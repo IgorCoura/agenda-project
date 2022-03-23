@@ -13,11 +13,11 @@ namespace Section14
         public decimal Price { get; set; }
         public int Quantity { get; set; }
 
-        public Product(string name, string price, string quantity)
+        public Product(string name, decimal price, int quantity)
         {   
             Name = name;
-            Price = decimal.Parse(price, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
-            Quantity = int.Parse(quantity);
+            Price = price;
+            Quantity = quantity;
         }
 
         public decimal GetTotalValue()

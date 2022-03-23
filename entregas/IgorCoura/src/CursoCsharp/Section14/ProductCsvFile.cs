@@ -18,8 +18,11 @@ namespace Section14
             while (streamReader.EndOfStream is false)
             {
                 string line = streamReader.ReadLine()!;
-                string[] listLine = line.Split(',');
-                var product = new Product(listLine[0], listLine[1], listLine[2]);
+                string[] arrayLine = line.Split(',');
+                var name = arrayLine[0];
+                var price = decimal.Parse(arrayLine[1], NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
+                var quantity = int.Parse(arrayLine[2]);
+                var product = new Product(name, price, quantity);
                 products.Add(product);
             }
 
@@ -31,9 +34,8 @@ namespace Section14
             using StreamWriter streamWriter = File.CreateText(destinePath);
 
             foreach(Product product in products)
-            {
                 streamWriter.WriteLine(product.ToStringWithOnlyNameAndTotalValue());
-            }
+            
         }
     }
 }
