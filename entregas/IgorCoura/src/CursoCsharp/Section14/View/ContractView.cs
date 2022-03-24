@@ -30,9 +30,7 @@ namespace Section14.View
         public static void ShowInstallments(this Contract contract)
         {
             foreach(var installment in contract.Installments)
-            {
                 Console.WriteLine($"{installment.Date.ToString("dd/MM/yyyy")} - {installment.Amount.ToString("0.00", CultureInfo.InvariantCulture)}");
-            }
             Console.WriteLine($"Total: {contract.TotalValueInstallments().ToString("0.00", CultureInfo.InvariantCulture)}");
         }
     }

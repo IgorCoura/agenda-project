@@ -32,9 +32,7 @@ namespace Section14.Entities
         {
             decimal total = 0;
             foreach(var installment in Installments)
-            {
                 total += installment.Amount;
-            }
             return total;
         }
 

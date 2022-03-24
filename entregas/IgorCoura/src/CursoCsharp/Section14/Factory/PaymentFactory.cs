@@ -18,10 +18,7 @@ namespace Section14.Services.Factory
         public IPaymentFactory Register(string paymentMethod, IPaymentService service)
         {
             if(_services.TryAdd(paymentMethod, service) is false)
-            {
                 _services[paymentMethod] = service;
-            }
-
             return this;
         }
     }
