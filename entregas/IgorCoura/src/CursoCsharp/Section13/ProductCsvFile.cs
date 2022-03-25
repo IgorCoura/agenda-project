@@ -20,8 +20,8 @@ namespace Section14
                 string line = streamReader.ReadLine()!;
                 string[] arrayLine = line.Split(',');
                 var name = arrayLine[0];
-                var price = decimal.Parse(arrayLine[1], NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
-                var quantity = int.Parse(arrayLine[2]);
+                decimal price = decimal.TryParse(arrayLine[1], NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out decimal result) ? result : 0;
+                int quantity = int.TryParse(arrayLine[2], out int value) ? value : 0;
                 var product = new Product(name, price, quantity);
                 products.Add(product);
             }
