@@ -9,14 +9,14 @@ namespace Section11.Interfaces
 {
     public interface IAccountRepository
     {
-        public void Create(Account e);
+        void Create(Account e);
 
-        public void Update(Account e);
+        void Update(Account e);
 
-        public void Delete(int agency, int numberAccount);
+        void Delete(int agency, int numberAccount);
 
-        public Account get(int agency, int numberAccount);
+        Account get(int agency, int numberAccount);
 
-        public IEnumerable<Account> getAll();
+        IEnumerable<Account> getAll();
     }
 }

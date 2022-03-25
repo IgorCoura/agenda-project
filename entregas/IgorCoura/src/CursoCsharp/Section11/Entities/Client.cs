@@ -19,5 +19,9 @@ namespace Section11.Entities
             DateOfBirth = dateOfBirth;
         }
 
+        public override string ToString()
+        {
+            return $"{Name}, {Cpf}, {DateOfBirth}";
+        }
     }
 }

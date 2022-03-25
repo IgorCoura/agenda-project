@@ -10,14 +10,14 @@ namespace Section11.Interfaces
 {
     public interface IClientRepository
     {
-        public void Create(Client e);
+        void Create(Client e);
 
-        public void Update(Client e);
+        void Update(Client e);
 
-        public void Delete(CPF cpf);
+        void Delete(CPF cpf);
 
-        public Client get(CPF cpf);
+        Client get(CPF cpf);
 
-        public IEnumerable<Client> getAll();
+        IEnumerable<Client> getAll();
     }
 }

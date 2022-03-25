@@ -10,14 +10,14 @@ namespace Section11.Interfaces
 {
     public interface IClientService
     {
-        public void Register(Client client);
+        void Register(Client client);
 
-        public void Modify(Client client);
+        void Modify(Client client);
 
-        public void Remove(CPF cpf);
+        void Remove(CPF cpf);
 
-        public Client Recover(CPF cpf);
+        Client Recover(CPF cpf);
 
-        public IEnumerable<Client> RecoverAll();
+        IEnumerable<Client> RecoverAll();
     }
 }
