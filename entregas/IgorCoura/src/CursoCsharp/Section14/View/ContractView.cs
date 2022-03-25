@@ -14,13 +14,13 @@ namespace Section14.View
         {
             Console.WriteLine("Enter contract data.");
             Console.WriteLine("Number:");
-            var numberContract = int.Parse(Console.ReadLine() ?? "0");
+            var numberContract = int.TryParse(Console.ReadLine(), out int result1)? result1 : 0;
             Console.WriteLine("Date (dd/MM/yyyy):");
-            var dateContract = DateTime.Parse(Console.ReadLine() ?? throw new ArgumentNullException("Date not be null"));
+            var dateContract = DateTime.TryParse(Console.ReadLine(), out DateTime result2)? result2 : DateTime.Now;
             Console.WriteLine("Contract value: ");
-            var contractValue = decimal.Parse(Console.ReadLine() ?? "0", NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
+            var contractValue = decimal.TryParse(Console.ReadLine(), NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out decimal result3)? result3: 0;
             Console.WriteLine("Enter number of installments: ");
-            var numberInstallments = int.Parse(Console.ReadLine() ?? "0");
+            var numberInstallments = int.TryParse(Console.ReadLine(), out int result4)? result4 : 0;
             Console.WriteLine("Payment method (Paypal, CreditCard): ");
             var methodPayment = (Console.ReadLine() ?? "paypal").ToLower();
 
