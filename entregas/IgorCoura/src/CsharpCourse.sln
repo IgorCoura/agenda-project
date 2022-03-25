@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section14", "CursoCsharp\Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section13", "CursoCsharp\Section13\Section13.csproj", "{799890DC-6A40-4C92-B850-4DCB36BDA259}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio-1", "Desafio-1\Desafio-1.csproj", "{051B40D4-5E64-4A13-95F0-F620BCA1E763}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{799890DC-6A40-4C92-B850-4DCB36BDA259}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{799890DC-6A40-4C92-B850-4DCB36BDA259}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{799890DC-6A40-4C92-B850-4DCB36BDA259}.Release|Any CPU.Build.0 = Release|Any CPU
+		{051B40D4-5E64-4A13-95F0-F620BCA1E763}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{051B40D4-5E64-4A13-95F0-F620BCA1E763}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{051B40D4-5E64-4A13-95F0-F620BCA1E763}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{051B40D4-5E64-4A13-95F0-F620BCA1E763}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{03B84C89-C6E6-4FCB-AD78-D8A01851C00E} = {B3B414A5-67B2-4D47-96F0-40AC64D153C5}
