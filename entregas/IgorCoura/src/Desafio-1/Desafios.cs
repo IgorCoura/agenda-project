@@ -47,21 +47,22 @@ namespace Desafio_1
         }
 
         //1.3 - A função abaixo conta quantos números primos existem até o número informado.
-        public static int ContarNumerosPrimos(int num)
+        public static int ContarNumerosPrimos(int numero)
         {
-            if (num < 0)
-                num *= -1;
+           
+            if (numero < 0)
+                numero *= -1;
             int countPrimo = 0;
-            for (int i = 2; i <= num; i++)
+            for (int i = 2; i <= numero; i++)
                 if(IsPrimo(i))
                     countPrimo++;
             return countPrimo;
         }
 
-        public static bool IsPrimo(int num)
+        public static bool IsPrimo(int numero)
         {
-            for (int i = num - 1; i > 1; i--)
-                if (num % i == 0)
+            for (int i = numero - 1; i > 1; i--)
+                if (numero % i == 0)
                     return false;
             return true;
         }
@@ -71,33 +72,24 @@ namespace Desafio_1
         public static int CalcularVogais(string frase)
         {
             var vogais = new List<char>() { 'a', 'e', 'i', 'o', 'u' };
-            var count = 0;
-            foreach (var c in frase)
-                if (vogais.Contains(c))
-                    count++;
-            return count;
+            var todasVogaisFrase = frase.Where(c => vogais.Contains(c));
+            return todasVogaisFrase.Count();
         }
 
         //1.5 - A função abaixo aplica uma porcentagem de desconto a um valor e retorna o resultado
         public static string CalcularValorComDescontoFormatado(string valor, string porcentagem)
         {
-            var listChars = new List<string>() { "R", "r", "$", ".", " " };
-            foreach (string c in listChars)
-                valor = valor.Replace(c, "");
-            porcentagem = porcentagem.Replace("%", "");
+            var valorLimpo = valor.Trim('R', 'r','$', '.', ' ' );
+            var porcentagemLimpa = porcentagem.Trim('%');
 
-            double value;
-            double porc;
-
-            if (double.TryParse(valor, out value) is false)
+            if (double.TryParse(valorLimpo, out double valorConvertido) is false)
                 throw new Exception("Valor é inválido.");
 
-            if (double.TryParse(porcentagem, out porc) is false)
+            if (double.TryParse(porcentagemLimpa, out double porcentagemConvertido) is false)
                 throw new Exception("Porcentagem é inválido.");
 
-            var calc = value * (1 - (porc / 100));
-            var result = calc.ToString("C", CultureInfo.CreateSpecificCulture("Pt-br"));
-            return  result;
+            var resultado = valorConvertido * (1 - (porcentagemConvertido / 100));
+            return resultado.ToString("C", CultureInfo.CreateSpecificCulture("Pt-br"));
         }
 
         //1.6 - A função abaixo obtém duas string de datas e calcula a diferença de dias entre elas.
@@ -120,59 +112,37 @@ namespace Desafio_1
         //1.7 - A função abaixo retorna um novo vetor com todos elementos pares do vetor informado.
         public static int[] ObterElementosPares(int[] vetor)
         {
-            List<int> result = new();
-            foreach (var v in vetor)
-                if (v % 2 == 0)
-                    result.Add(v);
-            return result.ToArray();
+            return vetor.Where(v => v % 2 == 0).ToArray();
         }
 
 
         //1.8 - A função abaixo buscar um ou mais elementos no vetor que contém o valor ou parte do valor informado na busca.
         public static string[] BuscarPessoa(string[] vetor, string palavra)
         {
-            List<string> result = new List<string>();
-            foreach (var v in vetor)
-                if (v.Contains(palavra))
-                    result.Add(v);
-            return result.ToArray();
+            return vetor.Where(v => v.Contains(palavra)).ToArray();
         }
         //1.9 - A função abaixo obtém uma string com números separados por vírgula e transforma em um array de array de inteiros com no máximo dois elementos.
         public static int[][] TransformarEmMatriz(string frase)
         {
-            var result = new List<int[]>();
-            var array = new int[2];
-            int count = 0;
-            foreach (var v in frase)
+            int[] numeros = frase.Split(",").Select(c => int.Parse(c)).ToArray();
+            List<int[]> resultado = new List<int[]>();  
+            for(int i = 0; i < numeros.Length; i+=2)
             {
-                if (v == ',')
-                    continue;
-
-                array[count] = v - '0';
-
-                count++;
-                if (count >= 2)
-                {
-                    result.Add(array);
-                    array = new int[2];
-                    count = 0;
-                }
+                int[] array;
+                if (numeros.Length - i == 1)
+                    array = new int[] { numeros[i]};
+                else
+                    array = new int[]{ numeros[i], numeros[i + 1] };
+                resultado.Add(array);
             }
-
-            return result.ToArray();
+            return resultado.ToArray();
         }
 
 
         //1.10 Afunção abaixo compara dois vetores e cria um novo vetor com os elementos faltantes de ambos
         public static int[] ObterElementosFaltantes(int[] vetor1, int[] vetor2)
         {
-            Array[] array = new Array[2] { vetor1, vetor2};
-            var sorteSet = new SortedSet<int>();
-            sorteSet.IntersectWith(vetor2);
-
-            return sorteSet.ToArray();
+            return vetor1.Except(vetor2).Union(vetor2.Except(vetor1)).OrderBy(v => v).ToArray();
         }
-
-
     }
 }
