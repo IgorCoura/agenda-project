@@ -16,14 +16,14 @@ namespace Section11.Repository
         {
             _entities = new List<Account>();
         }
-        public void Create(Account e)
+        public void Create(Account account)
         {
-            _entities.Add(e);
+            _entities.Add(account);
         }
 
-        public void Update(Account e)
+        public void Update(Account account)
         {
-            _entities[_entities.FindIndex(x => x.Agency == e.Agency && x.NumberAccount == e.NumberAccount)] = e;
+            _entities[_entities.FindIndex(x => x.Agency == account.Agency && x.NumberAccount == account.NumberAccount)] = account;
         }
 
         public void Delete(int agency, int numberAccount)
@@ -31,12 +31,12 @@ namespace Section11.Repository
             _entities.RemoveAll(x => x.Agency == agency && x.NumberAccount == numberAccount);
         }
 
-        public Account get(int agency, int numberAccount)
+        public Account Get(int agency, int numberAccount)
         {
             return _entities.Find(x => x.Agency == agency && x.NumberAccount == numberAccount) ?? throw new Exception($"Agency: {agency} and Account: {numberAccount}, not exist.");
         }
 
-        public IEnumerable<Account> getAll()
+        public IEnumerable<Account> GetAll()
         {
             return _entities;
         }

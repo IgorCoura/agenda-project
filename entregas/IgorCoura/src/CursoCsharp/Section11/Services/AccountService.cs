@@ -33,8 +33,8 @@ namespace Section11.Services
 
         public void Transfer(AccountModel accountOut, AccountModel accountIn, decimal value)
         {
-            var acOut = _accountRepository.get(accountOut.Agency, accountOut.NumberAccount);
-            var acIn = _accountRepository.get(accountIn.Agency, accountIn.NumberAccount);
+            var acOut = _accountRepository.Get(accountOut.Agency, accountOut.NumberAccount);
+            var acIn = _accountRepository.Get(accountIn.Agency, accountIn.NumberAccount);
             acOut.Withdraw(value);
             acIn.Deposit(value);
             _accountRepository.Update(acOut);
@@ -43,26 +43,26 @@ namespace Section11.Services
 
         public void Deposit(AccountModel account, decimal value)
         {
-            var ac = _accountRepository.get(account.Agency, account.NumberAccount);
+            var ac = _accountRepository.Get(account.Agency, account.NumberAccount);
             ac.Deposit(value);
             _accountRepository.Update(ac);
         }
 
         public void Withdraw(AccountModel account, decimal value)
         {
-            var ac = _accountRepository.get(account.Agency, account.NumberAccount);
+            var ac = _accountRepository.Get(account.Agency, account.NumberAccount);
             ac.Withdraw(value);
             _accountRepository.Update(ac);
         }
 
         public Account Recover(AccountModel account)
         {
-            return _accountRepository.get(account.Agency, account.NumberAccount);
+            return _accountRepository.Get(account.Agency, account.NumberAccount);
         }
 
         public IEnumerable<Account> RecoverAll()
         {
-            return _accountRepository.getAll();
+            return _accountRepository.GetAll();
         }
 
         private Account accountGenerator(Client client, decimal withdrawLimit)
@@ -79,7 +79,7 @@ namespace Section11.Services
                 }
                 try
                 {
-                    _accountRepository.get(agencia, numberAccount);
+                    _accountRepository.Get(agencia, numberAccount);
                     continue;
                 }
                 catch

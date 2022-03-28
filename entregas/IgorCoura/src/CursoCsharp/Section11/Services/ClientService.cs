@@ -35,12 +35,12 @@ namespace Section11.Services
 
         public Client Recover(CPF cpf)
         {
-            return _clientRepository.get(cpf);
+            return _clientRepository.Get(cpf);
         }
 
         public IEnumerable<Client> RecoverAll()
         {
-            return _clientRepository.getAll();
+            return _clientRepository.GetAll();
         }
     }
 }

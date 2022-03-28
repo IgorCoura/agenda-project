@@ -16,8 +16,8 @@ namespace Section11.Interfaces
 
         void Delete(CPF cpf);
 
-        Client get(CPF cpf);
+        Client Get(CPF cpf);
 
-        IEnumerable<Client> getAll();
+        IEnumerable<Client> GetAll();
     }
 }

@@ -17,14 +17,14 @@ namespace Section11.Repository
         {
             _entities = new List<Client>();
         }
-        public void Create(Client e)
+        public void Create(Client client)
         {
-            _entities.Add(e);
+            _entities.Add(client);
         }
 
-        public void Update(Client e)
+        public void Update(Client client)
         {
-            _entities[_entities.FindIndex(x => x.Cpf == e.Cpf)] = e;
+            _entities[_entities.FindIndex(x => x.Cpf == client.Cpf)] = client;
         }
 
         public void Delete(CPF cpf)
@@ -32,12 +32,12 @@ namespace Section11.Repository
             _entities.RemoveAll(x => x.Cpf == cpf);
         }
 
-        public Client get(CPF cpf)
+        public Client Get(CPF cpf)
         {
             return _entities.Find(x => x.Cpf == cpf) ?? throw new Exception($"Client with cpf {cpf}, not exist.");
         }
 
-        public IEnumerable<Client> getAll()
+        public IEnumerable<Client> GetAll()
         {
             return _entities;
         }
