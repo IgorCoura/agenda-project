@@ -13,7 +13,7 @@ Console.WriteLine(Desafios.CalcularPremio(100, "basic", 3) == 300.00M);//true
 
 //1.3
 Console.WriteLine("\nDesafio 1.3");
-Console.WriteLine(Desafios.ContarNumerosPrimos(10) == 4);//true
+Console.WriteLine(Desafios.ContarNumerosPrimos(7919) == 1000);//true
 
 //1.4
 Console.WriteLine("\nDesafio 1.4");

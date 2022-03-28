@@ -47,26 +47,23 @@ namespace Desafio_1
         }
 
         //1.3 - A função abaixo conta quantos números primos existem até o número informado.
-        public static int ContarNumerosPrimos(int numero)
+        public static int ContarNumerosPrimos(int entrada)
         {
-           
-            if (numero < 0)
-                numero *= -1;
-            int countPrimo = 0;
-            for (int i = 2; i <= numero; i++)
-                if(IsPrimo(i))
-                    countPrimo++;
-            return countPrimo;
-        }
+            var numeroPositivo = entrada < 0 ? entrada *= -1 : entrada;
+            if (entrada < 2)
+                return 0;
 
-        public static bool IsPrimo(int numero)
-        {
-            for (int i = numero - 1; i > 1; i--)
-                if (numero % i == 0)
-                    return false;
-            return true;
-        }
 
+            var numeros = Enumerable.Range(2, numeroPositivo);
+            var result = numeros.Where(n =>
+            {
+                for (int i = 2; i < n - 1; i++)
+                    if (n % i == 0)
+                        return false;
+                return true;
+            });
+            return result.Count();
+        }
 
         //1.4 - A função abaixo conta a quantidade de vogais dentro de uma string.
         public static int CalcularVogais(string frase)
