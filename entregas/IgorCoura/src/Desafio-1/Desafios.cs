@@ -12,15 +12,13 @@ namespace Desafio_1
         //1.1 - A função abaixo calcula o fatorial de um número.
         public static int CalcularFatorial(int num)
         {
-            for (int i = num - 1; i > 1; i--)
-                num *= i;
-            return num;
+            return num <= 1 ? 1 : CalcularFatorial(num - 1) * num;
         }
 
 
         //1.2 - A função abaixo calcula ovalor total do prêmio somando fator do tipo do prêmio.
         //Caso o valor ou o tipo passado seja invalido irá retorna um exceção
-        public static double CalcularPremio(double valor, string tipo, double? fator)
+        public static decimal CalcularPremio(decimal valor, string tipo, double? fator)
         {
             IDictionary<string, double> dicTipo = new Dictionary<string, double>() {
                 {"basic", 1} ,
@@ -33,13 +31,13 @@ namespace Desafio_1
             if (valor <= 0)
                 throw new Exception("O valor não pode ser menor ou igual a zero.");
             if (fator is not null && fator > 0)
-                return valor * fator.Value;
+                return valor * (decimal)fator.Value;
             else
             {
                 try
                 {
                     var mult = dicTipo[tipo];
-                    return valor * mult;
+                    return valor *(decimal)mult;
                 }
                 catch
                 {
@@ -169,8 +167,10 @@ namespace Desafio_1
         //1.10 Afunção abaixo compara dois vetores e cria um novo vetor com os elementos faltantes de ambos
         public static int[] ObterElementosFaltantes(int[] vetor1, int[] vetor2)
         {
-            var sorteSet = new SortedSet<int>(vetor1);
-            sorteSet.ExceptWith(vetor2);
+            Array[] array = new Array[2] { vetor1, vetor2};
+            var sorteSet = new SortedSet<int>();
+            sorteSet.IntersectWith(vetor2);
+
             return sorteSet.ToArray();
         }
 
