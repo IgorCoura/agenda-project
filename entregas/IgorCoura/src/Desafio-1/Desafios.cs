@@ -20,7 +20,7 @@ namespace Desafio_1
         //Caso o valor ou o tipo passado seja invalido irá retorna um exceção
         public static decimal CalcularPremio(decimal valor, string tipo, double? fator)
         {
-            IDictionary<string, double> dicTipo = new Dictionary<string, double>() {
+            IDictionary<string, double> dicionarioTipos = new Dictionary<string, double>() {
                 {"basic", 1} ,
                 {"vip", 1.2},
                 {"premium", 1.5 },
@@ -30,19 +30,18 @@ namespace Desafio_1
 
             if (valor <= 0)
                 throw new Exception("O valor não pode ser menor ou igual a zero.");
+
             if (fator is not null && fator > 0)
                 return valor * (decimal)fator.Value;
-            else
+
+            try
             {
-                try
-                {
-                    var mult = dicTipo[tipo];
-                    return valor *(decimal)mult;
-                }
-                catch
-                {
-                    throw new Exception("O tipo informado não existe.");
-                }
+                var mult = dicionarioTipos[tipo];
+                return valor * (decimal)mult;
+            }
+            catch
+            {
+                throw new Exception("O tipo informado não existe.");
             }
 
         }
