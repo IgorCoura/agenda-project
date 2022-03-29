@@ -79,12 +79,9 @@ namespace Desafio_1
         //1.6 - A função abaixo obtém duas string de datas e calcula a diferença de dias entre elas.
         public static int CalcularDiferencaData(string dataInicial, string dataFinal)
         {
-            dataInicial = dataInicial.Insert(2, "-").Insert(5, "-");
-            dataFinal = dataFinal.Insert(2, "-").Insert(5, "-");
-
-            if (DateTime.TryParse(dataInicial, out var initial))
+            if (DateTime.TryParseExact(dataInicial, "ddMMyyyy" , new CultureInfo("pt-BR"), DateTimeStyles.None , out var initial))
             {
-                if (DateTime.TryParse(dataFinal, out var final))
+                if (DateTime.TryParseExact(dataFinal, "ddMMyyyy", new CultureInfo("pt-BR"), DateTimeStyles.None, out var final))
                     return (int)(final - initial).TotalDays;
                 else
                     throw new Exception("Data final é inválido.");
