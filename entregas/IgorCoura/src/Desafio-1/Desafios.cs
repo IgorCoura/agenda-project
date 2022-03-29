@@ -18,26 +18,26 @@ namespace Desafio_1
 
         //1.2 - A função abaixo calcula ovalor total do prêmio somando fator do tipo do prêmio.
         //Caso o valor ou o tipo passado seja invalido irá retorna um exceção
-        public static decimal CalcularPremio(decimal valor, string tipo, double? fator)
+        public static decimal CalcularPremio(decimal valor, string tipo, decimal? fator)
         {
-            IDictionary<string, double> dicionarioTipos = new Dictionary<string, double>() {
-                {"basic", 1} ,
-                {"vip", 1.2},
-                {"premium", 1.5 },
-                {"deluxe", 1.8 },
-                {"special", 2 },
+            IDictionary<string, decimal> dicionarioTipos = new Dictionary<string, decimal>() {
+                {"basic", 1M} ,
+                {"vip", 1.2M},
+                {"premium", 1.5M },
+                {"deluxe", 1.8M },
+                {"special", 2M },
             };
 
             if (valor <= 0)
                 throw new Exception("O valor não pode ser menor ou igual a zero.");
 
             if (fator is not null && fator > 0)
-                return valor * (decimal)fator.Value;
+                return valor * fator.Value;
 
             try
             {
                 var mult = dicionarioTipos[tipo];
-                return valor * (decimal)mult;
+                return valor * mult;
             }
             catch
             {
@@ -66,10 +66,10 @@ namespace Desafio_1
             var valorLimpo = valor.Trim('R', 'r','$', '.', ' ' );
             var porcentagemLimpa = porcentagem.Trim('%');
 
-            if (double.TryParse(valorLimpo, out double valorConvertido) is false)
+            if (!decimal.TryParse(valorLimpo, out decimal valorConvertido))
                 throw new Exception("Valor é inválido.");
 
-            if (double.TryParse(porcentagemLimpa, out double porcentagemConvertido) is false)
+            if (!decimal.TryParse(porcentagemLimpa, out decimal porcentagemConvertido))
                 throw new Exception("Porcentagem é inválido.");
 
             var resultado = valorConvertido * (1 - (porcentagemConvertido / 100));
@@ -79,15 +79,11 @@ namespace Desafio_1
         //1.6 - A função abaixo obtém duas string de datas e calcula a diferença de dias entre elas.
         public static int CalcularDiferencaData(string dataInicial, string dataFinal)
         {
-            if (DateTime.TryParseExact(dataInicial, "ddMMyyyy" , new CultureInfo("pt-BR"), DateTimeStyles.None , out var initial))
-            {
-                if (DateTime.TryParseExact(dataFinal, "ddMMyyyy", new CultureInfo("pt-BR"), DateTimeStyles.None, out var final))
-                    return (int)(final - initial).TotalDays;
-                else
-                    throw new Exception("Data final é inválido.");
-            }
+            if (DateTime.TryParseExact(dataInicial, "ddMMyyyy" , new CultureInfo("pt-BR"), DateTimeStyles.None , out var initial)
+                && DateTime.TryParseExact(dataFinal, "ddMMyyyy", new CultureInfo("pt-BR"), DateTimeStyles.None, out var final))
+               return (int)(final - initial).TotalDays;
             else
-                throw new Exception("Data inicial é inválido.");
+                throw new Exception("Data é inválido.");
         }
 
         //1.7 - A função abaixo retorna um novo vetor com todos elementos pares do vetor informado.
