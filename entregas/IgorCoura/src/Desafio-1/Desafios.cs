@@ -49,28 +49,15 @@ namespace Desafio_1
         //1.3 - A função abaixo conta quantos números primos existem até o número informado.
         public static int ContarNumerosPrimos(int entrada)
         {
-            var numeroPositivo = entrada < 0 ? entrada *= -1 : entrada;
-            if (entrada < 2)
-                return 0;
-
-
-            var numeros = Enumerable.Range(2, numeroPositivo);
-            var result = numeros.Where(n =>
-            {
-                for (int i = 2; i < n - 1; i++)
-                    if (n % i == 0)
-                        return false;
-                return true;
-            });
-            return result.Count();
+            var numero = entrada < 0 ? entrada *= -1 : entrada;
+            if (entrada < 2) return 0;
+            return Enumerable.Range(2, numero).Count(n => (Enumerable.Range(1, n).Count(i => n % i == 0) <= 2));
         }
 
         //1.4 - A função abaixo conta a quantidade de vogais dentro de uma string.
         public static int CalcularVogais(string frase)
         {
-            var vogais = new List<char>() { 'a', 'e', 'i', 'o', 'u' };
-            var todasVogaisFrase = frase.Where(c => vogais.Contains(c));
-            return todasVogaisFrase.Count();
+            return frase.Count(c => new int[] { 'a', 'e', 'i', 'o', 'u' }.Contains(c));
         }
 
         //1.5 - A função abaixo aplica uma porcentagem de desconto a um valor e retorna o resultado
