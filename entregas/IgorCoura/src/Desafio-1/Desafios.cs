@@ -36,7 +36,7 @@ namespace Desafio_1
 
             try
             {
-                var mult = dicionarioTipos[tipo];
+                var mult = dicionarioTipos[tipo.ToLower()];
                 return valor * mult;
             }
             catch
@@ -57,7 +57,7 @@ namespace Desafio_1
         //1.4 - A função abaixo conta a quantidade de vogais dentro de uma string.
         public static int CalcularVogais(string frase)
         {
-            return frase.Count(c => new int[] { 'a', 'e', 'i', 'o', 'u' }.Contains(c));
+            return frase.ToLower().Count(c => new int[] { 'a', 'e', 'i', 'o', 'u' }.Contains(c));
         }
 
         //1.5 - A função abaixo aplica uma porcentagem de desconto a um valor e retorna o resultado
@@ -96,7 +96,7 @@ namespace Desafio_1
         //1.8 - A função abaixo buscar um ou mais elementos no vetor que contém o valor ou parte do valor informado na busca.
         public static string[] BuscarPessoa(string[] vetor, string palavra)
         {
-            return vetor.Where(v => v.Contains(palavra)).ToArray();
+            return vetor.Where(v => v.ToLower().Contains(palavra)).ToArray();
         }
         //1.9 - A função abaixo obtém uma string com números separados por vírgula e transforma em um array de array de inteiros com no máximo dois elementos.
         public static int[][] TransformarEmMatriz(string frase)
