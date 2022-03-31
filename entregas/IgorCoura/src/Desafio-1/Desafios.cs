@@ -79,9 +79,13 @@ namespace Desafio_1
         //1.6 - A função abaixo obtém duas string de datas e calcula a diferença de dias entre elas.
         public static int CalcularDiferencaData(string dataInicial, string dataFinal)
         {
-            if (DateTime.TryParseExact(dataInicial, "ddMMyyyy" , new CultureInfo("pt-BR"), DateTimeStyles.None , out var initial)
-                && DateTime.TryParseExact(dataFinal, "ddMMyyyy", new CultureInfo("pt-BR"), DateTimeStyles.None, out var final))
-               return (int)(final - initial).TotalDays;
+            return (int)(dataFinal.ConverteParaData() - dataInicial.ConverteParaData()).TotalDays;
+        }
+
+        public static DateTime ConverteParaData(this string dataString)
+        {
+            if (DateTime.TryParseExact(dataString, "ddMMyyyy", new CultureInfo("pt-BR"), DateTimeStyles.None, out var data))
+                return data;
             else
                 throw new Exception("Data é inválido.");
         }
@@ -96,7 +100,7 @@ namespace Desafio_1
         //1.8 - A função abaixo buscar um ou mais elementos no vetor que contém o valor ou parte do valor informado na busca.
         public static string[] BuscarPessoa(string[] vetor, string palavra)
         {
-            return vetor.Where(v => v.ToLower().Contains(palavra)).ToArray();
+            return vetor.Where(v => v.ToLower().Contains(palavra.ToLower())).ToArray();
         }
         //1.9 - A função abaixo obtém uma string com números separados por vírgula e transforma em um array de array de inteiros com no máximo dois elementos.
         public static int[][] TransformarEmMatriz(string frase)
