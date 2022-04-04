@@ -19,10 +19,12 @@ namespace AgendaConsole.Repositories
 
         public async Task<Contact> CreateAsync(Contact entity)
         {
+            entity.Id = _jsonStorage.CreateId();
             if(entity.Phones.Count > 0)
             {
                 entity.Phones.ForEach(x => PhoneExist(x));
                 entity.Phones = AddIdPhone(entity.Phones);
+                entity.Phones.ForEach(x => x.ContactId = entity.Id);
             }
             _jsonStorage.Create(entity);
             await _jsonStorage.SaveAsync();
@@ -35,6 +37,7 @@ namespace AgendaConsole.Repositories
             {
                 entity.Phones.ForEach(x => PhoneExist(x));
                 entity.Phones = AddIdPhone(entity.Phones);
+                entity.Phones.ForEach(p => p.ContactId = entity.Id);
             }
             var result = _jsonStorage.Update(entity);
             await _jsonStorage.SaveAsync();

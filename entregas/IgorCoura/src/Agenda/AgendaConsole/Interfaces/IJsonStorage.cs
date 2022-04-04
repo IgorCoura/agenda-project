@@ -9,6 +9,7 @@ namespace AgendaConsole.Interfaces
 {
     public interface IJsonStorage<T> where T : Register 
     {
+        int CreateId();
         T Create(T model);
         T Update(T model);
         T Remove(int id);

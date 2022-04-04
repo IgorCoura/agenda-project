@@ -18,5 +18,7 @@ namespace AgendaConsole.Entities
             CreatedAt = createdAt;
             UpdatedAt = updatedAt;
         }
+
+        public Register() { }
     }
 }

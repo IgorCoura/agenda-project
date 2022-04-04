@@ -33,12 +33,14 @@ namespace AgendaConsole.Repositories
             _context = ReadFile().ToList();
         }
 
+        public int CreateId()
+        {
+            return _context.Any() ? _context.LastOrDefault()!.Id + 1 : _context.Count() + 1;
+        }
         public T Create(T model)
         {
             try
             {
-                var id = _context.Any() ? _context.LastOrDefault()!.Id + 1 : _context.Count() + 1;
-                model.Id = id;
                 model.CreatedAt = DateTime.Now;
 
                 _context.Add(model);
