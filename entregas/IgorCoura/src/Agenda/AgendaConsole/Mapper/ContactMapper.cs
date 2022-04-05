@@ -28,7 +28,7 @@ namespace AgendaConsole.Mapper
             {
                 Id = model.Id,
                 Name = model.Name,
-                Phones = model.Phones.Select(p => p.ToModel()).ToList(),
+                Phones = model.Phones.Select(p => p.ToUpdateModel()).ToList(),
                 CreatedAt = model.CreatedAt,
                 UpdatedAt = model.UpdatedAt,
             };
