@@ -42,6 +42,7 @@ namespace AgendaConsole.Repositories
             try
             {
                 model.CreatedAt = DateTime.Now;
+                model.UpdatedAt = DateTime.Now;
 
                 _context.Add(model);
 

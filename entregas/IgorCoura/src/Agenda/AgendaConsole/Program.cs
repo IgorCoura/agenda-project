@@ -15,8 +15,10 @@ var service = new ContactService(repository);
 
 var createContactView = new CreateContactView(service);
 var editContactView = new EditContactView(service);
+var queryContactView = new QueryContactView(service);
+var removeContactView = new RemoveContactView(service);
 
-var mainView = new MainView(createContactView, editContactView);
+var mainView = new MainView(createContactView, editContactView, queryContactView, removeContactView);
 mainView.Run();
 
 Console.WriteLine("Finished!");

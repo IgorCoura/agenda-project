@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AgendaConsole.Entities;
 using AgendaConsole.Interfaces;
+using AgendaConsole.Mapper;
 using AgendaConsole.Model;
 
 namespace AgendaConsole.Services
@@ -18,39 +19,40 @@ namespace AgendaConsole.Services
             _contactRepository = contactRepository;
         }
 
-        public async Task<Contact> RegisterAsync(CreateContactModel contactModel)
+        public async Task<ContactModel> RegisterAsync(CreateContactModel contactModel)
         {
-            var phones = contactModel.Phones.Select(p => new Phone(0, p.Description, p.FormattedPhone, 11, 11)).ToList();
-            var contact = new Contact(0, contactModel.Name, phones, DateTime.Now, DateTime.Now);
+            var contact = contactModel.ToEntity();
             var result = await _contactRepository.CreateAsync(contact);
-            return result;
+            return result.ToModel();
         }
 
-        public void Edit()
+        public async Task<ContactModel> EditAsync(UpdateContactModel contactModel)
         {
-
+            var contact = contactModel.ToEntity();
+            var result = await _contactRepository.UpdateAsync(contact);
+            return result.ToModel();
         }
 
         public ContactModel RecoverById(int id)
         {
-           var entity = _contactRepository.GetById(id);
-            var phonesModel = entity.Phones.Select(p =>
-            new PhoneModel
-            {
-                FormattedPhone = p.FormattedPhone,
-                Description = p.Description
-            }).ToList();
-            var contactModel = new ContactModel
-            {
-                Name = entity.Name,
-                Phones = phonesModel
-            };
-            return contactModel;
+            var result = _contactRepository.GetById(id);
+            return result.ToModel();
         }
 
-        public void Remove()
+        public IEnumerable<ContactModel> Recover(Func<Contact, bool> func)
         {
+            return _contactRepository.GetAll().Where(func).Select(c => c.ToModel());
+        }
 
+        public IEnumerable<ContactModel> RecoverAll()
+        {
+            return _contactRepository.GetAll().Select(c => c.ToModel());
+        }
+
+        public async Task<ContactModel> Remove(int id)
+        {
+            var result = await _contactRepository.Remove(id);
+            return result.ToModel();
         }
     }
 }

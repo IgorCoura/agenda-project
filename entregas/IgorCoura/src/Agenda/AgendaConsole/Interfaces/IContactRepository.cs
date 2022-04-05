@@ -9,14 +9,14 @@ namespace AgendaConsole.Interfaces
 {
     public interface IContactRepository
     {
-        public Task<Contact> CreateAsync(Contact entity);
+        Task<Contact> CreateAsync(Contact entity);
 
-        public Task<Contact> UpdateAsync(Contact entity);
+        Task<Contact> UpdateAsync(Contact entity);
 
-        public IEnumerable<Contact> GetAll();
+        IEnumerable<Contact> GetAll();
 
-        public Contact GetById(int id);
+        Contact GetById(int id);
 
-        public Contact Remove(int id);
+        Task<Contact> Remove(int id);
     }
 }

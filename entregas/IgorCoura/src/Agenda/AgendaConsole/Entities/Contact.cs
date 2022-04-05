@@ -8,13 +8,21 @@ namespace AgendaConsole.Entities
 {
     public class Contact: Register 
     {
-        public Contact(int id, string name, List<Phone> phones, DateTime createdAt, DateTime updatedAt ): base(id, createdAt, updatedAt)
+        public Contact(string name, List<Phone> phones)
         {
             Name = name;
             Phones = phones;
         }
 
-        public string Name { get; private set; }
-        public List<Phone> Phones { get; set; }
+        public Contact(int id, string name, List<Phone> phones, DateTime createdAt, DateTime updatedAt) : base(id, createdAt, updatedAt)
+        {
+            Name = name;
+            Phones = phones;
+        }
+
+        public Contact() { }
+
+        public string Name { get; set; } = string.Empty;
+        public List<Phone> Phones { get; set; } = new();
     }
 }

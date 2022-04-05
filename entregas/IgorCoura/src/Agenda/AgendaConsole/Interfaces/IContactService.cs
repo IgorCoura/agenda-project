@@ -10,11 +10,12 @@ namespace AgendaConsole.Interfaces
 {
     public interface IContactService
     {
-        public Task<Contact> RegisterAsync(CreateContactModel contact);
-        public void Edit();
+        Task<ContactModel> RegisterAsync(CreateContactModel contact);
+        Task<ContactModel> EditAsync(UpdateContactModel contactModel);
 
-        public ContactModel RecoverById(int id);
-
-        public void Remove();
+        ContactModel RecoverById(int id);
+        IEnumerable<ContactModel> RecoverAll();
+        public IEnumerable<ContactModel> Recover(Func<Contact, bool> func);
+        Task<ContactModel> Remove(int id);
     }
 }

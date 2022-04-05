@@ -13,11 +13,15 @@ namespace AgendaConsole.Views
     {
         private readonly CreateContactView _createContactView;
         private readonly EditContactView _editContactView;
+        private readonly QueryContactView _queryContactView;
+        private readonly RemoveContactView _removeContactView;
 
-        public MainView(CreateContactView createContactView, EditContactView editContactView)
+        public MainView(CreateContactView createContactView, EditContactView editContactView, QueryContactView queryContactView, RemoveContactView removeContactView)
         {
             _createContactView = createContactView;
             _editContactView = editContactView;
+            _queryContactView = queryContactView;
+            _removeContactView = removeContactView;
         }
 
         public void Run()
@@ -30,6 +34,8 @@ namespace AgendaConsole.Views
                 {
                     case "1": _createContactView.Run(); break;
                     case "2": _editContactView.Run(); break;
+                    case "3": _queryContactView.Run(); break;
+                    case "4": _removeContactView.Run(); break;
                 }
             }
         }

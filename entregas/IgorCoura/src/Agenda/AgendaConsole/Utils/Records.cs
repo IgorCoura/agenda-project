@@ -10,20 +10,20 @@ namespace AgendaConsole.Utils
     public record NameRecord
     {
         [Required(ErrorMessage = "Insira um nome.")]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
     }
 
     public record PhoneRecord
     {
         [Required(ErrorMessage = "Insira um telefone")]
         [RegularExpression(@"^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$", ErrorMessage = "Informe um telefone valido.")]
-        public string Phone { get; set; }
+        public string Phone { get; set; } = string.Empty;
     }
 
     
     public record DescriptionRecord()
     {
         [Required(ErrorMessage = "Insira um descrição.")]
-        public string Description { get; set; }
+        public string Description { get; set; } = string.Empty;
     }
 }

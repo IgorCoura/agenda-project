@@ -25,6 +25,7 @@ namespace AgendaConsole.Repositories
                 entity.Phones.ForEach(x => PhoneExist(x));
                 entity.Phones = AddIdPhone(entity.Phones);
                 entity.Phones.ForEach(x => x.ContactId = entity.Id);
+                entity.Phones.ForEach(x => x.UpdatedAt = DateTime.Now);
             }
             _jsonStorage.Create(entity);
             await _jsonStorage.SaveAsync();
@@ -38,6 +39,7 @@ namespace AgendaConsole.Repositories
                 entity.Phones.ForEach(x => PhoneExist(x));
                 entity.Phones = AddIdPhone(entity.Phones);
                 entity.Phones.ForEach(p => p.ContactId = entity.Id);
+                entity.Phones.ForEach(x => x.UpdatedAt = DateTime.Now);
             }
             var result = _jsonStorage.Update(entity);
             await _jsonStorage.SaveAsync();
@@ -54,22 +56,27 @@ namespace AgendaConsole.Repositories
             return _jsonStorage.GetById(id);
         }
 
-        public Contact Remove(int id)
+        public async Task<Contact> Remove(int id)
         {
-            return _jsonStorage.Remove(id);
+            var result = _jsonStorage.Remove(id);
+            await _jsonStorage.SaveAsync();
+            return result;
         }
 
         private List<Phone> AddIdPhone(List<Phone> phones)
         {
             var existingPhones = _jsonStorage.GetAll().SelectMany(c => c.Phones);
             var id = existingPhones.Any() ? existingPhones.LastOrDefault()!.Id + 1 : existingPhones.Count() + 1;
-            phones.ForEach(p => p.Id = p.Id == 0 ? id++ : p.Id);
+            phones.ForEach(p => {
+                p.Id = p.Id == 0 ? id++ : p.Id;
+                p.CreatedAt = DateTime.Now;
+                });
             return phones;
         }
 
         private void PhoneExist(Phone phone)
         {
-            if (_jsonStorage.GetAll().SelectMany(c => c.Phones).Count(p => p.Equals(phone)) > 0)
+            if (phone.Id == 0 && _jsonStorage.GetAll().SelectMany(c => c.Phones).Count(p => p.Equals(phone)) > 0)
             {
                 throw new Exception($"O telefone {phone} já existe.");
             }

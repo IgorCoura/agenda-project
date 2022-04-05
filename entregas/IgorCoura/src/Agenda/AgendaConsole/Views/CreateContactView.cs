@@ -22,9 +22,17 @@ namespace AgendaConsole.Views
         {
             Console.WriteLine("\n NOVO CONTATO \n");
             var contact = CreateContact();
-            _contactService.RegisterAsync(contact);
+            try
+            {
+                _contactService.RegisterAsync(contact);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
         }
-        public CreateContactModel CreateContact()
+        private CreateContactModel CreateContact()
         {
             var name = UtilsViews.GetName();
             var model = new CreateContactModel { Name = name };
