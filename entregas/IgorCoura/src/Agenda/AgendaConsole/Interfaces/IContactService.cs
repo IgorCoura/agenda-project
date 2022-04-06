@@ -8,14 +8,14 @@ using AgendaConsole.Model;
 
 namespace AgendaConsole.Interfaces
 {
-    public interface IContactService
+    public interface IContactService: IUnitOfWork
     {
-        Task<ContactModel> RegisterAsync(CreateContactModel contact);
-        Task<ContactModel> EditAsync(UpdateContactModel contactModel);
+        ContactModel Register(CreateContactModel contact);
+        ContactModel Edit(UpdateContactModel contactModel);
 
         ContactModel RecoverById(int id);
         IEnumerable<ContactModel> RecoverAll();
         public IEnumerable<ContactModel> Recover(Func<Contact, bool> func);
-        Task<ContactModel> Remove(int id);
+        ContactModel Remove(int id);
     }
 }

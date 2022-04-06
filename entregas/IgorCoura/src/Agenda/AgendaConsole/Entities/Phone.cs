@@ -44,7 +44,7 @@ namespace AgendaConsole.Entities
                 DDD = ddd;
                 Number = number;
                 var stringNumber = number.ToString();
-                FormattedPhone = $"({ddd}) {stringNumber.Substring(0, stringNumber.Length - 4)}-{stringNumber.Substring(stringNumber.Length - 4)}";
+                FormattedPhone = $"({ddd}) {stringNumber.Insert(stringNumber.Length - 4, "-")}";
             }
             else
                 throw new Exception($"Erro ao tentar converter o numero de telefone: {formattedPhone}");

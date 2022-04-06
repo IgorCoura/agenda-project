@@ -17,32 +17,24 @@ namespace AgendaConsole.Repositories
             _jsonStorage = jsonStorage;
         }
 
-        public async Task<Contact> CreateAsync(Contact entity)
+        public Contact Create(Contact entity)
         {
             entity.Id = _jsonStorage.CreateId();
             if(entity.Phones.Count > 0)
             {
-                entity.Phones.ForEach(x => PhoneExist(x));
-                entity.Phones = AddIdPhone(entity.Phones);
-                entity.Phones.ForEach(x => x.ContactId = entity.Id);
-                entity.Phones.ForEach(x => x.UpdatedAt = DateTime.Now);
+                entity.Phones = FormatAndVerifyPhones(entity.Phones, entity.Id);
             }
             _jsonStorage.Create(entity);
-            await _jsonStorage.SaveAsync();
             return entity;
         }
 
-        public async Task<Contact> UpdateAsync(Contact entity)
+        public Contact Update(Contact entity)
         {
             if (entity.Phones.Count > 0)
             {
-                entity.Phones.ForEach(x => PhoneExist(x));
-                entity.Phones = AddIdPhone(entity.Phones);
-                entity.Phones.ForEach(p => p.ContactId = entity.Id);
-                entity.Phones.ForEach(x => x.UpdatedAt = DateTime.Now);
+                entity.Phones = FormatAndVerifyPhones(entity.Phones, entity.Id);
             }
             var result = _jsonStorage.Update(entity);
-            await _jsonStorage.SaveAsync();
             return result;
         }
 
@@ -56,11 +48,19 @@ namespace AgendaConsole.Repositories
             return _jsonStorage.GetById(id);
         }
 
-        public async Task<Contact> Remove(int id)
+        public Contact Remove(int id)
         {
             var result = _jsonStorage.Remove(id);
-            await _jsonStorage.SaveAsync();
             return result;
+        }
+         
+        public List<Phone> FormatAndVerifyPhones(List<Phone> phones, int contactId)
+        {
+            PhonesExists(phones);
+            phones = AddIdPhone(phones);
+            phones.ForEach(p => p.ContactId = contactId);
+            phones.ForEach(x => x.UpdatedAt = DateTime.Now);
+            return phones;
         }
 
         private List<Phone> AddIdPhone(List<Phone> phones)
@@ -74,13 +74,24 @@ namespace AgendaConsole.Repositories
             return phones;
         }
 
-        private void PhoneExist(Phone phone)
+        private void PhonesExists(List<Phone> phones)
         {
-            if (phone.Id == 0 && _jsonStorage.GetAll().SelectMany(c => c.Phones).Count(p => p.Equals(phone)) > 0)
+            foreach(Phone phone in phones)
             {
-                throw new Exception($"O telefone {phone} já existe.");
+                var quantEqualNumbersInDb = _jsonStorage.GetAll().SelectMany(c => c.Phones).Count(p => p.Equals(phone));
+                var quantEqualNumbersInListPhones = phones.Count(p => p.Equals(phone));
+                if (phone.Id == 0
+                &&  (quantEqualNumbersInDb > 0
+                || quantEqualNumbersInListPhones > 1))
+                {
+                    throw new Exception($"O telefone {phone} já existe.");
+                }
             }
         }
 
+        public async Task SaveChangesAsync()
+        {
+            await _jsonStorage.SaveAsync();
+        }
     }
 }

@@ -7,16 +7,16 @@ using AgendaConsole.Entities;
 
 namespace AgendaConsole.Interfaces
 {
-    public interface IContactRepository
+    public interface IContactRepository: IUnitOfWork
     {
-        Task<Contact> CreateAsync(Contact entity);
+        Contact Create(Contact entity);
 
-        Task<Contact> UpdateAsync(Contact entity);
+        Contact Update(Contact entity);
 
         IEnumerable<Contact> GetAll();
 
         Contact GetById(int id);
 
-        Task<Contact> Remove(int id);
+        Contact Remove(int id);
     }
 }

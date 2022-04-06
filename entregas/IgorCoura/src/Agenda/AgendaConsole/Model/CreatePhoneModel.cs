@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace AgendaConsole.Model
 {
+
     public class CreatePhoneModel
     {
         public string FormattedPhone { get; set; } = string.Empty;

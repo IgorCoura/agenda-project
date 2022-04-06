@@ -32,5 +32,15 @@ namespace AgendaConsole.Mapper
                 CreatedAt = model.CreatedAt,
                 UpdatedAt = model.UpdatedAt,
             };
+
+        public static ContactModel ToModel(this UpdateContactModel model) =>
+            new ContactModel
+            {
+                Id = model.Id,
+                Name = model.Name,
+                Phones = model.Phones.Select(p => p.ToModel()).ToList(),
+                CreatedAt = model.CreatedAt,
+                UpdatedAt = model.UpdatedAt,
+            };
     }
 }

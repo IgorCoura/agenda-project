@@ -1,13 +1,8 @@
 
 using AgendaConsole.Entities;
-using AgendaConsole.Options;
 using AgendaConsole.Repositories;
 using AgendaConsole.Services;
-using AgendaConsole.Views;
-
-
-
-
+using AgendaConsole.Utils;
 
 var storage = new JsonStorage<Contact>();
 var repository = new ContactRepository(storage);
@@ -18,7 +13,8 @@ var editContactView = new EditContactView(service);
 var queryContactView = new QueryContactView(service);
 var removeContactView = new RemoveContactView(service);
 
-var mainView = new MainView(createContactView, editContactView, queryContactView, removeContactView);
+var mainView = new MainView(service, createContactView, editContactView, queryContactView, removeContactView);
+
 mainView.Run();
 
 Console.WriteLine("Finished!");

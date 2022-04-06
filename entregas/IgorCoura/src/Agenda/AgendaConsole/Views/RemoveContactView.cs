@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using AgendaConsole.Interfaces;
 
-namespace AgendaConsole.Views
+namespace AgendaConsole.Utils
 {
-    public class RemoveContactView
+    public class RemoveContactView : IView
     {
         private readonly IContactService _contactService;
 
@@ -22,22 +22,17 @@ namespace AgendaConsole.Views
             while (true)
             {
                 Console.WriteLine("\n0 - Voltar\n");
-                Console.WriteLine("Digite o id do contato de deseja remove: ");
-                var response = Console.ReadLine();
-                if(response == "0")
-                {
-                    return;
-                }
 
-                if(int.TryParse(response, out int id))
-                {
-                    _contactService.Remove(id);
-                    Console.Clear();
-                    Console.WriteLine("Contato removido com sucesso.");
+                var id = ViewsUtils.GetId();
+
+                if(id == 0)
                     return;
-                }
+
+                _contactService.Remove(id);
                 Console.Clear();
-                Console.WriteLine("Digite um id valido.");
+                Console.WriteLine("Contato removido com sucesso.");
+                return;
+
             }
         }
     }

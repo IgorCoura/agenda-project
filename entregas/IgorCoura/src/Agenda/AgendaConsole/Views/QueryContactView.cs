@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using AgendaConsole.Interfaces;
 using AgendaConsole.Model;
 
-namespace AgendaConsole.Views
+namespace AgendaConsole.Utils
 {
-     public class QueryContactView
+     public class QueryContactView : IView
     {
         private readonly IContactService _contactService;
 
@@ -29,6 +29,8 @@ namespace AgendaConsole.Views
                     case "0": return;
                     case "1": RecoverAll();break;
                     case "2": RecoverByName(); break;
+                    case "3": RecoverByDDD(); break;
+                    case "4": RecoverByNumber(); break;
                 }
             }
             
@@ -48,41 +50,28 @@ namespace AgendaConsole.Views
 
         private void RecoverByDDD()
         {
-            //TODO: Buscar por ddd
+            var ddd = ViewsUtils.GetDDD();
+            var models = _contactService.Recover(c => c.Phones.Count(p => p.DDD.Equals(ddd)) > 0).ToList();
+            models.ForEach(m => ViewsUtils.ShowContact(m));
         }
 
         private void RecoverByNumber()
         {
-            //TODO: Busca por numero.
+            var number = ViewsUtils.GetNumber();
+            var models = _contactService.Recover(c => c.Phones.Count(p => p.Number.Equals(number)) > 0).ToList();
+            models.ForEach(m => ViewsUtils.ShowContact(m));
         }
         private void RecoverByName()
         {
-            var name = UtilsViews.GetName();
-            var models = _contactService.Recover(c => c.Name.Contains(name));
-            ShowContacts(models);
+            var name = ViewsUtils.GetName();
+            var models = _contactService.Recover(c => c.Name.Contains(name)).ToList();
+            models.ForEach(m => ViewsUtils.ShowContact(m));
         }
 
         private void RecoverAll()
         {
-            var models = _contactService.RecoverAll();
-            ShowContacts(models);
-        }
-
-
-        private void ShowContacts(IEnumerable<ContactModel> models)
-        {
-            foreach (var model in models)
-            {
-                Console.WriteLine($"Id: {model.Id}");
-                Console.WriteLine($"Name: {model.Name}");
-                foreach (var phone in model.Phones)
-                {
-                    Console.WriteLine($"    Id: {phone.Id}");
-                    Console.WriteLine($"    Phone: {phone.FormattedPhone}");
-                    Console.WriteLine($"    Description: {phone.Description}");
-                }
-                Console.WriteLine();
-            }
+            var models = _contactService.RecoverAll().ToList();
+            models.ForEach(m => ViewsUtils.ShowContact(m));
         }
     }
 }

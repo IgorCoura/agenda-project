@@ -7,6 +7,7 @@ using AgendaConsole.Entities;
 using AgendaConsole.Interfaces;
 using AgendaConsole.Mapper;
 using AgendaConsole.Model;
+using AgendaConsole.Utils;
 
 namespace AgendaConsole.Services
 {
@@ -19,17 +20,17 @@ namespace AgendaConsole.Services
             _contactRepository = contactRepository;
         }
 
-        public async Task<ContactModel> RegisterAsync(CreateContactModel contactModel)
+        public ContactModel Register(CreateContactModel contactModel)
         {
             var contact = contactModel.ToEntity();
-            var result = await _contactRepository.CreateAsync(contact);
+            var result = _contactRepository.Create(contact);
             return result.ToModel();
         }
 
-        public async Task<ContactModel> EditAsync(UpdateContactModel contactModel)
+        public ContactModel Edit(UpdateContactModel contactModel)
         {
             var contact = contactModel.ToEntity();
-            var result = await _contactRepository.UpdateAsync(contact);
+            var result = _contactRepository.Update(contact);
             return result.ToModel();
         }
 
@@ -49,10 +50,15 @@ namespace AgendaConsole.Services
             return _contactRepository.GetAll().Select(c => c.ToModel());
         }
 
-        public async Task<ContactModel> Remove(int id)
+        public ContactModel Remove(int id)
         {
-            var result = await _contactRepository.Remove(id);
+            var result = _contactRepository.Remove(id);
             return result.ToModel();
+        }
+
+        public async Task SaveChangesAsync()
+        {
+            await _contactRepository.SaveChangesAsync();
         }
     }
 }

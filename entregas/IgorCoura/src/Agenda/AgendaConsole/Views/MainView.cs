@@ -6,18 +6,21 @@ using System.Threading.Tasks;
 using AgendaConsole.Entities;
 using AgendaConsole.Model;
 using System.ComponentModel.DataAnnotations;
+using AgendaConsole.Interfaces;
 
-namespace AgendaConsole.Views
+namespace AgendaConsole.Utils
 {
-    public class MainView
+    public class MainView : IView
     {
-        private readonly CreateContactView _createContactView;
-        private readonly EditContactView _editContactView;
-        private readonly QueryContactView _queryContactView;
-        private readonly RemoveContactView _removeContactView;
+        private readonly IView _createContactView;
+        private readonly IView _editContactView;
+        private readonly IView _queryContactView;
+        private readonly IView _removeContactView;
+        private readonly IContactService _contactService;
 
-        public MainView(CreateContactView createContactView, EditContactView editContactView, QueryContactView queryContactView, RemoveContactView removeContactView)
+        public MainView(IContactService contactService, IView createContactView, IView editContactView, IView queryContactView, IView removeContactView)
         {
+            _contactService = contactService;
             _createContactView = createContactView;
             _editContactView = editContactView;
             _queryContactView = queryContactView;
@@ -26,33 +29,46 @@ namespace AgendaConsole.Views
 
         public void Run()
         {
-            var option = "";
-            while (option != "0")
+            while (true)
             {
-                option = Options();
-                switch (option)
+                var option = Options();
+                try
                 {
-                    case "1": _createContactView.Run(); break;
-                    case "2": _editContactView.Run(); break;
-                    case "3": _queryContactView.Run(); break;
-                    case "4": _removeContactView.Run(); break;
+                    switch (option)
+                    {
+                        case "0":return;
+                        case "1": _createContactView.Run(); break;
+                        case "2":_editContactView.Run();break;
+                        case "3":_queryContactView.Run(); break;
+                        case "4":_removeContactView.Run(); break;
+                        case "5":SaveChanges();break;
+                    }
                 }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro: " + ex.Message);
+                }
+                
             }
         }
 
-        public string Options()
+        private string Options()
         {
             Console.WriteLine("1-Criar novo contato.");
             Console.WriteLine("2-Editar contato existente.");
             Console.WriteLine("3-Consultar contato.");
             Console.WriteLine("4-Remover contato.");
-            Console.WriteLine("0-Sair.");
+            Console.WriteLine("5-Salvar todas as alteações.");
+            Console.WriteLine("0-Sair (Salve antes de sair).");
             var response = Console.ReadLine() ?? "";
             Console.Clear();
             return response;
         }
 
-        
+        private void SaveChanges()
+        {
+            _contactService.SaveChangesAsync();
+        }
 
     }
 }

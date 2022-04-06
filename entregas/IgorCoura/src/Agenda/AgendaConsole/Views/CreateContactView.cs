@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using AgendaConsole.Interfaces;
 using AgendaConsole.Model;
 
-namespace AgendaConsole.Views
+namespace AgendaConsole.Utils
 {
-    public class CreateContactView
+    public class CreateContactView: IView
     {
         private readonly IContactService _contactService;
 
@@ -22,26 +22,18 @@ namespace AgendaConsole.Views
         {
             Console.WriteLine("\n NOVO CONTATO \n");
             var contact = CreateContact();
-            try
-            {
-                _contactService.RegisterAsync(contact);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            
+            _contactService.Register(contact);
         }
         private CreateContactModel CreateContact()
         {
-            var name = UtilsViews.GetName();
+            var name = ViewsUtils.GetName();
             var model = new CreateContactModel { Name = name };
             model.Phones = new List<CreatePhoneModel>();
             while (true)
             {
                 var phone = new CreatePhoneModel{
-                    FormattedPhone = UtilsViews.GetPhone(),
-                    Description = UtilsViews.GetDescription()
+                    FormattedPhone = ViewsUtils.GetPhone(),
+                    Description = ViewsUtils.GetDescription()
                 };
                 model.Phones.Add(phone);
                 Console.WriteLine("Deseja inserir mais um numero (S/N): ");
