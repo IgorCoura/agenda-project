@@ -12,10 +12,9 @@ namespace AgendaConsole.Interfaces
     {
         ContactModel Register(CreateContactModel contact);
         ContactModel Edit(UpdateContactModel contactModel);
-
         ContactModel RecoverById(int id);
         IEnumerable<ContactModel> RecoverAll();
-        public IEnumerable<ContactModel> Recover(Func<Contact, bool> func);
+        IEnumerable<ContactModel> Recover(Func<Contact, bool> func);
         ContactModel Remove(int id);
     }
 }

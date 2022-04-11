@@ -20,9 +20,9 @@ namespace AgendaConsole.Repositories
         public Contact Create(Contact entity)
         {
             entity.Id = _jsonStorage.CreateId();
-            if(entity.Phones.Count > 0)
+            if(entity.Phones.ToList().Count > 0)
             {
-                entity.Phones = FormatAndVerifyPhones(entity.Phones, entity.Id);
+                entity.Phones = FormatAndVerifyPhones(entity.Phones.ToList(), entity.Id);
             }
             _jsonStorage.Create(entity);
             return entity;
@@ -30,9 +30,9 @@ namespace AgendaConsole.Repositories
 
         public Contact Update(Contact entity)
         {
-            if (entity.Phones.Count > 0)
+            if (entity.Phones.ToList().Count > 0)
             {
-                entity.Phones = FormatAndVerifyPhones(entity.Phones, entity.Id);
+                entity.Phones = FormatAndVerifyPhones(entity.Phones.ToList(), entity.Id);
             }
             var result = _jsonStorage.Update(entity);
             return result;

@@ -12,37 +12,38 @@ namespace AgendaConsole.Utils
 {
     public class MainView : IView
     {
-        private readonly IView _createContactView;
-        private readonly IView _editContactView;
-        private readonly IView _queryContactView;
-        private readonly IView _removeContactView;
         private readonly IContactService _contactService;
+        private readonly Dictionary<string, IView> _optionsDictionary;
 
         public MainView(IContactService contactService, IView createContactView, IView editContactView, IView queryContactView, IView removeContactView)
         {
-            _contactService = contactService;
-            _createContactView = createContactView;
-            _editContactView = editContactView;
-            _queryContactView = queryContactView;
-            _removeContactView = removeContactView;
+            _contactService = contactService;   
+            _optionsDictionary = new Dictionary<string, IView>()
+            {
+                {"1", createContactView},
+                {"2", editContactView},
+                {"3", queryContactView},
+                {"4", removeContactView},
+            };
         }
 
         public void Run()
         {
+            
             while (true)
             {
                 var option = Options();
+                if (option == "0")
+                    return;
+                
                 try
                 {
-                    switch (option)
+                    if (option == "5")
                     {
-                        case "0":return;
-                        case "1": _createContactView.Run(); break;
-                        case "2":_editContactView.Run();break;
-                        case "3":_queryContactView.Run(); break;
-                        case "4":_removeContactView.Run(); break;
-                        case "5":SaveChanges();break;
+                        SaveChanges();
+                        continue;
                     }
+                    _optionsDictionary[option].Run();
                 }
                 catch (Exception ex)
                 {
@@ -68,6 +69,7 @@ namespace AgendaConsole.Utils
         private void SaveChanges()
         {
             _contactService.SaveChangesAsync();
+            Console.WriteLine("Todas as Alterações foram salvas.");
         }
 
     }

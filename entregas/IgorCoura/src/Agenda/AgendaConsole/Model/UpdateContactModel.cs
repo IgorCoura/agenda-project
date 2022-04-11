@@ -10,7 +10,7 @@ namespace AgendaConsole.Model
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
-        public List<UpdatePhoneModel> Phones { get; set; } = new();
+        public IEnumerable<UpdatePhoneModel> Phones { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
     }

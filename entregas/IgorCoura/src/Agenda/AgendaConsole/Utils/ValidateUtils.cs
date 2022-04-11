@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AgendaConsole.Entities;
 
 namespace AgendaConsole.Utils
 {
@@ -19,3 +20,4 @@ namespace AgendaConsole.Utils
         }
     }
 }
+

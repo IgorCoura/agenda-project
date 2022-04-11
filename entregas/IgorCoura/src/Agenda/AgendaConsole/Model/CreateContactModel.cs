@@ -10,7 +10,7 @@ namespace AgendaConsole.Model
     public class CreateContactModel
     {
         public string Name { get; set; } = string.Empty;
-        public List<CreatePhoneModel> Phones { get; set; } = new();
+        public IEnumerable<CreatePhoneModel> Phones { get; set; }
 
     }
 }

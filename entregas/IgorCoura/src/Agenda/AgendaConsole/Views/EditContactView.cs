@@ -7,10 +7,17 @@ namespace AgendaConsole.Utils
     public class EditContactView : IView
     {
         private readonly IContactService _contactService;
-        
+        private readonly Dictionary<string, Action<UpdateContactModel>> _optionsDictionary;
 
         public EditContactView(IContactService contactService)
         {
+            _optionsDictionary = new Dictionary<string, Action<UpdateContactModel>>()
+            {
+                {"1", EditName},
+                {"2", AddNewPhone},
+                {"3", EditPhone},
+                {"4", RemovePhone},
+            };
             _contactService = contactService;
         }
 
@@ -19,18 +26,15 @@ namespace AgendaConsole.Utils
             var model = GetContact();
             if (model == null)
                 return;
+
             while (true)
             {
                 var option = Options(model);
+                if (option == "0")
+                    return;
 
-                switch (option)
-                {
-                    case "0": return;
-                    case "1": EditName(model); break;
-                    case "2": AddNewPhone(model); break;
-                    case "3": EditPhone(model); break;                      
-                    case "4": RemovePhone(model); break;                               
-                }
+                _optionsDictionary[option].Invoke(model);
+
                 model = _contactService.Edit(model).ToUpdateModel();
             }
             
@@ -72,18 +76,22 @@ namespace AgendaConsole.Utils
                 FormattedPhone = ViewsUtils.GetPhone(),
                 Description = ViewsUtils.GetDescription()
             };
-            model.Phones.Add(phone);
+            var phones = model.Phones.ToList();
+            phones.Add(phone);
+            model.Phones = phones;
             Console.Clear();
         }
 
         private void EditPhone(UpdateContactModel model) {
             Console.WriteLine("\nEDITAR TELEFONE");
             Console.WriteLine("Caso não queira editar um campo basta deixa-lo embranco\n");
-            var phoneModel = GetPhone(model.Phones);
-            if (phoneModel != null)
+            var phones = model.Phones.ToList();
+            var phone = GetPhone(phones);
+            if (phone!= null)
             {
-                phoneModel.FormattedPhone = ViewsUtils.GetPhone(phoneModel.FormattedPhone);
-                phoneModel.Description = ViewsUtils.GetDescription(phoneModel.Description);
+                phone.FormattedPhone = ViewsUtils.GetPhone(phone.FormattedPhone);
+                phone.Description = ViewsUtils.GetDescription(phone.Description);
+                model.Phones = phones;
                 return;
             }
             Console.Clear();
@@ -92,11 +100,13 @@ namespace AgendaConsole.Utils
         private void RemovePhone(UpdateContactModel model)
         {
             Console.WriteLine("\nREMOVER TELEFONE\n");
-            var phoneModel = GetPhone(model.Phones);
+            var phones = model.Phones.ToList();
+            var phoneModel = GetPhone(phones);
             if( phoneModel != null)
             {
-                model.Phones.Remove(phoneModel);
+                phones.Remove(phoneModel);
             }
+            model.Phones = phones;
             Console.Clear();
         }
         private UpdatePhoneModel? GetPhone(List<UpdatePhoneModel> phoneList)

@@ -11,27 +11,28 @@ namespace AgendaConsole.Utils
      public class QueryContactView : IView
     {
         private readonly IContactService _contactService;
+        private readonly Dictionary<string, Action> _optionsDictionary;
 
         public QueryContactView(IContactService contactService)
         {
             _contactService = contactService;
+            _optionsDictionary = new Dictionary<string, Action>()
+            {
+                {"1", RecoverAll},
+                {"2", RecoverByName},
+                {"3", RecoverByDDD},
+                {"4", RecoverByNumber},
+            };
         }
 
         public void Run()
         {
-            
             while (true)
             {
                 var option = Options();
-
-                switch (option)
-                {
-                    case "0": return;
-                    case "1": RecoverAll();break;
-                    case "2": RecoverByName(); break;
-                    case "3": RecoverByDDD(); break;
-                    case "4": RecoverByNumber(); break;
-                }
+                if (option == "0")
+                    return;
+                _optionsDictionary[option].Invoke();
             }
             
         }

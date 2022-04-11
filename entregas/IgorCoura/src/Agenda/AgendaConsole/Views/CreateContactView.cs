@@ -28,19 +28,18 @@ namespace AgendaConsole.Utils
         {
             var name = ViewsUtils.GetName();
             var model = new CreateContactModel { Name = name };
-            model.Phones = new List<CreatePhoneModel>();
+            var phones = new List<CreatePhoneModel>();
             while (true)
             {
                 var phone = new CreatePhoneModel{
                     FormattedPhone = ViewsUtils.GetPhone(),
                     Description = ViewsUtils.GetDescription()
                 };
-                model.Phones.Add(phone);
-                Console.WriteLine("Deseja inserir mais um numero (S/N): ");
-                if (Console.ReadLine() == "N")
+                phones.Add(phone);
+                if (ViewsUtils.ReadYesOrNo("Deseja inserir mais um numero (S/N): "))
                     break;
             }
-
+            model.Phones = phones;
             return model;
 
         }

@@ -133,6 +133,16 @@ namespace AgendaConsole.Utils
             }
         }
 
+        public static bool ReadYesOrNo(string? message = null)
+        {
+            if (!string.IsNullOrEmpty(message))
+                Console.Write(message);
+
+            var input = Console.ReadLine() ?? "";
+            return input.ToLower().Equals("s");
+        }
+
+
         public static void ShowContact(ContactModel model)
         {
             Console.WriteLine($"Id: {model.Id}");

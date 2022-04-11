@@ -23,6 +23,6 @@ namespace AgendaConsole.Entities
         public Contact() { }
 
         public string Name { get; set; } = string.Empty;
-        public List<Phone> Phones { get; set; } = new();
+        public IEnumerable<Phone> Phones { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace AgendaConsole.Mapper
             {
                 Id = entity.Id,
                 Name = entity.Name,
-                Phones = entity.Phones.Select(p => p.ToModel()).ToList(),
+                Phones = entity.Phones.Select(p => p.ToModel()),
                 CreatedAt = entity.CreatedAt,
                 UpdatedAt = entity.UpdatedAt,
             };
@@ -28,7 +28,7 @@ namespace AgendaConsole.Mapper
             {
                 Id = model.Id,
                 Name = model.Name,
-                Phones = model.Phones.Select(p => p.ToUpdateModel()).ToList(),
+                Phones = model.Phones.Select(p => p.ToUpdateModel()),
                 CreatedAt = model.CreatedAt,
                 UpdatedAt = model.UpdatedAt,
             };
@@ -38,7 +38,7 @@ namespace AgendaConsole.Mapper
             {
                 Id = model.Id,
                 Name = model.Name,
-                Phones = model.Phones.Select(p => p.ToModel()).ToList(),
+                Phones = model.Phones.Select(p => p.ToModel()),
                 CreatedAt = model.CreatedAt,
                 UpdatedAt = model.UpdatedAt,
             };
