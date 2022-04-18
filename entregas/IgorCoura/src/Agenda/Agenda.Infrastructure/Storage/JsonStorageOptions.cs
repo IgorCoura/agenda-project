@@ -1,4 +1,4 @@
-namespace Agenda.Infrastructure.Options
+namespace Agenda.Infrastructure.Storage
 {
     public class JsonStorageOptions
     {

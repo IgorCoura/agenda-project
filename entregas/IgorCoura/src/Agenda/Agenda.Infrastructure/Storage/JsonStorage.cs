@@ -4,9 +4,9 @@ using System.Text.Json;
 using System.Text.Unicode;
 using Agenda.Domain.Entities;
 using Agenda.Domain.Interfaces;
-using Agenda.Infrastructure.Options;
+using Microsoft.Extensions.Options;
 
-namespace Agenda.Infrastructure.Repositories
+namespace Agenda.Infrastructure.Storage
 {
     public class JsonStorage<T> : IJsonStorage<T> where T : Register
     {
@@ -16,9 +16,9 @@ namespace Agenda.Infrastructure.Repositories
         private readonly JsonStorageOptions _options;
         public IEnumerable<T> Context => _context;
 
-        public JsonStorage()
+        public JsonStorage(IOptions<JsonStorageOptions> options)
         {
-            _options =  new JsonStorageOptions();
+            _options = options.Value ?? new JsonStorageOptions();
             _filePath = Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + _options.FilePath;
             _jsonSerializerOptions = new JsonSerializerOptions()
             {

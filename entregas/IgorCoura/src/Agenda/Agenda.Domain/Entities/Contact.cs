@@ -1,3 +1,5 @@
+using Agenda.Domain.Core;
+
 namespace Agenda.Domain.Entities
 {
     public class Contact: Register 

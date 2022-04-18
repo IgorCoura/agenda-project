@@ -1,4 +1,4 @@
-namespace Agenda.Domain.Entities
+namespace Agenda.Domain.Core
 {
     public class Register
     {

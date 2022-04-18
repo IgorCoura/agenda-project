@@ -1,6 +1,7 @@
+using Agenda.ConsoleUI.Utils;
 using Agenda.Domain.Interfaces;
 
-namespace Agenda.ConsoleUI.Utils
+namespace Agenda.ConsoleUI.Views
 {
      public class QueryContactView : IView
     {

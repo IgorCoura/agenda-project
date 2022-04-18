@@ -1,4 +1,5 @@
 using System.Text.RegularExpressions;
+using Agenda.Domain.Core;
 
 namespace Agenda.Domain.Entities
 {

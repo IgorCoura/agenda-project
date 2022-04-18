@@ -1,7 +1,8 @@
+using Agenda.ConsoleUI.Utils;
 using Agenda.Domain.Interfaces;
 using Agenda.Domain.Model;
 
-namespace Agenda.ConsoleUI.Utils
+namespace Agenda.ConsoleUI.Views
 {
     public class CreateContactView: IView
     {

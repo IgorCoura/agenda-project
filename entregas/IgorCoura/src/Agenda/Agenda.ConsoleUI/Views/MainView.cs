@@ -1,22 +1,17 @@
 using Agenda.Domain.Interfaces;
 
-namespace Agenda.ConsoleUI.Utils
+namespace Agenda.ConsoleUI.Views
 {
     public class MainView : IView
     {
         private readonly IContactService _contactService;
         private readonly Dictionary<string, IView> _optionsDictionary;
+        private readonly ViewsAccessor _viewsAccessor;
 
-        public MainView(IContactService contactService, IView createContactView, IView editContactView, IView queryContactView, IView removeContactView)
+        public MainView(IContactService contactService, ViewsAccessor viewsAccessor)
         {
             _contactService = contactService;   
-            _optionsDictionary = new Dictionary<string, IView>()
-            {
-                {"1", createContactView},
-                {"2", editContactView},
-                {"3", queryContactView},
-                {"4", removeContactView},
-            };
+            _viewsAccessor = viewsAccessor;
         }
 
         public void Run()
@@ -35,7 +30,7 @@ namespace Agenda.ConsoleUI.Utils
                         SaveChanges();
                         continue;
                     }
-                    _optionsDictionary[option].Run();
+                    _viewsAccessor(option).Run();
                 }
                 catch (Exception ex)
                 {
@@ -43,6 +38,7 @@ namespace Agenda.ConsoleUI.Utils
                 }
                 
             }
+
         }
 
         private string Options()
