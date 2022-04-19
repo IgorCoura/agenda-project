@@ -1,3 +1,4 @@
+using Agenda.Application.Mappers;
 using Agenda.Application.Services;
 using Agenda.ConsoleUI;
 using Agenda.ConsoleUI.Views;
@@ -47,6 +48,8 @@ static void ConfigureServices(IServiceCollection service)
                    default: throw new KeyNotFoundException($"Opção {key} não existe.");
                }
            });
+
+    service.AddAutoMapper(typeof(EntityToModelProfile), typeof(ModelToEntityProfile), typeof(ModelToModelProfile));
  
     service.AddScoped<MainView>();
 

@@ -1,7 +1,7 @@
-using Agenda.Application.Mapper;
 using Agenda.ConsoleUI.Utils;
 using Agenda.Domain.Interfaces;
 using Agenda.Domain.Model;
+using AutoMapper;
 
 namespace Agenda.ConsoleUI.Views
 {
@@ -9,8 +9,9 @@ namespace Agenda.ConsoleUI.Views
     {
         private readonly IContactService _contactService;
         private readonly Dictionary<string, Action<UpdateContactModel>> _optionsDictionary;
+        private readonly IMapper _mapper;
 
-        public EditContactView(IContactService contactService)
+        public EditContactView(IContactService contactService, IMapper mapper)
         {
             _optionsDictionary = new Dictionary<string, Action<UpdateContactModel>>()
             {
@@ -20,6 +21,7 @@ namespace Agenda.ConsoleUI.Views
                 {"4", RemovePhone},
             };
             _contactService = contactService;
+            _mapper = mapper;
         }
 
         public void Run()
@@ -36,7 +38,8 @@ namespace Agenda.ConsoleUI.Views
 
                 _optionsDictionary[option].Invoke(model);
 
-                model = _contactService.Edit(model).ToUpdateModel();
+                var result = _contactService.Edit(model);
+                model = _mapper.Map<UpdateContactModel>(result);
             }
             
 
@@ -45,7 +48,7 @@ namespace Agenda.ConsoleUI.Views
         private string Options(UpdateContactModel model)
         {
             Console.WriteLine("\nEDITAR CONTATO.\n");
-            ViewsUtils.ShowContact(model.ToModel());
+            ViewsUtils.ShowContact(_mapper.Map<ContactModel>(model));
             Console.WriteLine($"1-Name.");
             Console.WriteLine("2-Adicionar um novo telefone.");
             Console.WriteLine("3-Editar Telefones");
@@ -114,7 +117,7 @@ namespace Agenda.ConsoleUI.Views
         {
             foreach (var phone in phoneList)
             {
-                ViewsUtils.ShowPhone(phone.ToModel());
+                ViewsUtils.ShowPhone(_mapper.Map<PhoneModel>(phone));
             }
             Console.WriteLine("\n0-Voltar");
             while (true)
@@ -149,7 +152,7 @@ namespace Agenda.ConsoleUI.Views
                 {
                     var contactModel = _contactService.RecoverById(id);
                     Console.Clear();
-                    return contactModel.ToUpdateModel();
+                    return _mapper.Map<UpdateContactModel>(contactModel);
                 }
                 catch (Exception ex)
                 {
