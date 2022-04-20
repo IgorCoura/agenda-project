@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using Agenda.Domain.Entities;
 
 namespace Agenda.Domain.Interfaces
@@ -8,7 +9,7 @@ namespace Agenda.Domain.Interfaces
 
         Contact Update(Contact entity);
 
-        IEnumerable<Contact> GetAll();
+        IEnumerable<Contact> GetAll(Expression<Func<Contact, bool>> filter = null);
 
         Contact GetById(int id);
 

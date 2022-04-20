@@ -28,7 +28,8 @@ namespace Agenda.ConsoleUI.Views
             {
                 var phone = new CreatePhoneModel{
                     FormattedPhone = ViewsUtils.GetPhone(),
-                    Description = ViewsUtils.GetDescription()
+                    Description = ViewsUtils.GetDescription(),
+                    PhoneType = ViewsUtils.GetPhoneType(),
                 };
                 phones.Add(phone);
                 if (!ViewsUtils.ReadYesOrNo("Deseja inserir mais um numero (S/N): "))

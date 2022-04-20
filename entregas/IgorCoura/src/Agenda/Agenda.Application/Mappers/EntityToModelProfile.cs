@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Agenda.Domain.Entities;
 using Agenda.Domain.Model;
+using Agenda.Domain.Entities;
+using Agenda.Domain.Entities.Enumerations;
 using AutoMapper;
 
 namespace Agenda.Application.Mappers
@@ -15,6 +16,7 @@ namespace Agenda.Application.Mappers
         {
             CreateMap<Contact, ContactModel>();
             CreateMap<Phone, PhoneModel>();
+            CreateMap<PhoneType, PhoneTypeModel>();
         }
     }
 }

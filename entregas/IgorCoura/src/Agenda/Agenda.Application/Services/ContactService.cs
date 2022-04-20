@@ -1,7 +1,8 @@
+using Agenda.Domain.Model;
 using Agenda.Domain.Entities;
 using Agenda.Domain.Interfaces;
-using Agenda.Domain.Model;
 using AutoMapper;
+using Agenda.Domain.Params;
 
 namespace Agenda.Application.Services
 {
@@ -36,9 +37,9 @@ namespace Agenda.Application.Services
             return _mapper.Map<ContactModel>(result);
         }
 
-        public IEnumerable<ContactModel> Recover(Func<Contact, bool> func)
+        public IEnumerable<ContactModel> Recover(ContactParams query)
         {
-            var results = _contactRepository.GetAll().Where(func);
+            var results = _contactRepository.GetAll(query.Filter());
             return _mapper.Map<IEnumerable<ContactModel>>(results);
         }
 

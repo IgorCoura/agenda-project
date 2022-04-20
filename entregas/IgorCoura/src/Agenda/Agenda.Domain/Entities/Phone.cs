@@ -1,5 +1,6 @@
 using System.Text.RegularExpressions;
 using Agenda.Domain.Core;
+using Agenda.Domain.Entities.Enumerations;
 
 namespace Agenda.Domain.Entities
 {
@@ -10,7 +11,9 @@ namespace Agenda.Domain.Entities
         public string FormattedPhone { get; set; } = string.Empty;
         public int DDD { get; set; }
         public int Number { get; set; }
-
+        public PhoneType phoneType { get; set; }
+        public int PhoneTypeId { get; set; }
+        
         public Phone(string description, string formattedPhone)
         {
             Description = description;

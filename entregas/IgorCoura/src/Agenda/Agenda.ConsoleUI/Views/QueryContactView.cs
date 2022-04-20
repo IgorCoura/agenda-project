@@ -1,5 +1,6 @@
 using Agenda.ConsoleUI.Utils;
 using Agenda.Domain.Interfaces;
+using Agenda.Domain.Params;
 
 namespace Agenda.ConsoleUI.Views
 {
@@ -47,20 +48,32 @@ namespace Agenda.ConsoleUI.Views
         private void RecoverByDDD()
         {
             var ddd = ViewsUtils.GetDDD();
-            var models = _contactService.Recover(c => c.Phones.Count(p => p.DDD.Equals(ddd)) > 0).ToList();
+            var query = new ContactParams
+            {
+                DDD = ddd,
+            };
+            var models = _contactService.Recover(query).ToList();
             models.ForEach(m => ViewsUtils.ShowContact(m));
         }
 
         private void RecoverByNumber()
         {
             var number = ViewsUtils.GetNumber();
-            var models = _contactService.Recover(c => c.Phones.Count(p => p.Number.Equals(number)) > 0).ToList();
+            var query = new ContactParams
+            {
+                Number = number,
+            };
+            var models = _contactService.Recover(query).ToList();
             models.ForEach(m => ViewsUtils.ShowContact(m));
         }
         private void RecoverByName()
         {
             var name = ViewsUtils.GetName();
-            var models = _contactService.Recover(c => c.Name.Contains(name)).ToList();
+            var query = new ContactParams
+            {
+                Name = name,
+            };
+            var models = _contactService.Recover(query).ToList();
             models.ForEach(m => ViewsUtils.ShowContact(m));
         }
 

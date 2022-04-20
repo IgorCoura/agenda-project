@@ -21,14 +21,18 @@ namespace Agenda.ConsoleUI.Views
 
                 var id = ViewsUtils.GetId();
 
-                if(id == 0)
+                if (id == 0)
                     return;
 
-                _contactService.Remove(id);
-                Console.Clear();
-                Console.WriteLine("Contato removido com sucesso.");
+                var contact = _contactService.RecoverById(id);
+                ViewsUtils.ShowContact(contact);
+                if (ViewsUtils.ReadYesOrNo("Realmente deseja remover esse contato (S/N)."))
+                {
+                    _contactService.Remove(id);
+                    Console.Clear();
+                    Console.WriteLine("Contato removido com sucesso.");
+                }
                 return;
-
             }
         }
     }

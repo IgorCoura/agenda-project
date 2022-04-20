@@ -1,4 +1,5 @@
 using Agenda.Domain.Interfaces;
+using Microsoft.Extensions.Hosting;
 
 namespace Agenda.ConsoleUI.Views
 {
@@ -7,11 +8,13 @@ namespace Agenda.ConsoleUI.Views
         private readonly IContactService _contactService;
         private readonly Dictionary<string, IView> _optionsDictionary;
         private readonly ViewsAccessor _viewsAccessor;
+        private readonly IHostApplicationLifetime _appLifetime;
 
-        public MainView(IContactService contactService, ViewsAccessor viewsAccessor)
+        public MainView(IContactService contactService,IHostApplicationLifetime appLifeTime,  ViewsAccessor viewsAccessor)
         {
             _contactService = contactService;   
             _viewsAccessor = viewsAccessor;
+            _appLifetime = appLifeTime;
         }
 
         public void Run()
@@ -21,8 +24,12 @@ namespace Agenda.ConsoleUI.Views
             {
                 var option = Options();
                 if (option == "0")
-                    return;
-                
+                {
+                    Exit();
+                    break;
+                }
+                   
+
                 try
                 {
                     if (option == "5")
@@ -38,7 +45,12 @@ namespace Agenda.ConsoleUI.Views
                 }
                 
             }
+            
+        }
 
+        private void Exit()
+        {
+            _appLifetime.StopApplication();
         }
 
         private string Options()

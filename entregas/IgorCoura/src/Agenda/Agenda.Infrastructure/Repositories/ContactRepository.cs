@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using Agenda.Domain.Entities;
 using Agenda.Domain.Interfaces;
 
@@ -32,10 +33,15 @@ namespace Agenda.Infrastructure.Repositories
             var result = _jsonStorage.Update(entity);
             return result;
         }
-
-        public IEnumerable<Contact> GetAll()
+        
+        public IEnumerable<Contact> GetAll(Expression<Func<Contact, bool>> filter = null)
         {
-            return _jsonStorage.GetAll();
+            var result = _jsonStorage.GetAll().AsQueryable();
+
+            if (filter != null)
+                return result.Where(filter);
+
+            return result;
         }
 
         public Contact GetById(int id)

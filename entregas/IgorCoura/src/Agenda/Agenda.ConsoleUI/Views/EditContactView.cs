@@ -78,7 +78,8 @@ namespace Agenda.ConsoleUI.Views
                 Id = 0,
                 ContactId = model.Id,
                 FormattedPhone = ViewsUtils.GetPhone(),
-                Description = ViewsUtils.GetDescription()
+                Description = ViewsUtils.GetDescription(),
+                PhoneType = ViewsUtils.GetPhoneType(),
             };
             var phones = model.Phones.ToList();
             phones.Add(phone);
@@ -95,6 +96,7 @@ namespace Agenda.ConsoleUI.Views
             {
                 phone.FormattedPhone = ViewsUtils.GetPhone(phone.FormattedPhone);
                 phone.Description = ViewsUtils.GetDescription(phone.Description);
+                phone.PhoneType = ViewsUtils.GetPhoneType(phone.PhoneType.Id.ToString());
                 model.Phones = phones;
                 return;
             }
@@ -106,7 +108,9 @@ namespace Agenda.ConsoleUI.Views
             Console.WriteLine("\nREMOVER TELEFONE\n");
             var phones = model.Phones.ToList();
             var phoneModel = GetPhone(phones);
-            if( phoneModel != null)
+            ViewsUtils.ShowPhone(_mapper.Map<PhoneModel>(phoneModel));
+            var optio = ViewsUtils.ReadYesOrNo("Realmente deseja remover esse telefone (S/N).");
+            if( phoneModel != null && optio)
             {
                 phones.Remove(phoneModel);
             }
