@@ -108,13 +108,16 @@ namespace Agenda.ConsoleUI.Views
             Console.WriteLine("\nREMOVER TELEFONE\n");
             var phones = model.Phones.ToList();
             var phoneModel = GetPhone(phones);
-            ViewsUtils.ShowPhone(_mapper.Map<PhoneModel>(phoneModel));
-            var optio = ViewsUtils.ReadYesOrNo("Realmente deseja remover esse telefone (S/N).");
-            if( phoneModel != null && optio)
+            if(phoneModel!= null)
             {
-                phones.Remove(phoneModel);
+                ViewsUtils.ShowPhone(_mapper.Map<PhoneModel>(phoneModel));
+                var optio = ViewsUtils.ReadYesOrNo("Realmente deseja remover esse telefone (S/N).");
+                if (optio)
+                {
+                    phones.Remove(phoneModel);
+                    model.Phones = phones;
+                }
             }
-            model.Phones = phones;
             Console.Clear();
         }
         private UpdatePhoneModel? GetPhone(List<UpdatePhoneModel> phoneList)
