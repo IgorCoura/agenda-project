@@ -1,8 +1,8 @@
-using Agenda.Domain.Entities;
-using Agenda.Domain.Model;
-using Agenda.Domain.Params;
+using Agenda.Application.Model;
+using Agenda.Application.Params;
+using Agenda.Domain.Interfaces;
 
-namespace Agenda.Domain.Interfaces
+namespace Agenda.Application.Interfaces
 {
     public interface IContactService: IUnitOfWork
     {

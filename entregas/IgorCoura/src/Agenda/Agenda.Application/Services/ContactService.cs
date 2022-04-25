@@ -1,8 +1,9 @@
-using Agenda.Domain.Model;
+using Agenda.Application.Model;
 using Agenda.Domain.Entities;
 using Agenda.Domain.Interfaces;
 using AutoMapper;
-using Agenda.Domain.Params;
+using Agenda.Application.Params;
+using Agenda.Application.Interfaces;
 
 namespace Agenda.Application.Services
 {

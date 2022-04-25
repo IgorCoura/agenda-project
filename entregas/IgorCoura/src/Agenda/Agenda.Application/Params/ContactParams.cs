@@ -2,7 +2,7 @@ using System.Linq.Expressions;
 using Agenda.Domain.Entities;
 using LinqKit;
 
-namespace Agenda.Domain.Params
+namespace Agenda.Application.Params
 {
     public class ContactParams:BaseParams<Contact>
     {

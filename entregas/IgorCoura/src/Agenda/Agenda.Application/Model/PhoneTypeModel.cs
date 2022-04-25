@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Agenda.Domain.Model
+namespace Agenda.Application.Model
 {
     public class PhoneTypeModel
     {

@@ -1,4 +1,5 @@
-using Agenda.Domain.Interfaces;
+using Agenda.ConsoleUI.Interfaces;
+using Agenda.Application.Interfaces;
 using Microsoft.Extensions.Hosting;
 
 namespace Agenda.ConsoleUI.Views

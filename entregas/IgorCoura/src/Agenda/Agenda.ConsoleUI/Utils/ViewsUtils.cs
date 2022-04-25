@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using Agenda.Domain.Entities.Enumerations;
-using Agenda.Domain.Model;
+using Agenda.Application.Model;
 
 namespace Agenda.ConsoleUI.Utils
 {

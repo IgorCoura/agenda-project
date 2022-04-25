@@ -1,6 +1,7 @@
 using Agenda.ConsoleUI.Utils;
-using Agenda.Domain.Interfaces;
-using Agenda.Domain.Model;
+using Agenda.ConsoleUI.Interfaces;
+using Agenda.Application.Interfaces;
+using Agenda.Application.Model;
 
 namespace Agenda.ConsoleUI.Views
 {

@@ -4,6 +4,8 @@ using Agenda.ConsoleUI;
 using Agenda.ConsoleUI.Views;
 using Agenda.Domain.Entities;
 using Agenda.Domain.Interfaces;
+using Agenda.ConsoleUI.Interfaces;
+using Agenda.Application.Interfaces;
 using Agenda.Infrastructure.Repositories;
 using Agenda.Infrastructure.Storage;
 using Microsoft.Extensions.DependencyInjection;

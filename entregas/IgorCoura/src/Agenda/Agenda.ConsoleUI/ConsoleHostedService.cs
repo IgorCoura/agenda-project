@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Agenda.ConsoleUI.Views;
-using Agenda.Domain.Interfaces;
+using Agenda.ConsoleUI.Interfaces;
 using Microsoft.Extensions.Hosting;
 
 namespace Agenda.ConsoleUI

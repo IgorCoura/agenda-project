@@ -1,10 +1,11 @@
 using Agenda.ConsoleUI.Utils;
-using Agenda.Domain.Interfaces;
-using Agenda.Domain.Params;
+using Agenda.ConsoleUI.Interfaces;
+using Agenda.Application.Interfaces;
+using Agenda.Application.Params;
 
 namespace Agenda.ConsoleUI.Views
 {
-     public class QueryContactView : IView
+    public class QueryContactView : IView
     {
         private readonly IContactService _contactService;
         private readonly Dictionary<string, Action> _optionsDictionary;
@@ -30,7 +31,7 @@ namespace Agenda.ConsoleUI.Views
                     return;
                 _optionsDictionary[option].Invoke();
             }
-            
+
         }
 
         private string Options()
@@ -40,7 +41,7 @@ namespace Agenda.ConsoleUI.Views
             Console.WriteLine("3- Buscar contato por DDD.");
             Console.WriteLine("4- Buscar contato por numero.");
             Console.WriteLine("0- Voltar.");
-            var result = Console.ReadLine()??"";
+            var result = Console.ReadLine() ?? "";
             Console.Clear();
             return result;
         }
