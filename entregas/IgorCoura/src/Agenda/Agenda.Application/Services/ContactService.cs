@@ -18,47 +18,48 @@ namespace Agenda.Application.Services
             _mapper = mapper;
         }
 
-        public ContactModel Register(CreateContactModel contactModel)
+        public async Task<ContactModel> Register(CreateContactModel contactModel)
         {
             var contact = _mapper.Map<Contact>(contactModel);
-            var result = _contactRepository.Create(contact);
+            //var contact = new Contact() {Name = "jose", Phones = new List<Phone>(), CreatedAt= DateTime.Now, UpdatedAt = DateTime.Now };
+            var result = await _contactRepository.RegisterAsync(contact);
             return _mapper.Map<ContactModel>(result);
         }
 
-        public ContactModel Edit(UpdateContactModel contactModel)
+        public async Task<ContactModel> Edit(UpdateContactModel contactModel)
         {
             var contact = _mapper.Map<Contact>(contactModel);
-            var result = _contactRepository.Update(contact);
+            var result = await _contactRepository.UpdateAsync(contact);
             return _mapper.Map<ContactModel>(result);
         }
 
-        public ContactModel RecoverById(int id)
+        public async Task<ContactModel> RecoverById(int id)
         {
-            var result = _contactRepository.GetById(id);
+            var result = await _contactRepository.GetByIdAsync(id);
             return _mapper.Map<ContactModel>(result);
         }
 
-        public IEnumerable<ContactModel> Recover(ContactParams query)
+        public async Task<IEnumerable<ContactModel>> Recover(ContactParams query)
         {
-            var results = _contactRepository.GetAll(query.Filter());
+            var results = await _contactRepository.GetAllAsyncAsNoTracking(query.Filter());
             return _mapper.Map<IEnumerable<ContactModel>>(results);
         }
 
-        public IEnumerable<ContactModel> RecoverAll()
+        public async Task<IEnumerable<ContactModel>> RecoverAll()
         {
-            var results = _contactRepository.GetAll();
+            var results = await _contactRepository.GetAllAsyncAsNoTracking();
             return _mapper.Map<IEnumerable<ContactModel>>(results);
         }
 
-        public ContactModel Remove(int id)
+        public async Task<ContactModel> Remove(int id)
         {
-            var result = _contactRepository.Remove(id);
+            var result = await _contactRepository.DeleteAsync(id);
             return _mapper.Map<ContactModel>(result);
         }
 
         public async Task SaveChangesAsync()
         {
-            await _contactRepository.SaveChangesAsync();
+            await _contactRepository.UnitOfWork.SaveChangesAsync();
         }
     }
 }

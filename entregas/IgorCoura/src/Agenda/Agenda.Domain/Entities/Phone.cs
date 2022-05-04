@@ -6,12 +6,13 @@ namespace Agenda.Domain.Entities
 {
     public class Phone: Register
     {
+        public Contact Contact { get; set; }
         public int ContactId { get;  set; }
         public string Description { get; set; } = string.Empty;
         public string FormattedPhone { get; set; } = string.Empty;
         public int DDD { get; set; }
         public int Number { get; set; }
-        public PhoneType phoneType { get; set; }
+        public PhoneType PhoneType { get; set; }
         public int PhoneTypeId { get; set; }
         
         public Phone(string description, string formattedPhone)

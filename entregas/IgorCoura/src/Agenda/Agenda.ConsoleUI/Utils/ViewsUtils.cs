@@ -128,17 +128,14 @@ namespace Agenda.ConsoleUI.Utils
             }
         }
 
-        public static PhoneTypeModel GetPhoneType(string defaultValue = "")
+        public static int GetPhoneType(string defaultValue = "")
         {
             Console.WriteLine("Informe o tipo de um telefone(1-Residencial, 2-Celular, 3-Comercial):");
             string? numberString = Console.ReadLine();
             var number = string.IsNullOrEmpty(numberString) ? defaultValue : numberString;
             if (int.TryParse(number, out int num) && num > 0 && num < 4)
             {
-                return new PhoneTypeModel
-                {
-                    Id = num
-                };
+                return num;
             }
             throw new Exception("Insira um valor valido para o tipo de telefone.");
         }

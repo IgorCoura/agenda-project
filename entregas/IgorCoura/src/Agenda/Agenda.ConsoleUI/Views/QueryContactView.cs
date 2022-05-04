@@ -46,42 +46,42 @@ namespace Agenda.ConsoleUI.Views
             return result;
         }
 
-        private void RecoverByDDD()
+        private async void RecoverByDDD()
         {
             var ddd = ViewsUtils.GetDDD();
             var query = new ContactParams
             {
                 DDD = ddd,
             };
-            var models = _contactService.Recover(query).ToList();
-            models.ForEach(m => ViewsUtils.ShowContact(m));
+            var models = await _contactService.Recover(query);
+            models.ToList().ForEach(m => ViewsUtils.ShowContact(m));
         }
 
-        private void RecoverByNumber()
+        private async void RecoverByNumber()
         {
             var number = ViewsUtils.GetNumber();
             var query = new ContactParams
             {
                 Number = number,
             };
-            var models = _contactService.Recover(query).ToList();
-            models.ForEach(m => ViewsUtils.ShowContact(m));
+            var models = await _contactService.Recover(query);
+            models.ToList().ForEach(m => ViewsUtils.ShowContact(m));
         }
-        private void RecoverByName()
+        private async void RecoverByName()
         {
             var name = ViewsUtils.GetName();
             var query = new ContactParams
             {
                 Name = name,
             };
-            var models = _contactService.Recover(query).ToList();
-            models.ForEach(m => ViewsUtils.ShowContact(m));
+            var models = await _contactService.Recover(query);
+            models.ToList().ForEach(m => ViewsUtils.ShowContact(m));
         }
 
-        private void RecoverAll()
+        private async void RecoverAll()
         {
-            var models = _contactService.RecoverAll().ToList();
-            models.ForEach(m => ViewsUtils.ShowContact(m));
+            var models = await _contactService.RecoverAll();
+            models.ToList().ForEach(m => ViewsUtils.ShowContact(m));
         }
     }
 }

@@ -10,6 +10,8 @@ using Agenda.Infrastructure.Repositories;
 using Agenda.Infrastructure.Storage;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Agenda.Infrastructure.Context;
+using Microsoft.EntityFrameworkCore;
 
 var builder = Host.CreateDefaultBuilder(args);
 
@@ -29,14 +31,20 @@ static void ConfigureServices(IServiceCollection service)
         config.FilePath = "\\default_storage.json";
     });
 
-    service.AddSingleton<IJsonStorage<Contact>, JsonStorage<Contact>>();
-    service.AddScoped<IContactRepository, ContactRepository>();
-    service.AddScoped<IContactService, ContactService>();
+    service.AddDbContext<ApplicationContext>(options =>
+       {
+           options.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=AgendaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+       },
+       ServiceLifetime.Singleton
+    );
+
+    service.AddTransient<IContactRepository, ContactRepository>();
+    service.AddTransient<IContactService, ContactService>();
    
-    service.AddScoped<RemoveContactView>();
-    service.AddScoped<EditContactView>();
-    service.AddScoped<QueryContactView>();
-    service.AddScoped<CreateContactView>();
+    service.AddTransient<RemoveContactView>();
+    service.AddTransient<EditContactView>();
+    service.AddTransient<QueryContactView>();
+    service.AddTransient<CreateContactView>();
 
     service.AddTransient<ViewsAccessor>(
            serviceProvider => key =>
@@ -52,8 +60,8 @@ static void ConfigureServices(IServiceCollection service)
            });
 
     service.AddAutoMapper(typeof(EntityToModelProfile), typeof(ModelToEntityProfile), typeof(ModelToModelProfile));
- 
-    service.AddScoped<MainView>();
+
+    service.AddTransient<MainView>();
 
     service.AddHostedService<ConsoleHostedService>();
 

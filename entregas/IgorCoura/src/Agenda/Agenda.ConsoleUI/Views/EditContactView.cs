@@ -25,9 +25,9 @@ namespace Agenda.ConsoleUI.Views
             _mapper = mapper;
         }
 
-        public void Run()
+        public async void Run()
         {
-            var model = GetContact();
+            var model = await GetContact();
             if (model == null)
                 return;
 
@@ -39,7 +39,7 @@ namespace Agenda.ConsoleUI.Views
 
                 _optionsDictionary[option].Invoke(model);
 
-                var result = _contactService.Edit(model);
+                var result = await _contactService.Edit(model);
                 model = _mapper.Map<UpdateContactModel>(result);
             }
             
@@ -80,7 +80,7 @@ namespace Agenda.ConsoleUI.Views
                 ContactId = model.Id,
                 FormattedPhone = ViewsUtils.GetPhone(),
                 Description = ViewsUtils.GetDescription(),
-                PhoneType = ViewsUtils.GetPhoneType(),
+                PhoneTypeId = ViewsUtils.GetPhoneType(),
             };
             var phones = model.Phones.ToList();
             phones.Add(phone);
@@ -97,7 +97,7 @@ namespace Agenda.ConsoleUI.Views
             {
                 phone.FormattedPhone = ViewsUtils.GetPhone(phone.FormattedPhone);
                 phone.Description = ViewsUtils.GetDescription(phone.Description);
-                phone.PhoneType = ViewsUtils.GetPhoneType(phone.PhoneType.Id.ToString());
+                phone.PhoneTypeId = ViewsUtils.GetPhoneType(phone.PhoneType.Id.ToString());
                 model.Phones = phones;
                 return;
             }
@@ -145,7 +145,7 @@ namespace Agenda.ConsoleUI.Views
             }
 
         }
-        private UpdateContactModel? GetContact()
+        private async Task<UpdateContactModel?> GetContact()
         {
             while (true)
             {
@@ -158,7 +158,7 @@ namespace Agenda.ConsoleUI.Views
 
                 try
                 {
-                    var contactModel = _contactService.RecoverById(id);
+                    var contactModel =  await _contactService.RecoverById(id);
                     Console.Clear();
                     return _mapper.Map<UpdateContactModel>(contactModel);
                 }

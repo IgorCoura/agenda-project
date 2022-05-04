@@ -4,13 +4,14 @@ using Agenda.Domain.Interfaces;
 
 namespace Agenda.Application.Interfaces
 {
-    public interface IContactService: IUnitOfWork
+    public interface IContactService
     {
-        ContactModel Register(CreateContactModel contact);
-        ContactModel Edit(UpdateContactModel contactModel);
-        ContactModel RecoverById(int id);
-        IEnumerable<ContactModel> RecoverAll();
-        IEnumerable<ContactModel> Recover(ContactParams query);
-        ContactModel Remove(int id);
+        Task<ContactModel> Register(CreateContactModel contact);
+        Task<ContactModel> Edit(UpdateContactModel contactModel);
+        Task<ContactModel> RecoverById(int id);
+        Task<IEnumerable<ContactModel>> RecoverAll();
+        Task<IEnumerable<ContactModel>> Recover(ContactParams query);
+        Task<ContactModel> Remove(int id);
+        Task SaveChangesAsync();
     }
 }

@@ -13,7 +13,7 @@ namespace Agenda.ConsoleUI.Views
             _contactService = contactService;
         }
 
-        public void Run()
+        public async void Run()
         {
             Console.WriteLine("\nREMOVER CONTATO\n");
             while (true)
@@ -25,11 +25,11 @@ namespace Agenda.ConsoleUI.Views
                 if (id == 0)
                     return;
 
-                var contact = _contactService.RecoverById(id);
+                var contact = await _contactService.RecoverById(id);
                 ViewsUtils.ShowContact(contact);
                 if (ViewsUtils.ReadYesOrNo("Realmente deseja remover esse contato (S/N)."))
                 {
-                    _contactService.Remove(id);
+                    await _contactService.Remove(id);
                     Console.Clear();
                     Console.WriteLine("Contato removido com sucesso.");
                 }

@@ -1,6 +1,6 @@
 namespace Agenda.Domain.Core
 {
-    public class Register
+    public abstract class Register
     {
         public int Id { get; set; }
         public DateTime CreatedAt { get; set; }
