@@ -13,7 +13,7 @@ namespace Agenda.Infrastructure.Mappings
     {
         public virtual void Configure(EntityTypeBuilder<T> builder)
         {
-            builder.HasIndex(x => x.Id);
+            builder.HasKey(x => x.Id);
             builder.Property(x => x.CreatedAt).IsRequired();
             builder.Property(x => x.UpdatedAt).IsRequired();
         }

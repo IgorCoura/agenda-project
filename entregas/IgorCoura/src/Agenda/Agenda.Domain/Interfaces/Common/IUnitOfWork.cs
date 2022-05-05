@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+
 namespace Agenda.Domain.Interfaces
 {
     public interface IUnitOfWork

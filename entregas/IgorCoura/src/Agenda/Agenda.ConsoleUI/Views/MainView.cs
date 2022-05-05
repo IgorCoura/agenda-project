@@ -6,19 +6,17 @@ namespace Agenda.ConsoleUI.Views
 {
     public class MainView : IView
     {
-        private readonly IContactService _contactService;
         private readonly Dictionary<string, IView> _optionsDictionary;
         private readonly ViewsAccessor _viewsAccessor;
         private readonly IHostApplicationLifetime _appLifetime;
 
-        public MainView(IContactService contactService,IHostApplicationLifetime appLifeTime,  ViewsAccessor viewsAccessor)
+        public MainView(IHostApplicationLifetime appLifeTime,  ViewsAccessor viewsAccessor)
         {
-            _contactService = contactService;   
             _viewsAccessor = viewsAccessor;
             _appLifetime = appLifeTime;
         }
 
-        public void Run()
+        public async Task Run()
         {
             
             while (true)
@@ -33,12 +31,7 @@ namespace Agenda.ConsoleUI.Views
 
                 try
                 {
-                    if (option == "5")
-                    {
-                        SaveChanges();
-                        continue;
-                    }
-                    _viewsAccessor(option).Run();
+                    await _viewsAccessor(option).Run();
                 }
                 catch (Exception ex)
                 {
@@ -60,17 +53,10 @@ namespace Agenda.ConsoleUI.Views
             Console.WriteLine("2-Editar contato existente.");
             Console.WriteLine("3-Consultar contato.");
             Console.WriteLine("4-Remover contato.");
-            Console.WriteLine("5-Salvar todas as alteações.");
-            Console.WriteLine("0-Sair (Salve antes de sair).");
+            Console.WriteLine("0-Sair.");
             var response = Console.ReadLine() ?? "";
             Console.Clear();
             return response;
-        }
-
-        private void SaveChanges()
-        {
-            _contactService.SaveChangesAsync();
-            Console.WriteLine("Todas as Alterações foram salvas.");
         }
 
     }

@@ -4,6 +4,7 @@ using Agenda.Domain.Entities.Enumerations;
 using Agenda.Domain.Interfaces;
 using Agenda.Infrastructure.Mappings;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace Agenda.Infrastructure.Context
 {
@@ -29,6 +30,11 @@ namespace Agenda.Infrastructure.Context
                 .HasData(Enumeration.GetAll<PhoneType>());
         }
 
- 
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var result = base.SaveChangesAsync(cancellationToken);
+            base.ChangeTracker.Clear();
+            return result;
+        }
     }
 }

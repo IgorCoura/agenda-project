@@ -12,6 +12,5 @@ namespace Agenda.Application.Interfaces
         Task<IEnumerable<ContactModel>> RecoverAll();
         Task<IEnumerable<ContactModel>> Recover(ContactParams query);
         Task<ContactModel> Remove(int id);
-        Task SaveChangesAsync();
     }
 }

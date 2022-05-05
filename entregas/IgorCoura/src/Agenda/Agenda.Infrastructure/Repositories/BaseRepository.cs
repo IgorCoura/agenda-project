@@ -13,7 +13,7 @@ namespace Agenda.Infrastructure.Repositories
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : Register
     {
-        private readonly ApplicationContext _context;
+        protected readonly ApplicationContext _context;
 
         public BaseRepository(ApplicationContext context)
         {
@@ -26,15 +26,15 @@ namespace Agenda.Infrastructure.Repositories
         {
             model.CreatedAt = DateTime.Now;
             model.UpdatedAt = DateTime.Now;
-            var result = _context.Set<T>().Add(model);
-            return await Task.FromResult(result.Entity);
+            var result = _context.Set<T>().Add(model).Entity;
+            return await Task.FromResult(result);
         }
 
         public virtual async Task<T> UpdateAsync(T model)
         {
             model.UpdatedAt = DateTime.Now;
-            var result = _context.Set<T>().Update(model);
-            return await Task.FromResult(result.Entity);
+            var result = _context.Set<T>().Update(model).Entity;
+            return await Task.FromResult(result);
         }
 
         public virtual async Task<T> DeleteAsync(int id)
@@ -47,14 +47,6 @@ namespace Agenda.Infrastructure.Repositories
             return await Task.FromResult(result.Entity);
         }
 
-        public virtual async Task<IEnumerable<T>> GetAllAsyncAsNoTracking(
-            Expression<Func<T, bool>>? filter = null)
-        {
-            if (filter == null)
-                return await _context.Set<T>().AsNoTracking().ToListAsync();
-            return await _context.Set<T>().AsNoTracking().Where(filter).ToListAsync();
-        }
-
         public virtual async Task<IEnumerable<T>> GetAllAsync(
             Expression<Func<T, bool>>? filter = null)
         {
@@ -63,9 +55,9 @@ namespace Agenda.Infrastructure.Repositories
             return await _context.Set<T>().Where(filter).ToListAsync();
         }
 
-        public virtual async Task<T> GetByIdAsync(int id)
+        public virtual async Task<T?> GetAsync(Expression<Func<T, bool>> filter)
         {
-            return await _context.Set<T>().FirstOrDefaultAsync(p => p.Id == id) ?? throw new InvalidOperationException($"Id: {id} não encontrado.");
+            return await _context.Set<T>().FirstOrDefaultAsync(filter);
         }
     }
 }

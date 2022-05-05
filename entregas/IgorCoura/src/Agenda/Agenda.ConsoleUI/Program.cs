@@ -33,7 +33,10 @@ static void ConfigureServices(IServiceCollection service)
 
     service.AddDbContext<ApplicationContext>(options =>
        {
-           options.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=AgendaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+           options
+               .UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=AgendaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
+               .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+           
        },
        ServiceLifetime.Singleton
     );

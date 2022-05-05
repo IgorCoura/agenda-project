@@ -8,12 +8,12 @@ namespace Agenda.ConsoleUI.Views
     public class QueryContactView : IView
     {
         private readonly IContactService _contactService;
-        private readonly Dictionary<string, Action> _optionsDictionary;
+        private readonly Dictionary<string, Func<Task>> _optionsDictionary;
 
         public QueryContactView(IContactService contactService)
         {
             _contactService = contactService;
-            _optionsDictionary = new Dictionary<string, Action>()
+            _optionsDictionary = new Dictionary<string, Func<Task>>()
             {
                 {"1", RecoverAll},
                 {"2", RecoverByName},
@@ -22,14 +22,14 @@ namespace Agenda.ConsoleUI.Views
             };
         }
 
-        public void Run()
+        public async Task Run()
         {
             while (true)
             {
                 var option = Options();
                 if (option == "0")
                     return;
-                _optionsDictionary[option].Invoke();
+                await _optionsDictionary[option].Invoke();
             }
 
         }
@@ -46,7 +46,7 @@ namespace Agenda.ConsoleUI.Views
             return result;
         }
 
-        private async void RecoverByDDD()
+        private async Task RecoverByDDD()
         {
             var ddd = ViewsUtils.GetDDD();
             var query = new ContactParams
@@ -57,7 +57,7 @@ namespace Agenda.ConsoleUI.Views
             models.ToList().ForEach(m => ViewsUtils.ShowContact(m));
         }
 
-        private async void RecoverByNumber()
+        private async Task RecoverByNumber()
         {
             var number = ViewsUtils.GetNumber();
             var query = new ContactParams
@@ -67,7 +67,7 @@ namespace Agenda.ConsoleUI.Views
             var models = await _contactService.Recover(query);
             models.ToList().ForEach(m => ViewsUtils.ShowContact(m));
         }
-        private async void RecoverByName()
+        private async Task RecoverByName()
         {
             var name = ViewsUtils.GetName();
             var query = new ContactParams
@@ -78,7 +78,7 @@ namespace Agenda.ConsoleUI.Views
             models.ToList().ForEach(m => ViewsUtils.ShowContact(m));
         }
 
-        private async void RecoverAll()
+        private async Task RecoverAll()
         {
             var models = await _contactService.RecoverAll();
             models.ToList().ForEach(m => ViewsUtils.ShowContact(m));

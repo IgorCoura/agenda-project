@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using Agenda.Domain.Entities;
 using Agenda.Domain.Entities.Enumerations;
@@ -16,39 +17,32 @@ namespace Agenda.Infrastructure.Repositories
         public override Task<Contact> RegisterAsync(Contact model)
         {
             if (model.Phones.ToList().Any())
-            {
-                FormatAndVerifyPhones(model.Phones.ToList());
-            }
+                model.Phones.ToList().ForEach(x => { x.CreatedAt = DateTime.Now; x.UpdatedAt = DateTime.Now; });
+
             return base.RegisterAsync(model);
         }
 
         public override Task<Contact> UpdateAsync(Contact model)
         {
             if (model.Phones.ToList().Any())
-            {
-                FormatAndVerifyPhones(model.Phones.ToList());
-            }
+                model.Phones.ToList().ForEach(x => {x.UpdatedAt = DateTime.Now; });
+
             return base.UpdateAsync(model);
         }
 
-        public List<Phone> FormatAndVerifyPhones(List<Phone> phones)
+        public override async Task<IEnumerable<Contact>> GetAllAsync(
+            Expression<Func<Contact, bool>>? filter = null)
         {
-            PhonesExists(phones);
-            phones.ForEach(x => { x.CreatedAt = DateTime.Now; x.UpdatedAt = DateTime.Now;});
-            return phones;
+            if (filter == null)
+                return await _context.Set<Contact>().Include(p => p.Phones).ThenInclude(p => p.PhoneType).ToListAsync();
+            return await _context.Set<Contact>().Where(filter).Include(p => p.Phones).ThenInclude(p => p.PhoneType).ToListAsync();
+        }
+
+        public override async Task<Contact?> GetAsync(Expression<Func<Contact, bool>> filter)
+        {
+            return await _context.Set<Contact>().Include(p => p.Phones).ThenInclude(p => p.PhoneType).FirstOrDefaultAsync(filter);
         }
 
 
-        private void PhonesExists(List<Phone> phones)
-        {
-            foreach (Phone phone in phones)
-            {
-                var quantEqualNumbersInListPhones = phones.Count(p => p.Equals(phone));
-                if (phone.Id == 0 &&  quantEqualNumbersInListPhones > 1)
-                {
-                    throw new Exception($"O telefone {phone} já existe.");
-                }
-            }
-        }
     }
 }

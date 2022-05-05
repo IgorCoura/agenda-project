@@ -166,7 +166,8 @@ namespace Agenda.ConsoleUI.Utils
             Console.WriteLine($"    Id: {phone.Id}");
             Console.WriteLine($"    Phone: {phone.FormattedPhone}");
             Console.WriteLine($"    Description: {phone.Description}");
-            Console.WriteLine($"    PhoneTypeId: {phone.PhoneType.Id}");
+            var typePrint = phone.PhoneType == null ? phone.PhoneTypeId.ToString() : phone.PhoneType.Name;
+            Console.WriteLine($"    PhoneType: {typePrint}");
         }
 
         private static void ShowErros(ICollection<ValidationResult> erros)

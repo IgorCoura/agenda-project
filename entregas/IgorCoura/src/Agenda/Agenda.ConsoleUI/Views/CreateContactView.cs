@@ -14,7 +14,7 @@ namespace Agenda.ConsoleUI.Views
             _contactService = contactService;
         }
 
-        public async void Run()
+        public async Task Run()
         {
             Console.WriteLine("\n NOVO CONTATO \n");
             var contact = CreateContact();

@@ -21,8 +21,8 @@ namespace Agenda.Application.Services
         public async Task<ContactModel> Register(CreateContactModel contactModel)
         {
             var contact = _mapper.Map<Contact>(contactModel);
-            //var contact = new Contact() {Name = "jose", Phones = new List<Phone>(), CreatedAt= DateTime.Now, UpdatedAt = DateTime.Now };
             var result = await _contactRepository.RegisterAsync(contact);
+            await _contactRepository.UnitOfWork.SaveChangesAsync();
             return _mapper.Map<ContactModel>(result);
         }
 
@@ -30,36 +30,34 @@ namespace Agenda.Application.Services
         {
             var contact = _mapper.Map<Contact>(contactModel);
             var result = await _contactRepository.UpdateAsync(contact);
+            await _contactRepository.UnitOfWork.SaveChangesAsync();
             return _mapper.Map<ContactModel>(result);
         }
 
         public async Task<ContactModel> RecoverById(int id)
         {
-            var result = await _contactRepository.GetByIdAsync(id);
+            Contact result = await _contactRepository.GetAsync(p => p.Id == id) ?? throw new ArgumentNullException($"Id: {id}, não existe");
             return _mapper.Map<ContactModel>(result);
         }
 
         public async Task<IEnumerable<ContactModel>> Recover(ContactParams query)
         {
-            var results = await _contactRepository.GetAllAsyncAsNoTracking(query.Filter());
+            var results = await _contactRepository.GetAllAsync(query.Filter());
             return _mapper.Map<IEnumerable<ContactModel>>(results);
         }
 
         public async Task<IEnumerable<ContactModel>> RecoverAll()
         {
-            var results = await _contactRepository.GetAllAsyncAsNoTracking();
+            var results = await _contactRepository.GetAllAsync();
             return _mapper.Map<IEnumerable<ContactModel>>(results);
         }
 
         public async Task<ContactModel> Remove(int id)
         {
             var result = await _contactRepository.DeleteAsync(id);
-            return _mapper.Map<ContactModel>(result);
-        }
-
-        public async Task SaveChangesAsync()
-        {
             await _contactRepository.UnitOfWork.SaveChangesAsync();
-        }
+            return _mapper.Map<ContactModel>(result);
+        } 
+
     }
 }

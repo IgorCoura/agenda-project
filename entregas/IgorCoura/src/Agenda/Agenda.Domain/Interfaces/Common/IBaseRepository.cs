@@ -12,11 +12,9 @@ namespace Agenda.Domain.Interfaces
     {
         Task<T> RegisterAsync(T model);
         Task<T> UpdateAsync(T model);
-        Task<T> DeleteAsync(int id);
-        Task<T> GetByIdAsync(int id);
+        Task<T> DeleteAsync(int id);     
         Task<IEnumerable<T>> GetAllAsync(
             Expression<Func<T, bool>>? filter = null);
-        Task<IEnumerable<T>> GetAllAsyncAsNoTracking(
-            Expression<Func<T, bool>>? filter = null);
+        Task<T?> GetAsync(Expression<Func<T, bool>> filter);
     }
 }

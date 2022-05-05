@@ -25,7 +25,7 @@ namespace Agenda.ConsoleUI.Views
             _mapper = mapper;
         }
 
-        public async void Run()
+        public async Task Run()
         {
             var model = await GetContact();
             if (model == null)
@@ -35,15 +35,12 @@ namespace Agenda.ConsoleUI.Views
             {
                 var option = Options(model);
                 if (option == "0")
-                    return;
+                    break;
 
                 _optionsDictionary[option].Invoke(model);
-
-                var result = await _contactService.Edit(model);
-                model = _mapper.Map<UpdateContactModel>(result);
             }
-            
 
+            await _contactService.Edit(model);
         }
 
         private string Options(UpdateContactModel model)
@@ -54,7 +51,7 @@ namespace Agenda.ConsoleUI.Views
             Console.WriteLine("2-Adicionar um novo telefone.");
             Console.WriteLine("3-Editar Telefones");
             Console.WriteLine("4-Remover Telefone");
-            Console.WriteLine("0-Voltar.");
+            Console.WriteLine("0-Salvar e Voltar.");
             var result = Console.ReadLine() ?? "";
             Console.Clear();
             return result;
