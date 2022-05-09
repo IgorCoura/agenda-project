@@ -6,14 +6,15 @@ namespace Agenda.ConsoleUI.Views
 {
     public class MainView : IView
     {
-        private readonly Dictionary<string, IView> _optionsDictionary;
         private readonly ViewsAccessor _viewsAccessor;
         private readonly IHostApplicationLifetime _appLifetime;
+        private IInteractionService _interactionService;
 
-        public MainView(IHostApplicationLifetime appLifeTime,  ViewsAccessor viewsAccessor)
+        public MainView(IHostApplicationLifetime appLifeTime,  ViewsAccessor viewsAccessor, IInteractionService interactionService)
         {
             _viewsAccessor = viewsAccessor;
             _appLifetime = appLifeTime;
+            _interactionService = interactionService;
         }
 
         public async Task Run()
@@ -26,6 +27,12 @@ namespace Agenda.ConsoleUI.Views
                 {
                     Exit();
                     break;
+                }
+
+                if(option == "5")
+                {
+                    SaveJsonInteractions();
+                    continue;
                 }
                    
 
@@ -53,10 +60,18 @@ namespace Agenda.ConsoleUI.Views
             Console.WriteLine("2-Editar contato existente.");
             Console.WriteLine("3-Consultar contato.");
             Console.WriteLine("4-Remover contato.");
+            Console.WriteLine("5-Salvar log em JSON.");
             Console.WriteLine("0-Sair.");
             var response = Console.ReadLine() ?? "";
             Console.Clear();
             return response;
+        }
+
+        private void SaveJsonInteractions()
+        {
+            _interactionService.SaveJsonInteractionsAsync();
+            Console.WriteLine("INTERAÇÕES FORAM SALVAS EM JSON");
+            Console.Clear();
         }
 
     }

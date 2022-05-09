@@ -13,6 +13,8 @@ namespace Agenda.Infrastructure.Context
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Phone> Phones { get; set; }
         public DbSet<PhoneType> PhoneTypes { get; set; }
+        public DbSet<Interaction> Interactions { get; set; }
+        public DbSet<InteractionType> InteractionTypes { get; set; }
 
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
@@ -24,17 +26,21 @@ namespace Agenda.Infrastructure.Context
                 .ApplyConfigurationsFromAssembly(GetType().Assembly);
 
             modelBuilder.ApplyConfiguration(new EnumerationMap<PhoneType>());
+            modelBuilder.ApplyConfiguration(new EnumerationMap<InteractionType>());
 
             modelBuilder
                 .Entity<PhoneType>()
                 .HasData(Enumeration.GetAll<PhoneType>());
+
+            modelBuilder
+                .Entity<InteractionType>()
+                .HasData(Enumeration.GetAll<InteractionType>());
         }
 
-        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            var result = base.SaveChangesAsync(cancellationToken);
-            base.ChangeTracker.Clear();
-            return result;
+            return base.SaveChangesAsync(cancellationToken);
         }
+
     }
 }

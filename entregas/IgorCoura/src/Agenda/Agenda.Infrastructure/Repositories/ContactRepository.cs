@@ -14,20 +14,19 @@ namespace Agenda.Infrastructure.Repositories
             
         }
 
-        public override Task<Contact> RegisterAsync(Contact model)
+        public override async Task<Contact> RegisterAsync(Contact model)
         {
             if (model.Phones.ToList().Any())
                 model.Phones.ToList().ForEach(x => { x.CreatedAt = DateTime.Now; x.UpdatedAt = DateTime.Now; });
 
-            return base.RegisterAsync(model);
+            return await base.RegisterAsync(model);
         }
 
-        public override Task<Contact> UpdateAsync(Contact model)
+        public override async Task<Contact> UpdateAsync(Contact model)
         {
             if (model.Phones.ToList().Any())
                 model.Phones.ToList().ForEach(x => {x.UpdatedAt = DateTime.Now; });
-
-            return base.UpdateAsync(model);
+            return await base.UpdateAsync(model);
         }
 
         public override async Task<IEnumerable<Contact>> GetAllAsync(

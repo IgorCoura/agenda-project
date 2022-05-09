@@ -59,5 +59,7 @@ namespace Agenda.Infrastructure.Repositories
         {
             return await _context.Set<T>().FirstOrDefaultAsync(filter);
         }
+
+
     }
 }

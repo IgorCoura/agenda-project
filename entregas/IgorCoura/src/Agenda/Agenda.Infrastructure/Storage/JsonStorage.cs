@@ -50,6 +50,18 @@ namespace Agenda.Infrastructure.Storage
             }
         }
 
+        public IEnumerable<T> CreateMany(IEnumerable<T> models)
+        {
+            foreach (var item in models)
+            {
+                item.Id = item.Id > 0 ? item.Id : CreateId();
+            }
+
+            _context.AddRange(models);
+
+            return models;
+        }
+
         public IEnumerable<T> GetAll()
         {
             return _context;

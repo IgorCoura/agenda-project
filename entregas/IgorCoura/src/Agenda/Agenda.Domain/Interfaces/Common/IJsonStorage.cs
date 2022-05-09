@@ -7,6 +7,7 @@ namespace Agenda.Domain.Interfaces
     {
         int CreateId();
         T Create(T model);
+        IEnumerable<T> CreateMany(IEnumerable<T> models);
         T Update(T model);
         T Remove(int id);
         IEnumerable<T> GetAll();
