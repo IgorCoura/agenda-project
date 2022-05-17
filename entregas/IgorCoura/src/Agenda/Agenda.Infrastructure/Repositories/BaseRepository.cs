@@ -8,6 +8,7 @@ using Agenda.Domain.Core;
 using Agenda.Domain.Interfaces;
 using Agenda.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 
 namespace Agenda.Infrastructure.Repositories
 {
@@ -45,19 +46,32 @@ namespace Agenda.Infrastructure.Repositories
             return await Task.FromResult(result.Entity);
         }
 
-        public virtual async Task<IEnumerable<T>> GetAllAsync(
-            Expression<Func<T, bool>>? filter = null)
-        {
-            if (filter == null)
-                return await _context.Set<T>().ToListAsync();
-            return await _context.Set<T>().Where(filter).ToListAsync();
-        }
-
-        public virtual async Task<T?> GetAsync(Expression<Func<T, bool>> filter)
+        public async Task<T?> FirstAsync(Expression<Func<T, bool>> filter)
         {
             return await _context.Set<T>().FirstOrDefaultAsync(filter);
         }
 
+        public async Task<T?> FirstAsyncAsTracking(Expression<Func<T, bool>> filter)
+        {
+            return await _context.Set<T>().AsTracking().FirstOrDefaultAsync(filter);
+        }
 
+        public async Task<IEnumerable<T>> GetDataAsync(Expression<Func<T, bool>>? filter = null, Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null, int? skip = null, int? take = null)
+        {
+            var query = _context.Set<T>().AsQueryable();
+            if (filter != null)
+                query = query.Where(filter);
+
+            if (include != null)
+                query = include(query);
+
+            if(skip != null && skip.HasValue)
+                query = query.Skip(skip.Value);
+
+            if(take != null && take.HasValue)
+                query = query.Take(take.Value);
+
+            return await query.ToListAsync();
+        }
     }
 }

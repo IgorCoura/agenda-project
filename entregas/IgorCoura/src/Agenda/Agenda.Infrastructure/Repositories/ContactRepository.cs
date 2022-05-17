@@ -33,19 +33,6 @@ namespace Agenda.Infrastructure.Repositories
             return await base.UpdateAsync(model);
         }
 
-        public override async Task<IEnumerable<Contact>> GetAllAsync(
-            Expression<Func<Contact, bool>>? filter = null)
-        {
-            if (filter == null)
-                return await _context.Set<Contact>().Include(p => p.Phones).ThenInclude(p => p.PhoneType).ToListAsync();
-            return await _context.Set<Contact>().Where(filter).Include(p => p.Phones).ThenInclude(p => p.PhoneType).ToListAsync();
-        }
-
-        public override async Task<Contact?> GetAsync(Expression<Func<Contact, bool>> filter)
-        {
-            return await _context.Set<Contact>().Include(p => p.Phones).ThenInclude(p => p.PhoneType).FirstOrDefaultAsync(filter);
-        }
-
 
     }
 }

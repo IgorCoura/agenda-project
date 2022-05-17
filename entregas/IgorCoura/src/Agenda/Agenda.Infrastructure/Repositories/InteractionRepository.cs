@@ -16,7 +16,7 @@ namespace Agenda.Infrastructure.Repositories
 
         public async Task SaveJsonInteractionsAsync()
         {
-            var interactions = await GetAllAsync();
+            var interactions = await GetDataAsync();
             if (interactions is not null)
                 _jsonStorage.CreateMany(interactions);
 
