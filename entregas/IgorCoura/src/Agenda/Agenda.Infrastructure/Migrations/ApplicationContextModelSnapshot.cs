@@ -190,13 +190,10 @@ namespace Agenda.Infrastructure.Migrations
 
                     b.HasIndex("ContactId");
 
-                    b.HasIndex("DDD")
-                        .IsUnique();
-
-                    b.HasIndex("Number")
-                        .IsUnique();
-
                     b.HasIndex("PhoneTypeId");
+
+                    b.HasIndex("DDD", "Number")
+                        .IsUnique();
 
                     b.ToTable("Phones");
                 });

@@ -13,8 +13,10 @@ using Microsoft.Extensions.Hosting;
 using Agenda.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using Agenda.Domain.Interfaces.Repositories;
+using Agenda.Infrastructure.UnitOfWork;
 
 var builder = Host.CreateDefaultBuilder(args);
+
 
 builder.ConfigureServices((hostContext, services) =>
 {
@@ -36,7 +38,7 @@ static void ConfigureServices(IServiceCollection service)
        {
            options
                .UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=AgendaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
-               .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
+               .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTrackingWithIdentityResolution)
                .EnableDetailedErrors()
                .EnableSensitiveDataLogging();
            
@@ -44,7 +46,10 @@ static void ConfigureServices(IServiceCollection service)
        ServiceLifetime.Singleton
     );
 
+
     service.AddSingleton<IJsonStorage<Interaction>, JsonStorage<Interaction>>();
+
+    service.AddTransient<IUnitOfWork, UnitOfWork>();
 
     service.AddTransient<IContactRepository, ContactRepository>();
     service.AddTransient<IInteractionRepository, InteractionRepository>();

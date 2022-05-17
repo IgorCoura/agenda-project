@@ -25,6 +25,18 @@ namespace Agenda.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "InteractionTypes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_InteractionTypes", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "PhoneTypes",
                 columns: table => new
                 {
@@ -34,6 +46,28 @@ namespace Agenda.Infrastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PhoneTypes", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Interactions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    InteractionTypeId = table.Column<int>(type: "int", nullable: false),
+                    Message = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Interactions", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Interactions_InteractionTypes_InteractionTypeId",
+                        column: x => x.InteractionTypeId,
+                        principalTable: "InteractionTypes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -69,24 +103,31 @@ namespace Agenda.Infrastructure.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "PhoneTypes",
+                table: "InteractionTypes",
                 columns: new[] { "Id", "Name" },
-                values: new object[] { 1, "Residencial" });
+                values: new object[,]
+                {
+                    { 1, "Criar Contato" },
+                    { 2, "Atualizar Contato" },
+                    { 3, "Remover Contato" },
+                    { 4, "Visualizar Contato" },
+                    { 5, "Visualizar Telefones" }
+                });
 
             migrationBuilder.InsertData(
                 table: "PhoneTypes",
                 columns: new[] { "Id", "Name" },
-                values: new object[] { 2, "Cellphone" });
-
-            migrationBuilder.InsertData(
-                table: "PhoneTypes",
-                columns: new[] { "Id", "Name" },
-                values: new object[] { 3, "Commercial" });
+                values: new object[,]
+                {
+                    { 1, "Residencial" },
+                    { 2, "Cellphone" },
+                    { 3, "Commercial" }
+                });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Contacts_Id",
-                table: "Contacts",
-                column: "Id");
+                name: "IX_Interactions_InteractionTypeId",
+                table: "Interactions",
+                column: "InteractionTypeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Phones_ContactId",
@@ -94,9 +135,10 @@ namespace Agenda.Infrastructure.Migrations
                 column: "ContactId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Phones_Id",
+                name: "IX_Phones_DDD_Number",
                 table: "Phones",
-                column: "Id");
+                columns: new[] { "DDD", "Number" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Phones_PhoneTypeId",
@@ -107,7 +149,13 @@ namespace Agenda.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Interactions");
+
+            migrationBuilder.DropTable(
                 name: "Phones");
+
+            migrationBuilder.DropTable(
+                name: "InteractionTypes");
 
             migrationBuilder.DropTable(
                 name: "Contacts");

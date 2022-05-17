@@ -20,8 +20,6 @@ namespace Agenda.Infrastructure.Repositories
             _context = context;
         }
 
-        public IUnitOfWork UnitOfWork => _context;
-
         public virtual async Task<T> RegisterAsync(T model)
         {
             model.CreatedAt = DateTime.Now;

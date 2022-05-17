@@ -25,7 +25,11 @@ namespace Agenda.Infrastructure.Repositories
         public override async Task<Contact> UpdateAsync(Contact model)
         {
             if (model.Phones.ToList().Any())
-                model.Phones.ToList().ForEach(x => {x.UpdatedAt = DateTime.Now; });
+                model.Phones.ToList().ForEach(x => {
+                    x.UpdatedAt = DateTime.Now;
+                    if (x.Id == 0)
+                        x.CreatedAt = DateTime.Now;
+                });
             return await base.UpdateAsync(model);
         }
 

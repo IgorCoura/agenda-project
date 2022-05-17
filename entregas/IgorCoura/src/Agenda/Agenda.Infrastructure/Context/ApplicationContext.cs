@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace Agenda.Infrastructure.Context
 {
-    public class ApplicationContext : DbContext, IUnitOfWork
+    public class ApplicationContext : DbContext
     {
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Phone> Phones { get; set; }
@@ -18,7 +18,9 @@ namespace Agenda.Infrastructure.Context
 
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
-        { }
+        {
+
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -37,10 +39,7 @@ namespace Agenda.Infrastructure.Context
                 .HasData(Enumeration.GetAll<InteractionType>());
         }
 
-        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
-        {
-            return base.SaveChangesAsync(cancellationToken);
-        }
+
 
     }
 }

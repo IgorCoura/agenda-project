@@ -8,7 +8,7 @@ using Agenda.Domain.Core;
 
 namespace Agenda.Domain.Interfaces
 {
-    public interface IBaseRepository<T>: IRepository<T> where T : Register
+    public interface IBaseRepository<T> where T : Register
     {
         Task<T> RegisterAsync(T model);
         Task<T> UpdateAsync(T model);

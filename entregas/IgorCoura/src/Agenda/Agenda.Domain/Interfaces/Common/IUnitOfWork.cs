@@ -4,6 +4,7 @@ namespace Agenda.Domain.Interfaces
 {
     public interface IUnitOfWork
     {
-        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken));
+        Task<bool> CommitAsync(CancellationToken cancellationToken = default(CancellationToken));
+        Task DisponseAsync();
     }
 }

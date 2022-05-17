@@ -14,20 +14,22 @@ namespace Agenda.Application.Services
         private readonly IContactRepository _contactRepository;
         private readonly IMapper _mapper;
         private readonly IInteractionRepository _interactionRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public ContactService(IContactRepository contactRepository, IMapper mapper, IInteractionRepository interactionRepository)
+        public ContactService(IContactRepository contactRepository, IMapper mapper, IInteractionRepository interactionRepository, IUnitOfWork unitOfWork)
         {
             _contactRepository = contactRepository;
             _mapper = mapper;
-            _interactionRepository = interactionRepository; 
+            _interactionRepository = interactionRepository;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<ContactModel> Register(CreateContactModel contactModel)
         {
             var contact = _mapper.Map<Contact>(contactModel);
             var result = await _contactRepository.RegisterAsync(contact);
-            await _interactionRepository.RegisterAsync(new Interaction(InteractionType.CreateContact.Id, $"Criando Contato com id: {result.Id}"));
-            await _contactRepository.UnitOfWork.SaveChangesAsync();
+            await _interactionRepository.RegisterAsync(new Interaction(InteractionType.CreateContact.Id, $"Criando Contato {result.Name}"));
+            await _unitOfWork.CommitAsync();
             return _mapper.Map<ContactModel>(result);
         }
 
@@ -36,7 +38,7 @@ namespace Agenda.Application.Services
             var contact = _mapper.Map<Contact>(contactModel);
             var result = await _contactRepository.UpdateAsync(contact);
             await _interactionRepository.RegisterAsync(new Interaction(InteractionType.UpdateContact.Id, $"Atualizando Contato com id: {result.Id}"));
-            await _contactRepository.UnitOfWork.SaveChangesAsync();
+            await _unitOfWork.CommitAsync();
             return _mapper.Map<ContactModel>(result);
         }
 
@@ -62,7 +64,7 @@ namespace Agenda.Application.Services
         {
             var result = await _contactRepository.DeleteAsync(id);
             await _interactionRepository.RegisterAsync(new Interaction(InteractionType.RemoveContact.Id, $"Removendo Contato com id: {result.Id}"));
-            await _contactRepository.UnitOfWork.SaveChangesAsync();
+            await _unitOfWork.CommitAsync();
             return _mapper.Map<ContactModel>(result);
         } 
 

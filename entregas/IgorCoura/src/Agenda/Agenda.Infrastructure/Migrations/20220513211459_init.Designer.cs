@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Agenda.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20220504154309_init")]
+    [Migration("20220513211459_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,9 +46,49 @@ namespace Agenda.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Id");
-
                     b.ToTable("Contacts");
+                });
+
+            modelBuilder.Entity("Agenda.Domain.Entities.Enumerations.InteractionType", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("InteractionTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Criar Contato"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Atualizar Contato"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Remover Contato"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Visualizar Contato"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Visualizar Telefones"
+                        });
                 });
 
             modelBuilder.Entity("Agenda.Domain.Entities.Enumerations.PhoneType", b =>
@@ -81,6 +121,34 @@ namespace Agenda.Infrastructure.Migrations
                             Id = 3,
                             Name = "Commercial"
                         });
+                });
+
+            modelBuilder.Entity("Agenda.Domain.Entities.Interaction", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("InteractionTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Message")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InteractionTypeId");
+
+                    b.ToTable("Interactions");
                 });
 
             modelBuilder.Entity("Agenda.Domain.Entities.Phone", b =>
@@ -124,11 +192,23 @@ namespace Agenda.Infrastructure.Migrations
 
                     b.HasIndex("ContactId");
 
-                    b.HasIndex("Id");
-
                     b.HasIndex("PhoneTypeId");
 
+                    b.HasIndex("DDD", "Number")
+                        .IsUnique();
+
                     b.ToTable("Phones");
+                });
+
+            modelBuilder.Entity("Agenda.Domain.Entities.Interaction", b =>
+                {
+                    b.HasOne("Agenda.Domain.Entities.Enumerations.InteractionType", "InteractionType")
+                        .WithMany()
+                        .HasForeignKey("InteractionTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("InteractionType");
                 });
 
             modelBuilder.Entity("Agenda.Domain.Entities.Phone", b =>
