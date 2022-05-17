@@ -6,6 +6,7 @@ using Agenda.Application.Params;
 using Agenda.Application.Interfaces;
 using Agenda.Domain.Interfaces.Repositories;
 using Agenda.Domain.Entities.Enumerations;
+using Microsoft.EntityFrameworkCore;
 
 namespace Agenda.Application.Services
 {
@@ -35,38 +36,42 @@ namespace Agenda.Application.Services
 
         public async Task<ContactModel> Edit(UpdateContactModel contactModel)
         {
-            var contact = _mapper.Map<Contact>(contactModel);
-            var result = await _contactRepository.UpdateAsync(contact);
-            await _interactionRepository.RegisterAsync(new Interaction(InteractionType.UpdateContact.Id, $"Atualizando Contato com id: {result.Id}"));
+            Contact existing = (await _contactRepository.FirstAsyncAsTracking(c => c.Id == contactModel.Id, include: q => q.Include(p => p.Phones))) ?? throw new Exception($"Contato com o Id {contactModel.Id} não existe.");
+
+            _mapper.Map<UpdateContactModel, Contact>(contactModel, existing);
+            await _interactionRepository.RegisterAsync(new Interaction(InteractionType.UpdateContact.Id, $"Atualizando Contato {existing.Name}"));
             await _unitOfWork.CommitAsync();
-            return _mapper.Map<ContactModel>(result);
+
+            return _mapper.Map<ContactModel>(existing);
         }
 
         public async Task<ContactModel> RecoverById(int id)
         {
-            Contact result = await _contactRepository.GetAsync(p => p.Id == id) ?? throw new ArgumentNullException($"Id: {id}, não existe");
+            Contact result =  await _contactRepository.FirstAsync(filter: c => c.Id == id, include: q => q.Include(p => p.Phones)) ?? throw new ArgumentNullException($"Id: {id}, não existe");
             return _mapper.Map<ContactModel>(result);
         }
 
         public async Task<IEnumerable<ContactModel>> Recover(ContactParams query)
         {
-            var results = await _contactRepository.GetAllAsync(query.Filter());
+            var results = await _contactRepository.GetDataAsync(filter: query.Filter(), include: q => q.Include(p => p.Phones));
             return _mapper.Map<IEnumerable<ContactModel>>(results);
         }
 
         public async Task<IEnumerable<ContactModel>> RecoverAll()
         {
-            var results = await _contactRepository.GetAllAsync();
+            var results = await _contactRepository.GetDataAsync(include: q => q.Include(p => p.Phones));
             return _mapper.Map<IEnumerable<ContactModel>>(results);
         }
 
         public async Task<ContactModel> Remove(int id)
         {
             var result = await _contactRepository.DeleteAsync(id);
-            await _interactionRepository.RegisterAsync(new Interaction(InteractionType.RemoveContact.Id, $"Removendo Contato com id: {result.Id}"));
+            await _interactionRepository.RegisterAsync(new Interaction(InteractionType.RemoveContact.Id, $"Removendo Contato {result.Name}"));
             await _unitOfWork.CommitAsync();
             return _mapper.Map<ContactModel>(result);
-        } 
+        }
+
+
 
     }
 }

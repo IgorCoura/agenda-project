@@ -41,6 +41,8 @@ namespace Agenda.ConsoleUI.Views
             }
 
             await _contactService.Edit(model);
+
+
         }
 
         private string Options(UpdateContactModel model)
@@ -94,7 +96,7 @@ namespace Agenda.ConsoleUI.Views
             {
                 phone.FormattedPhone = ViewsUtils.GetPhone(phone.FormattedPhone);
                 phone.Description = ViewsUtils.GetDescription(phone.Description);
-                phone.PhoneTypeId = ViewsUtils.GetPhoneType(phone.PhoneType.Id.ToString());
+                phone.PhoneTypeId = ViewsUtils.GetPhoneType(phone.PhoneTypeId.ToString());
                 model.Phones = phones;
                 return;
             }

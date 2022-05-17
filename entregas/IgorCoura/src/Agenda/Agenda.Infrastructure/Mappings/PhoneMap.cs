@@ -43,3 +43,4 @@ namespace Agenda.Infrastructure.Mappings
         }
     }
 }
+

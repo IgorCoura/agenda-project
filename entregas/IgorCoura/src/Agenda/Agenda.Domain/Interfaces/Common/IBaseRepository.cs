@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Agenda.Domain.Core;
+using Microsoft.EntityFrameworkCore.Query;
 
 namespace Agenda.Domain.Interfaces
 {
@@ -12,9 +13,13 @@ namespace Agenda.Domain.Interfaces
     {
         Task<T> RegisterAsync(T model);
         Task<T> UpdateAsync(T model);
-        Task<T> DeleteAsync(int id);     
-        Task<IEnumerable<T>> GetAllAsync(
-            Expression<Func<T, bool>>? filter = null);
-        Task<T?> GetAsync(Expression<Func<T, bool>> filter);
+        Task<T> DeleteAsync(int id);
+        Task<T?> FirstAsync(Expression<Func<T, bool>> filter, Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null);
+        Task<T?> FirstAsyncAsTracking(Expression<Func<T, bool>> filter, Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null);
+        Task<IEnumerable<T>> GetDataAsync(
+            Expression<Func<T, bool>>? filter = null, Func<IQueryable<T>,
+            IIncludableQueryable<T, object>>? include = null,
+            int? skip = null, int? take = null);
     }
 }
+

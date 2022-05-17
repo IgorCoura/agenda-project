@@ -14,7 +14,7 @@ namespace Agenda.Infrastructure.UnitOfWork
 
         public async Task<bool> CommitAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            var result =  await _context.SaveChangesAsync(cancellationToken);
+            var result =  _context.SaveChanges();
             _context.ChangeTracker.Clear();
             return result > 0;
         }

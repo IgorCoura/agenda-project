@@ -46,14 +46,22 @@ namespace Agenda.Infrastructure.Repositories
             return await Task.FromResult(result.Entity);
         }
 
-        public async Task<T?> FirstAsync(Expression<Func<T, bool>> filter)
+        public async Task<T?> FirstAsync(Expression<Func<T, bool>> filter, Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null)
         {
-            return await _context.Set<T>().FirstOrDefaultAsync(filter);
+            var query = _context.Set<T>().AsQueryable();
+            if (include != null)
+                query = include(query);
+
+            return await query.FirstOrDefaultAsync(filter);
         }
 
-        public async Task<T?> FirstAsyncAsTracking(Expression<Func<T, bool>> filter)
+        public async Task<T?> FirstAsyncAsTracking(Expression<Func<T, bool>> filter, Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null)
         {
-            return await _context.Set<T>().AsTracking().FirstOrDefaultAsync(filter);
+            var query = _context.Set<T>().AsQueryable();
+            if (include != null)
+                query = include(query);
+
+            return await query.AsTracking().FirstOrDefaultAsync(filter);
         }
 
         public async Task<IEnumerable<T>> GetDataAsync(Expression<Func<T, bool>>? filter = null, Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null, int? skip = null, int? take = null)

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Agenda.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20220513211459_init")]
+    [Migration("20220517151710_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -182,7 +182,8 @@ namespace Agenda.Infrastructure.Migrations
                         .HasMaxLength(9)
                         .HasColumnType("int");
 
-                    b.Property<int>("PhoneTypeId")
+                    b.Property<int?>("PhoneTypeId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<DateTime>("UpdatedAt")

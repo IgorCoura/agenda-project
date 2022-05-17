@@ -180,7 +180,8 @@ namespace Agenda.Infrastructure.Migrations
                         .HasMaxLength(9)
                         .HasColumnType("int");
 
-                    b.Property<int>("PhoneTypeId")
+                    b.Property<int?>("PhoneTypeId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<DateTime>("UpdatedAt")
