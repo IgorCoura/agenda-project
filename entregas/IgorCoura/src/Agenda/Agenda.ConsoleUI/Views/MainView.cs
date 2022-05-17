@@ -1,6 +1,8 @@
 using Agenda.ConsoleUI.Interfaces;
 using Agenda.Application.Interfaces;
 using Microsoft.Extensions.Hosting;
+using System.Data.Common;
+using Agenda.Domain.Interfaces;
 
 namespace Agenda.ConsoleUI.Views
 {
@@ -8,9 +10,10 @@ namespace Agenda.ConsoleUI.Views
     {
         private readonly ViewsAccessor _viewsAccessor;
         private readonly IHostApplicationLifetime _appLifetime;
-        private IInteractionService _interactionService;
+        private readonly IInteractionService _interactionService;
+        private readonly IUnitOfWork unitOfWork;
 
-        public MainView(IHostApplicationLifetime appLifeTime,  ViewsAccessor viewsAccessor, IInteractionService interactionService)
+        public MainView(IHostApplicationLifetime appLifeTime,  ViewsAccessor viewsAccessor, IInteractionService interactionService, IUnitOfWork unitOfWork)
         {
             _viewsAccessor = viewsAccessor;
             _appLifetime = appLifeTime;
@@ -42,13 +45,20 @@ namespace Agenda.ConsoleUI.Views
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Erro: " + ex.Message);
+                    Console.WriteLine("Message erro: " + ex.Message);
+                    if(ex.InnerException is not null)
+                        Console.WriteLine("Inner Exception message:" + ex.InnerException.Message);
+                }
+                finally
+                {
+                    unitOfWork.ClearTracker();
                 }
                 
             }
             
         }
 
+        
         private void Exit()
         {
             _appLifetime.StopApplication();

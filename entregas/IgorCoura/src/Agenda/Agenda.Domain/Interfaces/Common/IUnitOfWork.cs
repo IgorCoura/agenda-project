@@ -6,5 +6,6 @@ namespace Agenda.Domain.Interfaces
     {
         Task<bool> CommitAsync(CancellationToken cancellationToken = default(CancellationToken));
         Task DisponseAsync();
+        void ClearTracker();
     }
 }

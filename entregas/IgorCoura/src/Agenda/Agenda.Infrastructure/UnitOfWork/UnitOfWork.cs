@@ -15,13 +15,18 @@ namespace Agenda.Infrastructure.UnitOfWork
         public async Task<bool> CommitAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             var result =  _context.SaveChanges();
-            _context.ChangeTracker.Clear();
+            ClearTracker();
             return result > 0;
         }
 
         public async Task DisponseAsync()
         {
             await _context.DisposeAsync();
+        }
+
+        public void ClearTracker()
+        {
+            _context.ChangeTracker.Clear();
         }
     }
 }
