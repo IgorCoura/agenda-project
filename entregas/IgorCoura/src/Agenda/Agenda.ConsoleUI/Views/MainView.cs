@@ -11,13 +11,14 @@ namespace Agenda.ConsoleUI.Views
         private readonly ViewsAccessor _viewsAccessor;
         private readonly IHostApplicationLifetime _appLifetime;
         private readonly IInteractionService _interactionService;
-        private readonly IUnitOfWork unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
 
         public MainView(IHostApplicationLifetime appLifeTime,  ViewsAccessor viewsAccessor, IInteractionService interactionService, IUnitOfWork unitOfWork)
         {
             _viewsAccessor = viewsAccessor;
             _appLifetime = appLifeTime;
             _interactionService = interactionService;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task Run()
@@ -51,7 +52,7 @@ namespace Agenda.ConsoleUI.Views
                 }
                 finally
                 {
-                    unitOfWork.ClearTracker();
+                    _unitOfWork.ClearTracker();
                 }
                 
             }
