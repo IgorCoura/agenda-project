@@ -1,23 +1,27 @@
-using Agenda.Domain.Interfaces;
+using Agenda.ConsoleUI.Interfaces;
+using Agenda.Application.Interfaces;
 using Microsoft.Extensions.Hosting;
+using System.Data.Common;
+using Agenda.Domain.Interfaces;
 
 namespace Agenda.ConsoleUI.Views
 {
     public class MainView : IView
     {
-        private readonly IContactService _contactService;
-        private readonly Dictionary<string, IView> _optionsDictionary;
         private readonly ViewsAccessor _viewsAccessor;
         private readonly IHostApplicationLifetime _appLifetime;
+        private readonly IInteractionService _interactionService;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public MainView(IContactService contactService,IHostApplicationLifetime appLifeTime,  ViewsAccessor viewsAccessor)
+        public MainView(IHostApplicationLifetime appLifeTime,  ViewsAccessor viewsAccessor, IInteractionService interactionService, IUnitOfWork unitOfWork)
         {
-            _contactService = contactService;   
             _viewsAccessor = viewsAccessor;
             _appLifetime = appLifeTime;
+            _interactionService = interactionService;
+            _unitOfWork = unitOfWork;
         }
 
-        public void Run()
+        public async Task Run()
         {
             
             while (true)
@@ -28,26 +32,34 @@ namespace Agenda.ConsoleUI.Views
                     Exit();
                     break;
                 }
+
+                if(option == "5")
+                {
+                    SaveJsonInteractions();
+                    continue;
+                }
                    
 
                 try
                 {
-                    if (option == "5")
-                    {
-                        SaveChanges();
-                        continue;
-                    }
-                    _viewsAccessor(option).Run();
+                    await _viewsAccessor(option).Run();
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Erro: " + ex.Message);
+                    Console.WriteLine("Message erro: " + ex.Message);
+                    if(ex.InnerException is not null)
+                        Console.WriteLine("Inner Exception message:" + ex.InnerException.Message);
+                }
+                finally
+                {
+                    _unitOfWork.ClearTracker();
                 }
                 
             }
             
         }
 
+        
         private void Exit()
         {
             _appLifetime.StopApplication();
@@ -59,17 +71,18 @@ namespace Agenda.ConsoleUI.Views
             Console.WriteLine("2-Editar contato existente.");
             Console.WriteLine("3-Consultar contato.");
             Console.WriteLine("4-Remover contato.");
-            Console.WriteLine("5-Salvar todas as alteações.");
-            Console.WriteLine("0-Sair (Salve antes de sair).");
+            Console.WriteLine("5-Salvar log em JSON.");
+            Console.WriteLine("0-Sair.");
             var response = Console.ReadLine() ?? "";
             Console.Clear();
             return response;
         }
 
-        private void SaveChanges()
+        private void SaveJsonInteractions()
         {
-            _contactService.SaveChangesAsync();
-            Console.WriteLine("Todas as Alterações foram salvas.");
+            _interactionService.SaveJsonInteractionsAsync();
+            Console.WriteLine("INTERAÇÕES FORAM SALVAS EM JSON");
+            Console.Clear();
         }
 
     }

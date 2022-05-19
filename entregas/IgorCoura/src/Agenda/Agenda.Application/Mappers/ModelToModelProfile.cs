@@ -1,9 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Agenda.Domain.Model;
+using Agenda.Application.Model;
 using AutoMapper;
 
 namespace Agenda.Application.Mappers

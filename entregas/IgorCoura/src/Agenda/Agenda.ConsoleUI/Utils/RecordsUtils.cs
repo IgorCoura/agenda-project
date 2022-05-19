@@ -5,6 +5,7 @@ namespace Agenda.ConsoleUI.Utils
     public record NameRecord
     {
         [Required(ErrorMessage = "Insira um nome.")]
+        [MaxLength(200, ErrorMessage = "Insira um nome com no máximo 200.")]
         public string Name { get; set; } = string.Empty;
     }
 

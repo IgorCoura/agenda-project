@@ -1,12 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using Agenda.Domain.Core;
 
-namespace Agenda.Domain.Params
+namespace Agenda.Application.Params
 {
     public abstract class BaseParams<T> where T : Register
     {

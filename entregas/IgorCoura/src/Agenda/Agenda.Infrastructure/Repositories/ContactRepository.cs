@@ -1,98 +1,38 @@
+using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using Agenda.Domain.Entities;
+using Agenda.Domain.Entities.Enumerations;
 using Agenda.Domain.Interfaces;
+using Agenda.Infrastructure.Context;
 
 namespace Agenda.Infrastructure.Repositories
 {
-    public class ContactRepository: IContactRepository
+    public class ContactRepository : BaseRepository<Contact>, IContactRepository
     {
-        private readonly IJsonStorage<Contact> _jsonStorage;
-
-        public ContactRepository(IJsonStorage<Contact> jsonStorage)
+        public ContactRepository(ApplicationContext context) : base(context)
         {
-            _jsonStorage = jsonStorage;
+            
         }
 
-        public Contact Create(Contact entity)
+        public override async Task<Contact> RegisterAsync(Contact model)
         {
-            entity.Id = _jsonStorage.CreateId();
-            if(entity.Phones.ToList().Count > 0)
-            {
-                entity.Phones = FormatAndVerifyPhones(entity.Phones.ToList(), entity.Id);
-            }
-            _jsonStorage.Create(entity);
-            return entity;
+            if (model.Phones.ToList().Any())
+                model.Phones.ToList().ForEach(x => { x.CreatedAt = DateTime.Now; x.UpdatedAt = DateTime.Now; });
+
+            return await base.RegisterAsync(model);
         }
 
-        public Contact Update(Contact entity)
+        public override async Task<Contact> UpdateAsync(Contact model)
         {
-            if (entity.Phones.ToList().Count > 0)
-            {
-                entity.Phones = FormatAndVerifyPhones(entity.Phones.ToList(), entity.Id);
-            }
-            var result = _jsonStorage.Update(entity);
-            return result;
-        }
-        
-        public IEnumerable<Contact> GetAll(Expression<Func<Contact, bool>> filter = null)
-        {
-            var result = _jsonStorage.GetAll().AsQueryable();
-
-            if (filter != null)
-                return result.Where(filter);
-
-            return result;
-        }
-
-        public Contact GetById(int id)
-        {
-            return _jsonStorage.GetById(id);
-        }
-
-        public Contact Remove(int id)
-        {
-            var result = _jsonStorage.Remove(id);
-            return result;
-        }
-         
-        public List<Phone> FormatAndVerifyPhones(List<Phone> phones, int contactId)
-        {
-            PhonesExists(phones);
-            phones = AddIdPhone(phones);
-            phones.ForEach(p => p.ContactId = contactId);
-            phones.ForEach(x => x.UpdatedAt = DateTime.Now);
-            return phones;
-        }
-
-        private List<Phone> AddIdPhone(List<Phone> phones)
-        {
-            var existingPhones = _jsonStorage.GetAll().SelectMany(c => c.Phones);
-            var id = existingPhones.Any() ? existingPhones.LastOrDefault()!.Id + 1 : existingPhones.Count() + 1;
-            phones.ForEach(p => {
-                p.Id = p.Id == 0 ? id++ : p.Id;
-                p.CreatedAt = DateTime.Now;
+            if (model.Phones.ToList().Any())
+                model.Phones.ToList().ForEach(x => {
+                    x.UpdatedAt = DateTime.Now;
+                    if (x.Id == 0)
+                        x.CreatedAt = DateTime.Now;
                 });
-            return phones;
+            return await base.UpdateAsync(model);
         }
 
-        private void PhonesExists(List<Phone> phones)
-        {
-            foreach(Phone phone in phones)
-            {
-                var quantEqualNumbersInDb = _jsonStorage.GetAll().SelectMany(c => c.Phones).Count(p => p.Equals(phone));
-                var quantEqualNumbersInListPhones = phones.Count(p => p.Equals(phone));
-                if (phone.Id == 0
-                &&  (quantEqualNumbersInDb > 0
-                || quantEqualNumbersInListPhones > 1))
-                {
-                    throw new Exception($"O telefone {phone} já existe.");
-                }
-            }
-        }
 
-        public async Task SaveChangesAsync()
-        {
-            await _jsonStorage.SaveAsync();
-        }
     }
 }

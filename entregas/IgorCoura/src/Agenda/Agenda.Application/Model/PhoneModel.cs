@@ -1,4 +1,4 @@
-namespace Agenda.Domain.Model
+namespace Agenda.Application.Model
 {
     public class PhoneModel
     {
@@ -6,6 +6,7 @@ namespace Agenda.Domain.Model
         public int ContactId { get; set; }
         public string Description { get; set; } = string.Empty;
         public string FormattedPhone { get; set; } = string.Empty;
+        public int PhoneTypeId { get; set; }
         public PhoneTypeModel PhoneType { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }

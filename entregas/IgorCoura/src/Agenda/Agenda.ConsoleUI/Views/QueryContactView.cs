@@ -1,18 +1,19 @@
 using Agenda.ConsoleUI.Utils;
-using Agenda.Domain.Interfaces;
-using Agenda.Domain.Params;
+using Agenda.ConsoleUI.Interfaces;
+using Agenda.Application.Interfaces;
+using Agenda.Application.Params;
 
 namespace Agenda.ConsoleUI.Views
 {
-     public class QueryContactView : IView
+    public class QueryContactView : IView
     {
         private readonly IContactService _contactService;
-        private readonly Dictionary<string, Action> _optionsDictionary;
+        private readonly Dictionary<string, Func<Task>> _optionsDictionary;
 
         public QueryContactView(IContactService contactService)
         {
             _contactService = contactService;
-            _optionsDictionary = new Dictionary<string, Action>()
+            _optionsDictionary = new Dictionary<string, Func<Task>>()
             {
                 {"1", RecoverAll},
                 {"2", RecoverByName},
@@ -21,16 +22,16 @@ namespace Agenda.ConsoleUI.Views
             };
         }
 
-        public void Run()
+        public async Task Run()
         {
             while (true)
             {
                 var option = Options();
                 if (option == "0")
                     return;
-                _optionsDictionary[option].Invoke();
+                await _optionsDictionary[option].Invoke();
             }
-            
+
         }
 
         private string Options()
@@ -40,47 +41,47 @@ namespace Agenda.ConsoleUI.Views
             Console.WriteLine("3- Buscar contato por DDD.");
             Console.WriteLine("4- Buscar contato por numero.");
             Console.WriteLine("0- Voltar.");
-            var result = Console.ReadLine()??"";
+            var result = Console.ReadLine() ?? "";
             Console.Clear();
             return result;
         }
 
-        private void RecoverByDDD()
+        private async Task RecoverByDDD()
         {
             var ddd = ViewsUtils.GetDDD();
             var query = new ContactParams
             {
                 DDD = ddd,
             };
-            var models = _contactService.Recover(query).ToList();
-            models.ForEach(m => ViewsUtils.ShowContact(m));
+            var models = await _contactService.Recover(query);
+            models.ToList().ForEach(m => ViewsUtils.ShowContact(m));
         }
 
-        private void RecoverByNumber()
+        private async Task RecoverByNumber()
         {
             var number = ViewsUtils.GetNumber();
             var query = new ContactParams
             {
                 Number = number,
             };
-            var models = _contactService.Recover(query).ToList();
-            models.ForEach(m => ViewsUtils.ShowContact(m));
+            var models = await _contactService.Recover(query);
+            models.ToList().ForEach(m => ViewsUtils.ShowContact(m));
         }
-        private void RecoverByName()
+        private async Task RecoverByName()
         {
             var name = ViewsUtils.GetName();
             var query = new ContactParams
             {
                 Name = name,
             };
-            var models = _contactService.Recover(query).ToList();
-            models.ForEach(m => ViewsUtils.ShowContact(m));
+            var models = await _contactService.Recover(query);
+            models.ToList().ForEach(m => ViewsUtils.ShowContact(m));
         }
 
-        private void RecoverAll()
+        private async Task RecoverAll()
         {
-            var models = _contactService.RecoverAll().ToList();
-            models.ForEach(m => ViewsUtils.ShowContact(m));
+            var models = await _contactService.RecoverAll();
+            models.ToList().ForEach(m => ViewsUtils.ShowContact(m));
         }
     }
 }

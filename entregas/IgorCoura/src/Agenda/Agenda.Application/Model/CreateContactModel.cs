@@ -1,4 +1,4 @@
-namespace Agenda.Domain.Model
+namespace Agenda.Application.Model
 {
     public class CreateContactModel
     {

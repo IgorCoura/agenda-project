@@ -1,6 +1,7 @@
 using Agenda.ConsoleUI.Utils;
-using Agenda.Domain.Interfaces;
-using Agenda.Domain.Model;
+using Agenda.ConsoleUI.Interfaces;
+using Agenda.Application.Interfaces;
+using Agenda.Application.Model;
 
 namespace Agenda.ConsoleUI.Views
 {
@@ -13,11 +14,11 @@ namespace Agenda.ConsoleUI.Views
             _contactService = contactService;
         }
 
-        public void Run()
+        public async Task Run()
         {
             Console.WriteLine("\n NOVO CONTATO \n");
             var contact = CreateContact();
-            _contactService.Register(contact);
+            await _contactService.Register(contact);
         }
         private CreateContactModel CreateContact()
         {
@@ -29,7 +30,7 @@ namespace Agenda.ConsoleUI.Views
                 var phone = new CreatePhoneModel{
                     FormattedPhone = ViewsUtils.GetPhone(),
                     Description = ViewsUtils.GetDescription(),
-                    PhoneType = ViewsUtils.GetPhoneType(),
+                    PhoneTypeId = ViewsUtils.GetPhoneType(),
                 };
                 phones.Add(phone);
                 if (!ViewsUtils.ReadYesOrNo("Deseja inserir mais um numero (S/N): "))

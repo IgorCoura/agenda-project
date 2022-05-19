@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using Agenda.Domain.Entities.Enumerations;
-using Agenda.Domain.Model;
+using Agenda.Application.Model;
 
 namespace Agenda.ConsoleUI.Utils
 {
@@ -128,17 +128,14 @@ namespace Agenda.ConsoleUI.Utils
             }
         }
 
-        public static PhoneTypeModel GetPhoneType(string defaultValue = "")
+        public static int GetPhoneType(string defaultValue = "")
         {
             Console.WriteLine("Informe o tipo de um telefone(1-Residencial, 2-Celular, 3-Comercial):");
             string? numberString = Console.ReadLine();
             var number = string.IsNullOrEmpty(numberString) ? defaultValue : numberString;
             if (int.TryParse(number, out int num) && num > 0 && num < 4)
             {
-                return new PhoneTypeModel
-                {
-                    Id = num
-                };
+                return num;
             }
             throw new Exception("Insira um valor valido para o tipo de telefone.");
         }
@@ -169,7 +166,8 @@ namespace Agenda.ConsoleUI.Utils
             Console.WriteLine($"    Id: {phone.Id}");
             Console.WriteLine($"    Phone: {phone.FormattedPhone}");
             Console.WriteLine($"    Description: {phone.Description}");
-            Console.WriteLine($"    PhoneTypeId: {phone.PhoneType.Id}");
+            var typePrint = phone.PhoneType == null ? phone.PhoneTypeId.ToString() : phone.PhoneType.Name;
+            Console.WriteLine($"    PhoneType: {typePrint}");
         }
 
         private static void ShowErros(ICollection<ValidationResult> erros)

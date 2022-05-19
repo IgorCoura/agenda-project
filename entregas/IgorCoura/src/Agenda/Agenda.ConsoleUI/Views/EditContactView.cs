@@ -1,6 +1,7 @@
 using Agenda.ConsoleUI.Utils;
-using Agenda.Domain.Interfaces;
-using Agenda.Domain.Model;
+using Agenda.ConsoleUI.Interfaces;
+using Agenda.Application.Interfaces;
+using Agenda.Application.Model;
 using AutoMapper;
 
 namespace Agenda.ConsoleUI.Views
@@ -24,9 +25,9 @@ namespace Agenda.ConsoleUI.Views
             _mapper = mapper;
         }
 
-        public void Run()
+        public async Task Run()
         {
-            var model = GetContact();
+            var model = await GetContact();
             if (model == null)
                 return;
 
@@ -34,14 +35,13 @@ namespace Agenda.ConsoleUI.Views
             {
                 var option = Options(model);
                 if (option == "0")
-                    return;
+                    break;
 
                 _optionsDictionary[option].Invoke(model);
-
-                var result = _contactService.Edit(model);
-                model = _mapper.Map<UpdateContactModel>(result);
             }
-            
+
+            await _contactService.Edit(model);
+
 
         }
 
@@ -53,7 +53,7 @@ namespace Agenda.ConsoleUI.Views
             Console.WriteLine("2-Adicionar um novo telefone.");
             Console.WriteLine("3-Editar Telefones");
             Console.WriteLine("4-Remover Telefone");
-            Console.WriteLine("0-Voltar.");
+            Console.WriteLine("0-Salvar e Voltar.");
             var result = Console.ReadLine() ?? "";
             Console.Clear();
             return result;
@@ -79,7 +79,7 @@ namespace Agenda.ConsoleUI.Views
                 ContactId = model.Id,
                 FormattedPhone = ViewsUtils.GetPhone(),
                 Description = ViewsUtils.GetDescription(),
-                PhoneType = ViewsUtils.GetPhoneType(),
+                PhoneTypeId = ViewsUtils.GetPhoneType(),
             };
             var phones = model.Phones.ToList();
             phones.Add(phone);
@@ -96,7 +96,7 @@ namespace Agenda.ConsoleUI.Views
             {
                 phone.FormattedPhone = ViewsUtils.GetPhone(phone.FormattedPhone);
                 phone.Description = ViewsUtils.GetDescription(phone.Description);
-                phone.PhoneType = ViewsUtils.GetPhoneType(phone.PhoneType.Id.ToString());
+                phone.PhoneTypeId = ViewsUtils.GetPhoneType(phone.PhoneTypeId.ToString());
                 model.Phones = phones;
                 return;
             }
@@ -144,7 +144,7 @@ namespace Agenda.ConsoleUI.Views
             }
 
         }
-        private UpdateContactModel? GetContact()
+        private async Task<UpdateContactModel?> GetContact()
         {
             while (true)
             {
@@ -157,7 +157,7 @@ namespace Agenda.ConsoleUI.Views
 
                 try
                 {
-                    var contactModel = _contactService.RecoverById(id);
+                    var contactModel =  await _contactService.RecoverById(id);
                     Console.Clear();
                     return _mapper.Map<UpdateContactModel>(contactModel);
                 }
