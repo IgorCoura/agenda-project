@@ -14,8 +14,7 @@ namespace Agenda.Infrastructure.UnitOfWork
 
         public async Task<bool> CommitAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            var result =  _context.SaveChanges();
-            ClearTracker();
+            var result =  await _context.SaveChangesAsync();
             return result > 0;
         }
 
@@ -24,9 +23,5 @@ namespace Agenda.Infrastructure.UnitOfWork
             await _context.DisposeAsync();
         }
 
-        public void ClearTracker()
-        {
-            _context.ChangeTracker.Clear();
-        }
     }
 }

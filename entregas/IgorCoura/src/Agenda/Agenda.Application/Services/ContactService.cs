@@ -36,13 +36,12 @@ namespace Agenda.Application.Services
 
         public async Task<ContactModel> Edit(UpdateContactModel contactModel)
         {
-            Contact existing = (await _contactRepository.FirstAsyncAsTracking(c => c.Id == contactModel.Id, include: q => q.Include(p => p.Phones))) ?? throw new Exception($"Contato com o Id {contactModel.Id} não existe.");
-
-            _mapper.Map<UpdateContactModel, Contact>(contactModel, existing);
-            await _interactionRepository.RegisterAsync(new Interaction(InteractionType.UpdateContact.Id, $"Atualizando Contato {existing.Name}"));
+            var entity = _mapper.Map<UpdateContactModel, Contact>(contactModel);
+            var result = await _contactRepository.UpdateAsync(entity);
+            await _interactionRepository.RegisterAsync(new Interaction(InteractionType.UpdateContact.Id, $"Atualizando Contato {entity.Name}"));
             await _unitOfWork.CommitAsync();
 
-            return _mapper.Map<ContactModel>(existing);
+            return _mapper.Map<ContactModel>(result);
         }
 
         public async Task<ContactModel> RecoverById(int id)

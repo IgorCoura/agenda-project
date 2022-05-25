@@ -39,7 +39,25 @@ namespace Agenda.Infrastructure.Context
                 .HasData(Enumeration.GetAll<InteractionType>());
         }
 
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
+        {
+            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("CreatedAt") != null || entry.Entity.GetType().GetProperty("UpdatedAt") != null))
+            {
+                if (entry.State == EntityState.Added)
+                {
+                    entry.Property("CreatedAt").CurrentValue = DateTime.Now;
+                    entry.Property("UpdatedAt").CurrentValue = DateTime.Now;
+                }
 
+                if (entry.State == EntityState.Modified)
+                {
+                    entry.Property("CreatedAt").IsModified = false;
+                    entry.Property("UpdatedAt").CurrentValue = DateTime.Now;
+                }
+            }
+            return base.SaveChangesAsync(cancellationToken);
+        }
 
+        
     }
 }

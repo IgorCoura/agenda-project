@@ -21,9 +21,7 @@ builder.Services.AddDbContext<ApplicationContext>(options =>
         .EnableDetailedErrors()
         .EnableSensitiveDataLogging();
 
-},
-   ServiceLifetime.Singleton
-);
+});
 
 builder.Services.AddAutoMapper(typeof(EntityToModelProfile), typeof(ModelToEntityProfile), typeof(ModelToModelProfile));
 
