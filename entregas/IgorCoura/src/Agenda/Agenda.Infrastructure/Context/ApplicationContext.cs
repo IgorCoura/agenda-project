@@ -10,6 +10,7 @@ namespace Agenda.Infrastructure.Context
 {
     public class ApplicationContext : DbContext
     {
+        public DbSet<User> Users { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Phone> Phones { get; set; }
         public DbSet<PhoneType> PhoneTypes { get; set; }
@@ -29,6 +30,7 @@ namespace Agenda.Infrastructure.Context
 
             modelBuilder.ApplyConfiguration(new EnumerationMap<PhoneType>());
             modelBuilder.ApplyConfiguration(new EnumerationMap<InteractionType>());
+            modelBuilder.ApplyConfiguration(new EnumerationMap<UserRole>());
 
             modelBuilder
                 .Entity<PhoneType>()
@@ -37,6 +39,10 @@ namespace Agenda.Infrastructure.Context
             modelBuilder
                 .Entity<InteractionType>()
                 .HasData(Enumeration.GetAll<InteractionType>());
+
+            modelBuilder
+                .Entity<UserRole>()
+                .HasData(Enumeration.GetAll<UserRole>());
         }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

@@ -36,7 +36,7 @@ namespace Agenda.Application.Services
 
         public async Task<ContactModel> Edit(UpdateContactModel contactModel)
         {
-            var entity = _mapper.Map<UpdateContactModel, Contact>(contactModel);
+            var entity = _mapper.Map<Contact>(contactModel);
             var result = await _contactRepository.UpdateAsync(entity);
             await _interactionRepository.RegisterAsync(new Interaction(InteractionType.UpdateContact.Id, $"Atualizando Contato {entity.Name}"));
             await _unitOfWork.CommitAsync();

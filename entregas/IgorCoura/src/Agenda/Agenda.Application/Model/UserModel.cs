@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Agenda.Application.Model
 {
-    public record PhoneTypeModel
+    public record UserModel
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public int UserRuleId { get; set; }
     }
 }

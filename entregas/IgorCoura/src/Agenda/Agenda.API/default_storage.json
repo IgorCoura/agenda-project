@@ -1,0 +1,642 @@
+﻿[
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato CONTATO TESTE 1",
+    "Id": 3,
+    "CreatedAt": "2022-05-19T14:11:53.8597627",
+    "UpdatedAt": "2022-05-19T14:11:53.8597632"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato CONTATO TESTE 2",
+    "Id": 5,
+    "CreatedAt": "2022-05-19T14:13:20.3236288",
+    "UpdatedAt": "2022-05-19T14:13:20.323629"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato CONTATO TESTE 2",
+    "Id": 7,
+    "CreatedAt": "2022-05-19T14:14:16.3714695",
+    "UpdatedAt": "2022-05-19T14:14:16.3714706"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato CONTATO TESTE UPDATE",
+    "Id": 8,
+    "CreatedAt": "2022-05-19T14:14:29.7450933",
+    "UpdatedAt": "2022-05-19T14:14:29.7450945"
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato CONTATO TESTE 1",
+    "Id": 9,
+    "CreatedAt": "2022-05-19T14:16:28.9684649",
+    "UpdatedAt": "2022-05-19T14:16:28.9684667"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato CONTATO TESTE UPDATE",
+    "Id": 10,
+    "CreatedAt": "2022-05-19T14:16:51.7484083",
+    "UpdatedAt": "2022-05-19T14:16:51.7484103"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato CONTATO TESTE UPDATE",
+    "Id": 11,
+    "CreatedAt": "2022-05-19T14:17:10.3338241",
+    "UpdatedAt": "2022-05-19T14:17:10.3338244"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Dallas Hoppe",
+    "Id": 1002,
+    "CreatedAt": "2022-05-25T11:20:27.169857",
+    "UpdatedAt": "2022-05-25T11:20:27.1698585"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Mrs. Sara Barton",
+    "Id": 1003,
+    "CreatedAt": "2022-05-25T11:20:51.719796",
+    "UpdatedAt": "2022-05-25T11:20:51.7197972"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Julia Anderson",
+    "Id": 2002,
+    "CreatedAt": "2022-05-25T11:48:17.3247003",
+    "UpdatedAt": "2022-05-25T11:48:17.3247023"
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Julia Anderson",
+    "Id": 3002,
+    "CreatedAt": "2022-05-25T12:07:36.9832362",
+    "UpdatedAt": "2022-05-25T12:07:36.9833281"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Julio Orn",
+    "Id": 4002,
+    "CreatedAt": "2022-05-25T12:42:30.8322532",
+    "UpdatedAt": "2022-05-25T12:42:30.8322559"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Doreen Lueilwitz",
+    "Id": 4003,
+    "CreatedAt": "2022-05-25T12:42:33.9776808",
+    "UpdatedAt": "2022-05-25T12:42:33.9776812"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Lucifer",
+    "Id": 4004,
+    "CreatedAt": "2022-05-25T12:43:33.5339458",
+    "UpdatedAt": "2022-05-25T12:43:33.5339476"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Dr. Frances Koch",
+    "Id": 4005,
+    "CreatedAt": "2022-05-25T12:44:06.1307858",
+    "UpdatedAt": "2022-05-25T12:44:06.1307878"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Francisco",
+    "Id": 4006,
+    "CreatedAt": "2022-05-25T12:45:10.5101366",
+    "UpdatedAt": "2022-05-25T12:45:10.5101372"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Andy Lynch",
+    "Id": 4007,
+    "CreatedAt": "2022-05-25T12:47:19.8700895",
+    "UpdatedAt": "2022-05-25T12:47:19.870091"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROG",
+    "Id": 4008,
+    "CreatedAt": "2022-05-25T12:47:51.8234173",
+    "UpdatedAt": "2022-05-25T12:47:51.823419"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO",
+    "Id": 4009,
+    "CreatedAt": "2022-05-25T12:48:13.0788428",
+    "UpdatedAt": "2022-05-25T12:48:13.0788448"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4010,
+    "CreatedAt": "2022-05-25T12:50:39.4759071",
+    "UpdatedAt": "2022-05-25T12:50:39.4759752"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4011,
+    "CreatedAt": "2022-05-25T12:53:01.2793464",
+    "UpdatedAt": "2022-05-25T12:53:01.2793991"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4012,
+    "CreatedAt": "2022-05-25T12:53:37.7826178",
+    "UpdatedAt": "2022-05-25T12:53:37.7826832"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4013,
+    "CreatedAt": "2022-05-25T12:57:06.2665274",
+    "UpdatedAt": "2022-05-25T12:57:06.2665859"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4014,
+    "CreatedAt": "2022-05-25T13:01:55.2397785",
+    "UpdatedAt": "2022-05-25T13:01:55.2398354"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4015,
+    "CreatedAt": "2022-05-25T13:05:00.7433078",
+    "UpdatedAt": "2022-05-25T13:05:00.7433606"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4016,
+    "CreatedAt": "2022-05-25T13:06:41.6347204",
+    "UpdatedAt": "2022-05-25T13:06:41.6347719"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4017,
+    "CreatedAt": "2022-05-25T13:09:15.399382",
+    "UpdatedAt": "2022-05-25T13:09:15.3994351"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4018,
+    "CreatedAt": "2022-05-25T13:09:17.1171458",
+    "UpdatedAt": "2022-05-25T13:09:17.1171473"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4019,
+    "CreatedAt": "2022-05-25T13:09:18.1542613",
+    "UpdatedAt": "2022-05-25T13:09:18.1542631"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4020,
+    "CreatedAt": "2022-05-25T13:09:18.9313294",
+    "UpdatedAt": "2022-05-25T13:09:18.9313309"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Gene Quitzon",
+    "Id": 4021,
+    "CreatedAt": "2022-05-25T13:10:55.4201403",
+    "UpdatedAt": "2022-05-25T13:10:55.4201417"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Dave Bailey",
+    "Id": 4022,
+    "CreatedAt": "2022-05-25T13:11:03.5390557",
+    "UpdatedAt": "2022-05-25T13:11:03.5390574"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Suzanne O\u0027Connell",
+    "Id": 4023,
+    "CreatedAt": "2022-05-25T13:11:05.1782598",
+    "UpdatedAt": "2022-05-25T13:11:05.1782614"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Suzane Viera",
+    "Id": 4024,
+    "CreatedAt": "2022-05-25T13:12:11.9040718",
+    "UpdatedAt": "2022-05-25T13:12:11.9040739"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Suzane Viera",
+    "Id": 4025,
+    "CreatedAt": "2022-05-25T13:14:43.1435608",
+    "UpdatedAt": "2022-05-25T13:14:43.1435622"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Suzane Viera",
+    "Id": 5003,
+    "CreatedAt": "2022-05-25T13:43:38.0979779",
+    "UpdatedAt": "2022-05-25T13:43:38.097988"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Miss Robin Stoltenberg",
+    "Id": 5004,
+    "CreatedAt": "2022-05-25T13:43:43.3091457",
+    "UpdatedAt": "2022-05-25T13:43:43.3091479"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Miss Robin Stoltenberg DD",
+    "Id": 5005,
+    "CreatedAt": "2022-05-25T13:44:15.9582324",
+    "UpdatedAt": "2022-05-25T13:44:15.9582375"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Miss Robin Stoltenberg DD",
+    "Id": 6002,
+    "CreatedAt": "2022-05-25T13:52:24.515493",
+    "UpdatedAt": "2022-05-25T13:52:24.5169605"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato a",
+    "Id": 7002,
+    "CreatedAt": "2022-05-26T14:26:51.4662153",
+    "UpdatedAt": "2022-05-26T14:26:51.4665036"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato CONTATO TESTE 1",
+    "Id": 3,
+    "CreatedAt": "2022-05-19T14:11:53.8597627",
+    "UpdatedAt": "2022-05-19T14:11:53.8597632"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato CONTATO TESTE 2",
+    "Id": 5,
+    "CreatedAt": "2022-05-19T14:13:20.3236288",
+    "UpdatedAt": "2022-05-19T14:13:20.323629"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato CONTATO TESTE 2",
+    "Id": 7,
+    "CreatedAt": "2022-05-19T14:14:16.3714695",
+    "UpdatedAt": "2022-05-19T14:14:16.3714706"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato CONTATO TESTE UPDATE",
+    "Id": 8,
+    "CreatedAt": "2022-05-19T14:14:29.7450933",
+    "UpdatedAt": "2022-05-19T14:14:29.7450945"
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato CONTATO TESTE 1",
+    "Id": 9,
+    "CreatedAt": "2022-05-19T14:16:28.9684649",
+    "UpdatedAt": "2022-05-19T14:16:28.9684667"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato CONTATO TESTE UPDATE",
+    "Id": 10,
+    "CreatedAt": "2022-05-19T14:16:51.7484083",
+    "UpdatedAt": "2022-05-19T14:16:51.7484103"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato CONTATO TESTE UPDATE",
+    "Id": 11,
+    "CreatedAt": "2022-05-19T14:17:10.3338241",
+    "UpdatedAt": "2022-05-19T14:17:10.3338244"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Dallas Hoppe",
+    "Id": 1002,
+    "CreatedAt": "2022-05-25T11:20:27.169857",
+    "UpdatedAt": "2022-05-25T11:20:27.1698585"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Mrs. Sara Barton",
+    "Id": 1003,
+    "CreatedAt": "2022-05-25T11:20:51.719796",
+    "UpdatedAt": "2022-05-25T11:20:51.7197972"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Julia Anderson",
+    "Id": 2002,
+    "CreatedAt": "2022-05-25T11:48:17.3247003",
+    "UpdatedAt": "2022-05-25T11:48:17.3247023"
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Julia Anderson",
+    "Id": 3002,
+    "CreatedAt": "2022-05-25T12:07:36.9832362",
+    "UpdatedAt": "2022-05-25T12:07:36.9833281"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Julio Orn",
+    "Id": 4002,
+    "CreatedAt": "2022-05-25T12:42:30.8322532",
+    "UpdatedAt": "2022-05-25T12:42:30.8322559"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Doreen Lueilwitz",
+    "Id": 4003,
+    "CreatedAt": "2022-05-25T12:42:33.9776808",
+    "UpdatedAt": "2022-05-25T12:42:33.9776812"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Lucifer",
+    "Id": 4004,
+    "CreatedAt": "2022-05-25T12:43:33.5339458",
+    "UpdatedAt": "2022-05-25T12:43:33.5339476"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Dr. Frances Koch",
+    "Id": 4005,
+    "CreatedAt": "2022-05-25T12:44:06.1307858",
+    "UpdatedAt": "2022-05-25T12:44:06.1307878"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Francisco",
+    "Id": 4006,
+    "CreatedAt": "2022-05-25T12:45:10.5101366",
+    "UpdatedAt": "2022-05-25T12:45:10.5101372"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Andy Lynch",
+    "Id": 4007,
+    "CreatedAt": "2022-05-25T12:47:19.8700895",
+    "UpdatedAt": "2022-05-25T12:47:19.870091"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROG",
+    "Id": 4008,
+    "CreatedAt": "2022-05-25T12:47:51.8234173",
+    "UpdatedAt": "2022-05-25T12:47:51.823419"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO",
+    "Id": 4009,
+    "CreatedAt": "2022-05-25T12:48:13.0788428",
+    "UpdatedAt": "2022-05-25T12:48:13.0788448"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4010,
+    "CreatedAt": "2022-05-25T12:50:39.4759071",
+    "UpdatedAt": "2022-05-25T12:50:39.4759752"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4011,
+    "CreatedAt": "2022-05-25T12:53:01.2793464",
+    "UpdatedAt": "2022-05-25T12:53:01.2793991"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4012,
+    "CreatedAt": "2022-05-25T12:53:37.7826178",
+    "UpdatedAt": "2022-05-25T12:53:37.7826832"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4013,
+    "CreatedAt": "2022-05-25T12:57:06.2665274",
+    "UpdatedAt": "2022-05-25T12:57:06.2665859"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4014,
+    "CreatedAt": "2022-05-25T13:01:55.2397785",
+    "UpdatedAt": "2022-05-25T13:01:55.2398354"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4015,
+    "CreatedAt": "2022-05-25T13:05:00.7433078",
+    "UpdatedAt": "2022-05-25T13:05:00.7433606"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4016,
+    "CreatedAt": "2022-05-25T13:06:41.6347204",
+    "UpdatedAt": "2022-05-25T13:06:41.6347719"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4017,
+    "CreatedAt": "2022-05-25T13:09:15.399382",
+    "UpdatedAt": "2022-05-25T13:09:15.3994351"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4018,
+    "CreatedAt": "2022-05-25T13:09:17.1171458",
+    "UpdatedAt": "2022-05-25T13:09:17.1171473"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4019,
+    "CreatedAt": "2022-05-25T13:09:18.1542613",
+    "UpdatedAt": "2022-05-25T13:09:18.1542631"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4020,
+    "CreatedAt": "2022-05-25T13:09:18.9313294",
+    "UpdatedAt": "2022-05-25T13:09:18.9313309"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Gene Quitzon",
+    "Id": 4021,
+    "CreatedAt": "2022-05-25T13:10:55.4201403",
+    "UpdatedAt": "2022-05-25T13:10:55.4201417"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Dave Bailey",
+    "Id": 4022,
+    "CreatedAt": "2022-05-25T13:11:03.5390557",
+    "UpdatedAt": "2022-05-25T13:11:03.5390574"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Suzanne O\u0027Connell",
+    "Id": 4023,
+    "CreatedAt": "2022-05-25T13:11:05.1782598",
+    "UpdatedAt": "2022-05-25T13:11:05.1782614"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Suzane Viera",
+    "Id": 4024,
+    "CreatedAt": "2022-05-25T13:12:11.9040718",
+    "UpdatedAt": "2022-05-25T13:12:11.9040739"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Suzane Viera",
+    "Id": 4025,
+    "CreatedAt": "2022-05-25T13:14:43.1435608",
+    "UpdatedAt": "2022-05-25T13:14:43.1435622"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Suzane Viera",
+    "Id": 5003,
+    "CreatedAt": "2022-05-25T13:43:38.0979779",
+    "UpdatedAt": "2022-05-25T13:43:38.097988"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Miss Robin Stoltenberg",
+    "Id": 5004,
+    "CreatedAt": "2022-05-25T13:43:43.3091457",
+    "UpdatedAt": "2022-05-25T13:43:43.3091479"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Miss Robin Stoltenberg DD",
+    "Id": 5005,
+    "CreatedAt": "2022-05-25T13:44:15.9582324",
+    "UpdatedAt": "2022-05-25T13:44:15.9582375"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Miss Robin Stoltenberg DD",
+    "Id": 6002,
+    "CreatedAt": "2022-05-25T13:52:24.515493",
+    "UpdatedAt": "2022-05-25T13:52:24.5169605"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato a",
+    "Id": 7002,
+    "CreatedAt": "2022-05-26T14:26:51.4662153",
+    "UpdatedAt": "2022-05-26T14:26:51.4665036"
+  }
+]

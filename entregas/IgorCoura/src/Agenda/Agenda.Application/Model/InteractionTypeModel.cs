@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Agenda.Application.Model
 {
-    public record PhoneTypeModel
+    public record InteractionTypeModel
     {
         public int Id { get; set; }
         public string Name { get; set; }

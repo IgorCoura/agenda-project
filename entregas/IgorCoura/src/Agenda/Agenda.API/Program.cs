@@ -2,6 +2,7 @@ using Agenda.API.Configuration;
 using Agenda.Application.Mappers;
 using Agenda.Infrastructure.Context;
 using Agenda.Infrastructure.Storage;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,11 +17,16 @@ builder.Services.Configure<JsonStorageOptions>(config =>
 builder.Services.AddDbContext<ApplicationContext>(options =>
 {
     options
-        .UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=AgendaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
+        .UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
         .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTrackingWithIdentityResolution)
         .EnableDetailedErrors()
         .EnableSensitiveDataLogging();
 
+});
+
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{
+    options.SuppressModelStateInvalidFilter = true;
 });
 
 builder.Services.AddAutoMapper(typeof(EntityToModelProfile), typeof(ModelToEntityProfile), typeof(ModelToModelProfile));

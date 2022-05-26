@@ -30,6 +30,7 @@ namespace Agenda.Domain.Core
             return typeMatches && valueMatches;
         }
 
+
         public int CompareTo(object other) => Id.CompareTo(((Enumeration)other).Id);
 
         public override int GetHashCode()

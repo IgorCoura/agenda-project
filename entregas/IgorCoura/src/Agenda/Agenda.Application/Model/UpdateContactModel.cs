@@ -1,6 +1,6 @@
 namespace Agenda.Application.Model
 {
-    public class UpdateContactModel
+    public record UpdateContactModel
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;

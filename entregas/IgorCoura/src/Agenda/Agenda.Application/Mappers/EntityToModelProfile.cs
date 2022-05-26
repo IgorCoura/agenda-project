@@ -12,6 +12,9 @@ namespace Agenda.Application.Mappers
             CreateMap<Contact, ContactModel>();
             CreateMap<Phone, PhoneModel>();
             CreateMap<PhoneType, PhoneTypeModel>();
+            CreateMap<Interaction, InteractionModel>();
+            CreateMap<InteractionType, InteractionTypeModel>();
+            CreateMap<User, UserModel>();
         }
     }
 }

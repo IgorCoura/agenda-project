@@ -1,6 +1,6 @@
 namespace Agenda.Application.Model
 {
-    public class ContactModel
+    public record ContactModel
     {
         
         public int Id { get; set; }

@@ -1,6 +1,6 @@
 namespace Agenda.Application.Model
 {
-    public class PhoneModel
+    public record PhoneModel
     {
         public int Id { get; set; }
         public string Description { get; set; } = string.Empty;

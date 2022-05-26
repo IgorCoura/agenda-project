@@ -7,8 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Agenda.API.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
-    public class ContactController : ControllerBase
+    public class ContactController : MainController
     {
         private readonly IContactService _contactService;
 
@@ -20,22 +19,24 @@ namespace Agenda.API.Controllers
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] CreateContactModel model)
         {
+            if(!ModelState.IsValid) return BadCustomResponse(ModelState);
             var result = await _contactService.Register(model);
-            return Created(nameof(Post), result);
+            return OkCustomResponse(result);
         }
 
         [HttpPut]
         public async Task<ActionResult> Put([FromBody] UpdateContactModel model)
-        {
+        {   
+            if (!ModelState.IsValid) return BadCustomResponse(ModelState);
             var result = await _contactService.Edit(model);
-            return Ok(result);  
+            return OkCustomResponse(result);  
         }
 
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete([FromRoute] int id)
         {
             var result = await _contactService.Remove(id);
-            return Ok(result);
+            return OkCustomResponse(result);
         }
 
         [HttpGet]
@@ -43,28 +44,21 @@ namespace Agenda.API.Controllers
         {
             var result = await _contactService.Recover(contactParams);
 
-            return Ok(result);
+            return OkCustomResponse(result);
         }
 
         [HttpGet("{id:int}")]
         public async Task<ActionResult> GetById([FromRoute] int id)
         {
             var result = await _contactService.RecoverById(id);
-            return Ok(result);
+            return OkCustomResponse(result);
         }
 
         [HttpGet("all")]
         public async Task<ActionResult> GetAll()
         {
-            try
-            {
-                var result = await _contactService.RecoverAll();
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }   
+            var result = await _contactService.RecoverAll();
+            return OkCustomResponse(result);
         }
 
     }
