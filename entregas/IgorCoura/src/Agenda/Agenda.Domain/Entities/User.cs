@@ -17,6 +17,7 @@ namespace Agenda.Domain.Entities
         public int UserRoleId { get; set; }
         public UserRole UserRole { get; set; }
 
+        public User(){}
         public User(string name, string username, string email, string password, int userRoleId)
         {
             Name = name;

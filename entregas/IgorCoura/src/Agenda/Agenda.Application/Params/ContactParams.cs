@@ -1,6 +1,7 @@
 using System.Linq.Expressions;
 using Agenda.Domain.Entities;
 using LinqKit;
+using Microsoft.EntityFrameworkCore;
 
 namespace Agenda.Application.Params
 {
@@ -15,7 +16,7 @@ namespace Agenda.Application.Params
             var predicate = PredicateBuilder.New<Contact>();
 
             if (!string.IsNullOrEmpty(Name))
-                predicate = predicate.And(x => x.Name.ToLower().Contains(Name.ToLower()));
+                predicate = predicate.And(x => EF.Functions.Like(x.Name, $"%{Name}%"));
 
             if (DDD.HasValue)
                 predicate = predicate.And(x => x.Phones.Any(x => x.DDD == DDD));

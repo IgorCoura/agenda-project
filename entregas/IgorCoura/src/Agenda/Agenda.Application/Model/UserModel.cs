@@ -10,7 +10,8 @@ namespace Agenda.Application.Model
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
+        public string UserName { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
-        public int UserRuleId { get; set; }
+        public int UserRoleId { get; set; }
     }
 }

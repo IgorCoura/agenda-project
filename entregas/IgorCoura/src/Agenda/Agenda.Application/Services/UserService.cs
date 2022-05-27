@@ -1,5 +1,6 @@
 using Agenda.Application.Interfaces;
 using Agenda.Application.Model;
+using Agenda.Application.Params;
 using Agenda.Domain.Entities;
 using Agenda.Domain.Entities.Enumerations;
 using Agenda.Domain.Interfaces;
@@ -31,7 +32,8 @@ namespace Agenda.Application.Services
 
         public async Task<UserModel> Edit(UpdateUserModel model)
         {
-            var entity = _mapper.Map<User>(model);
+            var entity = await _userRepository.FirstAsync(e => e.Id == model.Id) ?? throw new ArgumentNullException(nameof(model));
+            _mapper.Map<UpdateUserModel, User>(model, entity);
             var result = await _userRepository.UpdateAsync(entity);
             await _unitOfWork.CommitAsync();
             return _mapper.Map<UserModel>(result);
@@ -41,6 +43,12 @@ namespace Agenda.Application.Services
         {
             var result = await _userRepository.FirstAsync(filter: c => c.Id == id) ?? throw new ArgumentNullException($"Id: {id}, não existe");
             return _mapper.Map<UserModel>(result);
+        }
+
+        public async Task<IEnumerable<UserModel>> Recover(UserParams query)
+        {
+            var results = await _userRepository.GetDataAsync(filter: query.Filter());
+            return _mapper.Map<IEnumerable<UserModel>>(results);
         }
 
 
