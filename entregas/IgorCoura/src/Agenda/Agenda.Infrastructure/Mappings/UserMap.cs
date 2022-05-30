@@ -14,7 +14,10 @@ namespace Agenda.Infrastructure.Mappings
         {
             base.Configure(builder);
 
-            builder.Property(x => x.Username)
+            builder.HasIndex(x => x.Username)
+                .IsUnique();
+
+            builder.Property(x => x.Username)             
                 .IsRequired()
                 .HasMaxLength(200);
 

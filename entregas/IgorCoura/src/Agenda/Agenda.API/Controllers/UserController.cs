@@ -1,6 +1,7 @@
 using Agenda.Application.Interfaces;
 using Agenda.Application.Model;
 using Agenda.Application.Params;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Agenda.API.Controllers

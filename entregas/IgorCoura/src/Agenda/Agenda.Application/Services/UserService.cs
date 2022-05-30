@@ -5,6 +5,7 @@ using Agenda.Domain.Entities;
 using Agenda.Domain.Entities.Enumerations;
 using Agenda.Domain.Interfaces;
 using Agenda.Domain.Interfaces.Repositories;
+using Agenda.Infrastructure.utils;
 using AutoMapper;
 
 namespace Agenda.Application.Services
@@ -25,6 +26,7 @@ namespace Agenda.Application.Services
         public async Task<UserModel> Register(CreateUserModel model)
         {
             var entity = _mapper.Map<User>(model);
+            entity.Password = PasswordHasher.Hash(model.Password);
             var result = await _userRepository.RegisterAsync(entity);
             await _unitOfWork.CommitAsync();
             return _mapper.Map<UserModel>(result);

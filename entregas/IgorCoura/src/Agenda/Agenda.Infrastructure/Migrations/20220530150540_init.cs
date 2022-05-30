@@ -49,6 +49,18 @@ namespace Agenda.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "UserRole",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserRole", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Interactions",
                 columns: table => new
                 {
@@ -102,6 +114,31 @@ namespace Agenda.Infrastructure.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Username = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    UserRoleId = table.Column<int>(type: "int", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Users_UserRole_UserRoleId",
+                        column: x => x.UserRoleId,
+                        principalTable: "UserRole",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.InsertData(
                 table: "InteractionTypes",
                 columns: new[] { "Id", "Name" },
@@ -124,6 +161,15 @@ namespace Agenda.Infrastructure.Migrations
                     { 3, "Commercial" }
                 });
 
+            migrationBuilder.InsertData(
+                table: "UserRole",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Admin" },
+                    { 2, "Commom" }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Interactions_InteractionTypeId",
                 table: "Interactions",
@@ -137,13 +183,23 @@ namespace Agenda.Infrastructure.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Phones_DDD_Number",
                 table: "Phones",
-                columns: new[] { "DDD", "Number" },
-                unique: true);
+                columns: new[] { "DDD", "Number" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Phones_PhoneTypeId",
                 table: "Phones",
                 column: "PhoneTypeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_Username",
+                table: "Users",
+                column: "Username",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_UserRoleId",
+                table: "Users",
+                column: "UserRoleId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -155,6 +211,9 @@ namespace Agenda.Infrastructure.Migrations
                 name: "Phones");
 
             migrationBuilder.DropTable(
+                name: "Users");
+
+            migrationBuilder.DropTable(
                 name: "InteractionTypes");
 
             migrationBuilder.DropTable(
@@ -162,6 +221,9 @@ namespace Agenda.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "PhoneTypes");
+
+            migrationBuilder.DropTable(
+                name: "UserRole");
         }
     }
 }

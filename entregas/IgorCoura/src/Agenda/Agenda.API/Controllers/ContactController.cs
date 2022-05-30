@@ -1,12 +1,15 @@
+using Agenda.Application.Constants;
 using Agenda.Application.Interfaces;
 using Agenda.Application.Model;
 using Agenda.Application.Params;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Agenda.API.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize(Roles = Roles.Admin)]
     public class ContactController : MainController
     {
         private readonly IContactService _contactService;

@@ -1,5 +1,6 @@
 using Agenda.API.Configuration;
 using Agenda.Application.Mappers;
+using Agenda.Application.Options;
 using Agenda.Infrastructure.Context;
 using Agenda.Infrastructure.Storage;
 using Microsoft.AspNetCore.Mvc;
@@ -14,6 +15,8 @@ builder.Services.Configure<JsonStorageOptions>(config =>
     config.FilePath = "\\default_storage.json";
 });
 
+builder.Services.Configure<TokenGeneratorOptions>(builder.Configuration.GetSection("Jwt"));
+
 builder.Services.AddDbContext<ApplicationContext>(options =>
 {
     options
@@ -23,6 +26,8 @@ builder.Services.AddDbContext<ApplicationContext>(options =>
         .EnableSensitiveDataLogging();
 
 });
+
+builder.Services.AddAuthConfig(builder.Configuration);
 
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
@@ -48,6 +53,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseAuthentication();
 
 app.UseAuthorization();
 

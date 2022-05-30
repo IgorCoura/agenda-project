@@ -12,7 +12,7 @@ namespace Agenda.Domain.Entities.Enumerations
         public static UserRole Admin = new UserRole(1, nameof(Admin));
         public static UserRole Commom = new UserRole(2, nameof(Commom));
 
-        private UserRole() { }
+        public UserRole() { }
         private UserRole(int id, string name): base(id, name) { }
 
     }

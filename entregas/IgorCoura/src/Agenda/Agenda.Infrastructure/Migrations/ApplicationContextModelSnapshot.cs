@@ -266,6 +266,9 @@ namespace Agenda.Infrastructure.Migrations
 
                     b.HasIndex("UserRoleId");
 
+                    b.HasIndex("Username")
+                        .IsUnique();
+
                     b.ToTable("Users");
                 });
 
