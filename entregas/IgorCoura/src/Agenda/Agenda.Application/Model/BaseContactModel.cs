@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Agenda.Application.Model
 {
-    public record UserModel: BaseUserModel
+    public abstract record BaseContactModel
     {
-        public int Id { get; set; }
-       
+        public string Name { get; set; } = string.Empty;
+        
     }
 }

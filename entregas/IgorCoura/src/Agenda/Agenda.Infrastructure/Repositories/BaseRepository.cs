@@ -81,5 +81,17 @@ namespace Agenda.Infrastructure.Repositories
 
             return await query.ToListAsync();
         }
+
+        public async Task<IEnumerable<T>> GetManyDataAsync(Expression<Func<T, IEnumerable<T>>>? filter = null, Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null)
+        {
+            var query = _context.Set<T>().AsQueryable<T>();
+            if (filter != null)
+                query = query.SelectMany(filter);
+
+            if (include != null)
+                query = include(query);
+
+            return await query.ToListAsync();
+        }
     }
 }

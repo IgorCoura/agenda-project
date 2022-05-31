@@ -1,4 +1,5 @@
 using Agenda.API.Configuration;
+using Agenda.API.Filters;
 using Agenda.Application.Mappers;
 using Agenda.Application.Options;
 using Agenda.Infrastructure.Context;
@@ -39,7 +40,11 @@ builder.Services.AddAutoMapper(typeof(EntityToModelProfile), typeof(ModelToEntit
 
 builder.Services.ResolveDependencies();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(opts =>
+{
+    opts.Filters.Add(new ApplicationExceptionFilter());
+});
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

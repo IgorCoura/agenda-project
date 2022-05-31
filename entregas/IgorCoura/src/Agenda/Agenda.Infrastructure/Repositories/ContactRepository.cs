@@ -4,6 +4,7 @@ using Agenda.Domain.Entities;
 using Agenda.Domain.Entities.Enumerations;
 using Agenda.Domain.Interfaces;
 using Agenda.Infrastructure.Context;
+using System.Text.RegularExpressions;
 
 namespace Agenda.Infrastructure.Repositories
 {

@@ -20,6 +20,7 @@ namespace Agenda.Domain.Interfaces
             Expression<Func<T, bool>>? filter = null, Func<IQueryable<T>,
             IIncludableQueryable<T, object>>? include = null,
             int? skip = null, int? take = null);
+        Task<IEnumerable<T>> GetManyDataAsync(Expression<Func<T, IEnumerable<T>>>? filter = null, Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null);
     }
 }
 
