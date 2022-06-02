@@ -26,6 +26,13 @@ namespace Agenda.Infrastructure.Mappings
                 .IsRequired()
                 .OnDelete(Microsoft.EntityFrameworkCore.DeleteBehavior.Cascade);
 
+            builder
+                .HasOne(x => x.User)
+                .WithMany()
+                .HasForeignKey(x => x.UserId)
+                .IsRequired()
+                .OnDelete(Microsoft.EntityFrameworkCore.DeleteBehavior.Cascade);
+
         }
     }
 }

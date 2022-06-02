@@ -29,9 +29,10 @@ namespace Agenda.Application.Services
             return _mapper.Map<IEnumerable<InteractionModel>>(result);
         }
 
-        public async Task<IEnumerable<InteractionTypeModel>> RecoverTypes()
+        public Task<IEnumerable<InteractionTypeModel>> RecoverTypes()
         {
-            return _mapper.Map<IEnumerable<InteractionTypeModel>>(Enumeration.GetAll<InteractionType>());
+            var result = _mapper.Map<IEnumerable<InteractionTypeModel>>(Enumeration.GetAll<InteractionType>());
+            return Task.FromResult(result);
         }
         public async Task SaveJsonInteractionsAsync()
         {

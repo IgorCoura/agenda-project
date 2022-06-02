@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Agenda.API.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     public class ContactController : MainController
     {
         private readonly IContactService _contactService;

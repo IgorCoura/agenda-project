@@ -1,9 +1,12 @@
+using Agenda.Application.Constants;
 using Agenda.Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Agenda.API.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize(Roles = Roles.Admin)]
     public class InteractionController : MainController
     {
         private readonly IInteractionService _interactionService;

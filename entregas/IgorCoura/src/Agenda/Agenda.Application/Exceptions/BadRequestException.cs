@@ -8,23 +8,23 @@ using FluentValidation.Results;
 
 namespace Agenda.Application.Exceptions
 {
-    public class DomainException : Exception
+    public class BadRequestException : Exception
     {
         public List<ValidationFailure> Errors { get; set; } = new List<ValidationFailure>();
-        public DomainException()
+        public BadRequestException()
         {
         }
 
-        public DomainException(string? message): base(message)
+        public BadRequestException(string? message): base(message)
         {
         }
 
-        public DomainException(string prop, string message) : this()
+        public BadRequestException(string prop, string message) : this()
         {
             Errors.Add(new ValidationFailure(prop, message));
         }
 
-        public DomainException(ValidationResult validationResult) : this()
+        public BadRequestException(ValidationResult validationResult) : this()
         {
             Errors.AddRange(validationResult.Errors);
         }

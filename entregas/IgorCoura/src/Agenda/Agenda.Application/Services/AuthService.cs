@@ -5,12 +5,14 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Agenda.Application.Exceptions;
 using Agenda.Application.Interfaces;
 using Agenda.Application.Model;
 using Agenda.Application.Options;
 using Agenda.Domain.Core;
 using Agenda.Domain.Entities.Enumerations;
 using Agenda.Domain.Interfaces.Repositories;
+using Agenda.Infrastructure.utils;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
@@ -29,11 +31,11 @@ namespace Agenda.Application.Services
 
         public async Task<string> Login(LoginModel model)
         {
-            var user = await _userRepository.FirstAsync(filter: x => x.Username == model.Username) ?? throw new Exception("User is null");
+            var user = await _userRepository.FirstAsync(filter: x => x.Username == model.Username) ?? throw new NotFoundRequestException($"Usuario com userName {model.Username} não encontrado.");
+            
 
-            //TODO: Alterar para hashcode
-            if (!model.Password.Equals(user.Password))
-                throw new Exception("Senha invalida");
+            if (!PasswordHasher.Verify(model.Password, user.Password))
+                throw new BadRequestException(nameof(model.Password),"Senha invalida");
 
             var clains = new List<Claim>()
                 {

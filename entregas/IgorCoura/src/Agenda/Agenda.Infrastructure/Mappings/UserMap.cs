@@ -27,7 +27,7 @@ namespace Agenda.Infrastructure.Mappings
 
             builder.Property(x => x.Password)
                 .IsRequired()
-                .HasMaxLength(50);
+                .HasMaxLength(500);
 
             builder.Property(x => x.Email)
                 .IsRequired()

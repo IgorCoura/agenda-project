@@ -1,3 +1,4 @@
+using Agenda.Application.Exceptions;
 using Agenda.Application.Interfaces;
 using Agenda.Application.Model;
 using Agenda.Application.Params;
@@ -34,16 +35,18 @@ namespace Agenda.Application.Services
 
         public async Task<UserModel> Edit(UpdateUserModel model)
         {
-            var entity = await _userRepository.FirstAsync(e => e.Id == model.Id) ?? throw new ArgumentNullException(nameof(model));
+            var entity = await _userRepository.FirstAsync(e => e.Id == model.Id) ?? throw new NotFoundRequestException($"Usuario com id: {model.Id} não encontrado.");
+
             _mapper.Map<UpdateUserModel, User>(model, entity);
             var result = await _userRepository.UpdateAsync(entity);
             await _unitOfWork.CommitAsync();
+
             return _mapper.Map<UserModel>(result);
         }
 
         public async Task<UserModel> RecoverById(int id)
         {
-            var result = await _userRepository.FirstAsync(filter: c => c.Id == id) ?? throw new ArgumentNullException($"Id: {id}, não existe");
+            var result = await _userRepository.FirstAsync(filter: c => c.Id == id) ?? throw new NotFoundRequestException($"Usuario com id: {id} não encontrado.");
             return _mapper.Map<UserModel>(result);
         }
 
@@ -62,9 +65,11 @@ namespace Agenda.Application.Services
 
         public async Task<UserModel> Remove(int id)
         {
-            var result = await _userRepository.DeleteAsync(id);
+            var result = await _userRepository.FirstAsync(u => u.Id == id) ?? throw new NotFoundRequestException($"Usuario com id: {id} não encontrado.");
+            await _userRepository.DeleteAsync(new User { Id = id});
             await _unitOfWork.CommitAsync();
             return _mapper.Map<UserModel>(result);
         }
+
     }
 }

@@ -9,6 +9,7 @@ using Agenda.Domain.Entities.Enumerations;
 using Microsoft.EntityFrameworkCore;
 using Agenda.Application.Exceptions;
 using FluentValidation;
+using LinqKit;
 
 namespace Agenda.Application.Services
 {
@@ -19,9 +20,11 @@ namespace Agenda.Application.Services
         private readonly IInteractionRepository _interactionRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IValidatorFactory _validatorFactory;
+        private readonly IAuthUserService _authUserService;
 
-        public ContactService(IContactRepository contactRepository, IMapper mapper, IInteractionRepository interactionRepository, IUnitOfWork unitOfWork, IValidatorFactory validatorFactory)
+        public ContactService(IContactRepository contactRepository, IAuthUserService authUserService, IMapper mapper, IInteractionRepository interactionRepository, IUnitOfWork unitOfWork, IValidatorFactory validatorFactory)
         {
+            _authUserService = authUserService;
             _contactRepository = contactRepository;
             _mapper = mapper;
             _interactionRepository = interactionRepository;
@@ -33,10 +36,12 @@ namespace Agenda.Application.Services
         {
             var validation = await _validatorFactory.GetValidator<CreateContactModel>().ValidateAsync(contactModel);
             if (!validation.IsValid)
-                throw new DomainException(validation);
+                throw new BadRequestException(validation);
 
             var contact = _mapper.Map<Contact>(contactModel);
+            contact.UserId = _authUserService.GetUserId();
             var result = await _contactRepository.RegisterAsync(contact);
+
             await _interactionRepository.RegisterAsync(new Interaction(InteractionType.CreateContact.Id, $"Criando Contato {result.Name}"));
             await _unitOfWork.CommitAsync();
             return _mapper.Map<ContactModel>(result);
@@ -46,9 +51,12 @@ namespace Agenda.Application.Services
         {
             var validation = await _validatorFactory.GetValidator<UpdateContactModel>().ValidateAsync(contactModel);
             if (!validation.IsValid)
-                throw new DomainException(validation);
+                throw new BadRequestException(validation);
+
             var entity = _mapper.Map<Contact>(contactModel);
+            entity.UserId = _authUserService.GetUserId();
             var result = await _contactRepository.UpdateAsync(entity);
+
             await _interactionRepository.RegisterAsync(new Interaction(InteractionType.UpdateContact.Id, $"Atualizando Contato {entity.Name}"));
             await _unitOfWork.CommitAsync();
 
@@ -57,28 +65,37 @@ namespace Agenda.Application.Services
 
         public async Task<ContactModel> RecoverById(int id)
         {
-            Contact result =  await _contactRepository.FirstAsync(filter: c => c.Id == id, include: q => q.Include(p => p.Phones)) ?? throw new DomainException("O id {0} não existe.");
+            var userId = _authUserService.GetUserId();
+            Contact result =  await _contactRepository.FirstAsync(filter: c => c.Id == id && c.UserId == userId, include: q => q.Include(p => p.Phones)) ?? throw new NotFoundRequestException($"Contato com id: {id} não encontrado.");
             return _mapper.Map<ContactModel>(result);
         }
 
         public async Task<IEnumerable<ContactModel>> Recover(ContactParams query)
         {
-            var results = await _contactRepository.GetDataAsync(filter: query.Filter(), include: q => q.Include(p => p.Phones));
+            var userId = _authUserService.GetUserId();
+            var filter = query.Filter().And(x => x.UserId == userId);
+            var results = await _contactRepository.GetDataAsync(filter: filter, include: q => q.Include(p => p.Phones));
             return _mapper.Map<IEnumerable<ContactModel>>(results);
         }
 
         public async Task<IEnumerable<ContactModel>> RecoverAll()
         {
-            var results = await _contactRepository.GetDataAsync(include: q => q.Include(p => p.Phones));
+            var userId = _authUserService.GetUserId();
+            var results = await _contactRepository.GetDataAsync(filter: c=> c.UserId == userId, include: q => q.Include(p => p.Phones));
             return _mapper.Map<IEnumerable<ContactModel>>(results);
         }
 
         public async Task<ContactModel> Remove(int id)
         {
-            var result = await _contactRepository.DeleteAsync(id);
-            await _interactionRepository.RegisterAsync(new Interaction(InteractionType.RemoveContact.Id, $"Removendo Contato {result.Name}"));
+            var userId = _authUserService.GetUserId();
+            var contact = await _contactRepository.FirstAsync(c => c.Id == id && c.UserId == userId) ?? throw new NotFoundRequestException($"Contato com id: {id} não encontrado.");
+
+            await _contactRepository.DeleteAsync(contact);
+
+            await _interactionRepository.RegisterAsync(new Interaction(InteractionType.RemoveContact.Id, $"Removendo Contato {contact.Name}"));
             await _unitOfWork.CommitAsync();
-            return _mapper.Map<ContactModel>(result);
+
+            return _mapper.Map<ContactModel>(contact);
         }
 
 

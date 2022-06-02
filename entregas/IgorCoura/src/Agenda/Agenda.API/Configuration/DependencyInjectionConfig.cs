@@ -25,6 +25,7 @@ namespace Agenda.API.Configuration
             service.AddScoped<IUserRepository, UserRepository>();
 
             service.AddScoped<IAuthService, AuthService>();
+            service.AddScoped<IAuthUserService, AuthUserService>();
             service.AddScoped<IInteractionService, InteractionService>();
             service.AddScoped<IContactService, ContactService>();
             service.AddScoped<IUserService, UserService>();
