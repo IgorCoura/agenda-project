@@ -21,6 +21,7 @@ namespace Agenda.Domain.Interfaces
             IIncludableQueryable<T, object>>? include = null,
             int? skip = null, int? take = null);
         Task<IEnumerable<T>> GetManyDataAsync(Expression<Func<T, IEnumerable<T>>>? filter = null, Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null);
+        Task<bool> HasAnyAsync(Expression<Func<T, bool>> filter, CancellationToken cancellationToken = default(CancellationToken));
     }
 }
 

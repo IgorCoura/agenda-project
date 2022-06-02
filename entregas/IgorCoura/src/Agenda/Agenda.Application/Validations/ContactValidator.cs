@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Agenda.Application.Model;
 using FluentValidation;
-using Agenda.Application.Utils;
 using Agenda.Domain.Interfaces;
 
 namespace Agenda.Application.Validations

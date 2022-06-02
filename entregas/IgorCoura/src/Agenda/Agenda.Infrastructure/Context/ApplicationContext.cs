@@ -1,8 +1,10 @@
+using System.Globalization;
 using Agenda.Domain.Core;
 using Agenda.Domain.Entities;
 using Agenda.Domain.Entities.Enumerations;
 using Agenda.Domain.Interfaces;
 using Agenda.Infrastructure.Mappings;
+using Agenda.Infrastructure.utils;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
@@ -43,6 +45,19 @@ namespace Agenda.Infrastructure.Context
             modelBuilder
                 .Entity<UserRole>()
                 .HasData(Enumeration.GetAll<UserRole>());
+
+            modelBuilder
+                .Entity<User>()
+                .HasData(new User
+                {
+                    Id = 1,
+                    Username = "admin",
+                    Password = PasswordHasher.Hash("admin"),
+                    Email = "admin@api.com",
+                    Name = "Admin Root Application",
+                    CreatedAt = DateTime.ParseExact("13/10/2021", "dd/MM/yyyy", CultureInfo.InvariantCulture),
+                    UserRoleId = UserRole.Admin.Id
+                });
         }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
@@ -52,7 +67,7 @@ namespace Agenda.Infrastructure.Context
                 if (entry.State == EntityState.Added)
                 {
                     entry.Property("CreatedAt").CurrentValue = DateTime.Now;
-                    entry.Property("UpdatedAt").CurrentValue = DateTime.Now;
+                    entry.Property("UpdatedAt").CurrentValue = null;
                 }
 
                 if (entry.State == EntityState.Modified)

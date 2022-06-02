@@ -9,7 +9,6 @@ namespace Agenda.Application.Model
 {
     public record UpdateUserModel: BaseUserModel
     {
-        public int Id { get; set; }
 
     }
 }

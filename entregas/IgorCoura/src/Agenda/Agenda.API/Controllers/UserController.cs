@@ -29,7 +29,7 @@ namespace Agenda.API.Controllers
             return OkCustomResponse(result);
         }
 
-        [HttpPost("/admin")]
+        [HttpPost("admin")]
         [Authorize(Roles = Roles.Admin)]
         public async Task<ActionResult> PostAdmin([FromBody] CreateUserModel model)
         {
@@ -44,17 +44,18 @@ namespace Agenda.API.Controllers
         {
             if (!ModelState.IsValid) return BadCustomResponse(ModelState);
             model.UserRoleId = 2;
-            var result = await _userService.Edit(model);
+            var id = int.Parse(User.FindFirst(ClaimTypes.Sid)!.Value);
+            var result = await _userService.Edit(id, model);
             return OkCustomResponse(result);
         }
 
-        [HttpPut("/admin")]
+        [HttpPut("admin/{id:int}")]
         [Authorize(Roles = Roles.Admin)]
-        public async Task<ActionResult> PutAdmin([FromBody] UpdateUserModel model)
+        public async Task<ActionResult> PutAdmin([FromRoute] int id, [FromBody] UpdateUserModel model)
         {
             if (!ModelState.IsValid)
                 return BadCustomResponse(ModelState);
-            var result = await _userService.Edit(model);
+            var result = await _userService.Edit(id, model);
             return OkCustomResponse(result);
         }
 
@@ -66,7 +67,7 @@ namespace Agenda.API.Controllers
             return OkCustomResponse(result);
         }
 
-        [HttpGet("/admin/all")]
+        [HttpGet("admin/all")]
         [Authorize(Roles = Roles.Admin)]
         public async Task<ActionResult> GetAll()
         {
@@ -74,7 +75,7 @@ namespace Agenda.API.Controllers
             return OkCustomResponse(result);
         }
 
-        [HttpGet("/admin/{id:int}")]
+        [HttpGet("admin/{id:int}")]
         [Authorize(Roles = Roles.Admin)]
         public async Task<ActionResult> GetById([FromRoute] int id)
         {
@@ -82,7 +83,7 @@ namespace Agenda.API.Controllers
             return OkCustomResponse(result);
         }
 
-        [HttpGet("/admin")]
+        [HttpGet("admin")]
         [Authorize(Roles = Roles.Admin)]
         public async Task<ActionResult> Get([FromQuery] UserParams userParams)
         {
@@ -98,7 +99,7 @@ namespace Agenda.API.Controllers
             return OkCustomResponse(result);
         }
 
-        [HttpDelete("/admin/{id:int}")]
+        [HttpDelete("admin/{id:int}")]
         [Authorize(Roles = Roles.Admin)]
         public async Task<ActionResult> Delete([FromRoute] int id)
         {

@@ -89,5 +89,13 @@ namespace Agenda.Infrastructure.Repositories
 
             return await query.ToListAsync();
         }
+
+        public async Task<bool> HasAnyAsync(Expression<Func<T, bool>> filter, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var result = await _context.Set<T>().AnyAsync(filter, cancellationToken);
+            return result;
+        }
+
+
     }
 }

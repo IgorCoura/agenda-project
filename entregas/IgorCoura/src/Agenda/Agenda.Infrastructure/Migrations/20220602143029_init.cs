@@ -54,7 +54,7 @@ namespace Agenda.Infrastructure.Migrations
                     InteractionTypeId = table.Column<int>(type: "int", nullable: false),
                     Message = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -79,7 +79,7 @@ namespace Agenda.Infrastructure.Migrations
                     Password = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     UserRoleId = table.Column<int>(type: "int", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -101,7 +101,7 @@ namespace Agenda.Infrastructure.Migrations
                     Name = table.Column<string>(type: "varchar(200)", unicode: false, maxLength: 200, nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -127,7 +127,7 @@ namespace Agenda.Infrastructure.Migrations
                     Number = table.Column<int>(type: "int", maxLength: 9, nullable: false),
                     PhoneTypeId = table.Column<int>(type: "int", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -176,6 +176,11 @@ namespace Agenda.Infrastructure.Migrations
                     { 1, "Admin" },
                     { 2, "Commom" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "CreatedAt", "Email", "Name", "Password", "UpdatedAt", "UserRoleId", "Username" },
+                values: new object[] { 1, new DateTime(2021, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@api.com", "Admin Root Application", "AQAAAAEAAAPoAAAAEAvRIW4yuubq7EnJoZTljLmbWhQAOBY6/rqYUaY/NimVRheMVoDhmkli+XwNthF9/g==", null, 1, "admin" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Contacts_UserId",

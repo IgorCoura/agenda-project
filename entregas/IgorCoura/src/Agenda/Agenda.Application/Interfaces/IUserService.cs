@@ -11,7 +11,7 @@ namespace Agenda.Application.Interfaces
     public interface IUserService
     {
         Task<UserModel> Register(CreateUserModel model);
-        Task<UserModel> Edit(UpdateUserModel model);
+        Task<UserModel> Edit(int id, UpdateUserModel model);
         Task<UserModel> RecoverById(int id);
         Task<IEnumerable<UserModel>> Recover(UserParams query);
         Task<IEnumerable<UserModel>> RecoverAll();

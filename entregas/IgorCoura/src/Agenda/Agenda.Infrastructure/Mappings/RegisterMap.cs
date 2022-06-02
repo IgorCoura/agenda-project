@@ -15,7 +15,7 @@ namespace Agenda.Infrastructure.Mappings
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.CreatedAt).IsRequired();
-            builder.Property(x => x.UpdatedAt).IsRequired();
+            builder.Property(x => x.UpdatedAt).IsRequired(false);
         }
     }
 }
