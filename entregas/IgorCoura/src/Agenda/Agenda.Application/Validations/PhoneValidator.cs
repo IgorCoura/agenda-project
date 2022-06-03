@@ -23,7 +23,7 @@ namespace Agenda.Application.Validations
                 .WithMessage("PhoneTypeId Tipo de telefone inválido");
 
             RuleFor(x => x.FormattedPhone)
-                .Matches(@"^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$")
+                .Matches(@"^\(?[1-9][0-9]\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$")
                 .WithMessage("{PropertyName}: {PropertyValue} - Formato de telefone inválido: (xx) x?xxxx-xxxx");
         }
     }

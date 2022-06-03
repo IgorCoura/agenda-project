@@ -1,9 +1,8 @@
 namespace Agenda.Application.Model
 {
-    public record ContactModel: BaseContactModel
+    public record ContactModel: BaseContactModel<PhoneModel>
     {
         public int Id { get; set; }
-        public IEnumerable<PhoneModel> Phones { get; set; }
     }
 
 }

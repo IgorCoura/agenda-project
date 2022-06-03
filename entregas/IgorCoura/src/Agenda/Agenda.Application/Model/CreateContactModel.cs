@@ -2,8 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Agenda.Application.Model
 {
-    public record CreateContactModel: BaseContactModel
+    public record CreateContactModel: BaseContactModel<CreatePhoneModel>
     {
-        public IEnumerable<CreatePhoneModel> Phones { get; set; }
     }
 }

@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Agenda.Application.Constants;
 using Agenda.Application.Interfaces;
 using Agenda.Application.Model;
@@ -23,7 +24,8 @@ namespace Agenda.API.Controllers
         public async Task<ActionResult> Post([FromBody] CreateContactModel model)
         {
             if(!ModelState.IsValid) return BadCustomResponse(ModelState);
-            var result = await _contactService.Register(model);
+            var userId = int.Parse(User.FindFirst(ClaimTypes.Sid)!.Value);
+            var result = await _contactService.Register(model, userId);
             return OkCustomResponse(result);
         }
 
@@ -31,21 +33,24 @@ namespace Agenda.API.Controllers
         public async Task<ActionResult> Put([FromBody] UpdateContactModel model)
         {   
             if (!ModelState.IsValid) return BadCustomResponse(ModelState);
-            var result = await _contactService.Edit(model);
+            var userId = int.Parse(User.FindFirst(ClaimTypes.Sid)!.Value);
+            var result = await _contactService.Edit(model, userId);
             return OkCustomResponse(result);  
         }
 
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete([FromRoute] int id)
         {
-            var result = await _contactService.Remove(id);
+            var userId = int.Parse(User.FindFirst(ClaimTypes.Sid)!.Value);
+            var result = await _contactService.Remove(id, userId);
             return OkCustomResponse(result);
         }
 
         [HttpGet]
         public async Task<ActionResult> Get([FromQuery] ContactParams contactParams)
         {
-            var result = await _contactService.Recover(contactParams);
+            var userId = int.Parse(User.FindFirst(ClaimTypes.Sid)!.Value);
+            var result = await _contactService.Recover(contactParams, userId);
 
             return OkCustomResponse(result);
         }
@@ -53,14 +58,16 @@ namespace Agenda.API.Controllers
         [HttpGet("{id:int}")]
         public async Task<ActionResult> GetById([FromRoute] int id)
         {
-            var result = await _contactService.RecoverById(id);
+            var userId = int.Parse(User.FindFirst(ClaimTypes.Sid)!.Value);
+            var result = await _contactService.RecoverById(id, userId);
             return OkCustomResponse(result);
         }
 
         [HttpGet("all")]
         public async Task<ActionResult> GetAll()
         {
-            var result = await _contactService.RecoverAll();
+            var userId = int.Parse(User.FindFirst(ClaimTypes.Sid)!.Value);
+            var result = await _contactService.RecoverAll(userId);
             return OkCustomResponse(result);
         }
 

@@ -78,16 +78,14 @@ namespace Agenda.Infrastructure.Repositories
             return await query.ToListAsync();
         }
 
-        public async Task<IEnumerable<T>> GetManyDataAsync(Expression<Func<T, IEnumerable<T>>>? filter = null, Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null)
+        public TResult QueryData<TResult>(Func<IQueryable<T>, TResult> queryParm, Expression<Func<T,bool>>? filter = null)
         {
             var query = _context.Set<T>().AsQueryable<T>();
-            if (filter != null)
-                query = query.SelectMany(filter);
+            if(filter != null)
+                query = query.Where(filter);
 
-            if (include != null)
-                query = include(query);
-
-            return await query.ToListAsync();
+            var result = queryParm(query);
+            return result;
         }
 
         public async Task<bool> HasAnyAsync(Expression<Func<T, bool>> filter, CancellationToken cancellationToken = default(CancellationToken))

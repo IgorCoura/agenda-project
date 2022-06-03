@@ -20,11 +20,10 @@ namespace Agenda.Application.Services
         private readonly IInteractionRepository _interactionRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IValidatorFactory _validatorFactory;
-        private readonly IAuthUserService _authUserService;
 
-        public ContactService(IContactRepository contactRepository, IAuthUserService authUserService, IMapper mapper, IInteractionRepository interactionRepository, IUnitOfWork unitOfWork, IValidatorFactory validatorFactory)
+
+        public ContactService(IContactRepository contactRepository, IMapper mapper, IInteractionRepository interactionRepository, IUnitOfWork unitOfWork, IValidatorFactory validatorFactory)
         {
-            _authUserService = authUserService;
             _contactRepository = contactRepository;
             _mapper = mapper;
             _interactionRepository = interactionRepository;
@@ -32,14 +31,22 @@ namespace Agenda.Application.Services
             _validatorFactory = validatorFactory;
         }
 
-        public async Task<ContactModel> Register(CreateContactModel contactModel)
+        public async Task<ContactModel> Register(CreateContactModel contactModel, int? userId = null)
         {
-            var validation = await _validatorFactory.GetValidator<CreateContactModel>().ValidateAsync(contactModel);
+            var contextValidation = new ValidationContext<CreateContactModel>(contactModel);
+            contextValidation.RootContextData["userId"] = userId;
+            var validation = await _validatorFactory.GetValidator<CreateContactModel>().ValidateAsync(contextValidation);
             if (!validation.IsValid)
                 throw new BadRequestException(validation);
 
             var contact = _mapper.Map<Contact>(contactModel);
-            contact.UserId = _authUserService.GetUserId();
+            if (userId is not null)
+            {
+                contact.UserId = (int)userId;
+                
+            }
+                
+
             var result = await _contactRepository.RegisterAsync(contact);
 
             await _interactionRepository.RegisterAsync(new Interaction(InteractionType.CreateContact.Id, $"Criando Contato {result.Name}"));
@@ -47,14 +54,18 @@ namespace Agenda.Application.Services
             return _mapper.Map<ContactModel>(result);
         }
 
-        public async Task<ContactModel> Edit(UpdateContactModel contactModel)
+        public async Task<ContactModel> Edit(UpdateContactModel contactModel, int? userId = null)
         {
-            var validation = await _validatorFactory.GetValidator<UpdateContactModel>().ValidateAsync(contactModel);
+
+            var contextValidation = new ValidationContext<UpdateContactModel>(contactModel);
+            contextValidation.RootContextData["userId"] = userId;
+            var validation = await _validatorFactory.GetValidator<UpdateContactModel>().ValidateAsync(contextValidation);
             if (!validation.IsValid)
                 throw new BadRequestException(validation);
 
             var entity = _mapper.Map<Contact>(contactModel);
-            entity.UserId = _authUserService.GetUserId();
+            if (userId is not null)
+                entity.UserId = (int)userId;
             var result = await _contactRepository.UpdateAsync(entity);
 
             await _interactionRepository.RegisterAsync(new Interaction(InteractionType.UpdateContact.Id, $"Atualizando Contato {entity.Name}"));
@@ -63,32 +74,42 @@ namespace Agenda.Application.Services
             return _mapper.Map<ContactModel>(result);
         }
 
-        public async Task<ContactModel> RecoverById(int id)
+        public async Task<ContactModel> RecoverById(int id, int? userId = null)
         {
-            var userId = _authUserService.GetUserId();
-            Contact result =  await _contactRepository.FirstAsync(filter: c => c.Id == id && c.UserId == userId, include: q => q.Include(p => p.Phones)) ?? throw new NotFoundRequestException($"Contato com id: {id} não encontrado.");
+            var predicate = PredicateBuilder.New<Contact>();
+            if (userId is not null)
+                predicate = predicate.And(x => x.UserId == userId);
+            predicate = predicate.And(x => x.Id == id);
+            Contact result =  await _contactRepository.FirstAsync(filter: predicate, include: q => q.Include(p => p.Phones)) ?? throw new NotFoundRequestException($"Contato com id: {id} não encontrado.");
             return _mapper.Map<ContactModel>(result);
         }
 
-        public async Task<IEnumerable<ContactModel>> Recover(ContactParams query)
+        public async Task<IEnumerable<ContactModel>> Recover(ContactParams query, int? userId)
         {
-            var userId = _authUserService.GetUserId();
-            var filter = query.Filter().And(x => x.UserId == userId);
+            var predicate = PredicateBuilder.New<Contact>();
+            if (userId is not null)
+                predicate = predicate.And(x => x.UserId == userId);
+            var filter = query.Filter().And(predicate);
             var results = await _contactRepository.GetDataAsync(filter: filter, include: q => q.Include(p => p.Phones));
             return _mapper.Map<IEnumerable<ContactModel>>(results);
         }
 
-        public async Task<IEnumerable<ContactModel>> RecoverAll()
+        public async Task<IEnumerable<ContactModel>> RecoverAll(int? userId = null)
         {
-            var userId = _authUserService.GetUserId();
-            var results = await _contactRepository.GetDataAsync(filter: c=> c.UserId == userId, include: q => q.Include(p => p.Phones));
+            var predicate = PredicateBuilder.New<Contact>();
+            if (userId is not null)
+                predicate = predicate.And(x => x.UserId == userId);
+            var results = await _contactRepository.GetDataAsync(filter: predicate, include: q => q.Include(p => p.Phones));
             return _mapper.Map<IEnumerable<ContactModel>>(results);
         }
 
-        public async Task<ContactModel> Remove(int id)
+        public async Task<ContactModel> Remove(int id, int? userId = null)
         {
-            var userId = _authUserService.GetUserId();
-            var contact = await _contactRepository.FirstAsync(c => c.Id == id && c.UserId == userId) ?? throw new NotFoundRequestException($"Contato com id: {id} não encontrado.");
+            var predicate = PredicateBuilder.New<Contact>();
+            if (userId is not null)
+                predicate = predicate.And(x => x.UserId == userId);
+            predicate = predicate.And(x => x.Id == id);
+            var contact = await _contactRepository.FirstAsync(predicate) ?? throw new NotFoundRequestException($"Contato com id: {id} não encontrado.");
 
             await _contactRepository.DeleteAsync(contact);
 
