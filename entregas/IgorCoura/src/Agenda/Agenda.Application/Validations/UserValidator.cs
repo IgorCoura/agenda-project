@@ -1,26 +1,32 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Agenda.Application.Model;
 using Agenda.Domain.Core;
+using Agenda.Domain.Entities;
 using Agenda.Domain.Entities.Enumerations;
 using Agenda.Domain.Interfaces.Repositories;
 using FluentValidation;
+using LinqKit;
 
 namespace Agenda.Application.Validations
 {
     public class BaseUserValidator<T> : AbstractValidator<T> where T : BaseUserModel
     {
+        private readonly IUserRepository _userRepository;
         public BaseUserValidator(IUserRepository userRepository)
         {
+            _userRepository = userRepository;
+
             RuleFor(x => x.Email)
                 .EmailAddress()
                 .NotEmpty();
 
             RuleFor(x => x.Email)
-                .MustAsync(async (email, cancellationToken) =>  !(await userRepository.HasAnyAsync(u => u.Email == email, cancellationToken)))
+                .MustAsync(async (user, email, context, cancellationToken) => await VerifyHasAny(u => u.Email == email, context ,cancellationToken))
                 .WithMessage("Email Já existe um usuário com e-mail informado.");
 
             RuleFor(x => x.UserName)
@@ -29,7 +35,7 @@ namespace Agenda.Application.Validations
                 .NotEmpty();
 
             RuleFor(x => x.UserName)
-                .MustAsync(async (username, cancellationToken) => !(await userRepository.HasAnyAsync(u => u.Username == username, cancellationToken)))
+                .MustAsync(async (user, userName, context, cancellationToken) => await VerifyHasAny(u => u.Username == userName, context  ,cancellationToken))
                 .WithMessage("UserName Já existe um usuário com username informado.");
 
             RuleFor(x => x.Name)
@@ -40,6 +46,21 @@ namespace Agenda.Application.Validations
             RuleFor(x => x.UserRoleId)
                 .Must(type => Enumeration.GetAll<UserRole>().Any(x => x.Id == type))
                 .WithMessage("USerRoleId Cargo de usuário inválido");
+        }
+
+        public async Task<bool> VerifyHasAny(Expression<Func<User, bool>> func, ValidationContext<T> context ,CancellationToken cancellation)
+        {
+            var predicate = PredicateBuilder.New<User>();
+
+            predicate = predicate.And(func);
+            if (context.RootContextData.TryGetValue("userId", out object? userId)
+                && userId != null)
+            {
+               var id = userId as int?;
+               predicate.And(x => x.Id != id!);
+            }
+
+            return !(await _userRepository.HasAnyAsync(predicate, cancellation));
         }
     }
 

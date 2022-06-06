@@ -10,6 +10,8 @@ using Agenda.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Agenda.Application.Interfaces;
 using Agenda.Application.Exceptions;
+using System.Text.RegularExpressions;
+using Agenda.Application.Utils;
 
 namespace Agenda.Application.Validations
 {
@@ -31,22 +33,34 @@ namespace Agenda.Application.Validations
                 .MustAsync(async (contact, phones, context, cancellationToken) =>
                 {
                     var userId = context.RootContextData["userId"] as int? ?? throw new ArgumentNullException("userId não pode ser null na validação do BaseContactValidator");
-                    return await VerifyExistingPhones(phones.Select(x => x.FormattedPhone), userId);
+                    return await VerifyExistingPhones(phones, userId);
                 }).WithMessage("Telefone já existe {PropertyName}: {PropertyValue}");
         }
 
         public async Task<bool> VerifyExistingPhones(
-            IEnumerable<string> phones,
+            IEnumerable<TPhone> phones,
             int userId)
         {
-            var correctFormatedPhone = phones.Select(p =>
+            var phoneDB = await _contactRepository.QueryData<Task<IEnumerable<Phone>>>(queryParm: async x => await x.SelectMany(x => x.Phones).ToListAsync(), filter: u => u.UserId == userId);
+            foreach(var phone in phones)
             {
-               var entity = new Phone();
-               entity.SetPhone(p);
-               return entity.FormattedPhone;
-            });
-            var response = await _contactRepository.QueryData<Task<IEnumerable<string>>>(queryParm: async x => await x.SelectMany(x => x.Phones).Select(x => x.FormattedPhone).ToListAsync(), filter: u => u.UserId == userId);
-            return !response.Any(x => correctFormatedPhone.Contains(x));
+                var numberPhone = PhoneUtils.splitFormattedPhone(phone.FormattedPhone);
+                if (numberPhone == null)
+                    return true;
+                if(phone is UpdatePhoneModel)
+                {
+                    var updatePhoneModel = phone as UpdatePhoneModel;
+                    if (phoneDB.Where(x => x.DDD == numberPhone.DDD && x.Number == numberPhone.Number && x.Id != updatePhoneModel!.Id).Any())
+                        return false;
+                }
+                else
+                {
+                    if (phoneDB.Where(x => x.DDD == numberPhone.DDD && x.Number == numberPhone.Number).Any())
+                        return false;
+                }
+                
+            }
+            return true;
         }
     }
 

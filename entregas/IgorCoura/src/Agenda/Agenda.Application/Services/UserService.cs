@@ -44,8 +44,9 @@ namespace Agenda.Application.Services
         public async Task<UserModel> Edit(int id, UpdateUserModel model)
         {
             var entity = await _userRepository.FirstAsync(e => e.Id == id) ?? throw new NotFoundRequestException($"Usuario com id: {id} não encontrado.");
-
-            var validation = await _validatorFactory.GetValidator<UpdateUserModel>().ValidateAsync(model);
+            var contextValidation = new ValidationContext<UpdateUserModel>(model);
+            contextValidation.RootContextData["userId"] = id;
+            var validation = await _validatorFactory.GetValidator<UpdateUserModel>().ValidateAsync(contextValidation);
             if (!validation.IsValid)
                 throw new BadRequestException(validation);
 

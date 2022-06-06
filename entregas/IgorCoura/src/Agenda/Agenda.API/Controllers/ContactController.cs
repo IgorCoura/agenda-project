@@ -46,6 +46,14 @@ namespace Agenda.API.Controllers
             return OkCustomResponse(result);
         }
 
+        [HttpDelete("phone/{id:int}")]
+        public async Task<ActionResult> DeletePhone([FromRoute] int id)
+        {
+            var userId = int.Parse(User.FindFirst(ClaimTypes.Sid)!.Value);
+            var result = await _contactService.RemovePhone(id, userId);
+            return OkCustomResponse(result);
+        }
+
         [HttpGet]
         public async Task<ActionResult> Get([FromQuery] ContactParams contactParams)
         {
