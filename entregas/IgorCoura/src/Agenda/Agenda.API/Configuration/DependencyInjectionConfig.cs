@@ -8,6 +8,8 @@ using Agenda.Infrastructure.Repositories;
 using Agenda.Infrastructure.Storage;
 using Agenda.Infrastructure.UnitOfWork;
 using FluentValidation.AspNetCore;
+using Microsoft.Extensions.Options;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Agenda.API.Configuration
 {
@@ -35,6 +37,8 @@ namespace Agenda.API.Configuration
                 fv.AutomaticValidationEnabled = false;
                 fv.RegisterValidatorsFromAssemblyContaining<CreateContactValidator>();
             });
+
+            service.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
 
             return service;
         }

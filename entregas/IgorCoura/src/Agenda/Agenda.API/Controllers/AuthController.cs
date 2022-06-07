@@ -5,7 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Agenda.API.Controllers
 {
-    [Route("api/auth")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/auth")]
     [Authorize]
     public class AuthController: MainController
     {
