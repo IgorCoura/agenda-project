@@ -12,6 +12,7 @@ namespace Agenda.Application.Interfaces
     {
         Task<UserModel> Register(CreateUserModel model);
         Task<UserModel> Edit(int id, UpdateUserModel model);
+        Task<UserModel> EditPassword(int id, UpdatePasswordModel model);
         Task<UserModel> RecoverById(int id);
         Task<IEnumerable<UserModel>> Recover(UserParams query);
         Task<IEnumerable<UserModel>> RecoverAll();

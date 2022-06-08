@@ -88,4 +88,22 @@ namespace Agenda.Application.Validations
 
         }
     }
+
+    public class UpdatePasswordValidator : AbstractValidator<UpdatePasswordModel>
+    {
+        public UpdatePasswordValidator() 
+        {
+            RuleFor(x => x.Password)
+                .MinimumLength(3)
+                .MaximumLength(200)
+                .NotEmpty();
+            RuleFor(x => x.Password)
+                .Matches(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$_!%*?&-])[A-Za-z\d@$!_%*?&-]{8,}$")
+                .WithMessage("Senha deve conter o mínimo de oito caracteres, pelo menos uma letra maiúscula, uma letra minúscula, um número e um caractere especial.");
+            RuleFor(x => x.ConfirmPassword)
+                .Equal(x => x.Password)
+                .WithMessage("As senhas devem ser iguais.");
+
+        }
+    }
 }

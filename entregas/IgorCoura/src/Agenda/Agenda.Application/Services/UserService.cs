@@ -57,6 +57,21 @@ namespace Agenda.Application.Services
             return _mapper.Map<UserModel>(result);
         }
 
+        public async Task<UserModel> EditPassword(int id, UpdatePasswordModel model)
+        {
+            var entity = await _userRepository.FirstAsync(e => e.Id == id) ?? throw new NotFoundRequestException($"Usuario com id: {id} não encontrado.");
+
+            var validation = await _validatorFactory.GetValidator<UpdatePasswordModel>().ValidateAsync(model);
+            if (!validation.IsValid)
+                throw new BadRequestException(validation);
+
+            entity.Password = PasswordHasher.Hash(model.Password);
+            var result = await _userRepository.UpdateAsync(entity);
+            await _unitOfWork.CommitAsync();
+
+            return _mapper.Map<UserModel>(result);
+        }
+
         public async Task<UserModel> RecoverById(int id)
         {
             var result = await _userRepository.FirstAsync(filter: c => c.Id == id) ?? throw new NotFoundRequestException($"Usuario com id: {id} não encontrado.");

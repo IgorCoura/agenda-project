@@ -50,6 +50,16 @@ namespace Agenda.API.Controllers
             return OkCustomResponse(result);
         }
 
+        [HttpPut("password")]
+        public async Task<ActionResult> PutPassword([FromBody] UpdatePasswordModel model)
+        {
+            if (!ModelState.IsValid)
+                return BadCustomResponse(ModelState);
+            var id = int.Parse(User.FindFirst(ClaimTypes.Sid)!.Value);
+            var result = await _userService.EditPassword(id, model);
+            return OkCustomResponse(result);
+        }
+
         [HttpPut("admin/{id:int}")]
         [Authorize(Roles = Roles.Admin)]
         public async Task<ActionResult> PutAdmin([FromRoute] int id, [FromBody] UpdateUserModel model)
@@ -57,6 +67,16 @@ namespace Agenda.API.Controllers
             if (!ModelState.IsValid)
                 return BadCustomResponse(ModelState);
             var result = await _userService.Edit(id, model);
+            return OkCustomResponse(result);
+        }
+
+        [HttpPut("admin/password/{id:int}")]
+        [Authorize(Roles = Roles.Admin)]
+        public async Task<ActionResult> PutAdminPassword([FromRoute] int id, [FromBody] UpdatePasswordModel model)
+        {
+            if (!ModelState.IsValid)
+                return BadCustomResponse(ModelState);
+            var result = await _userService.EditPassword(id, model);
             return OkCustomResponse(result);
         }
 

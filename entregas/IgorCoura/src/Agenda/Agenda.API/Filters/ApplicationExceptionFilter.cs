@@ -31,6 +31,17 @@ namespace Agenda.API.Filters
                     Message = exception!.Message,
                 });
             }
+
+            if (context.Exception is NotAuthorizedException)
+            {
+                var exception = context.Exception as NotAuthorizedException;
+                context.HttpContext.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+                context.Result = new JsonResult(new
+                {
+                    success = false,
+                    Message = exception!.Message
+                });
+            }
         }
     }
 }

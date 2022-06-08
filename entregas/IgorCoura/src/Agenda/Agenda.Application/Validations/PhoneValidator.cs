@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Agenda.Application.Model;
 using Agenda.Domain.Core;
@@ -23,8 +24,18 @@ namespace Agenda.Application.Validations
                 .WithMessage("PhoneTypeId Tipo de telefone inválido");
 
             RuleFor(x => x.FormattedPhone)
-                .Matches(@"^\(?[1-9][0-9]\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$")
-                .WithMessage("{PropertyName}: {PropertyValue} - Formato de telefone inválido: (xx) x?xxxx-xxxx");
+                .Must((phone, formatted, context) =>
+                {
+                    if (phone.PhoneTypeId == 2)
+                    {
+                        return new Regex(@"^\(?[1-9][0-9]\)? ?(9[0-9])[0-9]{3}\-?[0-9]{4}$").IsMatch(formatted);
+                    }
+                    else
+                    {
+                        return new Regex(@"^\(?[1-9][0-9]\)? ?([1-9])[0-9]{3}\-?[0-9]{4}$").IsMatch(formatted);
+                    }
+                })
+                .WithMessage("{PropertyName}: {PropertyValue} - Formato de telefone inválido é (xx) 9xxxx-xxxx para celular e (xx) xxxx-xxxx para residencial");
         }
     }
     public class CreatePhoneValidator : BasePhoneValidator<CreatePhoneModel>

@@ -57,12 +57,17 @@ namespace Agenda.Application.Services
         public async Task<ContactModel> Edit(UpdateContactModel contactModel, int? userId = null)
         {
             var entity = await _contactRepository.FirstAsync(e => e.Id == contactModel.Id) ?? throw new NotFoundRequestException($"Contato com id: {contactModel.Id} não encontrado.");
+
+            if (userId != entity.UserId)
+                throw new NotAuthorizedException();
+
             var contextValidation = new ValidationContext<UpdateContactModel>(contactModel);
             contextValidation.RootContextData["userId"] = userId;
             var validation = await _validatorFactory.GetValidator<UpdateContactModel>().ValidateAsync(contextValidation);
             if (!validation.IsValid)
                 throw new BadRequestException(validation);
 
+        
             _mapper.Map<UpdateContactModel, Contact>(contactModel, entity);
             if (userId is not null)
                 entity.UserId = (int)userId;
