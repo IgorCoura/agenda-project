@@ -10,8 +10,7 @@ namespace Agenda.Infrastructure.Mappings
             base.Configure(builder);
 
             builder
-                .HasIndex(x => new {x.DDD, x.Number})
-                .IsUnique();
+                .HasIndex(x => new {x.DDD, x.Number});
 
 
             builder

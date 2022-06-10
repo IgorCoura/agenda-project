@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Query;
 
 namespace Agenda.Infrastructure.Repositories
 {
-    public class BaseRepository<T> : IBaseRepository<T> where T : Register
+    public class BaseRepository<T> : IBaseRepository<T> where T : Register, new()
     {
         protected readonly ApplicationContext _context;
 
@@ -36,14 +36,10 @@ namespace Agenda.Infrastructure.Repositories
             return await Task.FromResult(result);
         }
 
-        public virtual async Task<T> DeleteAsync(int id)
+        public virtual Task DeleteAsync(T model)
         {
-            var obj = await _context.Set<T>().FirstOrDefaultAsync(p => p.Id == id);
-            if (obj == null)
-                throw new InvalidOperationException($"Id: {id} para remover {typeof(T).Name} é invalido");
-
-            var result = _context.Set<T>().Remove(obj);
-            return await Task.FromResult(result.Entity);
+            _context.Set<T>().Remove(model);
+            return Task.CompletedTask;
         }
 
         public async Task<T?> FirstAsync(Expression<Func<T, bool>> filter, Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null)
@@ -81,5 +77,23 @@ namespace Agenda.Infrastructure.Repositories
 
             return await query.ToListAsync();
         }
+
+        public TResult QueryData<TResult>(Func<IQueryable<T>, TResult> queryParm, Expression<Func<T,bool>>? filter = null)
+        {
+            var query = _context.Set<T>().AsQueryable<T>();
+            if(filter != null)
+                query = query.Where(filter);
+
+            var result = queryParm(query);
+            return result;
+        }
+
+        public async Task<bool> HasAnyAsync(Expression<Func<T, bool>> filter, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var result = await _context.Set<T>().AnyAsync(filter, cancellationToken);
+            return result;
+        }
+
+
     }
 }

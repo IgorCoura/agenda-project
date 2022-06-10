@@ -1,9 +1,8 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Agenda.Application.Model
 {
-    public class CreateContactModel
+    public record CreateContactModel: BaseContactModel<CreatePhoneModel>
     {
-        public string Name { get; set; } = string.Empty;
-        public IEnumerable<CreatePhoneModel> Phones { get; set; }
-
     }
 }

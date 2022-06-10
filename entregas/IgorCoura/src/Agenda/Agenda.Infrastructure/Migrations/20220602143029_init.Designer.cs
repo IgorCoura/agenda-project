@@ -12,14 +12,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Agenda.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20220517151710_init")]
+    [Migration("20220602143029_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.4")
+                .HasAnnotation("ProductVersion", "6.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -41,10 +41,15 @@ namespace Agenda.Infrastructure.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(200)");
 
-                    b.Property<DateTime>("UpdatedAt")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Contacts");
                 });
@@ -123,6 +128,33 @@ namespace Agenda.Infrastructure.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Agenda.Domain.Entities.Enumerations.UserRole", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserRole");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Admin"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Commom"
+                        });
+                });
+
             modelBuilder.Entity("Agenda.Domain.Entities.Interaction", b =>
                 {
                     b.Property<int>("Id")
@@ -141,7 +173,7 @@ namespace Agenda.Infrastructure.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<DateTime>("UpdatedAt")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -186,7 +218,7 @@ namespace Agenda.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("UpdatedAt")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -195,10 +227,79 @@ namespace Agenda.Infrastructure.Migrations
 
                     b.HasIndex("PhoneTypeId");
 
-                    b.HasIndex("DDD", "Number")
-                        .IsUnique();
+                    b.HasIndex("DDD", "Number");
 
                     b.ToTable("Phones");
+                });
+
+            modelBuilder.Entity("Agenda.Domain.Entities.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UserRoleId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserRoleId");
+
+                    b.HasIndex("Username")
+                        .IsUnique();
+
+                    b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2021, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "admin@api.com",
+                            Name = "Admin Root Application",
+                            Password = "AQAAAAEAAAPoAAAAEAvRIW4yuubq7EnJoZTljLmbWhQAOBY6/rqYUaY/NimVRheMVoDhmkli+XwNthF9/g==",
+                            UserRoleId = 1,
+                            Username = "admin"
+                        });
+                });
+
+            modelBuilder.Entity("Agenda.Domain.Entities.Contact", b =>
+                {
+                    b.HasOne("Agenda.Domain.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Agenda.Domain.Entities.Interaction", b =>
@@ -229,6 +330,17 @@ namespace Agenda.Infrastructure.Migrations
                     b.Navigation("Contact");
 
                     b.Navigation("PhoneType");
+                });
+
+            modelBuilder.Entity("Agenda.Domain.Entities.User", b =>
+                {
+                    b.HasOne("Agenda.Domain.Entities.Enumerations.UserRole", "UserRole")
+                        .WithMany()
+                        .HasForeignKey("UserRoleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("UserRole");
                 });
 
             modelBuilder.Entity("Agenda.Domain.Entities.Contact", b =>

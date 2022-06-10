@@ -1,0 +1,3194 @@
+﻿[
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato CONTATO TESTE 1",
+    "Id": 3,
+    "CreatedAt": "2022-05-19T14:11:53.8597627",
+    "UpdatedAt": "2022-05-19T14:11:53.8597632"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato CONTATO TESTE 2",
+    "Id": 5,
+    "CreatedAt": "2022-05-19T14:13:20.3236288",
+    "UpdatedAt": "2022-05-19T14:13:20.323629"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato CONTATO TESTE 2",
+    "Id": 7,
+    "CreatedAt": "2022-05-19T14:14:16.3714695",
+    "UpdatedAt": "2022-05-19T14:14:16.3714706"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato CONTATO TESTE UPDATE",
+    "Id": 8,
+    "CreatedAt": "2022-05-19T14:14:29.7450933",
+    "UpdatedAt": "2022-05-19T14:14:29.7450945"
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato CONTATO TESTE 1",
+    "Id": 9,
+    "CreatedAt": "2022-05-19T14:16:28.9684649",
+    "UpdatedAt": "2022-05-19T14:16:28.9684667"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato CONTATO TESTE UPDATE",
+    "Id": 10,
+    "CreatedAt": "2022-05-19T14:16:51.7484083",
+    "UpdatedAt": "2022-05-19T14:16:51.7484103"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato CONTATO TESTE UPDATE",
+    "Id": 11,
+    "CreatedAt": "2022-05-19T14:17:10.3338241",
+    "UpdatedAt": "2022-05-19T14:17:10.3338244"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Dallas Hoppe",
+    "Id": 1002,
+    "CreatedAt": "2022-05-25T11:20:27.169857",
+    "UpdatedAt": "2022-05-25T11:20:27.1698585"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Mrs. Sara Barton",
+    "Id": 1003,
+    "CreatedAt": "2022-05-25T11:20:51.719796",
+    "UpdatedAt": "2022-05-25T11:20:51.7197972"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Julia Anderson",
+    "Id": 2002,
+    "CreatedAt": "2022-05-25T11:48:17.3247003",
+    "UpdatedAt": "2022-05-25T11:48:17.3247023"
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Julia Anderson",
+    "Id": 3002,
+    "CreatedAt": "2022-05-25T12:07:36.9832362",
+    "UpdatedAt": "2022-05-25T12:07:36.9833281"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Julio Orn",
+    "Id": 4002,
+    "CreatedAt": "2022-05-25T12:42:30.8322532",
+    "UpdatedAt": "2022-05-25T12:42:30.8322559"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Doreen Lueilwitz",
+    "Id": 4003,
+    "CreatedAt": "2022-05-25T12:42:33.9776808",
+    "UpdatedAt": "2022-05-25T12:42:33.9776812"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Lucifer",
+    "Id": 4004,
+    "CreatedAt": "2022-05-25T12:43:33.5339458",
+    "UpdatedAt": "2022-05-25T12:43:33.5339476"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Dr. Frances Koch",
+    "Id": 4005,
+    "CreatedAt": "2022-05-25T12:44:06.1307858",
+    "UpdatedAt": "2022-05-25T12:44:06.1307878"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Francisco",
+    "Id": 4006,
+    "CreatedAt": "2022-05-25T12:45:10.5101366",
+    "UpdatedAt": "2022-05-25T12:45:10.5101372"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Andy Lynch",
+    "Id": 4007,
+    "CreatedAt": "2022-05-25T12:47:19.8700895",
+    "UpdatedAt": "2022-05-25T12:47:19.870091"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROG",
+    "Id": 4008,
+    "CreatedAt": "2022-05-25T12:47:51.8234173",
+    "UpdatedAt": "2022-05-25T12:47:51.823419"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO",
+    "Id": 4009,
+    "CreatedAt": "2022-05-25T12:48:13.0788428",
+    "UpdatedAt": "2022-05-25T12:48:13.0788448"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4010,
+    "CreatedAt": "2022-05-25T12:50:39.4759071",
+    "UpdatedAt": "2022-05-25T12:50:39.4759752"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4011,
+    "CreatedAt": "2022-05-25T12:53:01.2793464",
+    "UpdatedAt": "2022-05-25T12:53:01.2793991"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4012,
+    "CreatedAt": "2022-05-25T12:53:37.7826178",
+    "UpdatedAt": "2022-05-25T12:53:37.7826832"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4013,
+    "CreatedAt": "2022-05-25T12:57:06.2665274",
+    "UpdatedAt": "2022-05-25T12:57:06.2665859"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4014,
+    "CreatedAt": "2022-05-25T13:01:55.2397785",
+    "UpdatedAt": "2022-05-25T13:01:55.2398354"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4015,
+    "CreatedAt": "2022-05-25T13:05:00.7433078",
+    "UpdatedAt": "2022-05-25T13:05:00.7433606"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4016,
+    "CreatedAt": "2022-05-25T13:06:41.6347204",
+    "UpdatedAt": "2022-05-25T13:06:41.6347719"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4017,
+    "CreatedAt": "2022-05-25T13:09:15.399382",
+    "UpdatedAt": "2022-05-25T13:09:15.3994351"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4018,
+    "CreatedAt": "2022-05-25T13:09:17.1171458",
+    "UpdatedAt": "2022-05-25T13:09:17.1171473"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4019,
+    "CreatedAt": "2022-05-25T13:09:18.1542613",
+    "UpdatedAt": "2022-05-25T13:09:18.1542631"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4020,
+    "CreatedAt": "2022-05-25T13:09:18.9313294",
+    "UpdatedAt": "2022-05-25T13:09:18.9313309"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Gene Quitzon",
+    "Id": 4021,
+    "CreatedAt": "2022-05-25T13:10:55.4201403",
+    "UpdatedAt": "2022-05-25T13:10:55.4201417"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Dave Bailey",
+    "Id": 4022,
+    "CreatedAt": "2022-05-25T13:11:03.5390557",
+    "UpdatedAt": "2022-05-25T13:11:03.5390574"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Suzanne O\u0027Connell",
+    "Id": 4023,
+    "CreatedAt": "2022-05-25T13:11:05.1782598",
+    "UpdatedAt": "2022-05-25T13:11:05.1782614"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Suzane Viera",
+    "Id": 4024,
+    "CreatedAt": "2022-05-25T13:12:11.9040718",
+    "UpdatedAt": "2022-05-25T13:12:11.9040739"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Suzane Viera",
+    "Id": 4025,
+    "CreatedAt": "2022-05-25T13:14:43.1435608",
+    "UpdatedAt": "2022-05-25T13:14:43.1435622"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Suzane Viera",
+    "Id": 5003,
+    "CreatedAt": "2022-05-25T13:43:38.0979779",
+    "UpdatedAt": "2022-05-25T13:43:38.097988"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Miss Robin Stoltenberg",
+    "Id": 5004,
+    "CreatedAt": "2022-05-25T13:43:43.3091457",
+    "UpdatedAt": "2022-05-25T13:43:43.3091479"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Miss Robin Stoltenberg DD",
+    "Id": 5005,
+    "CreatedAt": "2022-05-25T13:44:15.9582324",
+    "UpdatedAt": "2022-05-25T13:44:15.9582375"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Miss Robin Stoltenberg DD",
+    "Id": 6002,
+    "CreatedAt": "2022-05-25T13:52:24.515493",
+    "UpdatedAt": "2022-05-25T13:52:24.5169605"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato a",
+    "Id": 7002,
+    "CreatedAt": "2022-05-26T14:26:51.4662153",
+    "UpdatedAt": "2022-05-26T14:26:51.4665036"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato CONTATO TESTE 1",
+    "Id": 3,
+    "CreatedAt": "2022-05-19T14:11:53.8597627",
+    "UpdatedAt": "2022-05-19T14:11:53.8597632"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato CONTATO TESTE 2",
+    "Id": 5,
+    "CreatedAt": "2022-05-19T14:13:20.3236288",
+    "UpdatedAt": "2022-05-19T14:13:20.323629"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato CONTATO TESTE 2",
+    "Id": 7,
+    "CreatedAt": "2022-05-19T14:14:16.3714695",
+    "UpdatedAt": "2022-05-19T14:14:16.3714706"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato CONTATO TESTE UPDATE",
+    "Id": 8,
+    "CreatedAt": "2022-05-19T14:14:29.7450933",
+    "UpdatedAt": "2022-05-19T14:14:29.7450945"
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato CONTATO TESTE 1",
+    "Id": 9,
+    "CreatedAt": "2022-05-19T14:16:28.9684649",
+    "UpdatedAt": "2022-05-19T14:16:28.9684667"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato CONTATO TESTE UPDATE",
+    "Id": 10,
+    "CreatedAt": "2022-05-19T14:16:51.7484083",
+    "UpdatedAt": "2022-05-19T14:16:51.7484103"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato CONTATO TESTE UPDATE",
+    "Id": 11,
+    "CreatedAt": "2022-05-19T14:17:10.3338241",
+    "UpdatedAt": "2022-05-19T14:17:10.3338244"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Dallas Hoppe",
+    "Id": 1002,
+    "CreatedAt": "2022-05-25T11:20:27.169857",
+    "UpdatedAt": "2022-05-25T11:20:27.1698585"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Mrs. Sara Barton",
+    "Id": 1003,
+    "CreatedAt": "2022-05-25T11:20:51.719796",
+    "UpdatedAt": "2022-05-25T11:20:51.7197972"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Julia Anderson",
+    "Id": 2002,
+    "CreatedAt": "2022-05-25T11:48:17.3247003",
+    "UpdatedAt": "2022-05-25T11:48:17.3247023"
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Julia Anderson",
+    "Id": 3002,
+    "CreatedAt": "2022-05-25T12:07:36.9832362",
+    "UpdatedAt": "2022-05-25T12:07:36.9833281"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Julio Orn",
+    "Id": 4002,
+    "CreatedAt": "2022-05-25T12:42:30.8322532",
+    "UpdatedAt": "2022-05-25T12:42:30.8322559"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Doreen Lueilwitz",
+    "Id": 4003,
+    "CreatedAt": "2022-05-25T12:42:33.9776808",
+    "UpdatedAt": "2022-05-25T12:42:33.9776812"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Lucifer",
+    "Id": 4004,
+    "CreatedAt": "2022-05-25T12:43:33.5339458",
+    "UpdatedAt": "2022-05-25T12:43:33.5339476"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Dr. Frances Koch",
+    "Id": 4005,
+    "CreatedAt": "2022-05-25T12:44:06.1307858",
+    "UpdatedAt": "2022-05-25T12:44:06.1307878"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Francisco",
+    "Id": 4006,
+    "CreatedAt": "2022-05-25T12:45:10.5101366",
+    "UpdatedAt": "2022-05-25T12:45:10.5101372"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Andy Lynch",
+    "Id": 4007,
+    "CreatedAt": "2022-05-25T12:47:19.8700895",
+    "UpdatedAt": "2022-05-25T12:47:19.870091"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROG",
+    "Id": 4008,
+    "CreatedAt": "2022-05-25T12:47:51.8234173",
+    "UpdatedAt": "2022-05-25T12:47:51.823419"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO",
+    "Id": 4009,
+    "CreatedAt": "2022-05-25T12:48:13.0788428",
+    "UpdatedAt": "2022-05-25T12:48:13.0788448"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4010,
+    "CreatedAt": "2022-05-25T12:50:39.4759071",
+    "UpdatedAt": "2022-05-25T12:50:39.4759752"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4011,
+    "CreatedAt": "2022-05-25T12:53:01.2793464",
+    "UpdatedAt": "2022-05-25T12:53:01.2793991"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4012,
+    "CreatedAt": "2022-05-25T12:53:37.7826178",
+    "UpdatedAt": "2022-05-25T12:53:37.7826832"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4013,
+    "CreatedAt": "2022-05-25T12:57:06.2665274",
+    "UpdatedAt": "2022-05-25T12:57:06.2665859"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4014,
+    "CreatedAt": "2022-05-25T13:01:55.2397785",
+    "UpdatedAt": "2022-05-25T13:01:55.2398354"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4015,
+    "CreatedAt": "2022-05-25T13:05:00.7433078",
+    "UpdatedAt": "2022-05-25T13:05:00.7433606"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4016,
+    "CreatedAt": "2022-05-25T13:06:41.6347204",
+    "UpdatedAt": "2022-05-25T13:06:41.6347719"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4017,
+    "CreatedAt": "2022-05-25T13:09:15.399382",
+    "UpdatedAt": "2022-05-25T13:09:15.3994351"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4018,
+    "CreatedAt": "2022-05-25T13:09:17.1171458",
+    "UpdatedAt": "2022-05-25T13:09:17.1171473"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4019,
+    "CreatedAt": "2022-05-25T13:09:18.1542613",
+    "UpdatedAt": "2022-05-25T13:09:18.1542631"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato ADRIANO ROGERIO RODRIGUES",
+    "Id": 4020,
+    "CreatedAt": "2022-05-25T13:09:18.9313294",
+    "UpdatedAt": "2022-05-25T13:09:18.9313309"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Gene Quitzon",
+    "Id": 4021,
+    "CreatedAt": "2022-05-25T13:10:55.4201403",
+    "UpdatedAt": "2022-05-25T13:10:55.4201417"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Dave Bailey",
+    "Id": 4022,
+    "CreatedAt": "2022-05-25T13:11:03.5390557",
+    "UpdatedAt": "2022-05-25T13:11:03.5390574"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Suzanne O\u0027Connell",
+    "Id": 4023,
+    "CreatedAt": "2022-05-25T13:11:05.1782598",
+    "UpdatedAt": "2022-05-25T13:11:05.1782614"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Suzane Viera",
+    "Id": 4024,
+    "CreatedAt": "2022-05-25T13:12:11.9040718",
+    "UpdatedAt": "2022-05-25T13:12:11.9040739"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Suzane Viera",
+    "Id": 4025,
+    "CreatedAt": "2022-05-25T13:14:43.1435608",
+    "UpdatedAt": "2022-05-25T13:14:43.1435622"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Suzane Viera",
+    "Id": 5003,
+    "CreatedAt": "2022-05-25T13:43:38.0979779",
+    "UpdatedAt": "2022-05-25T13:43:38.097988"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Miss Robin Stoltenberg",
+    "Id": 5004,
+    "CreatedAt": "2022-05-25T13:43:43.3091457",
+    "UpdatedAt": "2022-05-25T13:43:43.3091479"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Miss Robin Stoltenberg DD",
+    "Id": 5005,
+    "CreatedAt": "2022-05-25T13:44:15.9582324",
+    "UpdatedAt": "2022-05-25T13:44:15.9582375"
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Miss Robin Stoltenberg DD",
+    "Id": 6002,
+    "CreatedAt": "2022-05-25T13:52:24.515493",
+    "UpdatedAt": "2022-05-25T13:52:24.5169605"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato a",
+    "Id": 7002,
+    "CreatedAt": "2022-05-26T14:26:51.4662153",
+    "UpdatedAt": "2022-05-26T14:26:51.4665036"
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Otis Jacobson III",
+    "Id": 1,
+    "CreatedAt": "2022-06-03T15:00:12.7503386",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Frances Oberbrunner",
+    "Id": 2,
+    "CreatedAt": "2022-06-03T15:03:00.1740762",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Rachel Boyle",
+    "Id": 3,
+    "CreatedAt": "2022-06-03T15:05:35.0274305",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Mr. Candice Bartell",
+    "Id": 4,
+    "CreatedAt": "2022-06-03T15:05:46.5206811",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Otis Jacobson III",
+    "Id": 1,
+    "CreatedAt": "2022-06-03T15:00:12.7503386",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Frances Oberbrunner",
+    "Id": 2,
+    "CreatedAt": "2022-06-03T15:03:00.1740762",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Rachel Boyle",
+    "Id": 3,
+    "CreatedAt": "2022-06-03T15:05:35.0274305",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Mr. Candice Bartell",
+    "Id": 4,
+    "CreatedAt": "2022-06-03T15:05:46.5206811",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Jimmy Medhurst",
+    "Id": 1002,
+    "CreatedAt": "2022-06-06T09:53:29.7283964",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Cindy Buckridge",
+    "Id": 1003,
+    "CreatedAt": "2022-06-06T09:58:33.1794819",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Joseph Wuckert",
+    "Id": 1004,
+    "CreatedAt": "2022-06-06T09:59:17.6092872",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Eleanor Frami",
+    "Id": 1005,
+    "CreatedAt": "2022-06-06T09:59:30.7652151",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Cecilia O\u0027Hara",
+    "Id": 1006,
+    "CreatedAt": "2022-06-06T10:00:55.2443421",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Chris Ward",
+    "Id": 1007,
+    "CreatedAt": "2022-06-06T10:01:44.8723722",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Chris Ward",
+    "Id": 1008,
+    "CreatedAt": "2022-06-06T10:03:33.7727332",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Chris Ward",
+    "Id": 1009,
+    "CreatedAt": "2022-06-06T10:04:31.9944333",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Chris Ward",
+    "Id": 1010,
+    "CreatedAt": "2022-06-06T10:05:01.2262216",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Blanca Spencer",
+    "Id": 1011,
+    "CreatedAt": "2022-06-06T10:07:17.1889271",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Douglas Gerlach",
+    "Id": 1012,
+    "CreatedAt": "2022-06-06T10:09:33.2711977",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Tracey Reichel",
+    "Id": 2002,
+    "CreatedAt": "2022-06-06T10:28:43.1155754",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Danny O\u0027Reilly",
+    "Id": 2003,
+    "CreatedAt": "2022-06-06T10:30:30.7089145",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Jaime Christiansen Sr.",
+    "Id": 2004,
+    "CreatedAt": "2022-06-06T10:32:18.25814",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Louis Stiedemann",
+    "Id": 2005,
+    "CreatedAt": "2022-06-06T10:32:44.2933467",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Lee Feil",
+    "Id": 2006,
+    "CreatedAt": "2022-06-06T10:40:05.0752461",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2007,
+    "CreatedAt": "2022-06-06T10:40:10.9633623",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Courtney Huel",
+    "Id": 2008,
+    "CreatedAt": "2022-06-06T10:41:07.2400736",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2009,
+    "CreatedAt": "2022-06-06T10:41:13.9743957",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Roderick Lakin",
+    "Id": 3002,
+    "CreatedAt": "2022-06-06T11:22:55.858174",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Simon Windler",
+    "Id": 3003,
+    "CreatedAt": "2022-06-06T11:24:08.2688377",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3004,
+    "CreatedAt": "2022-06-06T11:24:22.3007507",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3005,
+    "CreatedAt": "2022-06-06T11:25:49.1403981",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3006,
+    "CreatedAt": "2022-06-06T11:25:51.7653018",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3007,
+    "CreatedAt": "2022-06-06T11:25:53.5965536",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3008,
+    "CreatedAt": "2022-06-06T11:25:58.2634367",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3009,
+    "CreatedAt": "2022-06-06T11:26:01.8310542",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3010,
+    "CreatedAt": "2022-06-06T11:29:40.1853866",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3011,
+    "CreatedAt": "2022-06-06T11:39:43.4415328",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Maureen McCullough",
+    "Id": 3012,
+    "CreatedAt": "2022-06-06T11:40:48.9195913",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3013,
+    "CreatedAt": "2022-06-06T11:40:49.3729302",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3014,
+    "CreatedAt": "2022-06-06T11:40:49.7817578",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Maryann Bins",
+    "Id": 3015,
+    "CreatedAt": "2022-06-06T11:40:56.9756258",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3016,
+    "CreatedAt": "2022-06-06T11:40:57.3657173",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3017,
+    "CreatedAt": "2022-06-06T11:40:57.7462562",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Alex O\u0027Hara",
+    "Id": 3018,
+    "CreatedAt": "2022-06-06T11:41:20.1324067",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3019,
+    "CreatedAt": "2022-06-06T11:41:29.4168799",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3020,
+    "CreatedAt": "2022-06-06T11:48:59.4582597",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Marlene Pouros",
+    "Id": 3021,
+    "CreatedAt": "2022-06-06T11:49:06.0627947",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3022,
+    "CreatedAt": "2022-06-06T11:49:06.427065",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3023,
+    "CreatedAt": "2022-06-06T11:49:06.8208924",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Della Schultz Sr.",
+    "Id": 3025,
+    "CreatedAt": "2022-06-06T11:56:43.0759937",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3026,
+    "CreatedAt": "2022-06-06T11:56:43.7863291",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3027,
+    "CreatedAt": "2022-06-06T11:56:44.3231394",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Constance Homenick",
+    "Id": 3031,
+    "CreatedAt": "2022-06-06T11:57:48.8852693",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3032,
+    "CreatedAt": "2022-06-06T11:58:02.4364273",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3033,
+    "CreatedAt": "2022-06-06T11:58:18.4302666",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Miss Janis Fadel",
+    "Id": 3034,
+    "CreatedAt": "2022-06-06T12:00:04.2866946",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3035,
+    "CreatedAt": "2022-06-06T12:00:04.8956886",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3036,
+    "CreatedAt": "2022-06-06T12:00:05.4535305",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Molly Stoltenberg",
+    "Id": 3037,
+    "CreatedAt": "2022-06-06T12:01:43.4036874",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3038,
+    "CreatedAt": "2022-06-06T12:01:44.1586398",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3039,
+    "CreatedAt": "2022-06-06T12:01:44.8014916",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Lindsey Murphy",
+    "Id": 3040,
+    "CreatedAt": "2022-06-06T12:02:02.0038646",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3041,
+    "CreatedAt": "2022-06-06T12:02:39.6445603",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3042,
+    "CreatedAt": "2022-06-06T12:03:22.5383628",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3043,
+    "CreatedAt": "2022-06-06T12:04:01.1628002",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3044,
+    "CreatedAt": "2022-06-06T12:04:23.6114668",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Michelle Beahan",
+    "Id": 3045,
+    "CreatedAt": "2022-06-06T12:04:33.4624993",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3046,
+    "CreatedAt": "2022-06-06T12:04:33.8654566",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Leon Berge",
+    "Id": 3047,
+    "CreatedAt": "2022-06-06T12:04:48.7333275",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3048,
+    "CreatedAt": "2022-06-06T12:04:49.2023699",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Drew Farrell",
+    "Id": 3049,
+    "CreatedAt": "2022-06-06T12:05:42.6386808",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Curtis Simonis",
+    "Id": 3050,
+    "CreatedAt": "2022-06-06T12:06:11.9365497",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3051,
+    "CreatedAt": "2022-06-06T12:06:12.303172",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3052,
+    "CreatedAt": "2022-06-06T12:06:12.6886336",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Nathan Nikolaus",
+    "Id": 3053,
+    "CreatedAt": "2022-06-06T12:36:33.0530528",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Jamie Considine",
+    "Id": 3054,
+    "CreatedAt": "2022-06-06T12:37:36.3014988",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3055,
+    "CreatedAt": "2022-06-06T12:37:36.8156006",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Melinda Renner",
+    "Id": 3056,
+    "CreatedAt": "2022-06-06T12:37:50.2567806",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3057,
+    "CreatedAt": "2022-06-06T12:37:50.7225335",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Stella Huel",
+    "Id": 3058,
+    "CreatedAt": "2022-06-06T12:37:59.3226098",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3059,
+    "CreatedAt": "2022-06-06T12:37:59.7328253",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3060,
+    "CreatedAt": "2022-06-06T12:38:00.6488365",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Otis Jacobson III",
+    "Id": 1,
+    "CreatedAt": "2022-06-03T15:00:12.7503386",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Frances Oberbrunner",
+    "Id": 2,
+    "CreatedAt": "2022-06-03T15:03:00.1740762",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Rachel Boyle",
+    "Id": 3,
+    "CreatedAt": "2022-06-03T15:05:35.0274305",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Mr. Candice Bartell",
+    "Id": 4,
+    "CreatedAt": "2022-06-03T15:05:46.5206811",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Jimmy Medhurst",
+    "Id": 1002,
+    "CreatedAt": "2022-06-06T09:53:29.7283964",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Cindy Buckridge",
+    "Id": 1003,
+    "CreatedAt": "2022-06-06T09:58:33.1794819",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Joseph Wuckert",
+    "Id": 1004,
+    "CreatedAt": "2022-06-06T09:59:17.6092872",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Eleanor Frami",
+    "Id": 1005,
+    "CreatedAt": "2022-06-06T09:59:30.7652151",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Cecilia O\u0027Hara",
+    "Id": 1006,
+    "CreatedAt": "2022-06-06T10:00:55.2443421",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Chris Ward",
+    "Id": 1007,
+    "CreatedAt": "2022-06-06T10:01:44.8723722",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Chris Ward",
+    "Id": 1008,
+    "CreatedAt": "2022-06-06T10:03:33.7727332",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Chris Ward",
+    "Id": 1009,
+    "CreatedAt": "2022-06-06T10:04:31.9944333",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Chris Ward",
+    "Id": 1010,
+    "CreatedAt": "2022-06-06T10:05:01.2262216",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Blanca Spencer",
+    "Id": 1011,
+    "CreatedAt": "2022-06-06T10:07:17.1889271",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Douglas Gerlach",
+    "Id": 1012,
+    "CreatedAt": "2022-06-06T10:09:33.2711977",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Tracey Reichel",
+    "Id": 2002,
+    "CreatedAt": "2022-06-06T10:28:43.1155754",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Danny O\u0027Reilly",
+    "Id": 2003,
+    "CreatedAt": "2022-06-06T10:30:30.7089145",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Jaime Christiansen Sr.",
+    "Id": 2004,
+    "CreatedAt": "2022-06-06T10:32:18.25814",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Louis Stiedemann",
+    "Id": 2005,
+    "CreatedAt": "2022-06-06T10:32:44.2933467",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Lee Feil",
+    "Id": 2006,
+    "CreatedAt": "2022-06-06T10:40:05.0752461",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2007,
+    "CreatedAt": "2022-06-06T10:40:10.9633623",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Courtney Huel",
+    "Id": 2008,
+    "CreatedAt": "2022-06-06T10:41:07.2400736",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2009,
+    "CreatedAt": "2022-06-06T10:41:13.9743957",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Roderick Lakin",
+    "Id": 3002,
+    "CreatedAt": "2022-06-06T11:22:55.858174",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Simon Windler",
+    "Id": 3003,
+    "CreatedAt": "2022-06-06T11:24:08.2688377",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3004,
+    "CreatedAt": "2022-06-06T11:24:22.3007507",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3005,
+    "CreatedAt": "2022-06-06T11:25:49.1403981",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3006,
+    "CreatedAt": "2022-06-06T11:25:51.7653018",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3007,
+    "CreatedAt": "2022-06-06T11:25:53.5965536",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3008,
+    "CreatedAt": "2022-06-06T11:25:58.2634367",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3009,
+    "CreatedAt": "2022-06-06T11:26:01.8310542",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3010,
+    "CreatedAt": "2022-06-06T11:29:40.1853866",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3011,
+    "CreatedAt": "2022-06-06T11:39:43.4415328",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Maureen McCullough",
+    "Id": 3012,
+    "CreatedAt": "2022-06-06T11:40:48.9195913",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3013,
+    "CreatedAt": "2022-06-06T11:40:49.3729302",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3014,
+    "CreatedAt": "2022-06-06T11:40:49.7817578",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Maryann Bins",
+    "Id": 3015,
+    "CreatedAt": "2022-06-06T11:40:56.9756258",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3016,
+    "CreatedAt": "2022-06-06T11:40:57.3657173",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3017,
+    "CreatedAt": "2022-06-06T11:40:57.7462562",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Alex O\u0027Hara",
+    "Id": 3018,
+    "CreatedAt": "2022-06-06T11:41:20.1324067",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3019,
+    "CreatedAt": "2022-06-06T11:41:29.4168799",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3020,
+    "CreatedAt": "2022-06-06T11:48:59.4582597",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Marlene Pouros",
+    "Id": 3021,
+    "CreatedAt": "2022-06-06T11:49:06.0627947",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3022,
+    "CreatedAt": "2022-06-06T11:49:06.427065",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3023,
+    "CreatedAt": "2022-06-06T11:49:06.8208924",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Della Schultz Sr.",
+    "Id": 3025,
+    "CreatedAt": "2022-06-06T11:56:43.0759937",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3026,
+    "CreatedAt": "2022-06-06T11:56:43.7863291",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3027,
+    "CreatedAt": "2022-06-06T11:56:44.3231394",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Constance Homenick",
+    "Id": 3031,
+    "CreatedAt": "2022-06-06T11:57:48.8852693",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3032,
+    "CreatedAt": "2022-06-06T11:58:02.4364273",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3033,
+    "CreatedAt": "2022-06-06T11:58:18.4302666",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Miss Janis Fadel",
+    "Id": 3034,
+    "CreatedAt": "2022-06-06T12:00:04.2866946",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3035,
+    "CreatedAt": "2022-06-06T12:00:04.8956886",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3036,
+    "CreatedAt": "2022-06-06T12:00:05.4535305",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Molly Stoltenberg",
+    "Id": 3037,
+    "CreatedAt": "2022-06-06T12:01:43.4036874",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3038,
+    "CreatedAt": "2022-06-06T12:01:44.1586398",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3039,
+    "CreatedAt": "2022-06-06T12:01:44.8014916",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Lindsey Murphy",
+    "Id": 3040,
+    "CreatedAt": "2022-06-06T12:02:02.0038646",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3041,
+    "CreatedAt": "2022-06-06T12:02:39.6445603",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3042,
+    "CreatedAt": "2022-06-06T12:03:22.5383628",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3043,
+    "CreatedAt": "2022-06-06T12:04:01.1628002",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3044,
+    "CreatedAt": "2022-06-06T12:04:23.6114668",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Michelle Beahan",
+    "Id": 3045,
+    "CreatedAt": "2022-06-06T12:04:33.4624993",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3046,
+    "CreatedAt": "2022-06-06T12:04:33.8654566",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Leon Berge",
+    "Id": 3047,
+    "CreatedAt": "2022-06-06T12:04:48.7333275",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3048,
+    "CreatedAt": "2022-06-06T12:04:49.2023699",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Drew Farrell",
+    "Id": 3049,
+    "CreatedAt": "2022-06-06T12:05:42.6386808",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Curtis Simonis",
+    "Id": 3050,
+    "CreatedAt": "2022-06-06T12:06:11.9365497",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3051,
+    "CreatedAt": "2022-06-06T12:06:12.303172",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3052,
+    "CreatedAt": "2022-06-06T12:06:12.6886336",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Nathan Nikolaus",
+    "Id": 3053,
+    "CreatedAt": "2022-06-06T12:36:33.0530528",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Jamie Considine",
+    "Id": 3054,
+    "CreatedAt": "2022-06-06T12:37:36.3014988",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3055,
+    "CreatedAt": "2022-06-06T12:37:36.8156006",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Melinda Renner",
+    "Id": 3056,
+    "CreatedAt": "2022-06-06T12:37:50.2567806",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3057,
+    "CreatedAt": "2022-06-06T12:37:50.7225335",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Stella Huel",
+    "Id": 3058,
+    "CreatedAt": "2022-06-06T12:37:59.3226098",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3059,
+    "CreatedAt": "2022-06-06T12:37:59.7328253",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3060,
+    "CreatedAt": "2022-06-06T12:38:00.6488365",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Luther O\u0027Reilly",
+    "Id": 3061,
+    "CreatedAt": "2022-06-06T13:00:06.3466818",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Luther O\u0027Reilly",
+    "Id": 3062,
+    "CreatedAt": "2022-06-06T13:01:58.9661836",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Luther O\u0027Reilly",
+    "Id": 3063,
+    "CreatedAt": "2022-06-06T13:03:30.6796251",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Luther O\u0027Reilly",
+    "Id": 3064,
+    "CreatedAt": "2022-06-06T13:06:07.5733643",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Ms. Mark Ruecker",
+    "Id": 3065,
+    "CreatedAt": "2022-06-06T13:28:21.2560544",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3066,
+    "CreatedAt": "2022-06-06T13:28:23.388374",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3067,
+    "CreatedAt": "2022-06-06T13:28:23.7962829",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3068,
+    "CreatedAt": "2022-06-06T13:28:24.4445342",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Domingo Lubowitz",
+    "Id": 3069,
+    "CreatedAt": "2022-06-06T13:29:35.2644309",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3070,
+    "CreatedAt": "2022-06-06T13:29:35.5947923",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3071,
+    "CreatedAt": "2022-06-06T13:29:35.9321542",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 3072,
+    "CreatedAt": "2022-06-06T13:29:36.589345",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Mr. Derek Lynch",
+    "Id": 4002,
+    "CreatedAt": "2022-06-07T10:13:36.6678534",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 4003,
+    "CreatedAt": "2022-06-07T10:13:37.2637053",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 4004,
+    "CreatedAt": "2022-06-07T10:13:37.6889427",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 4005,
+    "CreatedAt": "2022-06-07T10:13:38.4182377",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Sam Kutch",
+    "Id": 4006,
+    "CreatedAt": "2022-06-07T10:14:26.3058095",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 4007,
+    "CreatedAt": "2022-06-07T10:14:26.6900318",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 4008,
+    "CreatedAt": "2022-06-07T10:14:27.0716552",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 4009,
+    "CreatedAt": "2022-06-07T10:14:27.8086899",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Stanley Stroman III",
+    "Id": 4010,
+    "CreatedAt": "2022-06-07T10:16:07.5348255",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 4011,
+    "CreatedAt": "2022-06-07T10:16:07.9064679",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 4012,
+    "CreatedAt": "2022-06-07T10:16:08.2891749",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 4013,
+    "CreatedAt": "2022-06-07T10:16:08.9134255",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Matthew Senger",
+    "Id": 4014,
+    "CreatedAt": "2022-06-07T10:16:26.0570317",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 4015,
+    "CreatedAt": "2022-06-07T10:16:26.4199453",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 4016,
+    "CreatedAt": "2022-06-07T10:16:26.7605263",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 4017,
+    "CreatedAt": "2022-06-07T10:16:27.3396736",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Nancy Anderson DDS",
+    "Id": 1,
+    "CreatedAt": "2022-06-07T12:38:12.6943661",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2,
+    "CreatedAt": "2022-06-07T12:38:13.2396514",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3,
+    "CreatedAt": "2022-06-07T12:38:13.6826813",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 4,
+    "CreatedAt": "2022-06-07T12:38:14.2975675",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Janice Schroeder",
+    "Id": 5,
+    "CreatedAt": "2022-06-07T12:38:22.2871344",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 6,
+    "CreatedAt": "2022-06-07T12:38:22.6735074",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 7,
+    "CreatedAt": "2022-06-07T12:38:23.0912514",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 8,
+    "CreatedAt": "2022-06-07T12:38:23.729565",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Karl Hirthe",
+    "Id": 9,
+    "CreatedAt": "2022-06-07T12:38:30.8870515",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 10,
+    "CreatedAt": "2022-06-07T12:38:31.2064307",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 11,
+    "CreatedAt": "2022-06-07T12:38:31.5260842",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 12,
+    "CreatedAt": "2022-06-07T12:38:32.105545",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Beatrice Gutkowski",
+    "Id": 1002,
+    "CreatedAt": "2022-06-07T13:10:25.7099313",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1003,
+    "CreatedAt": "2022-06-07T13:10:26.3557053",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1004,
+    "CreatedAt": "2022-06-07T13:10:27.016057",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 1005,
+    "CreatedAt": "2022-06-07T13:10:27.8106773",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Kara McDermott",
+    "Id": 1006,
+    "CreatedAt": "2022-06-07T13:11:37.3321974",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1007,
+    "CreatedAt": "2022-06-07T13:11:37.7708098",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1008,
+    "CreatedAt": "2022-06-07T13:11:38.2650095",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 1009,
+    "CreatedAt": "2022-06-07T13:11:38.919343",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Dwayne Schimmel",
+    "Id": 1010,
+    "CreatedAt": "2022-06-07T13:13:16.1089669",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1011,
+    "CreatedAt": "2022-06-07T13:13:32.9755101",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Miss Hugh Jaskolski",
+    "Id": 1012,
+    "CreatedAt": "2022-06-07T13:18:41.1066149",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1013,
+    "CreatedAt": "2022-06-07T13:18:41.6780011",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1014,
+    "CreatedAt": "2022-06-07T13:18:42.1804844",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 1015,
+    "CreatedAt": "2022-06-07T13:18:42.9353284",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Tyler Collins",
+    "Id": 1016,
+    "CreatedAt": "2022-06-07T13:19:38.5003481",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1017,
+    "CreatedAt": "2022-06-07T13:19:38.9115267",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1018,
+    "CreatedAt": "2022-06-07T13:19:39.3569893",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 1019,
+    "CreatedAt": "2022-06-07T13:19:40.0238087",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Samuel Halvorson",
+    "Id": 1020,
+    "CreatedAt": "2022-06-07T13:20:00.7182738",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1021,
+    "CreatedAt": "2022-06-07T13:20:01.1655683",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1022,
+    "CreatedAt": "2022-06-07T13:20:01.5795414",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 1023,
+    "CreatedAt": "2022-06-07T13:20:02.2684631",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Daniel Powlowski Sr.",
+    "Id": 1024,
+    "CreatedAt": "2022-06-07T13:29:23.2883767",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1025,
+    "CreatedAt": "2022-06-07T13:29:23.785439",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1026,
+    "CreatedAt": "2022-06-07T13:29:24.334708",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 1027,
+    "CreatedAt": "2022-06-07T13:29:24.9548861",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Jane Runte III",
+    "Id": 1028,
+    "CreatedAt": "2022-06-07T13:29:54.6971885",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1029,
+    "CreatedAt": "2022-06-07T13:29:55.0728522",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1030,
+    "CreatedAt": "2022-06-07T13:29:55.5501994",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 1031,
+    "CreatedAt": "2022-06-07T13:29:56.1814025",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Thomas Considine",
+    "Id": 1032,
+    "CreatedAt": "2022-06-07T13:30:09.8941366",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1033,
+    "CreatedAt": "2022-06-07T13:30:10.3041049",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1034,
+    "CreatedAt": "2022-06-07T13:30:10.7639752",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 1035,
+    "CreatedAt": "2022-06-07T13:30:11.3861815",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Bryan Abshire",
+    "Id": 1036,
+    "CreatedAt": "2022-06-07T13:56:06.8311135",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1037,
+    "CreatedAt": "2022-06-07T13:56:07.4926813",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1038,
+    "CreatedAt": "2022-06-07T13:56:08.1708045",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 1039,
+    "CreatedAt": "2022-06-07T13:56:08.8768124",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Dustin Johns",
+    "Id": 2002,
+    "CreatedAt": "2022-06-08T11:18:58.8246547",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2003,
+    "CreatedAt": "2022-06-08T11:18:59.1582402",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2004,
+    "CreatedAt": "2022-06-08T11:18:59.5440146",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 2005,
+    "CreatedAt": "2022-06-08T11:18:59.8269113",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Kari Kutch",
+    "Id": 2006,
+    "CreatedAt": "2022-06-08T11:19:06.2788906",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2007,
+    "CreatedAt": "2022-06-08T11:19:06.5603952",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2008,
+    "CreatedAt": "2022-06-08T11:19:06.8915896",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 2009,
+    "CreatedAt": "2022-06-08T11:19:07.2230005",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Nancy Anderson DDS",
+    "Id": 1,
+    "CreatedAt": "2022-06-07T12:38:12.6943661",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2,
+    "CreatedAt": "2022-06-07T12:38:13.2396514",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 3,
+    "CreatedAt": "2022-06-07T12:38:13.6826813",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 4,
+    "CreatedAt": "2022-06-07T12:38:14.2975675",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Janice Schroeder",
+    "Id": 5,
+    "CreatedAt": "2022-06-07T12:38:22.2871344",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 6,
+    "CreatedAt": "2022-06-07T12:38:22.6735074",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 7,
+    "CreatedAt": "2022-06-07T12:38:23.0912514",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 8,
+    "CreatedAt": "2022-06-07T12:38:23.729565",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Karl Hirthe",
+    "Id": 9,
+    "CreatedAt": "2022-06-07T12:38:30.8870515",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 10,
+    "CreatedAt": "2022-06-07T12:38:31.2064307",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 11,
+    "CreatedAt": "2022-06-07T12:38:31.5260842",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 12,
+    "CreatedAt": "2022-06-07T12:38:32.105545",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Beatrice Gutkowski",
+    "Id": 1002,
+    "CreatedAt": "2022-06-07T13:10:25.7099313",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1003,
+    "CreatedAt": "2022-06-07T13:10:26.3557053",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1004,
+    "CreatedAt": "2022-06-07T13:10:27.016057",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 1005,
+    "CreatedAt": "2022-06-07T13:10:27.8106773",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Kara McDermott",
+    "Id": 1006,
+    "CreatedAt": "2022-06-07T13:11:37.3321974",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1007,
+    "CreatedAt": "2022-06-07T13:11:37.7708098",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1008,
+    "CreatedAt": "2022-06-07T13:11:38.2650095",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 1009,
+    "CreatedAt": "2022-06-07T13:11:38.919343",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Dwayne Schimmel",
+    "Id": 1010,
+    "CreatedAt": "2022-06-07T13:13:16.1089669",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1011,
+    "CreatedAt": "2022-06-07T13:13:32.9755101",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Miss Hugh Jaskolski",
+    "Id": 1012,
+    "CreatedAt": "2022-06-07T13:18:41.1066149",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1013,
+    "CreatedAt": "2022-06-07T13:18:41.6780011",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1014,
+    "CreatedAt": "2022-06-07T13:18:42.1804844",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 1015,
+    "CreatedAt": "2022-06-07T13:18:42.9353284",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Tyler Collins",
+    "Id": 1016,
+    "CreatedAt": "2022-06-07T13:19:38.5003481",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1017,
+    "CreatedAt": "2022-06-07T13:19:38.9115267",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1018,
+    "CreatedAt": "2022-06-07T13:19:39.3569893",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 1019,
+    "CreatedAt": "2022-06-07T13:19:40.0238087",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Samuel Halvorson",
+    "Id": 1020,
+    "CreatedAt": "2022-06-07T13:20:00.7182738",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1021,
+    "CreatedAt": "2022-06-07T13:20:01.1655683",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1022,
+    "CreatedAt": "2022-06-07T13:20:01.5795414",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 1023,
+    "CreatedAt": "2022-06-07T13:20:02.2684631",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Daniel Powlowski Sr.",
+    "Id": 1024,
+    "CreatedAt": "2022-06-07T13:29:23.2883767",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1025,
+    "CreatedAt": "2022-06-07T13:29:23.785439",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1026,
+    "CreatedAt": "2022-06-07T13:29:24.334708",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 1027,
+    "CreatedAt": "2022-06-07T13:29:24.9548861",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Jane Runte III",
+    "Id": 1028,
+    "CreatedAt": "2022-06-07T13:29:54.6971885",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1029,
+    "CreatedAt": "2022-06-07T13:29:55.0728522",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1030,
+    "CreatedAt": "2022-06-07T13:29:55.5501994",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 1031,
+    "CreatedAt": "2022-06-07T13:29:56.1814025",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Thomas Considine",
+    "Id": 1032,
+    "CreatedAt": "2022-06-07T13:30:09.8941366",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1033,
+    "CreatedAt": "2022-06-07T13:30:10.3041049",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1034,
+    "CreatedAt": "2022-06-07T13:30:10.7639752",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 1035,
+    "CreatedAt": "2022-06-07T13:30:11.3861815",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Bryan Abshire",
+    "Id": 1036,
+    "CreatedAt": "2022-06-07T13:56:06.8311135",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1037,
+    "CreatedAt": "2022-06-07T13:56:07.4926813",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 1038,
+    "CreatedAt": "2022-06-07T13:56:08.1708045",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 1039,
+    "CreatedAt": "2022-06-07T13:56:08.8768124",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Dustin Johns",
+    "Id": 2002,
+    "CreatedAt": "2022-06-08T11:18:58.8246547",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2003,
+    "CreatedAt": "2022-06-08T11:18:59.1582402",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2004,
+    "CreatedAt": "2022-06-08T11:18:59.5440146",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 2005,
+    "CreatedAt": "2022-06-08T11:18:59.8269113",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Kari Kutch",
+    "Id": 2006,
+    "CreatedAt": "2022-06-08T11:19:06.2788906",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2007,
+    "CreatedAt": "2022-06-08T11:19:06.5603952",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2008,
+    "CreatedAt": "2022-06-08T11:19:06.8915896",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 2009,
+    "CreatedAt": "2022-06-08T11:19:07.2230005",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 2010,
+    "CreatedAt": "2022-06-08T11:29:21.7816227",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 2011,
+    "CreatedAt": "2022-06-08T11:34:53.8384397",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 2012,
+    "CreatedAt": "2022-06-08T11:35:33.7193333",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 2013,
+    "CreatedAt": "2022-06-08T11:37:54.1377268",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 2014,
+    "CreatedAt": "2022-06-08T11:51:41.6517606",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 2015,
+    "CreatedAt": "2022-06-08T11:51:55.965091",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Mr. Joanne Miller",
+    "Id": 2016,
+    "CreatedAt": "2022-06-08T11:52:29.3447806",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Blanche Tremblay",
+    "Id": 2017,
+    "CreatedAt": "2022-06-08T11:53:55.8068013",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2018,
+    "CreatedAt": "2022-06-08T11:53:56.1815989",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2019,
+    "CreatedAt": "2022-06-08T11:53:56.7945015",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 2020,
+    "CreatedAt": "2022-06-08T11:53:59.2407253",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Lamar Runolfsson",
+    "Id": 2021,
+    "CreatedAt": "2022-06-08T11:54:32.9356225",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2022,
+    "CreatedAt": "2022-06-08T11:54:33.3826731",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2023,
+    "CreatedAt": "2022-06-08T11:54:33.8778467",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 2024,
+    "CreatedAt": "2022-06-08T11:54:34.5449651",
+    "UpdatedAt": null
+  }
+]

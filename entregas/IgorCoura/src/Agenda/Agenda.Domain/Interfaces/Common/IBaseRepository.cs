@@ -13,13 +13,15 @@ namespace Agenda.Domain.Interfaces
     {
         Task<T> RegisterAsync(T model);
         Task<T> UpdateAsync(T model);
-        Task<T> DeleteAsync(int id);
+        Task DeleteAsync(T model);
         Task<T?> FirstAsync(Expression<Func<T, bool>> filter, Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null);
         Task<T?> FirstAsyncAsTracking(Expression<Func<T, bool>> filter, Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null);
         Task<IEnumerable<T>> GetDataAsync(
             Expression<Func<T, bool>>? filter = null, Func<IQueryable<T>,
             IIncludableQueryable<T, object>>? include = null,
             int? skip = null, int? take = null);
+        TResult QueryData<TResult>(Func<IQueryable<T>, TResult> queryParm, Expression<Func<T, bool>>? filter = null);
+        Task<bool> HasAnyAsync(Expression<Func<T, bool>> filter, CancellationToken cancellationToken = default(CancellationToken));
     }
 }
 

@@ -6,11 +6,12 @@ namespace Agenda.Application.Interfaces
 {
     public interface IContactService
     {
-        Task<ContactModel> Register(CreateContactModel contact);
-        Task<ContactModel> Edit(UpdateContactModel contactModel);
-        Task<ContactModel> RecoverById(int id);
-        Task<IEnumerable<ContactModel>> RecoverAll();
-        Task<IEnumerable<ContactModel>> Recover(ContactParams query);
-        Task<ContactModel> Remove(int id);
+        Task<ContactModel> Register(CreateContactModel contact, int? userId = null);
+        Task<ContactModel> Edit(UpdateContactModel contactModel, int? userId = null);
+        Task<ContactModel> RecoverById(int id, int? userId = null);
+        Task<IEnumerable<ContactModel>> RecoverAll(int? userId = null);
+        Task<IEnumerable<ContactModel>> Recover(ContactParams query, int? userId = null);
+        Task<ContactModel> Remove(int id, int? userId = null);
+        Task<ContactModel> RemovePhone(int id, int? userId = null);
     }
 }

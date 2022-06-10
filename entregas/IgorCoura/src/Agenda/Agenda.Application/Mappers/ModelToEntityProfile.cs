@@ -14,6 +14,9 @@ namespace Agenda.Application.Mappers
             CreateMap<CreatePhoneModel, Phone>();
             CreateMap<UpdatePhoneModel, Phone>();
             CreateMap<PhoneTypeModel, PhoneType>();
+            CreateMap<UserModel, User>();
+            CreateMap<CreateUserModel, User>();
+            CreateMap<UpdateUserModel, User>();
         }
     }
 }

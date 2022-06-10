@@ -19,6 +19,9 @@ namespace Agenda.Domain.Entities
         public Contact() { }
 
         public string Name { get; set; } = string.Empty;
+        public int UserId { get; set; }
+        public User User { get; set; }
+
         public IEnumerable<Phone> Phones { get; set; }
     }
 }

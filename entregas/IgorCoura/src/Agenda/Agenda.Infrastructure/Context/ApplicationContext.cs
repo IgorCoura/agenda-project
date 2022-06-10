@@ -1,8 +1,10 @@
+using System.Globalization;
 using Agenda.Domain.Core;
 using Agenda.Domain.Entities;
 using Agenda.Domain.Entities.Enumerations;
 using Agenda.Domain.Interfaces;
 using Agenda.Infrastructure.Mappings;
+using Agenda.Infrastructure.utils;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
@@ -10,6 +12,7 @@ namespace Agenda.Infrastructure.Context
 {
     public class ApplicationContext : DbContext
     {
+        public DbSet<User> Users { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Phone> Phones { get; set; }
         public DbSet<PhoneType> PhoneTypes { get; set; }
@@ -29,6 +32,7 @@ namespace Agenda.Infrastructure.Context
 
             modelBuilder.ApplyConfiguration(new EnumerationMap<PhoneType>());
             modelBuilder.ApplyConfiguration(new EnumerationMap<InteractionType>());
+            modelBuilder.ApplyConfiguration(new EnumerationMap<UserRole>());
 
             modelBuilder
                 .Entity<PhoneType>()
@@ -37,9 +41,44 @@ namespace Agenda.Infrastructure.Context
             modelBuilder
                 .Entity<InteractionType>()
                 .HasData(Enumeration.GetAll<InteractionType>());
+
+            modelBuilder
+                .Entity<UserRole>()
+                .HasData(Enumeration.GetAll<UserRole>());
+
+            modelBuilder
+                .Entity<User>()
+                .HasData(new User
+                {
+                    Id = 1,
+                    Username = "admin",
+                    Password = PasswordHasher.Hash("admin"),
+                    Email = "admin@api.com",
+                    Name = "Admin Root Application",
+                    CreatedAt = DateTime.ParseExact("13/10/2021", "dd/MM/yyyy", CultureInfo.InvariantCulture),
+                    UserRoleId = UserRole.Admin.Id
+                });
         }
 
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
+        {
+            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("CreatedAt") != null || entry.Entity.GetType().GetProperty("UpdatedAt") != null))
+            {
+                if (entry.State == EntityState.Added)
+                {
+                    entry.Property("CreatedAt").CurrentValue = DateTime.Now;
+                    entry.Property("UpdatedAt").CurrentValue = null;
+                }
 
+                if (entry.State == EntityState.Modified)
+                {
+                    entry.Property("CreatedAt").IsModified = false;
+                    entry.Property("UpdatedAt").CurrentValue = DateTime.Now;
+                }
+            }
+            return base.SaveChangesAsync(cancellationToken);
+        }
 
+        
     }
 }

@@ -13,7 +13,7 @@ namespace Agenda.Domain.Entities
         public int InteractionTypeId { get; set; }
         public InteractionType InteractionType { get; set; }
         public string Message { get; set; }
-        private Interaction() { }
+        public Interaction() { }
         public Interaction(int interactionTypeId, string message)
         {
             InteractionTypeId = interactionTypeId;

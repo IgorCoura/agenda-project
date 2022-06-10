@@ -10,21 +10,6 @@ namespace Agenda.Infrastructure.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Contacts",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "varchar(200)", unicode: false, maxLength: 200, nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Contacts", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "InteractionTypes",
                 columns: table => new
                 {
@@ -49,6 +34,18 @@ namespace Agenda.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "UserRole",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserRole", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Interactions",
                 columns: table => new
                 {
@@ -57,7 +54,7 @@ namespace Agenda.Infrastructure.Migrations
                     InteractionTypeId = table.Column<int>(type: "int", nullable: false),
                     Message = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -66,6 +63,53 @@ namespace Agenda.Infrastructure.Migrations
                         name: "FK_Interactions_InteractionTypes_InteractionTypeId",
                         column: x => x.InteractionTypeId,
                         principalTable: "InteractionTypes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Username = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    UserRoleId = table.Column<int>(type: "int", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Users_UserRole_UserRoleId",
+                        column: x => x.UserRoleId,
+                        principalTable: "UserRole",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Contacts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "varchar(200)", unicode: false, maxLength: 200, nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Contacts", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Contacts_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -83,7 +127,7 @@ namespace Agenda.Infrastructure.Migrations
                     Number = table.Column<int>(type: "int", maxLength: 9, nullable: false),
                     PhoneTypeId = table.Column<int>(type: "int", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -124,6 +168,25 @@ namespace Agenda.Infrastructure.Migrations
                     { 3, "Commercial" }
                 });
 
+            migrationBuilder.InsertData(
+                table: "UserRole",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Admin" },
+                    { 2, "Commom" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "CreatedAt", "Email", "Name", "Password", "UpdatedAt", "UserRoleId", "Username" },
+                values: new object[] { 1, new DateTime(2021, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@api.com", "Admin Root Application", "AQAAAAEAAAPoAAAAEAvRIW4yuubq7EnJoZTljLmbWhQAOBY6/rqYUaY/NimVRheMVoDhmkli+XwNthF9/g==", null, 1, "admin" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Contacts_UserId",
+                table: "Contacts",
+                column: "UserId");
+
             migrationBuilder.CreateIndex(
                 name: "IX_Interactions_InteractionTypeId",
                 table: "Interactions",
@@ -137,13 +200,23 @@ namespace Agenda.Infrastructure.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Phones_DDD_Number",
                 table: "Phones",
-                columns: new[] { "DDD", "Number" },
-                unique: true);
+                columns: new[] { "DDD", "Number" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Phones_PhoneTypeId",
                 table: "Phones",
                 column: "PhoneTypeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_Username",
+                table: "Users",
+                column: "Username",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_UserRoleId",
+                table: "Users",
+                column: "UserRoleId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -162,6 +235,12 @@ namespace Agenda.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "PhoneTypes");
+
+            migrationBuilder.DropTable(
+                name: "Users");
+
+            migrationBuilder.DropTable(
+                name: "UserRole");
         }
     }
 }
