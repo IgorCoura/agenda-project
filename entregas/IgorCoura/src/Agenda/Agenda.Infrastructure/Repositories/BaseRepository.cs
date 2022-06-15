@@ -23,15 +23,13 @@ namespace Agenda.Infrastructure.Repositories
 
         public virtual async Task<T> RegisterAsync(T model)
         {
-            model.CreatedAt = DateTime.Now;
-            model.UpdatedAt = DateTime.Now;
+
             var result = _context.Set<T>().Add(model).Entity;
             return await Task.FromResult(result);
         }
 
         public virtual async Task<T> UpdateAsync(T model)
         {
-            model.UpdatedAt = DateTime.Now;
             var result = _context.Set<T>().Update(model).Entity;
             return await Task.FromResult(result);
         }

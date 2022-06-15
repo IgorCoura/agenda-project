@@ -41,10 +41,7 @@ namespace Agenda.Application.Services
 
             var contact = _mapper.Map<Contact>(contactModel);
             if (userId is not null)
-            {
-                contact.UserId = (int)userId;
-                
-            }
+                contact.UserId = (int)userId;  
                 
 
             var result = await _contactRepository.RegisterAsync(contact);

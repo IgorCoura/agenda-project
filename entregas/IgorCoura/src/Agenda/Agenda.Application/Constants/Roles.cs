@@ -6,3 +6,4 @@ namespace Agenda.Application.Constants
         public const string Common = "Common";
     }
 }
+
