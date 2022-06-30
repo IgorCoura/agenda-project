@@ -15,7 +15,7 @@ namespace Agenda.Application.Params
         public string Name { get; set; }
         public string Username { get; set; }
         public string Email { get; set; }
-        public override Expression<Func<User, bool>> Filter()
+        public override Expression<Func<User, bool>>? Filter()
         {
             var predicate = PredicateBuilder.New<User>();
 
@@ -28,7 +28,14 @@ namespace Agenda.Application.Params
             if (!string.IsNullOrEmpty(Email))
                 predicate = predicate.And(x => EF.Functions.Like(x.Email, $"%{Email}%"));
 
-            return predicate;
+            if (predicate.IsStarted)
+            {
+                return predicate;
+            }
+            else
+            {
+                return null;
+            }
         }
         public UserParams() { }
     }
