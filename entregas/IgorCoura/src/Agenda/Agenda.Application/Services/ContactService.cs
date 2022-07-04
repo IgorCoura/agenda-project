@@ -31,7 +31,7 @@ namespace Agenda.Application.Services
             _validatorFactory = validatorFactory;
         }
 
-        public async Task<ContactModel> Register(CreateContactModel contactModel, int? userId = null)
+        public async Task<ContactModel> Register(CreateContactModel contactModel, int userId)
         {
             var contextValidation = new ValidationContext<CreateContactModel>(contactModel);
             contextValidation.RootContextData["userId"] = userId;
@@ -40,11 +40,7 @@ namespace Agenda.Application.Services
                 throw new BadRequestException(validation);
 
             var contact = _mapper.Map<Contact>(contactModel);
-            if (userId is not null)
-            {
-                contact.UserId = (int)userId;
-                
-            }
+            contact.UserId = (int)userId;  
                 
 
             var result = await _contactRepository.RegisterAsync(contact);
@@ -54,7 +50,7 @@ namespace Agenda.Application.Services
             return _mapper.Map<ContactModel>(result);
         }
 
-        public async Task<ContactModel> Edit(UpdateContactModel contactModel, int? userId = null)
+        public async Task<ContactModel> Edit(UpdateContactModel contactModel, int userId)
         {
             var entity = await _contactRepository.FirstAsync(e => e.Id == contactModel.Id) ?? throw new NotFoundRequestException($"Contato com id: {contactModel.Id} não encontrado.");
 
@@ -69,8 +65,7 @@ namespace Agenda.Application.Services
 
         
             _mapper.Map<UpdateContactModel, Contact>(contactModel, entity);
-            if (userId is not null)
-                entity.UserId = (int)userId;
+            entity.UserId = userId;
             var result = await _contactRepository.UpdateAsync(entity);
 
             await _interactionRepository.RegisterAsync(new Interaction(InteractionType.UpdateContact.Id, $"Atualizando Contato {entity.Name}"));
@@ -89,7 +84,7 @@ namespace Agenda.Application.Services
             return _mapper.Map<ContactModel>(result);
         }
 
-        public async Task<IEnumerable<ContactModel>> Recover(ContactParams query, int? userId)
+        public async Task<IEnumerable<ContactModel>> Recover(ContactParams query, int? userId = null)
         {
             var filter = query.Filter();
             if (userId is not null)
@@ -111,11 +106,10 @@ namespace Agenda.Application.Services
             return _mapper.Map<IEnumerable<ContactModel>>(results);
         }
 
-        public async Task<ContactModel> Remove(int id, int? userId = null)
+        public async Task<ContactModel> Remove(int id, int userId)
         {
             var predicate = PredicateBuilder.New<Contact>();
-            if (userId is not null)
-                predicate = predicate.And(x => x.UserId == userId);
+            predicate = predicate.And(x => x.UserId == userId);
             predicate = predicate.And(x => x.Id == id);
             var contact = await _contactRepository.FirstAsync(predicate) ?? throw new NotFoundRequestException($"Contato com id: {id} não encontrado.");
 
@@ -127,11 +121,10 @@ namespace Agenda.Application.Services
             return _mapper.Map<ContactModel>(contact);
         }
 
-        public async Task<ContactModel> RemovePhone(int id, int? userId = null)
+        public async Task<ContactModel> RemovePhone(int id, int userId)
         {
             var predicate = PredicateBuilder.New<Contact>();
-            if (userId is not null)
-                predicate = predicate.And(x => x.UserId == userId);
+            predicate = predicate.And(x => x.UserId == userId);
             predicate = predicate.And(x => x.Phones.Any(p => p.Id == id));
 
             var contact = await _contactRepository.FirstAsyncAsTracking(predicate, include: q => q.Include(p => p.Phones)) ?? throw new NotFoundRequestException($"Phone com id: {id} não encontrado.");
