@@ -1,0 +1,28 @@
+@using Agenda.MVC.ViewModel
+@model LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div>
+    @using(Html.BeginForm("Index", "Login", FormMethod.Post))
+    {
+        <div>
+          @Html.LabelFor(x => x.Username)
+          @Html.TextBoxFor(x => x.Username)
+          @Html.ValidationMessageFor(x => x.Username)
+        </div>
+        <div>
+          @Html.LabelFor(x => x.Password)
+          @Html.PasswordFor(x => x.Password)
+          @Html.ValidationMessageFor(x => x.Password)
+        </div>
+        <div>
+          <vc:Summary></vc:Summary>
+        </div>
+        <div>
+          <button>LOGIN</button>
+        </div>
+    }
+</div>

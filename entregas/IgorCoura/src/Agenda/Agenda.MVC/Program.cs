@@ -1,7 +1,17 @@
+
+
+using Agenda.MVC.Interfaces;
+using Agenda.MVC.Notifications;
+using Agenda.MVC.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<INotificator, Notificator>();
+
 
 var app = builder.Build();
 
