@@ -1,0 +1,21 @@
+@using Agenda.MVC.ViewModel
+@using System.Collections
+@model IEnumerable<ContactViewModel>
+
+@{
+    ViewData["Title"] = "Contatos";
+}
+
+<div>
+    @foreach(var item in Model)
+    {
+        <div>
+          <h3>@item.Name</h3>
+            @foreach(var phones in item.Phones)
+            {
+                <p>@phones.FormattedPhone</p>
+                <p>@phones.PhoneType</p>
+            }
+        </div>
+    }
+</div>

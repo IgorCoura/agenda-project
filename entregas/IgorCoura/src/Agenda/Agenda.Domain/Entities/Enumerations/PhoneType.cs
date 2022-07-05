@@ -13,8 +13,8 @@ namespace Agenda.Domain.Entities.Enumerations
         public static PhoneType Cellphone = new PhoneType(2, nameof(Cellphone));
         public static PhoneType Commercial = new PhoneType(3, nameof(Commercial));
 
-        private PhoneType() { }
-        public PhoneType(int id, string name) : base(id, name)
+        public PhoneType() { }
+        private PhoneType(int id, string name) : base(id, name)
         { }
 
     }

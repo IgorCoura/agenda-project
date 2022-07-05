@@ -1,4 +1,5 @@
 using Agenda.Application.Model;
+using Agenda.Domain.Core;
 using Agenda.Domain.Entities;
 using Agenda.Domain.Entities.Enumerations;
 using AutoMapper;
@@ -10,11 +11,13 @@ namespace Agenda.Application.Mappers
         public EntityToModelProfile()
         {
             CreateMap<Contact, ContactModel>();
-            CreateMap<Phone, PhoneModel>();
+            CreateMap<Phone, PhoneModel>()
+            .ForMember(x => x.PhoneType, m => m.MapFrom(req => Enumeration.FromId<PhoneType>((int)req.PhoneTypeId!).Name));
             CreateMap<PhoneType, PhoneTypeModel>();
             CreateMap<Interaction, InteractionModel>();
             CreateMap<InteractionType, InteractionTypeModel>();
-            CreateMap<User, UserModel>();
+            CreateMap<User, UserModel>()
+                .ForMember(x => x.UserRole, m => m.MapFrom(req => Enumeration.FromId<UserRole>(req.UserRoleId).Name));
         }
     }
 }

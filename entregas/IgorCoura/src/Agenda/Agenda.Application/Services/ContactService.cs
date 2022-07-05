@@ -86,10 +86,13 @@ namespace Agenda.Application.Services
 
         public async Task<IEnumerable<ContactModel>> Recover(ContactParams query, int? userId = null)
         {
-            var filter = query.Filter();
+            var predicate = PredicateBuilder.New<Contact>();
+            if (query.Filter() != null)
+                predicate = query.Filter();
             if (userId is not null)
-                filter = filter.And(x => x.UserId == userId);
-            var results = await _contactRepository.GetDataAsync(filter: filter, include: q => q.Include(p => p.Phones));
+                predicate = predicate.And(x => x.UserId == userId);
+           
+            var results = await _contactRepository.GetDataAsync(filter: predicate, include: q => q.Include(p => p.Phones));
             return _mapper.Map<IEnumerable<ContactModel>>(results);
         }
 

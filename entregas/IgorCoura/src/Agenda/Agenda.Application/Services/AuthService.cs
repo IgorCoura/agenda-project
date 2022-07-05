@@ -31,11 +31,11 @@ namespace Agenda.Application.Services
 
         public async Task<string> Login(LoginModel model)
         {
-            var user = await _userRepository.FirstAsync(filter: x => x.Username == model.Username) ?? throw new NotFoundRequestException($"Usuario com userName {model.Username} não encontrado.");
+            var user = await _userRepository.FirstAsync(filter: x => x.Username == model.Username) ?? throw new NotFoundRequestException("Username ou senha incorreta.");
             
 
             if (!PasswordHasher.Verify(model.Password, user.Password))
-                throw new BadRequestException(nameof(model.Password),"Senha invalida");
+                throw new BadRequestException(nameof(model.Password), "Username ou senha incorreta.");
 
             var clains = new List<Claim>()
                 {

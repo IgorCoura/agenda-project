@@ -9,6 +9,7 @@ namespace Agenda.Application.Model
     public record UserModel: BaseUserModel
     {
         public int Id { get; set; }
-       
+        public string UserRole { get; set; }
+
     }
 }

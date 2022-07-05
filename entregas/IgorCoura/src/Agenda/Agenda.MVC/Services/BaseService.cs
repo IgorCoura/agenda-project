@@ -19,11 +19,13 @@ namespace Agenda.MVC.Services
             _notificador.Handle(new Notification(mensagem));
         }
 
-        protected void Notify(IEnumerable<string> mensagens)
+        protected void Notify(IEnumerable<object> mensagens)
         {
-            var notifications = mensagens.Select(x => new Notification(x));
+            var notifications = mensagens.Select(x => new Notification(x.ToString() ?? "Ocorreu um erro, tente novamente."));
             _notificador.Handle(notifications);
         }
+
+     
     }
 }
 

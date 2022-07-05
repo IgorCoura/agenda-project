@@ -1,7 +1,9 @@
 
 
+using Agenda.MVC.Configurations;
 using Agenda.MVC.Interfaces;
 using Agenda.MVC.Notifications;
+using Agenda.MVC.Options;
 using Agenda.MVC.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,8 +11,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<INotificator, Notificator>();
+builder.Services.ResolveDependencies(builder.Configuration);
+
+builder.Services.AddAuthConfiguration();
+
 
 
 var app = builder.Build();
@@ -28,7 +32,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",
