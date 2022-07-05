@@ -34,7 +34,7 @@ namespace Agenda.Application.Validations
                 {
                     var userId = context.RootContextData["userId"] as int? ?? throw new ArgumentNullException("userId não pode ser null na validação do BaseContactValidator");
                     return await VerifyExistingPhones(phones, userId);
-                }).WithMessage("Telefone já existe {PropertyName}: {PropertyValue}");
+                }).WithMessage("Telefone já existe.");
         }
 
         public async Task<bool> VerifyExistingPhones(

@@ -27,7 +27,7 @@ namespace Agenda.Application.Validations
 
             RuleFor(x => x.Email)
                 .MustAsync(async (user, email, context, cancellationToken) => await VerifyHasAny(u => u.Email == email, context ,cancellationToken))
-                .WithMessage("Email Já existe um usuário com e-mail informado.");
+                .WithMessage("Já existe um usuário com e-mail informado.");
 
             RuleFor(x => x.UserName)
                 .MinimumLength(3)
@@ -36,7 +36,7 @@ namespace Agenda.Application.Validations
 
             RuleFor(x => x.UserName)
                 .MustAsync(async (user, userName, context, cancellationToken) => await VerifyHasAny(u => u.Username == userName, context  ,cancellationToken))
-                .WithMessage("UserName Já existe um usuário com username informado.");
+                .WithMessage("Já existe um usuário com username informado.");
 
             RuleFor(x => x.Name)
                 .MinimumLength(3)
@@ -45,7 +45,7 @@ namespace Agenda.Application.Validations
 
             RuleFor(x => x.UserRoleId)
                 .Must(type => Enumeration.GetAll<UserRole>().Any(x => x.Id == type))
-                .WithMessage("USerRoleId Cargo de usuário inválido");
+                .WithMessage("Cargo de usuário inválido");
         }
 
         public async Task<bool> VerifyHasAny(Expression<Func<User, bool>> func, ValidationContext<T> context ,CancellationToken cancellation)

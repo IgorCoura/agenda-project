@@ -16,8 +16,7 @@ namespace Agenda.API.Filters
                 context.Result = new JsonResult(new
                 {
                     success = false,
-                    Message = exception!.Message,
-                    Errors = exception.Errors
+                    Errors = exception!.Errors.Select(x => x.ErrorMessage)
                 });
             }
 
@@ -28,7 +27,7 @@ namespace Agenda.API.Filters
                 context.Result = new JsonResult(new
                 {
                     success = false,
-                    Message = exception!.Message,
+                    Errors = new string[1] {exception!.Message},
                 });
             }
 
@@ -39,7 +38,7 @@ namespace Agenda.API.Filters
                 context.Result = new JsonResult(new
                 {
                     success = false,
-                    Message = exception!.Message
+                    Errors = new string[1] { exception!.Message },
                 });
             }
         }
