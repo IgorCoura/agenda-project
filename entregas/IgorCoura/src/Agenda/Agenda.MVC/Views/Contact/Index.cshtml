@@ -6,16 +6,73 @@
     ViewData["Title"] = "Contatos";
 }
 
+
+ 
+
 <div>
-    @foreach(var item in Model)
+    
+   <div class="input-group mb-3">
+      <div>
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Name</option>
+          <option value="1">DDD</option>
+          <option value="2">Number</option>
+        </select>
+      </div>
+      <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+      <button type="button" class="btn btn-outline-primary">Buscar</button>
+    </div>
+
+    @for(int i = 0; i< Model.Count(); i++)
     {
-        <div>
-          <h3>@item.Name</h3>
-            @foreach(var phones in item.Phones)
-            {
-                <p>@phones.FormattedPhone</p>
-                <p>@phones.PhoneType</p>
-            }
+
+      var contact = @Model.ElementAt(i);
+
+      <div class="card mb-1">
+        <div class="card-header" id="headingOne">
+           <h5 class="mb-0 d-flex justify-content-between">
+             <button class="btn dropdown-toggle" data-bs-toggle="collapse" data-bs-target=@("#collapseOne"+i) aria-expanded="false" aria-controls=@("#collapseOne"+i)>
+                  @contact.Name
+             </button>
+             <button class="btn ">
+               Editar
+             </button>
+           </h5>
         </div>
+     
+        <div id=@("collapseOne"+i) class="collapse" aria-labelledby=@("headingOne"+i) data-parent="#accordion">
+          <div class="card-body">
+            @foreach(var phone in contact.Phones)
+            {
+              var edit = false;
+              <div class="mb-2">
+                <div>@phone.PhoneType - @phone.FormattedPhone</div>
+                <div>Descrição: @phone.Description</div>
+                <button onclick=@edit = true>Editar</button>
+              </div>        
+            }         
+          </div>
+        </div>
+      </div>
     }
+
 </div>
+
+
+@code {
+    private DynamicComponent? dc;
+
+    private Task Refresh()
+    {
+        return (dc?.Instance as IRefreshable)?.Refresh();
+    }
+}
+  
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    
+}
+
