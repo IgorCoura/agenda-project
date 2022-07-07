@@ -29,7 +29,7 @@ namespace Agenda.MVC.Controllers
         public async Task<ActionResult> Index(LoginViewModel viewModel)
         {
             if (!ModelState.IsValid)
-                return View();
+                return View(viewModel);
 
             var token = await _authService.Login(viewModel);
 

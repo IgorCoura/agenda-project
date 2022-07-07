@@ -1,0 +1,39 @@
+@using Agenda.MVC.ViewModel
+@model EditContactViewModel
+
+
+<div class="card mb-1">
+  @Html.HiddenFor(x => x.Id)
+  <div class="card-header mb-3">
+    <div class="row align-items-center">
+      <div class="col-1">
+        Name
+      </div>
+      <div class="col-9">
+        @Html.TextBoxFor(x => x.Name, htmlAttributes: new{@class = "form-control"})
+        @Html.ValidationMessageFor(x => x.Name)
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div>
+      @await Html.PartialAsync("_EditPhone", Model!)
+    </div>
+    <button type="submit" name="option" class="waves-effect waves-light btn cancel btn btn-primary" value="AddPhone">
+      <span>Adicionar Telefone</span>
+    </button>
+  </div>
+  <div class="mb-3">
+    <button class="btn btn-primary">Salvar</button>
+    <a href='@Url.Action("Index")' >Cancelar</a>
+  </div>
+</div>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    
+}
+

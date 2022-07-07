@@ -13,5 +13,6 @@ namespace Agenda.Application.Interfaces
         Task<IEnumerable<ContactModel>> Recover(ContactParams query, int? userId = null);
         Task<ContactModel> Remove(int id, int userId);
         Task<ContactModel> RemovePhone(int id, int userId);
+        Task<IEnumerable<PhoneTypeModel>> RecoverPhoneType();
     }
 }

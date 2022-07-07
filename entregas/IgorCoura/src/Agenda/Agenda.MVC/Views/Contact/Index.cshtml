@@ -10,7 +10,12 @@
  
 
 <div>
-    
+   <div>
+     <h2>
+       Contact
+     </h2>
+     
+   </div>
    <div class="input-group mb-3">
       <div>
         <select class="form-select" aria-label="Default select example">
@@ -21,7 +26,15 @@
       </div>
       <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
       <button type="button" class="btn btn-outline-primary">Buscar</button>
+      <a class="btn btn-outline-primary" href='@Url.Action("Create", "Contact")'>
+       Adicionar
+     </a>
     </div>
+
+    @if(Model.Count() == 0)
+    {
+        <li>Não existe telefones</li>
+    }
 
     @for(int i = 0; i< Model.Count(); i++)
     {
@@ -34,9 +47,9 @@
              <button class="btn dropdown-toggle" data-bs-toggle="collapse" data-bs-target=@("#collapseOne"+i) aria-expanded="false" aria-controls=@("#collapseOne"+i)>
                   @contact.Name
              </button>
-             <button class="btn ">
+             <a class="btn" href='@Url.Action("Edit", "Contact", new {id = @contact.Id})'>
                Editar
-             </button>
+             </a>
            </h5>
         </div>
      
@@ -44,11 +57,9 @@
           <div class="card-body">
             @foreach(var phone in contact.Phones)
             {
-              var edit = false;
               <div class="mb-2">
                 <div>@phone.PhoneType - @phone.FormattedPhone</div>
                 <div>Descrição: @phone.Description</div>
-                <button onclick=@edit = true>Editar</button>
               </div>        
             }         
           </div>
@@ -59,20 +70,13 @@
 </div>
 
 
-@code {
-    private DynamicComponent? dc;
-
-    private Task Refresh()
-    {
-        return (dc?.Instance as IRefreshable)?.Refresh();
-    }
-}
   
 
 @section Scripts{
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+
     
 }
 

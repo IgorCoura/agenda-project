@@ -14,7 +14,7 @@ namespace Agenda.MVC.Services
     {
         private readonly ApiSettings _apiSettings;
 
-        public AuthService(INotificator notificator, IOptions<ApiSettings> options): base(notificator)
+        public AuthService(INotificator notificator, IHttpContextAccessor contextAccessor, IOptions<ApiSettings> options): base(notificator, contextAccessor, options.Value)
         {
             _apiSettings = options.Value;
         }

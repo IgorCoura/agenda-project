@@ -80,7 +80,13 @@ namespace Agenda.API.Controllers
             return OkCustomResponse(result);
         }
 
-
+        [HttpGet("phoneTypes")]
+        [AllowAnonymous]
+        public async Task<ActionResult> GetPhoneTypes()
+        {
+            var result = _contactService.RecoverPhoneType();
+            return OkCustomResponse(result.Result);
+        }
 
 
     }

@@ -8,7 +8,7 @@
 
 
 <div>
-    @using (Html.BeginForm("Edit", "Contact", FormMethod.Post))
+    @using (Html.BeginForm("Create", "Contact", FormMethod.Post))
     {
         @await Html.PartialAsync("_EditContact", Model)
     }

@@ -7,11 +7,11 @@ using Agenda.MVC.Params;
 
 namespace Agenda.MVC.Services
 {
-    public class UserService : IUserService
+    public class UserService : BaseService, IUserService
     {
         private readonly ApiSettings _apiSettings;
 
-        public UserService(IOptions<ApiSettings> options)
+        public UserService(INotificator notificator, IHttpContextAccessor contextAccessor, IOptions<ApiSettings> options) : base(notificator, contextAccessor, options.Value)
         {
             _apiSettings = options.Value;
         }

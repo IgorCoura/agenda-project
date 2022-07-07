@@ -4,34 +4,30 @@ namespace Agenda.MVC.Params
 {
     public class ContactParams
     {
-        public string? Name { get; set; }
-        public int? DDD { get; set; }
-        public int? Number { get; set; }
-        public int? Skip { get; set; }
-        public int? Take { get; set; }
+        private Dictionary<string, string?> dictionary = new Dictionary<string, string?>();
+        public ContactParams()
+        {
+            dictionary.Add("Name", null);
+            dictionary.Add("DDD", null);
+            dictionary.Add("Number", null);
+            dictionary.Add("Skip", null);
+            dictionary.Add("Take", null);
+        }
 
+        public void SetParam(string key, string value)
+        {
+            dictionary[key] = value;
+        }
+
+        public IEnumerable<string> GetParam()
+        {
+            return dictionary.Keys;
+        }
         public Dictionary<string, string>? Query()
         {
-            var query = new Dictionary<string, string>();
-
-            if (!string.IsNullOrEmpty(Name))
-               query["Name"] = Name;
-
-            if (DDD.HasValue)
-                query["DDD"] = DDD.ToString()!;
-
-            if (Number.HasValue)
-                query["Number"] = Number.ToString()!;
-
-            if(Skip.HasValue)
-                query["Skip"] = Skip.ToString()!;
-
-            if (Take.HasValue)
-                query["Take"] = Take.ToString()!;
-
-            if (query.Count > 0)
+            if (dictionary.Count > 0)
             {
-                return query;
+                return dictionary;
             }
 
             return null;

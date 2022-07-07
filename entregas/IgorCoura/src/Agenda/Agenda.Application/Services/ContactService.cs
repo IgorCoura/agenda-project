@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Agenda.Application.Exceptions;
 using FluentValidation;
 using LinqKit;
+using Agenda.Domain.Core;
 
 namespace Agenda.Application.Services
 {
@@ -107,6 +108,11 @@ namespace Agenda.Application.Services
                 
             var results = await _contactRepository.GetDataAsync(filter: predicate, include: q => q.Include(p => p.Phones));
             return _mapper.Map<IEnumerable<ContactModel>>(results);
+        }
+
+        public Task<IEnumerable<PhoneTypeModel>> RecoverPhoneType()
+        {
+            return Task.FromResult(_mapper.Map<IEnumerable<PhoneTypeModel>>(Enumeration.GetAll<PhoneType>()));
         }
 
         public async Task<ContactModel> Remove(int id, int userId)
