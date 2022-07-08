@@ -1,0 +1,24 @@
+@using Agenda.MVC.ViewModel
+@model CreateUserViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div>
+    @using(Html.BeginForm("Create", "UserAdmin", FormMethod.Post))
+    {
+        <div>
+          @Html.LabelFor(x => x.UserRoleId)
+          @Html.TextBoxFor(x => x.UserRoleId)
+          @Html.ValidationMessageFor(x => x.UserRoleId)
+        </div>
+        @await Html.PartialAsync("_FormsCreateUser", Model)
+    }
+</div>
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

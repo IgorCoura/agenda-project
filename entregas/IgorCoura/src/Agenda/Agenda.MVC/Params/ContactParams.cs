@@ -8,6 +8,7 @@ namespace Agenda.MVC.Params
         public ContactParams()
         {
             dictionary.Add("Name", null);
+            dictionary.Add("UserId", null);
             dictionary.Add("DDD", null);
             dictionary.Add("Number", null);
             dictionary.Add("Skip", null);

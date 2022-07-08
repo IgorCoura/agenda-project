@@ -69,7 +69,8 @@ namespace Agenda.MVC.Controllers
             var claims = new List<Claim>() { new Claim("token", token) };
             claims.AddRange(decodedToken.Claims);
 
-            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme, "name",
+                "role");
 
             var authProperties = new AuthenticationProperties
             {

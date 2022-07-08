@@ -9,6 +9,8 @@ namespace Agenda.MVC.Mapper
         {
             CreateMap<EditContactViewModel, ContactViewModel>().ReverseMap();
             CreateMap<EditPhoneViewModel, PhoneViewModel>().ReverseMap();
+            CreateMap<CreateUserViewModel, UserViewModel>().ReverseMap();
+            CreateMap<EditUserViewModel, UserViewModel>().ReverseMap();
         }
     }
 }

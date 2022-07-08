@@ -1,6 +1,6 @@
 @using Agenda.MVC.ViewModel
 
-@model EditContactViewModel
+@model BaseAdminContactViewModel<EditContactViewModel>
 
 @{
     ViewData["Title"] = "Contatos";
@@ -8,7 +8,7 @@
 
 
 <div>
-    @using (Html.BeginForm("Create", "Contact", FormMethod.Post))
+    @using (Html.BeginForm("Edit", "ContactAdmin", FormMethod.Post))
     {
         @await Html.PartialAsync("_FormsContact", Model)
     }

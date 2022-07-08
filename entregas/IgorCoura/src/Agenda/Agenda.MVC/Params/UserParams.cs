@@ -2,36 +2,33 @@ namespace Agenda.MVC.Params
 {
     public class UserParams
     {
-        public string? Name { get; set; }
-        public string? Username { get; set; }
-        public string? Email { get; set; }
-        public int? Skip { get; set; }
-        public int? Take { get; set; }
-        public  Dictionary<string, string>? Query()
+        private Dictionary<string, string?> dictionary = new Dictionary<string, string?>();
+        public UserParams()
         {
-            var query = new Dictionary<string, string>();
+            dictionary.Add("Name", null);
+            dictionary.Add("Username", null);
+            dictionary.Add("Email", null);
+            dictionary.Add("Skip", null);
+            dictionary.Add("Take", null);
+        }
 
-            if (!string.IsNullOrEmpty(Name))
-                query["Name"] = Name;
+        public void SetParam(string key, string value)
+        {
+            dictionary[key] = value;
+        }
 
-            if (!string.IsNullOrEmpty(Username))
-                query["Username"] = Username;
-
-            if (!string.IsNullOrEmpty(Email))
-                query["Email"] = Email;
-
-            if (Skip.HasValue)
-                query["Skip"] = Skip.ToString()!;
-
-            if (Take.HasValue)
-                query["Take"] = Take.ToString()!;
-
-            if (query.Count > 0)
+        public IEnumerable<string> GetParam()
+        {
+            return dictionary.Keys;
+        }
+        public Dictionary<string, string>? Query()
+        {
+            if (dictionary.Count > 0)
             {
-                return query;
+                return dictionary;
             }
+
             return null;
-            
         }
     }
 }

@@ -1,0 +1,71 @@
+@using Agenda.MVC.ViewModel
+@model List<UserViewModel>
+
+
+
+<div>
+   <div>
+     <h2>
+       Usuarios
+     </h2>
+     
+   </div>
+   <div class="input-group mb-3">
+      <div>
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Name</option>
+          <option value="1">Email</option>
+          <option value="2">UserName</option>
+        </select>
+      </div>
+      <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+      <button type="button" class="btn btn-outline-primary">Buscar</button>
+      <a class="btn btn-outline-primary" href='@Url.Action("Create", "UserAdmin")'>
+       Adicionar
+     </a>
+    </div>
+
+    @if(Model.Count() == 0)
+    {
+        <li>Não existe telefones</li>
+    }
+
+    @for(int i = 0; i< Model.Count(); i++)
+    {
+
+      var contact = @Model.ElementAt(i);
+
+      <div class="card mb-1">
+        <div class="card-header" id="headingOne">
+           <h5 class="mb-0 d-flex justify-content-between">
+             <div class="row">
+               <div class="col-auto">
+                 Nome: @contact.Name
+               </div>
+               <div class="col-auto">
+                 Email: @contact.Email
+               </div>
+               <div class="col-auto">
+                 Username: @contact.UserName
+               </div>
+               <div class="col-auto">
+                 UserRole: @contact.UserRole
+               </div>
+             </div>
+             <div>
+               <a class="btn" href='@Url.Action("Index", "ContactAdmin", new {userId = @contact.Id})'>
+                 Contatos
+               </a>
+               <a class="btn" href='@Url.Action("Edit", "UserAdmin", new {id = @contact.Id})'>
+                 Editar
+               </a>
+               <a class="btn" href='@Url.Action("Delete", "UserAdmin", new {id = @contact.Id})'>
+                 Remove
+               </a>
+             </div>
+           </h5>
+        </div>
+      </div>
+    }
+
+</div>

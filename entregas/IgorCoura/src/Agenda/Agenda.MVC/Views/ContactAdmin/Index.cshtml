@@ -1,6 +1,6 @@
 @using Agenda.MVC.ViewModel
 @using System.Collections
-@model IEnumerable<ContactViewModel>
+@model BaseAdminContactViewModel<IEnumerable<ContactViewModel>>
 
 @{
     ViewData["Title"] = "Contatos";
@@ -26,20 +26,20 @@
       </div>
       <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
       <button type="button" class="btn btn-outline-primary">Buscar</button>
-      <a class="btn btn-outline-primary" href='@Url.Action("Create", "Contac")'>
+      <a class="btn btn-outline-primary" href='@Url.Action("Create", "ContactAdmin", new {userId = Model.UserId})'>
        Adicionar
      </a>
     </div>
 
-    @if(Model.Count() == 0)
+    @if(Model.Contact.Count() == 0)
     {
         <li>Não existe telefones</li>
     }
 
-    @for(int i = 0; i< Model.Count(); i++)
+    @for(int i = 0; i< Model.Contact.Count(); i++)
     {
 
-      var contact = @Model.ElementAt(i);
+      var contact = @Model.Contact.ElementAt(i);
 
       <div class="card mb-1">
         <div class="card-header" id="headingOne">
@@ -47,7 +47,7 @@
              <button class="btn dropdown-toggle" data-bs-toggle="collapse" data-bs-target=@("#collapseOne"+i) aria-expanded="false" aria-controls=@("#collapseOne"+i)>
                   @contact.Name
              </button>
-             <a class="btn" href='@Url.Action("Edit", "Contact", new {id = @contact.Id})'>
+             <a class="btn" href='@Url.Action("Edit", "ContactAdmin", new {id = @contact.Id})'>
                Editar
              </a>
            </h5>

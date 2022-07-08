@@ -1,0 +1,23 @@
+@using Agenda.MVC.ViewModel
+@model EditUserViewModel
+
+@{
+    ViewData["Title"] = "Alterar user";
+}
+
+<div>
+    @using(Html.BeginForm("Edit", "User", FormMethod.Post))
+    {
+        @await Html.PartialAsync("_FormsEditUser", Model)
+    }
+    <div>
+      <a href='@Url.Action("Delete")'>
+        Deletar Conta.
+      </a>
+    </div>
+</div>
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -72,7 +72,7 @@ namespace Agenda.MVC.Controllers
             if (option.Contains("save"))
             {
 
-                //await _contactService.Update(model);
+                await _contactService.Register(model);
 
                 if (HasErrors())
                     return View(model);

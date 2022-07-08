@@ -10,7 +10,7 @@
 <div>
     @using (Html.BeginForm("Edit", "Contact", FormMethod.Post))
     {
-        @await Html.PartialAsync("_EditContact", Model)
+        @await Html.PartialAsync("_FormsContact", Model)
     }
     <div>
        <vc:Summary></vc:Summary>

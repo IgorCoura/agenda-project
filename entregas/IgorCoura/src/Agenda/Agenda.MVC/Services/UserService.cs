@@ -18,29 +18,99 @@ namespace Agenda.MVC.Services
 
         public async Task<bool> Register(CreateUserViewModel viewModel)
         {
-            await GetAll();
-            var response = await  _apiSettings.Url.AllowHttpStatus("400-404").AppendPathSegment("/api/v1/User").PostJsonAsync(viewModel);
+            var response = await GetAuthApiUrl().AllowHttpStatus("400-404").AppendPathSegment("/api/v1/User").PostJsonAsync(viewModel);
 
             if(response.StatusCode == 200)
             {
                 return true;
             }
 
+            var result = await response.GetJsonAsync();
+            Notify(result.errors);
+
             return false;
         }
 
-        public async Task<bool> GetAll()
+
+        public async Task<bool> Edit(EditUserViewModel model)
         {
-            var parame = new UserParams()
+            var response = await GetAuthApiUrl().AllowHttpStatus("400").AppendPathSegment("/api/v1/User").PutJsonAsync(model);
+            if(response.StatusCode == 200)
             {
-                Name = "Admin Root Application",
-                Username = "admin",
-                Email = "admin@api.com",
-                Take = 1,
-            };
-            var response = await _apiSettings.Url.WithOAuthBearerToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiIxIiwiZW1haWwiOiJhZG1pbkBhcGkuY29tIiwidW5pcXVlX25hbWUiOiJBZG1pbiBSb290IEFwcGxpY2F0aW9uIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjU3MDUzMzcwLCJleHAiOjE2NTcwNTY5NzAsImlhdCI6MTY1NzA1MzM3MH0.6-Uj43vVAxy3dJl7Ro26UiDPZwuiAXtVIljEqls3eNg").AppendPathSegment("/api/v1/User/admin").SetQueryParams(parame.Query()).GetJsonAsync();
+                return true;
+            }
+            var result = await response.GetJsonAsync();
+            Notify(result.errors);
+            return false;
+        }
+
+        public async Task<bool> EditPassword(EditPasswordViewModel model)
+        {
+            var response = await GetAuthApiUrl().AllowHttpStatus("400").AppendPathSegment("/api/v1/User/password").PutJsonAsync(model);
+            if (response.StatusCode == 200)
+            {
+                return true;
+            }
+            var result = await response.GetJsonAsync();
+            Notify(result.errors);
+            return false;
+        }
+
+        public async Task<UserViewModel> GetUser()
+        {
+            var response = await GetAuthApiUrl().AppendPathSegment("/api/v1/User").GetJsonAsync<BaseResponseViewModel<UserViewModel>>();
+            return response.Data;
+        }
+
+        public async Task RemoverUser()
+        {
+            await GetAuthApiUrl().AppendPathSegment("/api/v1/User").DeleteAsync();
+        }
+
+        public async Task<bool> RegisterAdmin(CreateUserViewModel viewModel)
+        {
+            var response = await GetAuthApiUrl().AllowHttpStatus("400-404").AppendPathSegment("/api/v1/User/admin").PostJsonAsync(viewModel);
+
+            if (response.StatusCode == 200)
+            {
+                return true;
+            }
+
+            var result = await response.GetJsonAsync();
+            Notify(result.errors);
 
             return false;
         }
+
+        public async Task<bool> EditAdmin(EditUserViewModel model)
+        {
+            var response = await GetAuthApiUrl().AllowHttpStatus("400").AppendPathSegment("/api/v1/User/admin/").AppendPathSegment(model.Id).PutJsonAsync(model);
+            if (response.StatusCode == 200)
+            {
+                return true;
+            }
+            var result = await response.GetJsonAsync();
+            Notify(result.errors);
+            return false;
+        }
+
+
+        public async Task<UserViewModel> GetByIdAdmin(int id)
+        {
+            var response = await GetAuthApiUrl().AppendPathSegment("/api/v1/User/admin/").AppendPathSegment(id).GetJsonAsync<BaseResponseViewModel<UserViewModel>>();
+            return response.Data;
+        }
+
+        public async Task<IEnumerable<UserViewModel>> GetAllAdmin(UserParams param)
+        {
+            var response = await GetAuthApiUrl().AppendPathSegment("/api/v1/User/admin").SetQueryParams(param).GetJsonAsync<BaseResponseViewModel<IEnumerable<UserViewModel>>>();
+            return response.Data;
+        }
+
+        public async Task RemoverByIdAdmin(int id)
+        {
+            await GetAuthApiUrl().AppendPathSegment("/api/v1/User/admin/").AppendPathSegment(id).DeleteAsync();
+        }
+
     }
 }

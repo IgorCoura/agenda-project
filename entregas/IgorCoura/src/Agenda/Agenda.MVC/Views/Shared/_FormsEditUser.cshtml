@@ -1,0 +1,25 @@
+@using Agenda.MVC.ViewModel
+@model EditUserViewModel
+
+<div>
+  @Html.LabelFor(x => x.Name)
+  @Html.TextBoxFor(x => x.Name)
+  @Html.ValidationMessageFor(x => x.Name)
+</div>
+<div>
+  @Html.LabelFor(x => x.UserName)
+  @Html.TextBoxFor(x => x.UserName)
+  @Html.ValidationMessageFor(x => x.UserName)
+</div>
+<div>
+  @Html.LabelFor(x => x.Email)
+  @Html.TextBoxFor(x => x.Email)
+  @Html.ValidationMessageFor(x => x.Email)
+</div>
+<div>
+  <vc:Summary></vc:Summary>
+</div>
+<div>
+  <button>Salvar</button>
+  <a></a>
+</div>

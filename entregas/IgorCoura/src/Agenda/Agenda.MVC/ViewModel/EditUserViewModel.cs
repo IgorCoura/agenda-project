@@ -3,9 +3,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Agenda.MVC.ViewModel
 {
-    public class CreateUserViewModel
+    public class EditUserViewModel
     {
-
+        [Key]
+        public int Id { get; set; }
         [Required]
         [StringLength(200, MinimumLength = 3, ErrorMessage = "O nome teve ter um tamanho entre 3 e 200 caracteres.")]
         [DisplayName("Nome")]
@@ -21,13 +22,5 @@ namespace Agenda.MVC.ViewModel
         [Required]
         [DisplayName("Cargo")]
         public int UserRoleId { get; set; }
-        [Required]
-        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$_!%*?&-])[A-Za-z\d@$!_%*?&-]{8,}$", ErrorMessage = "Senha deve conter o mínimo de oito caracteres, pelo menos uma letra maiúscula, uma letra minúscula, um número e um caractere especial.")]
-        [DisplayName("Senha")]
-        public string Password { get; set; } = string.Empty;
-        [Compare("Password")]
-        [Required]
-        [DisplayName("Confirmar Senha")]
-        public string ConfirmPassword { get; set; } = string.Empty;
     }
 }
