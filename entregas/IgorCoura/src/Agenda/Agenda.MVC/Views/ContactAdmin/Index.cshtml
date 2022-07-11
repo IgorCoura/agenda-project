@@ -1,72 +1,89 @@
 @using Agenda.MVC.ViewModel
 @using System.Collections
-@model BaseAdminContactViewModel<IEnumerable<ContactViewModel>>
+@model SearchViewModel<List<ContactViewModel>>
 
 @{
     ViewData["Title"] = "Contatos";
 }
-
-
- 
 
 <div>
    <div>
      <h2>
        Contact
      </h2>
-     
    </div>
-   <div class="input-group mb-3">
-      <div>
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Name</option>
-          <option value="1">DDD</option>
-          <option value="2">Number</option>
-        </select>
-      </div>
-      <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-      <button type="button" class="btn btn-outline-primary">Buscar</button>
-      <a class="btn btn-outline-primary" href='@Url.Action("Create", "ContactAdmin", new {userId = Model.UserId})'>
-       Adicionar
-     </a>
-    </div>
-
-    @if(Model.Contact.Count() == 0)
-    {
-        <li>Não existe telefones</li>
-    }
-
-    @for(int i = 0; i< Model.Contact.Count(); i++)
-    {
-
-      var contact = @Model.Contact.ElementAt(i);
-
-      <div class="card mb-1">
-        <div class="card-header" id="headingOne">
-           <h5 class="mb-0 d-flex justify-content-between">
-             <button class="btn dropdown-toggle" data-bs-toggle="collapse" data-bs-target=@("#collapseOne"+i) aria-expanded="false" aria-controls=@("#collapseOne"+i)>
-                  @contact.Name
-             </button>
-             <a class="btn" href='@Url.Action("Edit", "ContactAdmin", new {id = @contact.Id})'>
-               Editar
-             </a>
-           </h5>
+  @using (Html.BeginForm("Index", "ContactAdmin", FormMethod.Get))
+  {
+     <div class="input-group mb-3">
+        <div>
+          @Html.DropDownListFor(x => x.Key, Model!.SearchKeys, new {@class = "form-select"})
+          @Html.ValidationMessageFor(x => x.Key)
         </div>
+        <div class="input-field col s8">
+          @Html.TextBoxFor(x => x.Value, new {@class = "form-control rounded", @placeholder ="Search", @type = "search" })
+          @Html.ValidationMessageFor(x => x.Value)
+        </div>
+        <button type="submit" class="btn btn-outline-primary", name="userId", value=@TempData["userId"]>Buscar</button>
+        <a class="btn btn-outline-primary" href='@Url.Action("Create", "Contact")'>
+         Adicionar
+       </a>
+     </div>
+
+      @if(Model.Data.Count() == 0)
+      {
+          <li>Não existe telefones</li>
+      }
+
+      @for(int i = 0; i< Model.Data.Count(); i++)
+      {
+
+        var contact = @Model.Data[i];
+
+        <div class="card mb-1">
+          <div class="card-header" id="headingOne">
+             <h5 class="mb-0 d-flex justify-content-between">
+               <button class="btn dropdown-toggle" data-bs-toggle="collapse" data-bs-target=@("#collapseOne"+i) aria-expanded="false" aria-controls=@("#collapseOne"+i)>
+                    @contact.Name
+               </button>
+               <a class="btn" href='@Url.Action("Edit", "ContactAdmin", new {id=@contact.Id, userId = TempData["userId"]})'>
+                 Editar
+               </a>
+             </h5>
+          </div>
      
-        <div id=@("collapseOne"+i) class="collapse" aria-labelledby=@("headingOne"+i) data-parent="#accordion">
-          <div class="card-body">
-            @foreach(var phone in contact.Phones)
-            {
-              <div class="mb-2">
-                <div>@phone.PhoneType - @phone.FormattedPhone</div>
-                <div>Descrição: @phone.Description</div>
-              </div>        
-            }         
+          <div id=@("collapseOne"+i) class="collapse" aria-labelledby=@("headingOne"+i) data-parent="#accordion">
+            <div class="card-body">
+              @foreach(var phone in contact.Phones)
+              {
+                <div class="mb-2">
+                  <div>@phone.PhoneType - @phone.FormattedPhone</div>
+                  <div>Descrição: @phone.Description</div>
+                </div>        
+              }         
+            </div>
           </div>
         </div>
-      </div>
-    }
+      }
 
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item">
+            <a  class="page-link" href='@Url.Action("Index", "ContactAdmin", new {page = (Model.CurrentPage-1 < 1 ? 1 : Model.CurrentPage-1), userId = TempData["userId"]})' aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+            @foreach(var pagNumber in Enumerable.Range(1, Model.TotalPages))
+            {
+                <li class='@(Model.CurrentPage == pagNumber ? "page-item active": "page-item")'><a  class="page-link" href='@Url.Action("Index", "ContactAdmin", new {page = pagNumber, userId = TempData["userId"]})'>@pagNumber</a></li>
+            }
+          <li class="page-item">
+            <a  class="page-link" aria-label="Next"   href='@Url.Action("Index", "ContactAdmin", new {page = (Model.CurrentPage+1 > Model.TotalPages ? Model.TotalPages : Model.CurrentPage+1), userId = TempData["userId"]})'>
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+  }
 </div>
 
 

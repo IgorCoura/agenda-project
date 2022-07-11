@@ -101,10 +101,10 @@ namespace Agenda.MVC.Services
             return response.Data;
         }
 
-        public async Task<IEnumerable<UserViewModel>> GetAllAdmin(UserParams param)
+        public async Task<BasePageResponseViewModel<IEnumerable<UserViewModel>>> GetAllAdmin(UserParams param)
         {
-            var response = await GetAuthApiUrl().AppendPathSegment("/api/v1/User/admin").SetQueryParams(param).GetJsonAsync<BaseResponseViewModel<IEnumerable<UserViewModel>>>();
-            return response.Data;
+            var response = await GetAuthApiUrl().AppendPathSegment("/api/v1/User/admin").SetQueryParams(param.Query()).GetJsonAsync<BasePageResponseViewModel<IEnumerable<UserViewModel>>>();
+            return response;
         }
 
         public async Task RemoverByIdAdmin(int id)

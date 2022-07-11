@@ -18,10 +18,10 @@ namespace Agenda.MVC.Services
             _contextAccessor = contextAccessor;
         }
 
-        public async Task<IEnumerable<ContactViewModel>> GetAll(ContactParams contactParams)
+        public async Task<BasePageResponseViewModel<IEnumerable<ContactViewModel>>> GetAll(ContactParams contactParams)
         {
-            var response = await GetAuthApiUrl().AppendPathSegment("/api/v1/Contact").SetQueryParams(contactParams.Query()).GetJsonAsync<BaseResponseViewModel<IEnumerable<ContactViewModel>>>();
-            return response.Data;
+            var response = await GetAuthApiUrl().AppendPathSegment("/api/v1/Contact").SetQueryParams(contactParams.Query()).GetJsonAsync<BasePageResponseViewModel<IEnumerable<ContactViewModel>>>();
+            return response;
         }
 
         public async Task<ContactViewModel> GetById(int id)
@@ -59,10 +59,10 @@ namespace Agenda.MVC.Services
             var resposne = await GetAuthApiUrl().AppendPathSegment("/api/v1/Contact/phone/").AppendPathSegment(phoneId).DeleteAsync();
         }
 
-        public async Task<IEnumerable<ContactViewModel>> GetAllAdmin(ContactParams contactParams)
+        public async Task<BasePageResponseViewModel<IEnumerable<ContactViewModel>>> GetAllAdmin(ContactParams contactParams)
         {
-            var response = await GetAuthApiUrl().AppendPathSegment("/api/v1/Contact/admin/search").SetQueryParams(contactParams.Query()).GetJsonAsync<BaseResponseViewModel<IEnumerable<ContactViewModel>>>();
-            return response.Data;
+            var response = await GetAuthApiUrl().AppendPathSegment("/api/v1/Contact/admin/search").SetQueryParams(contactParams.Query()).GetJsonAsync<BasePageResponseViewModel<IEnumerable<ContactViewModel>>>();
+            return response;
         }
 
         public async Task<ContactViewModel> GetByIdAdmin(int id, int userId)

@@ -6,6 +6,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Agenda.MVC.Controllers
 {
@@ -21,10 +22,31 @@ namespace Agenda.MVC.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(SearchViewModel<List<UserViewModel>> model, int page = 1)
         {
-            var response = await _userService.GetAllAdmin(new UserParams());
-            return View(response.ToList());
+            var param = new UserParams();
+            param.SetParam(model.Key, model.Value);
+            param.SetParam("Take", model.Take.ToString());
+            param.SetParam("Skip", (model.Take * (page - 1)).ToString());
+
+            var result = await _userService.GetAllAdmin(param);
+            var totalPages = (int)Math.Ceiling((decimal)result.TotalItems / model.Take);
+
+            var response = new SearchViewModel<List<UserViewModel>>()
+            {
+
+                Data = result.Data.ToList(),
+                SearchKeys = new List<SelectListItem>()
+                {
+                    new SelectListItem("Nome", "Name"),
+                    new SelectListItem("Email", "Email"),
+                    new SelectListItem("Username", "Username")
+                },
+                CurrentPage = page,
+                TotalPages = totalPages
+            };
+
+            return View(response);
         }
 
         [HttpGet]

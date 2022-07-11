@@ -21,18 +21,32 @@ namespace Agenda.MVC.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> Index(int userId)
+        public async Task<ActionResult> Index(SearchViewModel<List<ContactViewModel>> model, int userId, int page = 1)
         {
             var param = new ContactParams();
             param.SetParam("UserId", userId.ToString());
-            param.SetParam("Take", null);
-            param.SetParam("Skip", null);
+            param.SetParam(model.Key, model.Value);
+            param.SetParam("Take", model.Take.ToString());
+            param.SetParam("Skip", (model.Take * (page - 1)).ToString());
+
             var result = await _contactService.GetAllAdmin(param);
-            var response = new BaseAdminContactViewModel<IEnumerable<ContactViewModel>>()
+
+            var totalPages = (int)Math.Ceiling((decimal)result.TotalItems / model.Take);
+
+            var response = new SearchViewModel<List<ContactViewModel>>()
             {
-                UserId = userId,
-                Contact = result
+                Data = result.Data.ToList(),
+                SearchKeys = new List<SelectListItem>()
+                {
+                    new SelectListItem("Nome", "Name"),
+                    new SelectListItem("Número", "Number"),
+                    new SelectListItem("DDD", "DDD")
+                },
+                TotalPages = totalPages,
+                CurrentPage = page,
+
             };
+            TempData["userId"] = userId;
             return View(response);
         }
 
@@ -42,29 +56,25 @@ namespace Agenda.MVC.Controllers
             await GetPhoneTypes();
             var contact = await _contactService.GetByIdAdmin(id, userId);
             var editContact = _mapper.Map<EditContactViewModel>(contact);
-            var response = new BaseAdminContactViewModel<EditContactViewModel>()
-            {
-                UserId=userId,
-                Contact = editContact
-            };
-            return View(response);
+            TempData["userId"] = userId;
+            return View(editContact);
         }
 
         [HttpPost]
-        public async Task<ActionResult> Edit(BaseAdminContactViewModel<EditContactViewModel> viewModel,  string option = "save")
+        public async Task<ActionResult> Edit(EditContactViewModel model, int userId,  string option = "save")
         {
-            var model = viewModel.Contact;
-            await GetPhoneTypes();
-            model = await EditPhones(model, viewModel.UserId, option);
+            TempData["userId"] = userId;
+            await GetPhoneTypes(); 
+            model = await EditPhones(model, userId, option);
             if (option.Contains("save"))
             {
 
-                await _contactService.UpdateAdmin(model, viewModel.UserId);
+                await _contactService.UpdateAdmin(model, userId);
 
                 if (HasErrors())
                     return View(model);
 
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index), new { userId = userId});
             }
             return View(model);
         }
@@ -73,30 +83,25 @@ namespace Agenda.MVC.Controllers
         public async Task<ActionResult> Create(int userId)
         {
             await GetPhoneTypes();
-            var response = new BaseAdminContactViewModel<EditContactViewModel>()
-            {
-                UserId = userId,
-                Contact = new EditContactViewModel()
-            };
-            return View(response);
+            TempData["userId"] = userId;
+            return View(new EditContactViewModel());
         }
 
 
         [HttpPost]
-        public async Task<ActionResult> Create(BaseAdminContactViewModel<EditContactViewModel> viewModel, string option = "save")
+        public async Task<ActionResult> Create(EditContactViewModel model, int userId, string option = "save")
         {
             await GetPhoneTypes();
-            var model = viewModel.Contact;
-            model = await EditPhones(model, viewModel.UserId, option);
+            TempData["userId"] = userId;
+            model = await EditPhones(model, userId, option);
             if (option.Contains("save"))
             {
-
-                await _contactService.RegisterAdmin(model, viewModel.UserId);
+                await _contactService.RegisterAdmin(model, userId);
 
                 if (HasErrors())
                     return View(model);
 
-                return RedirectToAction(nameof(Index), new {userId = viewModel.UserId});
+                return RedirectToAction(nameof(Index), new {userId = userId});
             }
             return View(model);
         }
@@ -107,6 +112,8 @@ namespace Agenda.MVC.Controllers
             
             if (option.Contains("AddPhone"))
             {
+                userId = int.Parse(option.Split("|")[1]);
+                TempData["userId"] = userId;
                 ModelState.Clear();
                 model.Phones.Add(new EditPhoneViewModel());
             }

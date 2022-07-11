@@ -65,7 +65,8 @@ namespace Agenda.API.Controllers
         public async Task<ActionResult> Get([FromQuery] UserParams userParams)
         {
             var result = await _userService.Recover(userParams);
-            return OkCustomResponse(result);
+            var totalitems = await _userService.GetTotalItems(userParams);
+            return OkPageResponse(totalitems, result);
         }
 
         [HttpDelete("{id:int}")]

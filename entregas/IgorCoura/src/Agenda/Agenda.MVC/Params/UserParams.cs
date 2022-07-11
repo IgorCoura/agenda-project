@@ -12,9 +12,10 @@ namespace Agenda.MVC.Params
             dictionary.Add("Take", null);
         }
 
-        public void SetParam(string key, string value)
+        public void SetParam(string? key, string? value)
         {
-            dictionary[key] = value;
+            if (key != null && dictionary.ContainsKey(key))
+                dictionary[key] = value;
         }
 
         public IEnumerable<string> GetParam()

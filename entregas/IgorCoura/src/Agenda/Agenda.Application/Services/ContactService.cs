@@ -93,7 +93,7 @@ namespace Agenda.Application.Services
             if (userId is not null)
                 predicate = predicate.And(x => x.UserId == userId);
            
-            var results = await _contactRepository.GetDataAsync(filter: predicate, include: q => q.Include(p => p.Phones));
+            var results = await _contactRepository.GetDataAsync(filter: predicate, include: q => q.Include(p => p.Phones), skip: query.Skip, take: query.Take);
             return _mapper.Map<IEnumerable<ContactModel>>(results);
         }
 
@@ -115,6 +115,11 @@ namespace Agenda.Application.Services
             return Task.FromResult(_mapper.Map<IEnumerable<PhoneTypeModel>>(Enumeration.GetAll<PhoneType>()));
         }
 
+        public Task<int> GetTotalItems(ContactParams contactParams)
+        {
+            var query = contactParams.Filter() ?? PredicateBuilder.New<Contact>(true);
+            return Task.FromResult(_contactRepository.QueryData(x => x.Count(query)));
+        }
         public async Task<ContactModel> Remove(int id, int userId)
         {
             var predicate = PredicateBuilder.New<Contact>();

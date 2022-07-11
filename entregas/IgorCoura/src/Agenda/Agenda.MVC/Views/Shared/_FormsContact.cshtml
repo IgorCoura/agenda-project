@@ -19,13 +19,13 @@
     <div>
       @await Html.PartialAsync("_FormsPhone", Model!)
     </div>
-    <button type="submit" name="option" class="waves-effect waves-light btn cancel btn btn-primary" value="AddPhone">
+    <button type="submit" name="option" class="waves-effect waves-light btn cancel btn btn-primary" value=@("AddPhone|"+TempData["userId"])>
       <span>Adicionar Telefone</span>
     </button>
   </div>
   <div class="mb-3">
-    <button class="btn btn-primary">Salvar</button>
-    <a href='@Url.Action("Index")' >Cancelar</a>
+    <button class="btn btn-primary" name="userId" value=@TempData["userId"]>Salvar</button>
+    <a href='@Url.Action("Index", new {id = TempData["userId"]})' >Cancelar</a>
   </div>
 </div>
 

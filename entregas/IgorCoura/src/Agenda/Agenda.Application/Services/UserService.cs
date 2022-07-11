@@ -10,6 +10,7 @@ using Agenda.Domain.Interfaces.Repositories;
 using Agenda.Infrastructure.utils;
 using AutoMapper;
 using FluentValidation;
+using LinqKit;
 
 namespace Agenda.Application.Services
 {
@@ -80,15 +81,20 @@ namespace Agenda.Application.Services
 
         public async Task<IEnumerable<UserModel>> Recover(UserParams query)
         {
-            var results = await _userRepository.GetDataAsync(filter: query.Filter());
+            var results = await _userRepository.GetDataAsync(filter: query.Filter(), skip: query.Skip, take: query.Take);
             return _mapper.Map<IEnumerable<UserModel>>(results);
         }
-
 
         public async Task<IEnumerable<UserModel>> RecoverAll()
         {
             var results = await _userRepository.GetDataAsync();
             return _mapper.Map<IEnumerable<UserModel>>(results);
+        }
+
+        public  Task<int> GetTotalItems(UserParams userParams)
+        {
+            var query = userParams.Filter() ?? PredicateBuilder.New<User>(true);
+            return Task.FromResult(_userRepository.QueryData(x => x.Count(query)));
         }
 
         public async Task<UserModel> Remove(int id)

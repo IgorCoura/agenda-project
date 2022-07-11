@@ -1,6 +1,5 @@
 @using Agenda.MVC.ViewModel
-@model List<UserViewModel>
-
+@model SearchViewModel<List<UserViewModel>>
 
 
 <div>
@@ -8,32 +7,34 @@
      <h2>
        Usuarios
      </h2>
-     
-   </div>
-   <div class="input-group mb-3">
-      <div>
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Name</option>
-          <option value="1">Email</option>
-          <option value="2">UserName</option>
-        </select>
-      </div>
-      <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-      <button type="button" class="btn btn-outline-primary">Buscar</button>
-      <a class="btn btn-outline-primary" href='@Url.Action("Create", "UserAdmin")'>
-       Adicionar
-     </a>
+    </div>
+@using (Html.BeginForm("Index", "UserAdmin", FormMethod.Get))
+{   
+   
+    <div class="input-group mb-3">
+        <div>
+          @Html.DropDownListFor(x => x.Key, Model!.SearchKeys, new {@class = "form-select"})
+          @Html.ValidationMessageFor(x => x.Key)
+        </div>
+        <div class="input-field col s8">
+          @Html.TextBoxFor(x => x.Value, new {@class = "form-control rounded", @placeholder ="Search", @type = "search" })
+          @Html.ValidationMessageFor(x => x.Value)
+        </div>
+        <button type="submit" class="btn btn-outline-primary">Buscar</button>
+        <a class="btn btn-outline-primary" href='@Url.Action("Create", "UserAdmin")'>
+         Adicionar
+       </a>
     </div>
 
-    @if(Model.Count() == 0)
+    @if(Model.Data.Count() == 0)
     {
         <li>Não existe telefones</li>
     }
 
-    @for(int i = 0; i< Model.Count(); i++)
+    @for(int i = 0; i< Model.Data.Count(); i++)
     {
 
-      var contact = @Model.ElementAt(i);
+        var contact = @Model.Data[i];
 
       <div class="card mb-1">
         <div class="card-header" id="headingOne">
@@ -68,4 +69,23 @@
       </div>
     }
 
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <button type="submit" class="page-link" name="page" value=@(Model.CurrentPage-1 < 1 ? 1 : Model.CurrentPage-1) aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </button>
+        </li>
+          @foreach(var pagNumber in Enumerable.Range(1, Model.TotalPages))
+          {
+              <li class='@(Model.CurrentPage == pagNumber ? "page-item active": "page-item")'><button type="submit" class="page-link" name="page" value=@pagNumber>@pagNumber</button></li>
+          }
+        <li class="page-item">
+          <button type="submit" class="page-link" aria-label="Next" name="page" value=@(Model.CurrentPage+1 > Model.TotalPages ? Model.TotalPages : Model.CurrentPage+1)>
+            <span aria-hidden="true">&raquo;</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+}
 </div>

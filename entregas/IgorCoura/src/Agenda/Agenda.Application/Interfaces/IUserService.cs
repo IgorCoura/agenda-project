@@ -16,6 +16,7 @@ namespace Agenda.Application.Interfaces
         Task<UserModel> RecoverById(int id);
         Task<IEnumerable<UserModel>> Recover(UserParams query);
         Task<IEnumerable<UserModel>> RecoverAll();
+        Task<int> GetTotalItems(UserParams userParams);
         Task<UserModel> Remove(int id);
     }
 }

@@ -21,13 +21,31 @@ namespace Agenda.MVC.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(SearchViewModel<List<ContactViewModel>> model, int page = 1)
         {
             var param = new ContactParams();
-            param.SetParam("Take", null);
-            param.SetParam("Skip", null);
+            param.SetParam(model.Key, model.Value);
+            param.SetParam("Take", model.Take.ToString());
+            param.SetParam("Skip", (model.Take * (page - 1)).ToString());
+
             var result = await _contactService.GetAll(param);
-            return View(result);
+            var totalPages = (int)Math.Ceiling((decimal)result.TotalItems / model.Take);
+
+            var response = new SearchViewModel<List<ContactViewModel>>()
+            {
+                Data = result.Data.ToList(),
+                SearchKeys = new List<SelectListItem>()
+                {
+                    new SelectListItem("Nome", "Name"),
+                    new SelectListItem("Número", "Number"),
+                    new SelectListItem("DDD", "DDD")
+                },
+                CurrentPage = page,
+                TotalPages = totalPages
+
+            };
+
+            return View(response);
         }
 
         [HttpGet]

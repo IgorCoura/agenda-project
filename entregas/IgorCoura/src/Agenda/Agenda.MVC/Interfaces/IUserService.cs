@@ -13,7 +13,7 @@ namespace Agenda.MVC.Interfaces
         Task<bool> RegisterAdmin(CreateUserViewModel viewModel);
         Task<bool> EditAdmin(EditUserViewModel model);
         Task<UserViewModel> GetByIdAdmin(int id);
-        Task<IEnumerable<UserViewModel>> GetAllAdmin(UserParams param);
+        Task<BasePageResponseViewModel<IEnumerable<UserViewModel>>> GetAllAdmin(UserParams param);
         Task RemoverByIdAdmin(int id);
     }
 }
