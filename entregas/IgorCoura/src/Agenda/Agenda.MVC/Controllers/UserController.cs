@@ -85,12 +85,6 @@ namespace Agenda.MVC.Controllers
         [HttpGet]
         public async Task<ActionResult> Delete()
         {
-            return View();
-        }
-
-        [HttpGet]
-        public async Task<ActionResult> DeleteConta()
-        {
             await _userService.RemoverUser();
             await HttpContext.SignOutAsync();
             return Redirect(Url.ActionLink("index","login")!);

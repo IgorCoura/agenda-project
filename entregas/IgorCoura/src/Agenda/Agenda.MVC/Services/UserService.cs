@@ -18,7 +18,7 @@ namespace Agenda.MVC.Services
 
         public async Task<bool> Register(CreateUserViewModel viewModel)
         {
-            var response = await GetAuthApiUrl().AllowHttpStatus("400-404").AppendPathSegment("/api/v1/User").PostJsonAsync(viewModel);
+            var response = await _apiSettings.Url.AllowHttpStatus("400-404").AppendPathSegment("/api/v1/User").PostJsonAsync(viewModel);
 
             if(response.StatusCode == 200)
             {

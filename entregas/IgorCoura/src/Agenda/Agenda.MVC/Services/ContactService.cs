@@ -56,8 +56,14 @@ namespace Agenda.MVC.Services
 
         public async Task RemovePhone(int phoneId)
         {
-            var resposne = await GetAuthApiUrl().AppendPathSegment("/api/v1/Contact/phone/").AppendPathSegment(phoneId).DeleteAsync();
+            await GetAuthApiUrl().AppendPathSegment("/api/v1/Contact/phone/").AppendPathSegment(phoneId).DeleteAsync();
         }
+
+        public async Task Remove(int contactId)
+        {
+            await GetAuthApiUrl().AppendPathSegment("/api/v1/Contact/").AppendPathSegment(contactId).DeleteAsync();
+        }
+
 
         public async Task<BasePageResponseViewModel<IEnumerable<ContactViewModel>>> GetAllAdmin(ContactParams contactParams)
         {
@@ -97,7 +103,12 @@ namespace Agenda.MVC.Services
 
         public async Task RemovePhoneAdmin(int id, int userId)
         {
-            var resposne = await GetAuthApiUrl().AppendPathSegment("/api/v1/Contact/phone").SetQueryParam("id", id).SetQueryParam("userId", userId).DeleteAsync();
+            await GetAuthApiUrl().AppendPathSegment("/api/v1/Contact/admin/phone").SetQueryParam("id", id).SetQueryParam("userId", userId).DeleteAsync();
+        }
+
+        public async Task RemoveContactAdmin(int contactId, int userId)
+        {
+            await GetAuthApiUrl().AppendPathSegment("/api/v1/Contact/admin").SetQueryParam("id", contactId).SetQueryParam("userId", userId).DeleteAsync();
         }
 
         public async Task<IEnumerable<EnumerationViewModel>> GetPhoneTypesAsync()

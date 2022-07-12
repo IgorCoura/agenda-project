@@ -2,6 +2,29 @@
 @model SearchViewModel<List<UserViewModel>>
 
 
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmar exclusão!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Tem certeza que deseja remover o usuario selecionado?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary confirm-delete">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal-->
+
 <div>
    <div>
      <h2>
@@ -60,9 +83,9 @@
                <a class="btn" href='@Url.Action("Edit", "UserAdmin", new {id = @contact.Id})'>
                  Editar
                </a>
-               <a class="btn" href='@Url.Action("Delete", "UserAdmin", new {id = @contact.Id})'>
+               <button type="button" class="btn delete-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-itemid="@contact.Id" >
                  Remove
-               </a>
+               </button>
              </div>
            </h5>
         </div>
@@ -89,3 +112,21 @@
     </nav>
 }
 </div>
+@section Scripts
+{
+  @await Html.PartialAsync("_ValidationScriptsPartial")
+
+  <script>
+  $(document).ready(function ()  {
+      $('.delete-btn').click(function() {
+          const itemid = $(this).data('itemid');
+          $('.confirm-delete').data('itemid', itemid);
+      });
+      $('.confirm-delete').click(function ()  {
+          const itemid = $(this).data('itemid');
+          const url = window.location.origin + '@Html.Raw(Url.Action("Delete", "UserAdmin"))' + '/' + '?id=' + itemid;
+          window.location.href = url;
+      });
+  })
+  </script>
+}

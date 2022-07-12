@@ -11,10 +11,12 @@ namespace Agenda.MVC.Interfaces
         Task<bool> Register(EditContactViewModel model);
         Task RemovePhone(int phoneId);
         Task<IEnumerable<EnumerationViewModel>> GetPhoneTypesAsync();
+        Task Remove(int contactId);
         Task<BasePageResponseViewModel<IEnumerable<ContactViewModel>>> GetAllAdmin(ContactParams contactParams);
         Task<ContactViewModel> GetByIdAdmin(int id, int userId);
         Task<bool> UpdateAdmin(EditContactViewModel model, int userId);
         Task<bool> RegisterAdmin(EditContactViewModel model, int userId);
         Task RemovePhoneAdmin(int id, int userId);
+        Task RemoveContactAdmin(int contactId, int userId);
     }
 }

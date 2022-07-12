@@ -5,15 +5,21 @@
     ViewData["Title"] = "Alterar user";
 }
 
-<div>
+<div class="form-user m-auto">
+  <h3 class="text-center">Editar usuario</h3>
     @using(Html.BeginForm("Edit", "UserAdmin", FormMethod.Post))
     {
+      <div class="form-group">
         <div>
           @Html.LabelFor(x => x.UserRoleId)
-          @Html.TextBoxFor(x => x.UserRoleId)
+          @Html.TextBoxFor(x => x.UserRoleId, new { @class="form-control"})
           @Html.ValidationMessageFor(x => x.UserRoleId)
         </div>
         @await Html.PartialAsync("_FormsEditUser", Model)
+      </div>
+      <div>
+          <vc:Summary></vc:Summary>
+        </div>
     }
 
 </div>

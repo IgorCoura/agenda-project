@@ -106,6 +106,13 @@ namespace Agenda.MVC.Controllers
             return View(model);
         }
 
+        [HttpGet]
+        public async Task<ActionResult> Delete(int id, int userId)
+        {
+            await _contactService.RemoveContactAdmin(id, userId);
+            return RedirectToAction(nameof(Index), new { userId = userId });
+        }
+
 
         private async Task<EditContactViewModel> EditPhones(EditContactViewModel model, int userId, string option)
         {

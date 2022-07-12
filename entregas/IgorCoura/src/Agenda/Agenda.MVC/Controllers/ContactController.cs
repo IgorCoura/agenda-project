@@ -128,5 +128,12 @@ namespace Agenda.MVC.Controllers
             var list = new SelectList(types, "Id", "Name");
             ViewBag.PhoneTypes = list;
         }
+
+        [HttpGet]
+        public async Task<ActionResult> Delete(int id)
+        {
+            await _contactService.Remove(id);
+            return RedirectToAction("Index");
+        }
     }
 }

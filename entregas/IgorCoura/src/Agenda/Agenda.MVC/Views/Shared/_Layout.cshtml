@@ -1,3 +1,4 @@
+@using Agenda.MVC.Constants
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,32 +8,49 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Agenda.MVC.styles.css" asp-append-version="true" />
+    @RenderSection("Styles", false)
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Agenda.MVC</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Contact" asp-action="Index">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+  <header class="p-3 mb-3 border-bottom">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 text-dark text-decoration-none">
+          <img class="bi me-2" width="40" height="32" src="https://cdn-icons-png.flaticon.com/512/212/212184.png">
+          <span class="fs-4">Agenda</span>
+        </a>
+        @if(User.Identity!.IsAuthenticated){
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center align-items-center mb-md-auto">
+              <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Contact" asp-action="Index" style="font-size: 1.2rem">Contact</a></li>
+              @if (User.IsInRole(Roles.Admin))
+              {
+                  <li class="nav-item"><a class="nav-link text-dark px-2" asp-area="" asp-controller="UserAdmin" asp-action="Index" style="font-size: 1.2rem">Users</a></li>
+              }
+          </ul>
+
+          <div class="dropdown text-end">
+            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-photo-183042379.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+            </a>
+            <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+              <li><a class="dropdown-item text-dark" asp-area="" asp-controller="User" asp-action="Edit">Editar Perfil</a></li>
+              <li><a class="dropdown-item text-dark" asp-area="" asp-controller="User" asp-action="EditPassword">Alterar Senha</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-dark" asp-area="" asp-controller="Login" asp-action="Logout">Logout</a></li>
+            </ul>
+          </div>
+        }
+        else
+        {
+          <div class="me-lg-auto mb-2 mb-md-auto"></div>
+          <div class="mb-md-0 align-content-center">
+            <a class="btn btn-outline-primary" role="button" asp-area="" asp-controller="Login" asp-action="Index">Login</a>
+          </div>
+        }
+
+      </div>
+    </div>
+  </header>
+   
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

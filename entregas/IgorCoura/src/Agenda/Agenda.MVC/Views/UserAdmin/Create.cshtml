@@ -5,18 +5,24 @@
     ViewData["Title"] = "Create";
 }
 
-
-<div>
+<div class="form-user m-auto">
+  <h3 class="text-center">Cadastro de usuario</h3>
     @using(Html.BeginForm("Create", "UserAdmin", FormMethod.Post))
     {
+      <div class="form-group">
         <div>
           @Html.LabelFor(x => x.UserRoleId)
-          @Html.TextBoxFor(x => x.UserRoleId)
+          @Html.TextBoxFor(x => x.UserRoleId, new { @class="form-control"})
           @Html.ValidationMessageFor(x => x.UserRoleId)
         </div>
         @await Html.PartialAsync("_FormsCreateUser", Model)
+      </div>
+      <div>
+        <vc:Summary></vc:Summary>
+      </div>
     }
 </div>
+
 @section Scripts{
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");

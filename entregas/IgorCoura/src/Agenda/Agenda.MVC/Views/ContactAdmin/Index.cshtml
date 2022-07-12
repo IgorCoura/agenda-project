@@ -6,6 +6,26 @@
     ViewData["Title"] = "Contatos";
 }
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmar exclusão!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Tem certeza que deseja remover esse contato selecionado?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary confirm-delete">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal-->
+
 <div>
    <div>
      <h2>
@@ -42,12 +62,17 @@
         <div class="card mb-1">
           <div class="card-header" id="headingOne">
              <h5 class="mb-0 d-flex justify-content-between">
-               <button class="btn dropdown-toggle" data-bs-toggle="collapse" data-bs-target=@("#collapseOne"+i) aria-expanded="false" aria-controls=@("#collapseOne"+i)>
+               <button type="button" class="btn dropdown-toggle" data-bs-toggle="collapse" data-bs-target=@("#collapseOne"+i) aria-expanded="false" aria-controls=@("#collapseOne"+i)>
                     @contact.Name
                </button>
-               <a class="btn" href='@Url.Action("Edit", "ContactAdmin", new {id=@contact.Id, userId = TempData["userId"]})'>
-                 Editar
-               </a>
+               <div>
+                 <a class="btn" href='@Url.Action("Edit", "ContactAdmin", new {id=@contact.Id, userId = TempData["userId"]})'>
+                  Editar
+                 </a>
+                 <button type="button" class="btn delete-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-itemid="@contact.Id" data-userid="@TempData["userId"]" >
+                   Remove
+                 </button>
+               </div>
              </h5>
           </div>
      
@@ -88,12 +113,24 @@
 
 
   
+@section Scripts
+{
+  @await Html.PartialAsync("_ValidationScriptsPartial")
 
-@section Scripts{
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-
-    
+  <script>
+  $(document).ready(function ()  {
+      $('.delete-btn').click(function() {
+          const itemid = $(this).data('itemid');
+          const userId = $(this).data('userid');
+          $('.confirm-delete').data('userid', userId);
+          $('.confirm-delete').data('itemid', itemid);
+      });
+      $('.confirm-delete').click(function ()  {
+          const itemid = $(this).data('itemid');
+          const userId = $(this).data('userid');
+          const url = window.location.origin + '@Html.Raw(Url.Action("Delete", "ContactAdmin"))' + '/' + '?id=' + itemid + '&userId='+userId;
+          window.location.href = url;
+      });
+  })
+  </script>
 }
-

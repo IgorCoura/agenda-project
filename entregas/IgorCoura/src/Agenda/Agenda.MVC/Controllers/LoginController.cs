@@ -38,7 +38,7 @@ namespace Agenda.MVC.Controllers
 
             await CreateCookie(token);
 
-            return Redirect(Url.Action("Index", "Home")!);
+            return Redirect(Url.Action("Index", "Contact")!);
         }
 
         [HttpGet]
@@ -60,6 +60,13 @@ namespace Agenda.MVC.Controllers
                 View(viewModel);
             }
             return View("Index");
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            return Redirect("Index");
         }
 
         public async Task CreateCookie(string token)
