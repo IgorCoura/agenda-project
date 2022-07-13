@@ -135,5 +135,7 @@ namespace Agenda.MVC.Controllers
             await _contactService.Remove(id);
             return RedirectToAction("Index");
         }
+
+        
     }
 }

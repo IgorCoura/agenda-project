@@ -61,7 +61,7 @@ namespace Agenda.MVC.Controllers
             if (HasErrors())
                 return View(model);
 
-            TempData["Sucesso"] = true;
+            TempData["Sucesso"] = "Perfil alterado com sucesso.";
             return View(model);
         }
 
@@ -78,7 +78,7 @@ namespace Agenda.MVC.Controllers
             if (HasErrors())
                 return View(model);
 
-            TempData["Sucesso"] = true;
+            TempData["Sucesso"] = "Senha alterada com sucesso.";
             return View(model);
         }
 

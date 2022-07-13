@@ -2,30 +2,30 @@
 @model EditContactViewModel
 
 
-<div class="card mb-1">
+<div class="card mb-1 form-contact m-auto">
   @Html.HiddenFor(x => x.Id)
   <div class="card-header mb-3">
-    <div class="row align-items-center">
-      <div class="col-1">
+    <div class="form-group row align-items-center">
+      <div class="col-sm-2">
         Name
       </div>
-      <div class="col-9">
+      <div class="col-sm-8">
         @Html.TextBoxFor(x => x.Name, htmlAttributes: new{@class = "form-control"})
-        @Html.ValidationMessageFor(x => x.Name)
+        @Html.ValidationMessageFor(x => x.Name,"", new{@class = "invalid-feedback d-block"})
       </div>
     </div>
   </div>
   <div class="card-body">
-    <div>
+    <div >
       @await Html.PartialAsync("_FormsPhone", Model!)
     </div>
     <button type="submit" name="option" class="waves-effect waves-light btn cancel btn btn-primary" value=@("AddPhone|"+TempData["userId"])>
       <span>Adicionar Telefone</span>
     </button>
   </div>
-  <div class="mb-3">
-    <button class="btn btn-primary" name="userId" value=@TempData["userId"]>Salvar</button>
-    <a href='@Url.Action("Index", new {id = TempData["userId"]})' >Cancelar</a>
+  <div class="mb-3 m-auto">
+    <button class="btn btn-primary m-3" name="userId" value=@TempData["userId"]>Salvar</button>
+    <a class="m-3" href='@Url.Action("Index", new {userId = TempData["userId"]})' >Cancelar</a>
   </div>
 </div>
 

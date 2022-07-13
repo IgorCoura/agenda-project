@@ -4,17 +4,17 @@
 <div>
   @Html.LabelFor(x => x.Name)
   @Html.TextBoxFor(x => x.Name, new { @class="form-control"})
-  @Html.ValidationMessageFor(x => x.Name)
+  @Html.ValidationMessageFor(x => x.Name,"", new{@class = "invalid-feedback d-block"})
 </div>
 <div>
   @Html.LabelFor(x => x.UserName)
   @Html.TextBoxFor(x => x.UserName, new { @class="form-control"})
-  @Html.ValidationMessageFor(x => x.UserName)
+  @Html.ValidationMessageFor(x => x.UserName,"", new{@class = "invalid-feedback d-block"})
 </div>
 <div>
   @Html.LabelFor(x => x.Email)
   @Html.TextBoxFor(x => x.Email, new { @class="form-control"})
-  @Html.ValidationMessageFor(x => x.Email)
+  @Html.ValidationMessageFor(x => x.Email,"", new{@class = "invalid-feedback d-block"})
 </div>
 
 <div class="m-3 text-center">

@@ -61,7 +61,7 @@ namespace Agenda.MVC.Controllers
         {
             await _userService.EditAdmin(model);
             if (HasErrors())
-                View(model);
+                return View(model);
             return RedirectToAction("Index");
         }
 
@@ -76,7 +76,7 @@ namespace Agenda.MVC.Controllers
         {
             await _userService.RegisterAdmin(model);
             if (HasErrors())
-                View(model);
+                return View(model);
             return RedirectToAction("Index");
         }
         [HttpGet]

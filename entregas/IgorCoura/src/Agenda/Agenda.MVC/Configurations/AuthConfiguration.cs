@@ -17,7 +17,7 @@ namespace Agenda.MVC.Configurations
             {
                 opts.LoginPath = "/Login";
                 opts.LogoutPath = "/Logout";
-                opts.AccessDeniedPath = "/Home";
+                opts.AccessDeniedPath = "/erro/403";
             });
 
             return services;

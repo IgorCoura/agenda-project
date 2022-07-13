@@ -5,27 +5,27 @@
 <div>
   @Html.LabelFor(x => x.Name)
   @Html.TextBoxFor(x => x.Name, new { @class="form-control"})
-  @Html.ValidationMessageFor(x => x.Name)
+  @Html.ValidationMessageFor(x => x.Name,"", new{@class = "invalid-feedback d-block"})
 </div>
 <div>
   @Html.LabelFor(x => x.UserName)
   @Html.TextBoxFor(x => x.UserName, new { @class="form-control"})
-  @Html.ValidationMessageFor(x => x.UserName)
+  @Html.ValidationMessageFor(x => x.UserName,"", new{@class = "invalid-feedback d-block"})
 </div>
 <div>
   @Html.LabelFor(x => x.Email)
   @Html.TextBoxFor(x => x.Email, new { @class="form-control"})
-  @Html.ValidationMessageFor(x => x.Email)
+  @Html.ValidationMessageFor(x => x.Email,"", new{@class = "invalid-feedback d-block"})
 </div>
 <div>
   @Html.LabelFor(x => x.Password)
   @Html.PasswordFor(x => x.Password, new { @class="form-control"})
-  @Html.ValidationMessageFor(x => x.Password)
+  @Html.ValidationMessageFor(x => x.Password,"", new{@class = "invalid-feedback d-block"})
 </div>
 <div>
   @Html.LabelFor(x => x.ConfirmPassword)
   @Html.PasswordFor(x => x.ConfirmPassword, new { @class="form-control"})
-  @Html.ValidationMessageFor(x => x.ConfirmPassword)
+  @Html.ValidationMessageFor(x => x.ConfirmPassword,"", new{@class = "invalid-feedback d-block"})
 </div>
 <div class="m-3 text-center">
   <button type="submit" class="btn btn-primary m-2">Cadastrar</button>

@@ -1,3 +1,4 @@
+using Agenda.MVC.Constants;
 using Agenda.MVC.Interfaces;
 using Agenda.MVC.Params;
 using Agenda.MVC.ViewModel;
@@ -8,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Agenda.MVC.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = Roles.Admin)]
     public class ContactAdminController : BaseController
     {
         private readonly IContactService _contactService;
@@ -129,6 +130,8 @@ namespace Agenda.MVC.Controllers
                 var split = option.Split("|");
                 var index = int.Parse(split[1]);
                 var id = int.Parse(split[2]);
+                userId = int.Parse(split[3]);
+                TempData["userId"] = userId;
                 ModelState.Clear();
                 model.Phones.Remove(model.Phones[index]);
                 if(id > 0)

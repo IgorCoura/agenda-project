@@ -1,3 +1,4 @@
+@using Agenda.MVC.Constants
 @using Agenda.MVC.ViewModel
 @model CreateUserViewModel
 
@@ -12,8 +13,8 @@
       <div class="form-group">
         <div>
           @Html.LabelFor(x => x.UserRoleId)
-          @Html.TextBoxFor(x => x.UserRoleId, new { @class="form-control"})
-          @Html.ValidationMessageFor(x => x.UserRoleId)
+          @Html.DropDownListFor(x => x.UserRoleId, Roles.AllRoles, new{@class = "form-select"})
+          @Html.ValidationMessageFor(x => x.UserRoleId,"", new{@class = "invalid-feedback d-block"})
         </div>
         @await Html.PartialAsync("_FormsCreateUser", Model)
       </div>
