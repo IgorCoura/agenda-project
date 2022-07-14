@@ -33,12 +33,12 @@ namespace Agenda.MVC.Services
         {
             if (_contextAccessor.HttpContext!.User.Identity!.IsAuthenticated)
             {
-                var token = _contextAccessor.HttpContext.User.Claims.FirstOrDefault(x => x.Type == "token") ?? throw new InvalidOperationException("O usuario está autenticado, mais com o valor do token null");
+                var token = _contextAccessor.HttpContext.User.Claims.FirstOrDefault(x => x.Type == "token") ?? throw new UnauthorizedAccessException("O usuario está autenticado, mais com o valor do token null");
 
                 return _apiSettings.Url.WithOAuthBearerToken(token.Value);
 
             }
-            throw new InvalidOperationException("Usuario não está autenticado");
+            throw new UnauthorizedAccessException("O usuario não está autenticado.");
         }
 
 

@@ -10,8 +10,8 @@ namespace Agenda.Domain.Entities.Enumerations
         public static InteractionType GetContact = new InteractionType(4, "Visualizar Contato");
         public static InteractionType GetPhones = new InteractionType(5, "Visualizar Telefones");
 
-        private InteractionType() { }
-        public InteractionType(int id, string name) : base(id, name)
+        public InteractionType() { }
+        private InteractionType(int id, string name) : base(id, name)
         { }
     }
 }

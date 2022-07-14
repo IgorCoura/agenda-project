@@ -1,4 +1,6 @@
 using Agenda.MVC.ViewModel;
+using Agenda.MVC.ViewModel.Contact;
+using Agenda.MVC.ViewModel.User;
 using AutoMapper;
 
 namespace Agenda.MVC.Mapper

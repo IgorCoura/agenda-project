@@ -1,9 +1,10 @@
 using Agenda.MVC.Options;
-using Agenda.MVC.ViewModel;
 using Microsoft.Extensions.Options;
 using Flurl.Http;
 using Agenda.MVC.Interfaces;
 using Agenda.MVC.Params;
+using Agenda.MVC.ViewModel.Base;
+using Agenda.MVC.ViewModel.User;
 
 namespace Agenda.MVC.Services
 {
@@ -111,6 +112,14 @@ namespace Agenda.MVC.Services
         {
             await GetAuthApiUrl().AppendPathSegment("/api/v1/User/admin/").AppendPathSegment(id).DeleteAsync();
         }
+
+        public async Task<IEnumerable<InteractionViewModel>> GetAllInteractions()
+        {
+            var result = await GetAuthApiUrl().AppendPathSegment("/api/v1/Interaction").GetJsonAsync<BaseResponseViewModel<IEnumerable<InteractionViewModel>>>();
+            return result.Data;
+        }
+
+
 
     }
 }

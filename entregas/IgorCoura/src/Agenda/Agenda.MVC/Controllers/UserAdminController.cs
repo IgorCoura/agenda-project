@@ -1,7 +1,8 @@
 using Agenda.MVC.Constants;
 using Agenda.MVC.Interfaces;
 using Agenda.MVC.Params;
-using Agenda.MVC.ViewModel;
+using Agenda.MVC.ViewModel.Base;
+using Agenda.MVC.ViewModel.User;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
@@ -85,5 +86,13 @@ namespace Agenda.MVC.Controllers
             await _userService.RemoverByIdAdmin(id);
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public async Task<ActionResult> Interaction()
+        {
+            var result = await _userService.GetAllInteractions();
+            return View(result.ToList());
+        }
+
     }
 }

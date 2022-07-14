@@ -1,7 +1,8 @@
 using Agenda.MVC.Interfaces;
 using Agenda.MVC.Options;
 using Agenda.MVC.Params;
-using Agenda.MVC.ViewModel;
+using Agenda.MVC.ViewModel.Base;
+using Agenda.MVC.ViewModel.Contact;
 using Flurl.Http;
 using Microsoft.Extensions.Options;
 

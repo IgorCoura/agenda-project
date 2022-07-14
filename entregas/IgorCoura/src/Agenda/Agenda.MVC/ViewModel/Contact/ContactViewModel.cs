@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Agenda.MVC.ViewModel
+namespace Agenda.MVC.ViewModel.Contact
 {
     public class ContactViewModel
     {

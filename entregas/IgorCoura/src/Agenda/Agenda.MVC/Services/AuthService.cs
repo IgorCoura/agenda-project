@@ -1,12 +1,12 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Agenda.MVC.Interfaces;
-using Agenda.MVC.ViewModel;
 using Flurl.Http;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using Agenda.MVC.Options;
 using Microsoft.Extensions.Options;
+using Agenda.MVC.ViewModel.User;
 
 namespace Agenda.MVC.Services
 {

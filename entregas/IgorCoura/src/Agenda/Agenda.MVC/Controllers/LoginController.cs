@@ -1,7 +1,8 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Agenda.MVC.Interfaces;
-using Agenda.MVC.ViewModel;
+using Agenda.MVC.ViewModel.Base;
+using Agenda.MVC.ViewModel.User;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;

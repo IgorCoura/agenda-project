@@ -1,5 +1,6 @@
 using Agenda.MVC.Params;
-using Agenda.MVC.ViewModel;
+using Agenda.MVC.ViewModel.Base;
+using Agenda.MVC.ViewModel.Contact;
 
 namespace Agenda.MVC.Interfaces
 {

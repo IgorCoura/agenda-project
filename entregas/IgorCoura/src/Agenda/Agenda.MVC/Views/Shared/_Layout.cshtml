@@ -1,4 +1,5 @@
 @using Agenda.MVC.Constants
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +25,7 @@
               @if (User.IsInRole(Roles.Admin))
               {
                   <li class="nav-item"><a class="nav-link text-dark px-2" asp-area="" asp-controller="UserAdmin" asp-action="Index" style="font-size: 1.2rem">Users</a></li>
+                  <li class="nav-item"><a class="nav-link text-dark px-2" asp-area="" asp-controller="UserAdmin" asp-action="Interaction" style="font-size: 1.2rem">Interactions</a></li>
               }
           </ul>
 

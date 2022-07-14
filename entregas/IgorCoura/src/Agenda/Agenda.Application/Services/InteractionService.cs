@@ -34,6 +34,7 @@ namespace Agenda.Application.Services
             var result = _mapper.Map<IEnumerable<InteractionTypeModel>>(Enumeration.GetAll<InteractionType>());
             return Task.FromResult(result);
         }
+
         public async Task SaveJsonInteractionsAsync()
         {
             await _interactionRepository.SaveJsonInteractionsAsync();

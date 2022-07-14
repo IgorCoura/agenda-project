@@ -3694,5 +3694,3973 @@
     "Id": 41,
     "CreatedAt": "2022-06-09T12:17:01.1128746",
     "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 1,
+    "CreatedAt": "2022-06-09T12:07:51.2607731",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 2,
+    "CreatedAt": "2022-06-09T12:07:55.0517476",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 3,
+    "CreatedAt": "2022-06-09T12:07:57.5935571",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 4,
+    "CreatedAt": "2022-06-09T12:08:06.9392949",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 5,
+    "CreatedAt": "2022-06-09T12:08:15.328578",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 6,
+    "CreatedAt": "2022-06-09T12:08:17.2752665",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 7,
+    "CreatedAt": "2022-06-09T12:08:45.8454885",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 8,
+    "CreatedAt": "2022-06-09T12:08:48.0251159",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 9,
+    "CreatedAt": "2022-06-09T12:08:54.3932043",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 10,
+    "CreatedAt": "2022-06-09T12:09:04.5316311",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 11,
+    "CreatedAt": "2022-06-09T12:13:58.6001881",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 12,
+    "CreatedAt": "2022-06-09T12:14:58.2718752",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 13,
+    "CreatedAt": "2022-06-09T12:14:58.5696339",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 14,
+    "CreatedAt": "2022-06-09T12:14:58.6509708",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 15,
+    "CreatedAt": "2022-06-09T12:14:59.367929",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 16,
+    "CreatedAt": "2022-06-09T12:14:59.8454121",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 17,
+    "CreatedAt": "2022-06-09T12:14:59.9390082",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 18,
+    "CreatedAt": "2022-06-09T12:15:00.5244019",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 19,
+    "CreatedAt": "2022-06-09T12:15:00.6149871",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 20,
+    "CreatedAt": "2022-06-09T12:15:01.1017457",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 21,
+    "CreatedAt": "2022-06-09T12:15:01.470873",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 22,
+    "CreatedAt": "2022-06-09T12:15:01.5325637",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 23,
+    "CreatedAt": "2022-06-09T12:16:40.9553654",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 24,
+    "CreatedAt": "2022-06-09T12:16:41.2852763",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 25,
+    "CreatedAt": "2022-06-09T12:16:41.3787402",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 26,
+    "CreatedAt": "2022-06-09T12:16:42.0240991",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 27,
+    "CreatedAt": "2022-06-09T12:16:42.687433",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 28,
+    "CreatedAt": "2022-06-09T12:16:42.7867151",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 29,
+    "CreatedAt": "2022-06-09T12:16:43.2731868",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 30,
+    "CreatedAt": "2022-06-09T12:16:43.3807021",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 31,
+    "CreatedAt": "2022-06-09T12:16:43.8838262",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 32,
+    "CreatedAt": "2022-06-09T12:16:44.2500101",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 33,
+    "CreatedAt": "2022-06-09T12:16:44.3601267",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Bernadette Gleason",
+    "Id": 34,
+    "CreatedAt": "2022-06-09T12:16:50.83673",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 35,
+    "CreatedAt": "2022-06-09T12:16:51.2376956",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 36,
+    "CreatedAt": "2022-06-09T12:16:51.7649043",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 37,
+    "CreatedAt": "2022-06-09T12:16:52.4986391",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Rex Huel",
+    "Id": 38,
+    "CreatedAt": "2022-06-09T12:16:59.6887315",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 39,
+    "CreatedAt": "2022-06-09T12:17:00.019754",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 40,
+    "CreatedAt": "2022-06-09T12:17:00.4494732",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 41,
+    "CreatedAt": "2022-06-09T12:17:01.1128746",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 1002,
+    "CreatedAt": "2022-06-10T10:04:48.3986489",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 1003,
+    "CreatedAt": "2022-06-10T10:04:48.7109278",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 1004,
+    "CreatedAt": "2022-06-10T10:04:48.7911729",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 1005,
+    "CreatedAt": "2022-06-10T10:04:49.4266307",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 1006,
+    "CreatedAt": "2022-06-10T10:04:49.9929082",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 1007,
+    "CreatedAt": "2022-06-10T10:04:50.0915026",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 1008,
+    "CreatedAt": "2022-06-10T10:04:50.5803064",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 1009,
+    "CreatedAt": "2022-06-10T10:04:50.6901698",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 1010,
+    "CreatedAt": "2022-06-10T10:04:51.1689156",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 1011,
+    "CreatedAt": "2022-06-10T10:04:51.5078855",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 1012,
+    "CreatedAt": "2022-06-10T10:04:51.6023593",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 1013,
+    "CreatedAt": "2022-06-10T10:05:53.0857037",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 1014,
+    "CreatedAt": "2022-06-10T10:05:53.3647045",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 1015,
+    "CreatedAt": "2022-06-10T10:05:53.4571088",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 1016,
+    "CreatedAt": "2022-06-10T10:05:54.0566864",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 1017,
+    "CreatedAt": "2022-06-10T10:05:54.5792559",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 1018,
+    "CreatedAt": "2022-06-10T10:05:54.6734923",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 1019,
+    "CreatedAt": "2022-06-10T10:05:55.1748018",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 1020,
+    "CreatedAt": "2022-06-10T10:05:55.2690364",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 1021,
+    "CreatedAt": "2022-06-10T10:05:55.7349169",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 1022,
+    "CreatedAt": "2022-06-10T10:05:56.0931048",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 1023,
+    "CreatedAt": "2022-06-10T10:05:56.1738669",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 1024,
+    "CreatedAt": "2022-06-10T10:11:05.6424817",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 1025,
+    "CreatedAt": "2022-06-10T10:11:17.9699407",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 1026,
+    "CreatedAt": "2022-06-10T10:11:28.9732533",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 1027,
+    "CreatedAt": "2022-06-10T10:16:44.5266646",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 1028,
+    "CreatedAt": "2022-06-10T10:18:30.2926384",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 1029,
+    "CreatedAt": "2022-06-10T10:18:35.053056",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 1030,
+    "CreatedAt": "2022-06-10T10:19:04.0137014",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 1031,
+    "CreatedAt": "2022-06-10T10:19:07.4093074",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 1032,
+    "CreatedAt": "2022-06-10T10:19:36.9190553",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 1033,
+    "CreatedAt": "2022-06-10T10:20:00.4354882",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 1034,
+    "CreatedAt": "2022-06-10T10:20:05.4826037",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 2002,
+    "CreatedAt": "2022-07-04T11:05:49.3597433",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 2003,
+    "CreatedAt": "2022-07-04T11:05:49.7034196",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 2004,
+    "CreatedAt": "2022-07-04T11:05:49.781298",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 2005,
+    "CreatedAt": "2022-07-04T11:05:50.3934416",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 2006,
+    "CreatedAt": "2022-07-04T11:05:51.1165533",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 2007,
+    "CreatedAt": "2022-07-04T11:05:51.1974477",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 2008,
+    "CreatedAt": "2022-07-04T11:05:51.7131007",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 2009,
+    "CreatedAt": "2022-07-04T11:05:51.8103574",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 2010,
+    "CreatedAt": "2022-07-04T11:05:52.2478847",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 2011,
+    "CreatedAt": "2022-07-04T11:05:52.5720246",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 2012,
+    "CreatedAt": "2022-07-04T11:05:52.6662961",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 2013,
+    "CreatedAt": "2022-07-04T11:08:56.0181097",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 2014,
+    "CreatedAt": "2022-07-04T11:08:56.3144874",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 2015,
+    "CreatedAt": "2022-07-04T11:08:56.4092676",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 2016,
+    "CreatedAt": "2022-07-04T11:08:57.0080898",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 2017,
+    "CreatedAt": "2022-07-04T11:08:57.6602996",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 2018,
+    "CreatedAt": "2022-07-04T11:08:57.7407846",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 2019,
+    "CreatedAt": "2022-07-04T11:08:58.3387476",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 2020,
+    "CreatedAt": "2022-07-04T11:08:58.4273456",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 2021,
+    "CreatedAt": "2022-07-04T11:08:58.9041823",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 2022,
+    "CreatedAt": "2022-07-04T11:08:59.2623645",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 2023,
+    "CreatedAt": "2022-07-04T11:08:59.3582317",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Lucas Lind",
+    "Id": 2024,
+    "CreatedAt": "2022-07-04T11:09:11.2509732",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2025,
+    "CreatedAt": "2022-07-04T11:09:11.6609126",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2026,
+    "CreatedAt": "2022-07-04T11:09:12.2255822",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 2027,
+    "CreatedAt": "2022-07-04T11:09:12.961686",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 2028,
+    "CreatedAt": "2022-07-04T11:10:54.2131619",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 2029,
+    "CreatedAt": "2022-07-04T11:10:54.4802777",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 2030,
+    "CreatedAt": "2022-07-04T11:10:54.587821",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 2031,
+    "CreatedAt": "2022-07-04T11:10:55.2196529",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 2032,
+    "CreatedAt": "2022-07-04T11:10:55.8893857",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 2033,
+    "CreatedAt": "2022-07-04T11:10:55.9896462",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 2034,
+    "CreatedAt": "2022-07-04T11:10:56.5348382",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 2035,
+    "CreatedAt": "2022-07-04T11:10:56.6288465",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 2036,
+    "CreatedAt": "2022-07-04T11:10:57.1002824",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 2037,
+    "CreatedAt": "2022-07-04T11:10:57.4765774",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 2038,
+    "CreatedAt": "2022-07-04T11:10:57.5551549",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Alice Rath",
+    "Id": 2039,
+    "CreatedAt": "2022-07-04T11:11:04.3940576",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2040,
+    "CreatedAt": "2022-07-04T11:11:04.7724452",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2041,
+    "CreatedAt": "2022-07-04T11:11:05.2448132",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 2042,
+    "CreatedAt": "2022-07-04T11:11:05.9066827",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Nora Veum",
+    "Id": 2043,
+    "CreatedAt": "2022-07-04T11:11:11.7198326",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2044,
+    "CreatedAt": "2022-07-04T11:11:12.1143487",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2045,
+    "CreatedAt": "2022-07-04T11:11:12.5679394",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 2046,
+    "CreatedAt": "2022-07-04T11:11:13.1307086",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 2047,
+    "CreatedAt": "2022-07-04T11:17:25.0877633",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 2048,
+    "CreatedAt": "2022-07-04T11:17:25.3679936",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 2049,
+    "CreatedAt": "2022-07-04T11:17:25.4634793",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 2050,
+    "CreatedAt": "2022-07-04T11:17:26.1473872",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 2051,
+    "CreatedAt": "2022-07-04T11:17:26.8327731",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 2052,
+    "CreatedAt": "2022-07-04T11:17:26.9376419",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 2053,
+    "CreatedAt": "2022-07-04T11:17:27.485118",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 2054,
+    "CreatedAt": "2022-07-04T11:17:27.5800262",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 2055,
+    "CreatedAt": "2022-07-04T11:17:28.0395688",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 2056,
+    "CreatedAt": "2022-07-04T11:17:28.3911038",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 2057,
+    "CreatedAt": "2022-07-04T11:17:28.4859344",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Shaun Haag",
+    "Id": 2058,
+    "CreatedAt": "2022-07-04T11:17:34.0123641",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2059,
+    "CreatedAt": "2022-07-04T11:17:34.4364393",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2060,
+    "CreatedAt": "2022-07-04T11:17:34.9084265",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 2061,
+    "CreatedAt": "2022-07-04T11:17:35.4916959",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Andy Breitenberg",
+    "Id": 2062,
+    "CreatedAt": "2022-07-04T11:17:42.6817768",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2063,
+    "CreatedAt": "2022-07-04T11:17:43.0258476",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2064,
+    "CreatedAt": "2022-07-04T11:17:43.4316196",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 2065,
+    "CreatedAt": "2022-07-04T11:17:44.0471703",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 3002,
+    "CreatedAt": "2022-07-04T15:39:39.1887916",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 3003,
+    "CreatedAt": "2022-07-04T15:39:39.5578767",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 3004,
+    "CreatedAt": "2022-07-04T15:39:39.6703609",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 3005,
+    "CreatedAt": "2022-07-04T15:39:40.3511599",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 3006,
+    "CreatedAt": "2022-07-04T15:39:41.0452346",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 3007,
+    "CreatedAt": "2022-07-04T15:39:41.1440451",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 3008,
+    "CreatedAt": "2022-07-04T15:39:41.7702796",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 3009,
+    "CreatedAt": "2022-07-04T15:39:41.8469808",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 3010,
+    "CreatedAt": "2022-07-04T15:39:42.2798529",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 3011,
+    "CreatedAt": "2022-07-04T15:39:42.6342648",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 3012,
+    "CreatedAt": "2022-07-04T15:39:42.7133016",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 3013,
+    "CreatedAt": "2022-07-04T20:57:38.5630036",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 3014,
+    "CreatedAt": "2022-07-04T21:05:25.1038323",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 3015,
+    "CreatedAt": "2022-07-04T21:05:54.0267032",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 3016,
+    "CreatedAt": "2022-07-04T21:05:57.8187195",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 3017,
+    "CreatedAt": "2022-07-04T21:06:56.411057",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 3018,
+    "CreatedAt": "2022-07-04T21:07:25.3498449",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 3019,
+    "CreatedAt": "2022-07-04T21:07:27.664934",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 3020,
+    "CreatedAt": "2022-07-04T21:08:01.7702332",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 3021,
+    "CreatedAt": "2022-07-04T21:08:04.8638607",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 3022,
+    "CreatedAt": "2022-07-04T21:08:34.829423",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 3023,
+    "CreatedAt": "2022-07-04T21:08:56.7338534",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 3024,
+    "CreatedAt": "2022-07-04T21:08:59.2215249",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 3025,
+    "CreatedAt": "2022-07-04T21:09:20.2061864",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 3026,
+    "CreatedAt": "2022-07-04T21:09:20.5256476",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 3027,
+    "CreatedAt": "2022-07-04T21:09:20.678283",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 3028,
+    "CreatedAt": "2022-07-04T21:09:21.3906819",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 3029,
+    "CreatedAt": "2022-07-04T21:09:21.9457505",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 3030,
+    "CreatedAt": "2022-07-04T21:09:22.0259365",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 3031,
+    "CreatedAt": "2022-07-04T21:09:22.5778295",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 3032,
+    "CreatedAt": "2022-07-04T21:09:22.6662812",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 3033,
+    "CreatedAt": "2022-07-04T21:09:23.1407426",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 3034,
+    "CreatedAt": "2022-07-04T21:09:44.516938",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 3035,
+    "CreatedAt": "2022-07-04T21:09:46.1742215",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 3036,
+    "CreatedAt": "2022-07-04T21:10:02.6841194",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 3037,
+    "CreatedAt": "2022-07-04T21:10:02.9671821",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 3038,
+    "CreatedAt": "2022-07-04T21:10:03.0635178",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 3039,
+    "CreatedAt": "2022-07-04T21:10:03.7871383",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 3040,
+    "CreatedAt": "2022-07-04T21:10:04.2955224",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 3041,
+    "CreatedAt": "2022-07-04T21:10:04.4001136",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 3042,
+    "CreatedAt": "2022-07-04T21:10:04.979848",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 3043,
+    "CreatedAt": "2022-07-04T21:10:05.0770497",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 3044,
+    "CreatedAt": "2022-07-04T21:10:05.5695485",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 3045,
+    "CreatedAt": "2022-07-04T21:10:05.9329068",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 3046,
+    "CreatedAt": "2022-07-04T21:10:06.0257676",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 3047,
+    "CreatedAt": "2022-07-04T22:07:03.8643105",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 3048,
+    "CreatedAt": "2022-07-04T22:07:04.1926333",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 3049,
+    "CreatedAt": "2022-07-04T22:07:04.2996618",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 3050,
+    "CreatedAt": "2022-07-04T22:07:05.1339848",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 3051,
+    "CreatedAt": "2022-07-04T22:07:05.9044912",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 3052,
+    "CreatedAt": "2022-07-04T22:07:06.017825",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 3053,
+    "CreatedAt": "2022-07-04T22:07:06.6097583",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 3054,
+    "CreatedAt": "2022-07-04T22:07:06.7347775",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 3055,
+    "CreatedAt": "2022-07-04T22:07:07.28881",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 3056,
+    "CreatedAt": "2022-07-04T22:07:07.709041",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 3057,
+    "CreatedAt": "2022-07-04T22:07:07.8167527",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Virgil Skiles",
+    "Id": 4002,
+    "CreatedAt": "2022-07-05T17:03:43.1217258",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato June Becker",
+    "Id": 4003,
+    "CreatedAt": "2022-07-05T17:03:57.2870306",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Loretta Collins",
+    "Id": 4004,
+    "CreatedAt": "2022-07-05T17:03:59.2849584",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Ms. Neil Fisher",
+    "Id": 4005,
+    "CreatedAt": "2022-07-05T17:04:01.249636",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5002,
+    "CreatedAt": "2022-07-07T14:34:30.8895729",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5003,
+    "CreatedAt": "2022-07-07T14:34:49.7103273",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5004,
+    "CreatedAt": "2022-07-07T14:35:28.7364519",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5005,
+    "CreatedAt": "2022-07-07T14:35:40.7784317",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5006,
+    "CreatedAt": "2022-07-07T14:35:52.1399698",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5007,
+    "CreatedAt": "2022-07-07T14:36:14.0233855",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5008,
+    "CreatedAt": "2022-07-07T14:38:54.2255186",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5009,
+    "CreatedAt": "2022-07-07T14:39:07.3264555",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5010,
+    "CreatedAt": "2022-07-07T14:54:36.4685954",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5011,
+    "CreatedAt": "2022-07-07T14:58:28.0068792",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5012,
+    "CreatedAt": "2022-07-07T14:58:30.7895736",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5013,
+    "CreatedAt": "2022-07-07T14:58:35.0680524",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5014,
+    "CreatedAt": "2022-07-07T14:58:36.91991",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5015,
+    "CreatedAt": "2022-07-07T14:58:58.118537",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5016,
+    "CreatedAt": "2022-07-07T16:59:17.7706848",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5017,
+    "CreatedAt": "2022-07-07T16:59:29.853286",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato NomeCadastro",
+    "Id": 6002,
+    "CreatedAt": "2022-07-07T22:26:34.621525",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato sad",
+    "Id": 6003,
+    "CreatedAt": "2022-07-07T22:26:48.5495953",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Admin Root",
+    "Id": 7002,
+    "CreatedAt": "2022-07-08T15:24:17.8943409",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato NomeCadastro",
+    "Id": 7003,
+    "CreatedAt": "2022-07-08T15:26:36.413064",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato NomeCadastro324",
+    "Id": 7004,
+    "CreatedAt": "2022-07-08T18:48:43.1180035",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 8002,
+    "CreatedAt": "2022-07-11T11:05:05.1818218",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 8003,
+    "CreatedAt": "2022-07-11T11:06:04.8964881",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 8004,
+    "CreatedAt": "2022-07-11T11:06:20.1450346",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 8005,
+    "CreatedAt": "2022-07-11T11:06:32.1854628",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 8006,
+    "CreatedAt": "2022-07-11T11:10:43.0429066",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 8007,
+    "CreatedAt": "2022-07-11T11:26:07.1966667",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 9002,
+    "CreatedAt": "2022-07-11T11:58:08.5667003",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato NomeCadastro",
+    "Id": 10002,
+    "CreatedAt": "2022-07-11T16:19:17.3067861",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato NomeCadastro",
+    "Id": 10003,
+    "CreatedAt": "2022-07-11T16:19:35.6067419",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Jose",
+    "Id": 11002,
+    "CreatedAt": "2022-07-12T13:23:55.8140202",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato sda",
+    "Id": 11003,
+    "CreatedAt": "2022-07-12T13:24:25.6373107",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Loretta Collins",
+    "Id": 12002,
+    "CreatedAt": "2022-07-12T17:04:51.7442584",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato NomeCadastro324",
+    "Id": 12003,
+    "CreatedAt": "2022-07-12T17:05:47.3087906",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Virgil Skiles",
+    "Id": 13002,
+    "CreatedAt": "2022-07-13T10:32:13.5717388",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato June Becker",
+    "Id": 13003,
+    "CreatedAt": "2022-07-13T10:52:15.585137",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato June Becker",
+    "Id": 13004,
+    "CreatedAt": "2022-07-13T10:52:18.2432526",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Admin Root",
+    "Id": 13005,
+    "CreatedAt": "2022-07-13T10:53:40.3546941",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Admin Root",
+    "Id": 13006,
+    "CreatedAt": "2022-07-13T10:53:46.5116046",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Primeiro Contato",
+    "Id": 14002,
+    "CreatedAt": "2022-07-13T14:05:37.7521257",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato June Becker",
+    "Id": 14003,
+    "CreatedAt": "2022-07-13T14:23:24.1960775",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato June Becker",
+    "Id": 14004,
+    "CreatedAt": "2022-07-13T14:23:50.3938795",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Ms. Neil Fisher",
+    "Id": 14005,
+    "CreatedAt": "2022-07-13T14:30:49.2202981",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Ms. Neil Fisher",
+    "Id": 14006,
+    "CreatedAt": "2022-07-13T14:40:29.9482932",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Ms. Neil Fisher",
+    "Id": 14007,
+    "CreatedAt": "2022-07-13T14:40:43.2658997",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Ms. Neil Fisher",
+    "Id": 14008,
+    "CreatedAt": "2022-07-13T14:41:05.7504048",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Ms. Neil Fisher",
+    "Id": 14009,
+    "CreatedAt": "2022-07-13T14:42:41.1887255",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Ms. Neil Fisher",
+    "Id": 14010,
+    "CreatedAt": "2022-07-13T14:43:24.0263252",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Ms. Neil Fisher",
+    "Id": 14011,
+    "CreatedAt": "2022-07-13T14:43:34.385314",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato June Becker",
+    "Id": 15002,
+    "CreatedAt": "2022-07-14T12:55:13.8508917",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 1,
+    "CreatedAt": "2022-06-09T12:07:51.2607731",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 2,
+    "CreatedAt": "2022-06-09T12:07:55.0517476",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 3,
+    "CreatedAt": "2022-06-09T12:07:57.5935571",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 4,
+    "CreatedAt": "2022-06-09T12:08:06.9392949",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 5,
+    "CreatedAt": "2022-06-09T12:08:15.328578",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 6,
+    "CreatedAt": "2022-06-09T12:08:17.2752665",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 7,
+    "CreatedAt": "2022-06-09T12:08:45.8454885",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 8,
+    "CreatedAt": "2022-06-09T12:08:48.0251159",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 9,
+    "CreatedAt": "2022-06-09T12:08:54.3932043",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 10,
+    "CreatedAt": "2022-06-09T12:09:04.5316311",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 11,
+    "CreatedAt": "2022-06-09T12:13:58.6001881",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 12,
+    "CreatedAt": "2022-06-09T12:14:58.2718752",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 13,
+    "CreatedAt": "2022-06-09T12:14:58.5696339",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 14,
+    "CreatedAt": "2022-06-09T12:14:58.6509708",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 15,
+    "CreatedAt": "2022-06-09T12:14:59.367929",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 16,
+    "CreatedAt": "2022-06-09T12:14:59.8454121",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 17,
+    "CreatedAt": "2022-06-09T12:14:59.9390082",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 18,
+    "CreatedAt": "2022-06-09T12:15:00.5244019",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 19,
+    "CreatedAt": "2022-06-09T12:15:00.6149871",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 20,
+    "CreatedAt": "2022-06-09T12:15:01.1017457",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 21,
+    "CreatedAt": "2022-06-09T12:15:01.470873",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 22,
+    "CreatedAt": "2022-06-09T12:15:01.5325637",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 23,
+    "CreatedAt": "2022-06-09T12:16:40.9553654",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 24,
+    "CreatedAt": "2022-06-09T12:16:41.2852763",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 25,
+    "CreatedAt": "2022-06-09T12:16:41.3787402",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 26,
+    "CreatedAt": "2022-06-09T12:16:42.0240991",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 27,
+    "CreatedAt": "2022-06-09T12:16:42.687433",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 28,
+    "CreatedAt": "2022-06-09T12:16:42.7867151",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 29,
+    "CreatedAt": "2022-06-09T12:16:43.2731868",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 30,
+    "CreatedAt": "2022-06-09T12:16:43.3807021",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 31,
+    "CreatedAt": "2022-06-09T12:16:43.8838262",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 32,
+    "CreatedAt": "2022-06-09T12:16:44.2500101",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 33,
+    "CreatedAt": "2022-06-09T12:16:44.3601267",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Bernadette Gleason",
+    "Id": 34,
+    "CreatedAt": "2022-06-09T12:16:50.83673",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 35,
+    "CreatedAt": "2022-06-09T12:16:51.2376956",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 36,
+    "CreatedAt": "2022-06-09T12:16:51.7649043",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 37,
+    "CreatedAt": "2022-06-09T12:16:52.4986391",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Rex Huel",
+    "Id": 38,
+    "CreatedAt": "2022-06-09T12:16:59.6887315",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 39,
+    "CreatedAt": "2022-06-09T12:17:00.019754",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 40,
+    "CreatedAt": "2022-06-09T12:17:00.4494732",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 41,
+    "CreatedAt": "2022-06-09T12:17:01.1128746",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 1002,
+    "CreatedAt": "2022-06-10T10:04:48.3986489",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 1003,
+    "CreatedAt": "2022-06-10T10:04:48.7109278",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 1004,
+    "CreatedAt": "2022-06-10T10:04:48.7911729",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 1005,
+    "CreatedAt": "2022-06-10T10:04:49.4266307",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 1006,
+    "CreatedAt": "2022-06-10T10:04:49.9929082",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 1007,
+    "CreatedAt": "2022-06-10T10:04:50.0915026",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 1008,
+    "CreatedAt": "2022-06-10T10:04:50.5803064",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 1009,
+    "CreatedAt": "2022-06-10T10:04:50.6901698",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 1010,
+    "CreatedAt": "2022-06-10T10:04:51.1689156",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 1011,
+    "CreatedAt": "2022-06-10T10:04:51.5078855",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 1012,
+    "CreatedAt": "2022-06-10T10:04:51.6023593",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 1013,
+    "CreatedAt": "2022-06-10T10:05:53.0857037",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 1014,
+    "CreatedAt": "2022-06-10T10:05:53.3647045",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 1015,
+    "CreatedAt": "2022-06-10T10:05:53.4571088",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 1016,
+    "CreatedAt": "2022-06-10T10:05:54.0566864",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 1017,
+    "CreatedAt": "2022-06-10T10:05:54.5792559",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 1018,
+    "CreatedAt": "2022-06-10T10:05:54.6734923",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 1019,
+    "CreatedAt": "2022-06-10T10:05:55.1748018",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 1020,
+    "CreatedAt": "2022-06-10T10:05:55.2690364",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 1021,
+    "CreatedAt": "2022-06-10T10:05:55.7349169",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 1022,
+    "CreatedAt": "2022-06-10T10:05:56.0931048",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 1023,
+    "CreatedAt": "2022-06-10T10:05:56.1738669",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 1024,
+    "CreatedAt": "2022-06-10T10:11:05.6424817",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 1025,
+    "CreatedAt": "2022-06-10T10:11:17.9699407",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 1026,
+    "CreatedAt": "2022-06-10T10:11:28.9732533",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 1027,
+    "CreatedAt": "2022-06-10T10:16:44.5266646",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 1028,
+    "CreatedAt": "2022-06-10T10:18:30.2926384",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 1029,
+    "CreatedAt": "2022-06-10T10:18:35.053056",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 1030,
+    "CreatedAt": "2022-06-10T10:19:04.0137014",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 1031,
+    "CreatedAt": "2022-06-10T10:19:07.4093074",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 1032,
+    "CreatedAt": "2022-06-10T10:19:36.9190553",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 1033,
+    "CreatedAt": "2022-06-10T10:20:00.4354882",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 1034,
+    "CreatedAt": "2022-06-10T10:20:05.4826037",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 2002,
+    "CreatedAt": "2022-07-04T11:05:49.3597433",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 2003,
+    "CreatedAt": "2022-07-04T11:05:49.7034196",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 2004,
+    "CreatedAt": "2022-07-04T11:05:49.781298",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 2005,
+    "CreatedAt": "2022-07-04T11:05:50.3934416",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 2006,
+    "CreatedAt": "2022-07-04T11:05:51.1165533",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 2007,
+    "CreatedAt": "2022-07-04T11:05:51.1974477",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 2008,
+    "CreatedAt": "2022-07-04T11:05:51.7131007",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 2009,
+    "CreatedAt": "2022-07-04T11:05:51.8103574",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 2010,
+    "CreatedAt": "2022-07-04T11:05:52.2478847",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 2011,
+    "CreatedAt": "2022-07-04T11:05:52.5720246",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 2012,
+    "CreatedAt": "2022-07-04T11:05:52.6662961",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 2013,
+    "CreatedAt": "2022-07-04T11:08:56.0181097",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 2014,
+    "CreatedAt": "2022-07-04T11:08:56.3144874",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 2015,
+    "CreatedAt": "2022-07-04T11:08:56.4092676",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 2016,
+    "CreatedAt": "2022-07-04T11:08:57.0080898",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 2017,
+    "CreatedAt": "2022-07-04T11:08:57.6602996",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 2018,
+    "CreatedAt": "2022-07-04T11:08:57.7407846",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 2019,
+    "CreatedAt": "2022-07-04T11:08:58.3387476",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 2020,
+    "CreatedAt": "2022-07-04T11:08:58.4273456",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 2021,
+    "CreatedAt": "2022-07-04T11:08:58.9041823",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 2022,
+    "CreatedAt": "2022-07-04T11:08:59.2623645",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 2023,
+    "CreatedAt": "2022-07-04T11:08:59.3582317",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Lucas Lind",
+    "Id": 2024,
+    "CreatedAt": "2022-07-04T11:09:11.2509732",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2025,
+    "CreatedAt": "2022-07-04T11:09:11.6609126",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2026,
+    "CreatedAt": "2022-07-04T11:09:12.2255822",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 2027,
+    "CreatedAt": "2022-07-04T11:09:12.961686",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 2028,
+    "CreatedAt": "2022-07-04T11:10:54.2131619",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 2029,
+    "CreatedAt": "2022-07-04T11:10:54.4802777",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 2030,
+    "CreatedAt": "2022-07-04T11:10:54.587821",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 2031,
+    "CreatedAt": "2022-07-04T11:10:55.2196529",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 2032,
+    "CreatedAt": "2022-07-04T11:10:55.8893857",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 2033,
+    "CreatedAt": "2022-07-04T11:10:55.9896462",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 2034,
+    "CreatedAt": "2022-07-04T11:10:56.5348382",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 2035,
+    "CreatedAt": "2022-07-04T11:10:56.6288465",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 2036,
+    "CreatedAt": "2022-07-04T11:10:57.1002824",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 2037,
+    "CreatedAt": "2022-07-04T11:10:57.4765774",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 2038,
+    "CreatedAt": "2022-07-04T11:10:57.5551549",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Alice Rath",
+    "Id": 2039,
+    "CreatedAt": "2022-07-04T11:11:04.3940576",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2040,
+    "CreatedAt": "2022-07-04T11:11:04.7724452",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2041,
+    "CreatedAt": "2022-07-04T11:11:05.2448132",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 2042,
+    "CreatedAt": "2022-07-04T11:11:05.9066827",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Nora Veum",
+    "Id": 2043,
+    "CreatedAt": "2022-07-04T11:11:11.7198326",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2044,
+    "CreatedAt": "2022-07-04T11:11:12.1143487",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2045,
+    "CreatedAt": "2022-07-04T11:11:12.5679394",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 2046,
+    "CreatedAt": "2022-07-04T11:11:13.1307086",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 2047,
+    "CreatedAt": "2022-07-04T11:17:25.0877633",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 2048,
+    "CreatedAt": "2022-07-04T11:17:25.3679936",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 2049,
+    "CreatedAt": "2022-07-04T11:17:25.4634793",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 2050,
+    "CreatedAt": "2022-07-04T11:17:26.1473872",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 2051,
+    "CreatedAt": "2022-07-04T11:17:26.8327731",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 2052,
+    "CreatedAt": "2022-07-04T11:17:26.9376419",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 2053,
+    "CreatedAt": "2022-07-04T11:17:27.485118",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 2054,
+    "CreatedAt": "2022-07-04T11:17:27.5800262",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 2055,
+    "CreatedAt": "2022-07-04T11:17:28.0395688",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 2056,
+    "CreatedAt": "2022-07-04T11:17:28.3911038",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 2057,
+    "CreatedAt": "2022-07-04T11:17:28.4859344",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Shaun Haag",
+    "Id": 2058,
+    "CreatedAt": "2022-07-04T11:17:34.0123641",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2059,
+    "CreatedAt": "2022-07-04T11:17:34.4364393",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2060,
+    "CreatedAt": "2022-07-04T11:17:34.9084265",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 2061,
+    "CreatedAt": "2022-07-04T11:17:35.4916959",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Andy Breitenberg",
+    "Id": 2062,
+    "CreatedAt": "2022-07-04T11:17:42.6817768",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2063,
+    "CreatedAt": "2022-07-04T11:17:43.0258476",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato const",
+    "Id": 2064,
+    "CreatedAt": "2022-07-04T11:17:43.4316196",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato const",
+    "Id": 2065,
+    "CreatedAt": "2022-07-04T11:17:44.0471703",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 3002,
+    "CreatedAt": "2022-07-04T15:39:39.1887916",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 3003,
+    "CreatedAt": "2022-07-04T15:39:39.5578767",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 3004,
+    "CreatedAt": "2022-07-04T15:39:39.6703609",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 3005,
+    "CreatedAt": "2022-07-04T15:39:40.3511599",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 3006,
+    "CreatedAt": "2022-07-04T15:39:41.0452346",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 3007,
+    "CreatedAt": "2022-07-04T15:39:41.1440451",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 3008,
+    "CreatedAt": "2022-07-04T15:39:41.7702796",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 3009,
+    "CreatedAt": "2022-07-04T15:39:41.8469808",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 3010,
+    "CreatedAt": "2022-07-04T15:39:42.2798529",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 3011,
+    "CreatedAt": "2022-07-04T15:39:42.6342648",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 3012,
+    "CreatedAt": "2022-07-04T15:39:42.7133016",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 3013,
+    "CreatedAt": "2022-07-04T20:57:38.5630036",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 3014,
+    "CreatedAt": "2022-07-04T21:05:25.1038323",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 3015,
+    "CreatedAt": "2022-07-04T21:05:54.0267032",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 3016,
+    "CreatedAt": "2022-07-04T21:05:57.8187195",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 3017,
+    "CreatedAt": "2022-07-04T21:06:56.411057",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 3018,
+    "CreatedAt": "2022-07-04T21:07:25.3498449",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 3019,
+    "CreatedAt": "2022-07-04T21:07:27.664934",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 3020,
+    "CreatedAt": "2022-07-04T21:08:01.7702332",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 3021,
+    "CreatedAt": "2022-07-04T21:08:04.8638607",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 3022,
+    "CreatedAt": "2022-07-04T21:08:34.829423",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 3023,
+    "CreatedAt": "2022-07-04T21:08:56.7338534",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 3024,
+    "CreatedAt": "2022-07-04T21:08:59.2215249",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 3025,
+    "CreatedAt": "2022-07-04T21:09:20.2061864",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 3026,
+    "CreatedAt": "2022-07-04T21:09:20.5256476",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 3027,
+    "CreatedAt": "2022-07-04T21:09:20.678283",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 3028,
+    "CreatedAt": "2022-07-04T21:09:21.3906819",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 3029,
+    "CreatedAt": "2022-07-04T21:09:21.9457505",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 3030,
+    "CreatedAt": "2022-07-04T21:09:22.0259365",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 3031,
+    "CreatedAt": "2022-07-04T21:09:22.5778295",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 3032,
+    "CreatedAt": "2022-07-04T21:09:22.6662812",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 3033,
+    "CreatedAt": "2022-07-04T21:09:23.1407426",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 3034,
+    "CreatedAt": "2022-07-04T21:09:44.516938",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 3035,
+    "CreatedAt": "2022-07-04T21:09:46.1742215",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 3036,
+    "CreatedAt": "2022-07-04T21:10:02.6841194",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 3037,
+    "CreatedAt": "2022-07-04T21:10:02.9671821",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 3038,
+    "CreatedAt": "2022-07-04T21:10:03.0635178",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 3039,
+    "CreatedAt": "2022-07-04T21:10:03.7871383",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 3040,
+    "CreatedAt": "2022-07-04T21:10:04.2955224",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 3041,
+    "CreatedAt": "2022-07-04T21:10:04.4001136",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 3042,
+    "CreatedAt": "2022-07-04T21:10:04.979848",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 3043,
+    "CreatedAt": "2022-07-04T21:10:05.0770497",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 3044,
+    "CreatedAt": "2022-07-04T21:10:05.5695485",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 3045,
+    "CreatedAt": "2022-07-04T21:10:05.9329068",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 3046,
+    "CreatedAt": "2022-07-04T21:10:06.0257676",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 1",
+    "Id": 3047,
+    "CreatedAt": "2022-07-04T22:07:03.8643105",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Admin 2",
+    "Id": 3048,
+    "CreatedAt": "2022-07-04T22:07:04.1926333",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Admin 1",
+    "Id": 3049,
+    "CreatedAt": "2022-07-04T22:07:04.2996618",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin Update",
+    "Id": 3050,
+    "CreatedAt": "2022-07-04T22:07:05.1339848",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Admin 1",
+    "Id": 3051,
+    "CreatedAt": "2022-07-04T22:07:05.9044912",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Admin 1",
+    "Id": 3052,
+    "CreatedAt": "2022-07-04T22:07:06.017825",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 1",
+    "Id": 3053,
+    "CreatedAt": "2022-07-04T22:07:06.6097583",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Contato Teste Comum 2",
+    "Id": 3054,
+    "CreatedAt": "2022-07-04T22:07:06.7347775",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Contato Teste Comum Update",
+    "Id": 3055,
+    "CreatedAt": "2022-07-04T22:07:07.28881",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Teste Comum Update",
+    "Id": 3056,
+    "CreatedAt": "2022-07-04T22:07:07.709041",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Contato Admin 1",
+    "Id": 3057,
+    "CreatedAt": "2022-07-04T22:07:07.8167527",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Virgil Skiles",
+    "Id": 4002,
+    "CreatedAt": "2022-07-05T17:03:43.1217258",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato June Becker",
+    "Id": 4003,
+    "CreatedAt": "2022-07-05T17:03:57.2870306",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Loretta Collins",
+    "Id": 4004,
+    "CreatedAt": "2022-07-05T17:03:59.2849584",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Ms. Neil Fisher",
+    "Id": 4005,
+    "CreatedAt": "2022-07-05T17:04:01.249636",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5002,
+    "CreatedAt": "2022-07-07T14:34:30.8895729",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5003,
+    "CreatedAt": "2022-07-07T14:34:49.7103273",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5004,
+    "CreatedAt": "2022-07-07T14:35:28.7364519",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5005,
+    "CreatedAt": "2022-07-07T14:35:40.7784317",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5006,
+    "CreatedAt": "2022-07-07T14:35:52.1399698",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5007,
+    "CreatedAt": "2022-07-07T14:36:14.0233855",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5008,
+    "CreatedAt": "2022-07-07T14:38:54.2255186",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5009,
+    "CreatedAt": "2022-07-07T14:39:07.3264555",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5010,
+    "CreatedAt": "2022-07-07T14:54:36.4685954",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5011,
+    "CreatedAt": "2022-07-07T14:58:28.0068792",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5012,
+    "CreatedAt": "2022-07-07T14:58:30.7895736",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5013,
+    "CreatedAt": "2022-07-07T14:58:35.0680524",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5014,
+    "CreatedAt": "2022-07-07T14:58:36.91991",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5015,
+    "CreatedAt": "2022-07-07T14:58:58.118537",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5016,
+    "CreatedAt": "2022-07-07T16:59:17.7706848",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 5017,
+    "CreatedAt": "2022-07-07T16:59:29.853286",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato NomeCadastro",
+    "Id": 6002,
+    "CreatedAt": "2022-07-07T22:26:34.621525",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato sad",
+    "Id": 6003,
+    "CreatedAt": "2022-07-07T22:26:48.5495953",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Admin Root",
+    "Id": 7002,
+    "CreatedAt": "2022-07-08T15:24:17.8943409",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato NomeCadastro",
+    "Id": 7003,
+    "CreatedAt": "2022-07-08T15:26:36.413064",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato NomeCadastro324",
+    "Id": 7004,
+    "CreatedAt": "2022-07-08T18:48:43.1180035",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 8002,
+    "CreatedAt": "2022-07-11T11:05:05.1818218",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 8003,
+    "CreatedAt": "2022-07-11T11:06:04.8964881",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 8004,
+    "CreatedAt": "2022-07-11T11:06:20.1450346",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 8005,
+    "CreatedAt": "2022-07-11T11:06:32.1854628",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 8006,
+    "CreatedAt": "2022-07-11T11:10:43.0429066",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 8007,
+    "CreatedAt": "2022-07-11T11:26:07.1966667",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Virgil Skiles",
+    "Id": 9002,
+    "CreatedAt": "2022-07-11T11:58:08.5667003",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato NomeCadastro",
+    "Id": 10002,
+    "CreatedAt": "2022-07-11T16:19:17.3067861",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato NomeCadastro",
+    "Id": 10003,
+    "CreatedAt": "2022-07-11T16:19:35.6067419",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Jose",
+    "Id": 11002,
+    "CreatedAt": "2022-07-12T13:23:55.8140202",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato sda",
+    "Id": 11003,
+    "CreatedAt": "2022-07-12T13:24:25.6373107",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Loretta Collins",
+    "Id": 12002,
+    "CreatedAt": "2022-07-12T17:04:51.7442584",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato NomeCadastro324",
+    "Id": 12003,
+    "CreatedAt": "2022-07-12T17:05:47.3087906",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Virgil Skiles",
+    "Id": 13002,
+    "CreatedAt": "2022-07-13T10:32:13.5717388",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato June Becker",
+    "Id": 13003,
+    "CreatedAt": "2022-07-13T10:52:15.585137",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato June Becker",
+    "Id": 13004,
+    "CreatedAt": "2022-07-13T10:52:18.2432526",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Admin Root",
+    "Id": 13005,
+    "CreatedAt": "2022-07-13T10:53:40.3546941",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Removendo Contato Admin Root",
+    "Id": 13006,
+    "CreatedAt": "2022-07-13T10:53:46.5116046",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criando Contato Primeiro Contato",
+    "Id": 14002,
+    "CreatedAt": "2022-07-13T14:05:37.7521257",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato June Becker",
+    "Id": 14003,
+    "CreatedAt": "2022-07-13T14:23:24.1960775",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato June Becker",
+    "Id": 14004,
+    "CreatedAt": "2022-07-13T14:23:50.3938795",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Ms. Neil Fisher",
+    "Id": 14005,
+    "CreatedAt": "2022-07-13T14:30:49.2202981",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Ms. Neil Fisher",
+    "Id": 14006,
+    "CreatedAt": "2022-07-13T14:40:29.9482932",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Ms. Neil Fisher",
+    "Id": 14007,
+    "CreatedAt": "2022-07-13T14:40:43.2658997",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Ms. Neil Fisher",
+    "Id": 14008,
+    "CreatedAt": "2022-07-13T14:41:05.7504048",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Ms. Neil Fisher",
+    "Id": 14009,
+    "CreatedAt": "2022-07-13T14:42:41.1887255",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Ms. Neil Fisher",
+    "Id": 14010,
+    "CreatedAt": "2022-07-13T14:43:24.0263252",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato Ms. Neil Fisher",
+    "Id": 14011,
+    "CreatedAt": "2022-07-13T14:43:34.385314",
+    "UpdatedAt": null
+  },
+  {
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizando Contato June Becker",
+    "Id": 15002,
+    "CreatedAt": "2022-07-14T12:55:13.8508917",
+    "UpdatedAt": null
   }
 ]

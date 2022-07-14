@@ -1,10 +1,11 @@
-@using Agenda.MVC.ViewModel
+@using Agenda.MVC.ViewModel.Contact
+
 @model EditContactViewModel
 
 <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
   @for(var i = 0; i < Model!.Phones.Count(); i++)
   {
-    <div class="mb-5" id=@("scrollspyHeading"+i)>
+    <div class="mb-5 phone-form" id=@("scrollspyHeading"+i)>
        <div class="row align-items-center mb-1">
         @Html.HiddenFor(x=>x.Phones[i].Id)
         <div class="col-2">TELEFONE</div>

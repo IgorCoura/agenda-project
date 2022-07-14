@@ -1,5 +1,6 @@
 using Agenda.MVC.Params;
-using Agenda.MVC.ViewModel;
+using Agenda.MVC.ViewModel.Base;
+using Agenda.MVC.ViewModel.User;
 
 namespace Agenda.MVC.Interfaces
 {
@@ -14,6 +15,7 @@ namespace Agenda.MVC.Interfaces
         Task<bool> EditAdmin(EditUserViewModel model);
         Task<UserViewModel> GetByIdAdmin(int id);
         Task<BasePageResponseViewModel<IEnumerable<UserViewModel>>> GetAllAdmin(UserParams param);
+        Task<IEnumerable<InteractionViewModel>> GetAllInteractions();
         Task RemoverByIdAdmin(int id);
     }
 }

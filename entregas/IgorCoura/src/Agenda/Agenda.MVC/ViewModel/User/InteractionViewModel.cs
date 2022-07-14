@@ -1,12 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Agenda.Application.Model
+namespace Agenda.MVC.ViewModel.User
 {
-    public record InteractionModel
+    public class InteractionViewModel
     {
         public int InteractionTypeId { get; set; }
         public string InteractionType { get; set; } = string.Empty;

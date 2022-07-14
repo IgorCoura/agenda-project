@@ -1,7 +1,9 @@
+using System.Text;
 using Agenda.Application.Constants;
 using Agenda.Application.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace Agenda.API.Controllers
 {
@@ -35,5 +37,6 @@ namespace Agenda.API.Controllers
             await _interactionService.SaveJsonInteractionsAsync();
             return OkCustomResponse("Interations save in Json with success");
         }
+
     }
 }

@@ -1,4 +1,4 @@
-namespace Agenda.MVC.ViewModel
+namespace Agenda.MVC.ViewModel.Base
 {
     public class EnumerationViewModel
     {

@@ -1,4 +1,4 @@
-using Agenda.MVC.ViewModel;
+using Agenda.MVC.ViewModel.User;
 
 namespace Agenda.MVC.Interfaces
 {

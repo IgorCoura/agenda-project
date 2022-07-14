@@ -1,6 +1,6 @@
 using Agenda.MVC.Constants;
 using Agenda.MVC.Interfaces;
-using Agenda.MVC.ViewModel;
+using Agenda.MVC.ViewModel.User;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;

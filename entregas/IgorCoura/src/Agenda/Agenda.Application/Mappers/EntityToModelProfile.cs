@@ -12,10 +12,11 @@ namespace Agenda.Application.Mappers
         {
             CreateMap<Contact, ContactModel>();
             CreateMap<Phone, PhoneModel>()
-            .ForMember(x => x.PhoneType, m => m.MapFrom(req => Enumeration.FromId<PhoneType>((int)req.PhoneTypeId!).Name));
+                .ForMember(x => x.PhoneType, m => m.MapFrom(req => Enumeration.FromId<PhoneType>((int)req.PhoneTypeId!).Name));
             CreateMap<PhoneType, PhoneTypeModel>();
-            CreateMap<Interaction, InteractionModel>();
-            CreateMap<InteractionType, InteractionTypeModel>();
+            CreateMap<Interaction, InteractionModel>()
+                .ForMember(x => x.InteractionType, m => m.MapFrom(req => Enumeration.FromId<InteractionType>((int)req.InteractionTypeId!).Name));
+            CreateMap<InteractionType, InteractionTypeModel>();            
             CreateMap<User, UserModel>()
                 .ForMember(x => x.UserRole, m => m.MapFrom(req => Enumeration.FromId<UserRole>(req.UserRoleId).Name));
         }

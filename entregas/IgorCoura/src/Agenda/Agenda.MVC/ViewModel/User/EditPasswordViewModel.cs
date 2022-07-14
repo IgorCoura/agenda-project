@@ -1,7 +1,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace Agenda.MVC.ViewModel
+namespace Agenda.MVC.ViewModel.User
 {
     public class EditPasswordViewModel
     {
