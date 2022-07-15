@@ -100,25 +100,28 @@
       </div>
     }
 
-
-    <nav aria-label="Page navigation example">
-      <ul class="pagination justify-content-center">
-        <li class="page-item">
-          <button type="submit" class="page-link" name="page" value=@(Model.CurrentPage-1 < 1 ? 1 : Model.CurrentPage-1) aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-          </button>
-        </li>
-          @foreach(var pagNumber in Enumerable.Range(1, Model.TotalPages))
-          {
-              <li class='@(Model.CurrentPage == pagNumber ? "page-item active": "page-item")'><button type="submit" class="page-link" name="page" value=@pagNumber>@pagNumber</button></li>
-          }
-        <li class="page-item">
-          <button type="submit" class="page-link" aria-label="Next" name="page" value=@(Model.CurrentPage+1 > Model.TotalPages ? Model.TotalPages : Model.CurrentPage+1)>
-            <span aria-hidden="true">&raquo;</span>
-          </button>
-        </li>
-      </ul>
-    </nav>
+    @if(Model.TotalPages > 1)
+    {
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <li class="page-item">
+              <button type="submit" class="page-link" name="page" value=@(Model.CurrentPage-1 < 1 ? 1 : Model.CurrentPage-1) aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </button>
+            </li>
+              @foreach(var pagNumber in Enumerable.Range(1, Model.TotalPages))
+              {
+                  <li class='@(Model.CurrentPage == pagNumber ? "page-item active": "page-item")'><button type="submit" class="page-link" name="page" value=@pagNumber>@pagNumber</button></li>
+              }
+            <li class="page-item">
+              <button type="submit" class="page-link" aria-label="Next" name="page" value=@(Model.CurrentPage+1 > Model.TotalPages ? Model.TotalPages : Model.CurrentPage+1)>
+                <span aria-hidden="true">&raquo;</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+    }
+        
 
 }
 </div>

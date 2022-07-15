@@ -115,9 +115,10 @@ namespace Agenda.Application.Services
             return Task.FromResult(_mapper.Map<IEnumerable<PhoneTypeModel>>(Enumeration.GetAll<PhoneType>()));
         }
 
-        public Task<int> GetTotalItems(ContactParams contactParams)
+        public Task<int> GetTotalItems(ContactParams contactParams, int userId)
         {
             var query = contactParams.Filter() ?? PredicateBuilder.New<Contact>(true);
+            query = query.And(x => x.UserId == userId);
             return Task.FromResult(_contactRepository.QueryData(x => x.Count(query)));
         }
         public async Task<ContactModel> Remove(int id, int userId)

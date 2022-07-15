@@ -60,7 +60,7 @@ namespace Agenda.API.Controllers
         {
             var userId = int.Parse(User.FindFirst(ClaimTypes.Sid)!.Value);
             var result = await _contactService.Recover(contactParams, userId);
-            var totalItems = await _contactService.GetTotalItems(contactParams);
+            var totalItems = await _contactService.GetTotalItems(contactParams, userId);
             return OkPageResponse(totalItems, result);
         }
 

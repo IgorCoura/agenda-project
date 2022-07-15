@@ -11,11 +11,11 @@
         <div class="col-2">TELEFONE</div>
         <div class="col-6">
           @Html.TextBoxFor(x => x.Phones[i].FormattedPhone, new{@class = "form-control"})
-          @Html.ValidationMessageFor(x => x.Phones[i].FormattedPhone)
+          @Html.ValidationMessageFor(x => x.Phones[i].FormattedPhone,"", new{@class = "invalid-feedback d-block"})
         </div>
         <div class="col-2">
           @Html.DropDownListFor(x => x.Phones[i].PhoneTypeId, (SelectList)ViewBag.PhoneTypes, new{@class = "form-select"})
-          @Html.ValidationMessageFor(x => x.Phones[i].PhoneTypeId)
+          @Html.ValidationMessageFor(x => x.Phones[i].PhoneTypeId,"", new{@class = "invalid-feedback d-block"})
         </div>
         <button name="option" value=@("RemovePhone|"+i+"|"+Model.Phones[i].Id+"|"+TempData["UserId"]) class="btn btn-outline-danger col-sm-1" type="submit">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16" style="color:red">
