@@ -17,6 +17,16 @@ namespace Agenda.API.Controllers
             });
         }
 
+        protected ActionResult OkPageResponse(int TotalItems = 0, object result = null )
+        {
+            return Ok(new
+            {
+                success = true,
+                totalItems = TotalItems,
+                data = result
+            });
+        }
+
 
         protected ActionResult BadCustomResponse(ModelStateDictionary modelState)
         {

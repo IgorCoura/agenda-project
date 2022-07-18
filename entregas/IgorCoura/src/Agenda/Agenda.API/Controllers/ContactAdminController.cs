@@ -55,8 +55,8 @@ namespace Agenda.API.Controllers
         public async Task<ActionResult> GetAdmin([FromQuery] int userId, [FromQuery] ContactParams contactParams)
         {
             var result = await _contactService.Recover(contactParams, userId);
-
-            return OkCustomResponse(result);
+            var totalItems = await _contactService.GetTotalItems(contactParams, userId);
+            return OkPageResponse(totalItems, result);
         }
 
         [HttpGet]

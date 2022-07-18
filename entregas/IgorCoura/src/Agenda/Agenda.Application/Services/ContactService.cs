@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Agenda.Application.Exceptions;
 using FluentValidation;
 using LinqKit;
+using Agenda.Domain.Core;
 
 namespace Agenda.Application.Services
 {
@@ -86,10 +87,13 @@ namespace Agenda.Application.Services
 
         public async Task<IEnumerable<ContactModel>> Recover(ContactParams query, int? userId = null)
         {
-            var filter = query.Filter();
+            var predicate = PredicateBuilder.New<Contact>();
+            if (query.Filter() != null)
+                predicate = query.Filter();
             if (userId is not null)
-                filter = filter.And(x => x.UserId == userId);
-            var results = await _contactRepository.GetDataAsync(filter: filter, include: q => q.Include(p => p.Phones));
+                predicate = predicate.And(x => x.UserId == userId);
+           
+            var results = await _contactRepository.GetDataAsync(filter: predicate, include: q => q.Include(p => p.Phones), skip: query.Skip, take: query.Take);
             return _mapper.Map<IEnumerable<ContactModel>>(results);
         }
 
@@ -106,6 +110,17 @@ namespace Agenda.Application.Services
             return _mapper.Map<IEnumerable<ContactModel>>(results);
         }
 
+        public Task<IEnumerable<PhoneTypeModel>> RecoverPhoneType()
+        {
+            return Task.FromResult(_mapper.Map<IEnumerable<PhoneTypeModel>>(Enumeration.GetAll<PhoneType>()));
+        }
+
+        public Task<int> GetTotalItems(ContactParams contactParams, int userId)
+        {
+            var query = contactParams.Filter() ?? PredicateBuilder.New<Contact>(true);
+            query = query.And(x => x.UserId == userId);
+            return Task.FromResult(_contactRepository.QueryData(x => x.Count(query)));
+        }
         public async Task<ContactModel> Remove(int id, int userId)
         {
             var predicate = PredicateBuilder.New<Contact>();

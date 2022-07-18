@@ -10,6 +10,8 @@ namespace Agenda.Application.Params
         public string? Name { get; set; }
         public int? DDD { get; set; }
         public int? Number { get; set; }
+        public int? Skip { get; set; }
+        public int? Take { get; set; }
 
         public override Expression<Func<Contact, bool>> Filter()
         {
@@ -24,7 +26,11 @@ namespace Agenda.Application.Params
             if (Number.HasValue)
                 predicate = predicate.And(x => x.Phones.Any(x => x.Number == Number));
 
-            return predicate;
+            if (predicate.IsStarted)
+            {
+                return predicate;
+            }
+            return null;
         }
     }
 }

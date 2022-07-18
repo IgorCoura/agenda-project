@@ -12,9 +12,11 @@ namespace Agenda.Application.Params
 {
     public class UserParams: BaseParams<User>
     {
-        public string Name { get; set; }
-        public string Username { get; set; }
-        public string Email { get; set; }
+        public string? Name { get; set; }
+        public string? Username { get; set; }
+        public string? Email { get; set; }
+        public int? Skip { get; set; }
+        public int? Take { get; set; }
         public override Expression<Func<User, bool>>? Filter()
         {
             var predicate = PredicateBuilder.New<User>();
@@ -32,11 +34,8 @@ namespace Agenda.Application.Params
             {
                 return predicate;
             }
-            else
-            {
                 return null;
-            }
+            
         }
-        public UserParams() { }
     }
 }

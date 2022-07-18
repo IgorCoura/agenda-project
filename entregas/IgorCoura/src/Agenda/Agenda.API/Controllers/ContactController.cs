@@ -60,8 +60,8 @@ namespace Agenda.API.Controllers
         {
             var userId = int.Parse(User.FindFirst(ClaimTypes.Sid)!.Value);
             var result = await _contactService.Recover(contactParams, userId);
-
-            return OkCustomResponse(result);
+            var totalItems = await _contactService.GetTotalItems(contactParams, userId);
+            return OkPageResponse(totalItems, result);
         }
 
         [HttpGet("{id:int}")]
@@ -80,7 +80,13 @@ namespace Agenda.API.Controllers
             return OkCustomResponse(result);
         }
 
-
+        [HttpGet("phoneTypes")]
+        [AllowAnonymous]
+        public async Task<ActionResult> GetPhoneTypes()
+        {
+            var result = _contactService.RecoverPhoneType();
+            return OkCustomResponse(result.Result);
+        }
 
 
     }

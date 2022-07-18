@@ -1,0 +1,53 @@
+@using Agenda.MVC.ViewModel.User
+
+@model EditUserViewModel
+
+@{
+    ViewData["Title"] = "Alterar user";
+}
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmar exclusão!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Tem certeza que deseja deletar essa conta?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <a class="btn btn-primary confirm-delete" href='@Html.Raw(Url.Action("Delete", "User"))'>Confirmar</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal-->
+
+<div class="form-user m-auto">
+  <h3 class="text-center">Editar perfil</h3>
+    @using(Html.BeginForm("Edit", "User", FormMethod.Post))
+    {
+      <div class="form-group">
+        @await Html.PartialAsync("_FormsEditUser", Model)
+      </div>
+      <div>
+        <vc:Summary></vc:Summary>
+      </div>
+        
+    }
+    <div style="height:50px"></div>
+    <div class="text-center">
+      <h4>Deletar conta!</h4>
+      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Deletar conta
+      </button>
+    </div>
+</div>
+@section Scripts
+{
+  @await Html.PartialAsync("_ValidationScriptsPartial")
+
+}

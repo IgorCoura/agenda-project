@@ -21,7 +21,7 @@ namespace Agenda.Application.Validations
 
             RuleFor(x => x.PhoneTypeId)
                 .Must(type => Enumeration.GetAll<PhoneType>().Any(x => x.Id == type))
-                .WithMessage("PhoneTypeId Tipo de telefone inválido");
+                .WithMessage("Tipo de telefone inválido");
 
             RuleFor(x => x.FormattedPhone)
                 .Must((phone, formatted, context) =>
@@ -35,7 +35,7 @@ namespace Agenda.Application.Validations
                         return new Regex(@"^\(?[1-9][0-9]\)? ?([1-9])[0-9]{3}\-?[0-9]{4}$").IsMatch(formatted);
                     }
                 })
-                .WithMessage("{PropertyName}: {PropertyValue} - Formato de telefone inválido é (xx) 9xxxx-xxxx para celular e (xx) xxxx-xxxx para residencial");
+                .WithMessage("Formato de telefone inválido. (xx) 9xxxx-xxxx para celular e (xx) xxxx-xxxx para residencial");
         }
     }
     public class CreatePhoneValidator : BasePhoneValidator<CreatePhoneModel>

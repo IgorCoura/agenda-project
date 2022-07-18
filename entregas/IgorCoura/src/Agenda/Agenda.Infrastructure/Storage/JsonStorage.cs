@@ -130,6 +130,7 @@ namespace Agenda.Infrastructure.Storage
             }
         }
 
+
         private IEnumerable<T> ReadFile()
         {
             if (!FileExists())

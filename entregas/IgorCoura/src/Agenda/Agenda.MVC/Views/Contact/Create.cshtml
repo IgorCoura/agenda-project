@@ -1,0 +1,27 @@
+@using Agenda.MVC.ViewModel.Contact
+
+@model EditContactViewModel
+
+@{
+    ViewData["Title"] = "Contatos";
+}
+
+
+<div>
+    @using (Html.BeginForm("Create", "Contact", FormMethod.Post))
+    {
+        @await Html.PartialAsync("_FormsContact", Model)
+    }
+    <div>
+       <vc:Summary></vc:Summary>
+    </div>
+</div>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    
+}
+

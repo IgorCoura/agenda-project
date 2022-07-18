@@ -22,5 +22,6 @@ namespace Agenda.Infrastructure.Repositories
 
             await _jsonStorage.SaveAsync();
         }
+
     }
 }

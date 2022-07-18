@@ -1,0 +1,32 @@
+@using Agenda.MVC.Constants
+@using Agenda.MVC.ViewModel.User
+
+@model EditUserViewModel
+
+@{
+    ViewData["Title"] = "Alterar user";
+}
+
+<div class="form-user m-auto">
+  <h3 class="text-center">Editar usuario</h3>
+    @using(Html.BeginForm("Edit", "UserAdmin", FormMethod.Post))
+    {
+      <div class="form-group">
+        <div>
+          @Html.LabelFor(x => x.UserRoleId)
+          @Html.DropDownListFor(x => x.UserRoleId, Roles.AllRoles, new{@class = "form-select"})
+          @Html.ValidationMessageFor(x => x.UserRoleId,"", new{@class = "invalid-feedback d-block"})
+        </div>
+        @await Html.PartialAsync("_FormsEditUser", Model)
+      </div>
+      <div>
+          <vc:Summary></vc:Summary>
+      </div>
+    }
+
+</div>
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

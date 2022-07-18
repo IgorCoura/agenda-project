@@ -1,0 +1,26 @@
+@using Agenda.MVC.ViewModel.User
+
+@model CreateUserViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+
+<div class="form-user m-auto">
+  <h3 class="text-center">Cadastro</h3>
+    @using(Html.BeginForm("RegisterUser", "Login", FormMethod.Post))
+    {
+        <div class="form-group">
+          @await Html.PartialAsync("_FormsCreateUser", Model)
+        </div>
+        <div>
+          <vc:Summary></vc:Summary>
+        </div>
+    }
+</div>
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
