@@ -1,0 +1,32 @@
+<header class="p-3 mb-3 border-bottom">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 text-dark text-decoration-none">
+          <img class="bi me-2" width="40" height="32" src="https://cdn-icons-png.flaticon.com/512/212/212184.png">
+          <span class="fs-4">Agenda</span>
+        </a>
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center align-items-center mb-md-auto">
+              <li class="nav-item"><a class="nav-link text-dark" style="font-size: 1.2rem">Contact</a></li>
+                  <li class="nav-item"><a class="nav-link text-dark px-2" style="font-size: 1.2rem">Users</a></li>
+                  <li class="nav-item"><a class="nav-link text-dark px-2" style="font-size: 1.2rem">Interactions</a></li>
+          </ul>
+          <div class="dropdown text-end" *ngIf="IsAuthenticated">
+            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-photo-183042379.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+            </a>
+            <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+              <li><a class="dropdown-item text-dark">Editar Perfil</a></li>
+              <li><a class="dropdown-item text-dark">Alterar Senha</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-dark" (click)="Change()">Logout</a></li>
+            </ul>
+          </div>
+          <div *ngIf="!IsAuthenticated">
+            <div class="me-lg-auto mb-2 mb-md-auto"></div>
+            <div class="mb-md-0 align-content-center">
+                <button class="btn btn-outline-primary" (click)="Change()">Login</button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </header>
