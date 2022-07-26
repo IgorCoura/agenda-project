@@ -1,0 +1,25 @@
+<form class="card form-contact" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="card-header mb-3">
+      <div class="form-group row align-items-center">
+        <div class="col-sm-2">
+          Name
+        </div>
+        <div class="col-sm-8">
+          <input class="form-control" formControlName="name">
+          <div class="invalid-feedback d-block"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <app-phone-form *ngFor="let item of phonesField.controls; let i = index" [phoneForm]="phonesField.controls[i]" [index]="i" (removePhone)="onRemovePhone($event)"></app-phone-form>
+      <button class="waves-effect waves-light btn cancel btn btn-primary" (click)="addPhoneForm()">
+        <span>Adicionar Telefone</span>
+      </button>
+    </div>
+    <div class="mb-3 m-auto">
+      <button class="btn btn-primary m-3" type="submit" >Salvar</button>
+      <a class="m-3" href='#' >Cancelar</a>
+    </div>
+</form>
+
+<app-form-debug [form]="form"></app-form-debug>
