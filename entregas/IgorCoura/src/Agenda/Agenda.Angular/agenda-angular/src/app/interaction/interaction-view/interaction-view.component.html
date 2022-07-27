@@ -1,0 +1,13 @@
+<h1 class="m-auto text-center mb-3">Interactions</h1>
+<ol class="list-group list-group-numbered m-auto interaction-view">
+    <li class="list-group-item d-flex justify-content-between align-items-start" *ngFor="let item of interactions">
+        <div class="ms-2 me-auto">
+        <div class="fw-bold">{{item.interactionType}}</div>
+        {{item.message}}
+        </div>
+    </li>
+</ol>
+
+
+
+

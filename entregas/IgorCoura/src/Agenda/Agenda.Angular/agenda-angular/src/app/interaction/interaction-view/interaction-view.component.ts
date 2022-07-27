@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Interaction } from 'src/app/entities/interaction.entity';
 
 @Component({
   selector: 'app-interaction-view',
@@ -7,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InteractionViewComponent implements OnInit {
 
-  Interactions = ['a','b','c']
-
+  interactions = [new Interaction(1, 1, "InteractionType", "Message"), new Interaction(2, 2, "InteractionType2", "Message2"),]
+  
   constructor() { }
 
   ngOnInit(): void {

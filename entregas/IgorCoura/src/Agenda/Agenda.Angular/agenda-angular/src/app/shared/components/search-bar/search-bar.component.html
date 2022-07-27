@@ -1,22 +1,18 @@
 <div class="input-group mb-3">
-    <div>
-      <select class="form-select">
-        <option value="">Selecione</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-    </div>
+    <div *ngIf="optionsSearch.length > 0">
+      <mat-form-field appearance="outline">
+        <mat-label>Pesquisa</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let item of optionsSearch" [value]="item">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
     <div class="input-field col s8">
       <input class="form-control rounded" placeholder="Search" type="search">
-      <div class="invalid-feedback">Invalid Message</div>
     </div>
     <div>
-      <button type="submit" class="btn btn-outline-primary">Buscar</button>
-      <a class="btn btn-outline-primary" href='#'>
+      <button type="submit" class="btn btn-outline-primary" (click) = "onSearch()">Buscar</button>
+      <button class="btn btn-outline-primary" href='#' (click)="onAdd()">
        Adicionar
-     </a>
+      </button>
     </div>
  </div>

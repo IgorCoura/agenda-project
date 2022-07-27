@@ -1,0 +1,36 @@
+<div class="contact-view">
+    <h1 class="m-auto text-center mb-3">Contact</h1>
+
+    <app-search-bar></app-search-bar>
+
+    <div *ngFor="let contact of contacts; index as i" >
+        <mat-expansion-panel class="card mb-1"  hideToggle >
+            <mat-expansion-panel-header fxLayoutAlign="space-between center">
+                <mat-panel-title>
+                    {{contact.name}}
+                </mat-panel-title>
+                <div>
+                    <button mat-icon-button color="primary" aria-label="Icon button with a home icon" (click) = "onEdit()"><mat-icon>edit</mat-icon></button>
+                    <button mat-icon-button color="warn" aria-label="Icon button with a home icon" (click) = "onDelete()"><mat-icon>delete</mat-icon></button>
+                </div>
+            </mat-expansion-panel-header>
+
+            <div>
+                <div class="card-body">
+                    <mat-divider></mat-divider>
+                    <div class="mb-2" *ngFor="let phone of contact.phones">
+                        <br>
+                        <div>{{phone.PhoneType}} - {{phone.formattedPhone}}</div>
+                        <div>Descrição: {{phone.description}}</div>
+                        <br>
+                        <mat-divider></mat-divider>
+                    </div>               
+                </div>
+            </div>
+
+        </mat-expansion-panel>
+    </div>
+
+    <app-nav-page></app-nav-page>
+
+</div>

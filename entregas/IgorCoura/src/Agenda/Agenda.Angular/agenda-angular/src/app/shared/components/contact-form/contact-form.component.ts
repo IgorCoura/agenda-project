@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Phone } from '../../entities/phone.entity';
+import { Phone } from '../../../entities/phone.entity';
 
 @Component({
   selector: 'app-contact-form',
