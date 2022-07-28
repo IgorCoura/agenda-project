@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { NavPageComponent } from './components/nav-page/nav-page.component';
-import { ContactFormComponent } from './components/contact-form/contact-form.component';
-import { PhoneFormComponent } from './components/phone-form/phone-form.component';
+import { ContactFormComponent } from '../contact/contact-form/contact-form.component';
+import { PhoneFormComponent } from '../contact/phone-form/phone-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormDebugComponent } from './components/form-debug/form-debug.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -19,6 +19,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatSelectModule} from '@angular/material/select';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -27,8 +28,6 @@ import {MatSelectModule} from '@angular/material/select';
     SearchBarComponent,
     NavBarComponent,
     NavPageComponent,
-    ContactFormComponent,
-    PhoneFormComponent,
     FormDebugComponent,
   ],
   imports: [
@@ -46,13 +45,13 @@ import {MatSelectModule} from '@angular/material/select';
     MatListModule,
     MatSelectModule,
     FlexLayoutModule,
-
+    MatPaginatorModule
   ],
   exports: [
     SearchBarComponent,
     NavBarComponent,
+    FormDebugComponent,
     NavPageComponent,
-    ContactFormComponent,
   ],
 })
 export class SharedModule { }

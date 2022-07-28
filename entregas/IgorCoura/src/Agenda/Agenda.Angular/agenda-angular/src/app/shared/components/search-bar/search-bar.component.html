@@ -1,18 +1,15 @@
-<div class="input-group mb-3">
-    <div *ngIf="optionsSearch.length > 0">
-      <mat-form-field appearance="outline">
-        <mat-label>Pesquisa</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let item of optionsSearch" [value]="item">{{item}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    <div class="input-field col s8">
-      <input class="form-control rounded" placeholder="Search" type="search">
-    </div>
-    <div>
-      <button type="submit" class="btn btn-outline-primary" (click) = "onSearch()">Buscar</button>
-      <button class="btn btn-outline-primary" href='#' (click)="onAdd()">
-       Adicionar
-      </button>
-    </div>
- </div>
+
+<div fxLayout="row" fxLayoutAlign="center" >
+
+  <mat-select [(value)]="selectedOption" fxLayoutAlign="none center" >
+    <mat-option *ngFor="let item of optionsSearch" [value]="item">{{item}}</mat-option>
+  </mat-select>
+
+  <input   matInput #search  placeholder="pesquisa...">
+
+  <button mat-stroked-button color="primary" (click) = "onSearch(search.value)">Buscar</button>
+  <button  mat-stroked-button color="primary" href='#' (click)="onAdd()">
+    Adicionar
+  </button>
+  
+</div>

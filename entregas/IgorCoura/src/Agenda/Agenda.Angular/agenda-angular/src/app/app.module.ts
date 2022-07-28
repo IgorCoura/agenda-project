@@ -7,22 +7,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
 import { ContactViewComponent } from './contact/contact-view/contact-view.component';
 import { SearchBarComponent } from './shared/components/search-bar/search-bar.component';
-import { UserViewComponent } from './user-view/user-view.component';
+import { UserViewComponent } from './user-admin/user-view/user-view.component';
 import { NavPageComponent } from './shared/components/nav-page/nav-page.component';
 import { InteractionViewComponent } from './interaction/interaction-view/interaction-view.component';
-import { ContactFormComponent } from './shared/components/contact-form/contact-form.component';
-import { PhoneFormComponent } from './shared/components/phone-form/phone-form.component';
+import { ContactFormComponent } from './contact/contact-form/contact-form.component';
+import { PhoneFormComponent } from './contact/phone-form/phone-form.component';
 import { LoginComponent } from './login/login.component';
 import { SharedModule } from './shared/shared.module';
 import { ContactModule } from './contact/contact.module';
 import { InteractionModule } from './interaction/interaction.module';
+import { UserModule } from './user/user.module';
+import { UserAdminModule } from './user-admin/user-admin.module';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserViewComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import { InteractionModule } from './interaction/interaction.module';
     SharedModule,
     ContactModule,
     InteractionModule,
-
+    UserModule,
+    UserAdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]

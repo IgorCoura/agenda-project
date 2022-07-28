@@ -8,10 +8,10 @@
       </a>
     </div>
     <div fxLayoutAlign="start center">
-      <a class="route-button" mat-button [routerLink]="['/contact']"><span>Contact</span></a>
+      <a  mat-button [routerLink]="['/contact']"><span>Contatos</span></a>
       <div *ngIf="IsAdmin">
-        <a class="route-button" mat-button><span>Users</span></a>
-        <a class="route-button" mat-button [routerLink]="['/interactions']"><span>Interactions</span></a>
+        <a mat-button  [routerLink]="['/']" ><span>Usuarios</span></a>
+        <a mat-button [routerLink]="['/interactions']" ><span>Interações</span></a>
       </div>
     </div>
    </div>
@@ -25,8 +25,8 @@
       <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-photo-183042379.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>Editar Perfil</button>
-      <button mat-menu-item>Alterar Senha</button>
+      <button mat-menu-item routerLink="/user/edit">Editar Perfil</button>
+      <button mat-menu-item routerLink="/user/edit-password">Alterar Senha</button>
       <button mat-menu-item>Logout</button>
     </mat-menu>
   </div>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-nav-page',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavPageComponent implements OnInit {
 
+  @Input() length: number = 100;
+  @Input() pageSize: number = 10;
+  @Input() pageSizeOptions = [5, 10, 25];
+  @Output() pageEvent!: PageEvent;
+
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  handlePageEvent(event: PageEvent) {
+    this.length = event.length;
+    this.pageSize = event.pageSize;
+    this.pageEvent = event;
+  }
+
 
 }
