@@ -1,0 +1,30 @@
+<h1>Register User</h1>
+<form class="form-group"  [formGroup]="form" fxLayout="column" fxLayoutAlign="center none"  (submit)="onSubmit()">
+
+    <label>Name</label>
+    <input type="text" class="form-control" placeholder="Enter name" formControlName="name">
+    <div class = "invalid-feedback d-block"></div>
+
+    <label>UserName</label>
+    <input type="text" class="form-control" placeholder="Enter username" formControlName="userName">
+    <div class = "invalid-feedback d-block"></div>
+
+    <label>Email</label>
+    <input type="email" class="form-control" placeholder="Enter email" formControlName="email">
+    <div class = "invalid-feedback d-block"></div>
+
+    <label>Senha</label>
+    <input type="password" class="form-control" placeholder="Enter senha">
+    <div class = "invalid-feedback d-block"></div>
+
+    <label>Confirma senha</label>
+    <input type="password" class="form-control" placeholder="Enter senha">
+    <div class = "invalid-feedback d-block"></div>
+
+    <div class="div-button">
+        <button type="submit" class="btn btn-primary m-2">Salvar</button>
+        <a routerLink="/login" class="btn btn-link">cancelar</a>
+    </div>
+</form>
+
+  

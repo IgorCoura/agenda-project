@@ -10,10 +10,10 @@ export class PhoneFormComponent implements OnInit {
 
   @Input() index!: number;
   @Input() phoneForm! : any;
+  @Input() options! : Array<string>;
   @Output() removePhone = new EventEmitter(); 
 
   constructor() { 
-    console.log(this.phoneForm);
   }
 
   ngOnInit(): void {

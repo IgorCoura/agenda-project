@@ -10,8 +10,8 @@
                     {{contact.name}}
                 </mat-panel-title>
                 <div>
-                    <button mat-icon-button color="primary" aria-label="Icon button with a home icon" [routerLink]="['/contact/form/', contact.id]" ><mat-icon>edit</mat-icon></button>
-                    <button mat-icon-button color="warn" aria-label="Icon button with a home icon" (click) = "onDelete()"><mat-icon>delete</mat-icon></button>
+                    <button mat-icon-button color="primary" aria-label="Icon button with a home icon" (click)="onEdit(contact)"><mat-icon>edit</mat-icon></button>
+                    <button mat-icon-button color="warn" aria-label="Icon button with a home icon" (click) = "onDelete(contact)"><mat-icon>delete</mat-icon></button>
                 </div>
             </mat-expansion-panel-header>
 
@@ -20,7 +20,7 @@
                     <mat-divider></mat-divider>
                     <div class="mb-2" *ngFor="let phone of contact.phones">
                         <br>
-                        <div>{{phone.PhoneType}} - {{phone.formattedPhone}}</div>
+                        <div>{{phone.phoneType}} - {{phone.formattedPhone}}</div>
                         <div>Descrição: {{phone.description}}</div>
                         <br>
                         <mat-divider></mat-divider>
@@ -31,6 +31,6 @@
         </mat-expansion-panel>
     </div>
 
-    <app-nav-page></app-nav-page>
+    <app-nav-page (changePageEvent)="onChangePageEvent($event)"></app-nav-page>
 
 </div>

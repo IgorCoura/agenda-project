@@ -5,13 +5,13 @@ export class Phone{
     formattedPhone: string;
     description: string;
     phoneTypeId: number;
-    PhoneType: string;
+    phoneType: string;
 
     constructor(id: number, formattedPhone: string, description: string, phoneTypeId: number, PhoneType: string){
         this.id = id;
         this.formattedPhone = formattedPhone;
         this.description = description;
         this.phoneTypeId = phoneTypeId;
-        this.PhoneType = PhoneType;
+        this.phoneType = PhoneType;
     }
 }

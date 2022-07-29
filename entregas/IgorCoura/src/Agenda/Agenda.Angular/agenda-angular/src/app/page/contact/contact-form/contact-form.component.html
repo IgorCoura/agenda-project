@@ -1,24 +1,25 @@
 <form class="card form-contact" [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="card-header mb-3">
-      <div class="form-group row align-items-center">
-        <div class="col-sm-2">
+      <div fxLayout="row" fxLayoutAlign="start center" >
+        <div [fxFlex]="10">
           Name
         </div>
-        <div class="col-sm-8">
+        <div [fxFlex]="90">
           <input class="form-control" formControlName="name">
           <div class="invalid-feedback d-block"></div>
         </div>
       </div>
     </div>
     <div class="card-body">
-      <app-phone-form *ngFor="let item of phonesField.controls; let i = index" [phoneForm]="phonesField.controls[i]" [index]="i" (removePhone)="onRemovePhone($event)"></app-phone-form>
+      <app-phone-form *ngFor="let item of phonesField.controls; let i = index" [phoneForm]="phonesField.controls[i]" [index]="i" (removePhone)="onRemovePhone($event)" [options]="phoneOptions"></app-phone-form>
       <button class="waves-effect waves-light btn cancel btn btn-primary" (click)="addPhoneForm()">
         <span>Adicionar Telefone</span>
       </button>
     </div>
     <div class="mb-3 m-auto">
       <button class="btn btn-primary m-3" type="submit" >Salvar</button>
-      <a class="m-3" routerLink="" >Cancelar</a>
+      <a *ngIf="userId == 0" class="m-3" routerLink="/contact" >Cancelar</a>
+      <a *ngIf="userId > 0" class="m-3" [routerLink]="['/admin/contact', userId]" >Cancelar</a>
     </div>
 </form>
 

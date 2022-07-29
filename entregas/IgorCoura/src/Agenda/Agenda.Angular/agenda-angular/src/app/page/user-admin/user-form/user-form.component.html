@@ -1,0 +1,38 @@
+<h1>{{title}}</h1>
+<form class="form-group"  [formGroup]="form" fxLayout="column" fxLayoutAlign="center none"  (submit)="onSubmit()">
+
+    <label>Cargo</label>
+    <mat-select fxLayoutAlign="none center" class="card" formControlName="userRole">
+        <mat-option *ngFor="let item of options" [value]="item">{{item}}</mat-option>
+    </mat-select>
+
+    <label>Name</label>
+    <input type="text" class="form-control" placeholder="Enter name" formControlName="name">
+    <div class = "invalid-feedback d-block"></div>
+
+    <label>UserName</label>
+    <input type="text" class="form-control" placeholder="Enter username" formControlName="userName">
+    <div class = "invalid-feedback d-block"></div>
+
+    <label>Email</label>
+    <input type="email" class="form-control" placeholder="Enter email" formControlName="email">
+    <div class = "invalid-feedback d-block"></div>
+
+
+    <div *ngIf="id == 0" >
+        <label>Senha</label>
+        <input type="password" class="form-control" placeholder="Enter senha">
+        <div class = "invalid-feedback d-block"></div>
+
+        <label>Confirma senha</label>
+        <input type="password" class="form-control" placeholder="Enter senha">
+        <div class = "invalid-feedback d-block"></div>
+    </div>
+
+    <div class="div-button">
+        <button type="submit" class="btn btn-primary m-2">Salvar</button>
+        <a routerLink="/admin/user" class="btn btn-link">cancelar</a>
+    </div>
+</form>
+
+  

@@ -1,6 +1,6 @@
 <div class="user-view">
 
-  <h1 class="m-auto text-center mb-3">CONTATOS</h1>
+  <h1 class="m-auto text-center mb-3">USUARIOS</h1>
 
   <app-search-bar [optionsSearch]="optionsSearch" (searchEvent)="onSearch($event)" (addEvent)="onAdd()"></app-search-bar>
     <div *ngFor="let user of Users" class="card" fxLayout="row"  fxLayoutAlign="space-around center" >
@@ -17,17 +17,17 @@
         Role: {{user.userRole}}
       </div>
       <div>
-        <a  mat-icon-button >
+        <a  mat-icon-button  [routerLink] = "['/admin/contact/', user.id]">
           <mat-icon>contacts</mat-icon>
         </a>
-        <a  mat-icon-button color="primary"> 
+        <a  mat-icon-button color="primary" [routerLink] = "['/admin/user/form/', user.id]"> 
           <mat-icon>edit</mat-icon>
         </a>
-        <a  mat-icon-button color="warn">
+        <a  mat-icon-button color="warn" (click)="onDelete(user)">
           <mat-icon>delete</mat-icon>
         </a>
       </div>
     </div>
-  <app-nav-page></app-nav-page>
+  <app-nav-page (changePageEvent)="onChangePage($event)"></app-nav-page>
 
 </div>

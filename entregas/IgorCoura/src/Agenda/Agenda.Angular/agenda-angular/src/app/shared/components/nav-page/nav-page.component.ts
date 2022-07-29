@@ -11,7 +11,7 @@ export class NavPageComponent implements OnInit {
   @Input() length: number = 100;
   @Input() pageSize: number = 10;
   @Input() pageSizeOptions = [5, 10, 25];
-  @Output() pageEvent!: PageEvent;
+  @Output() changePageEvent = new EventEmitter();
 
 
   constructor() { }
@@ -22,7 +22,7 @@ export class NavPageComponent implements OnInit {
   handlePageEvent(event: PageEvent) {
     this.length = event.length;
     this.pageSize = event.pageSize;
-    this.pageEvent = event;
+    this.changePageEvent.emit({take: event.pageSize, skip: this.pageSize * event.pageIndex});
   }
 
 
