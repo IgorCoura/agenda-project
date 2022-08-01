@@ -38,7 +38,7 @@ namespace Agenda.API.Controllers
 
             return BadRequest(new {
                 success = false,
-                erros = result
+                errors = result
             });
         }
 
