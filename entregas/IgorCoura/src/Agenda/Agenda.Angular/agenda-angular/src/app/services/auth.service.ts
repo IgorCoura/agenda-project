@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { delay, Observable, tap } from 'rxjs';
+import { delay, Observable, Subject, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Login } from '../entities/login.entity';
 import jwtDecode from 'jwt-decode';
@@ -10,7 +10,7 @@ import { Roles } from '../enums/roles';
 export class AuthService {
 
   private readonly apiUrl = environment.apiUrl;
-
+ 
   constructor(private http: HttpClient) { }
 
   loginAsync(login: Login){
@@ -34,11 +34,14 @@ export class AuthService {
     const { role } = jwtDecode(token) as {role : Roles};
     window.localStorage.setItem("@token", token);
     window.localStorage.setItem("@role", role);
+
   }
 
   clearToken(): void {
     window.localStorage.removeItem("@token");
     window.localStorage.removeItem("@role");
+
   }
+
 
 }

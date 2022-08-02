@@ -13,6 +13,7 @@ import { InteractionModule } from './page/interaction/interaction.module';
 import { UserModule } from './page/user/user.module';
 import { UserAdminModule } from './page/user-admin/user-admin.module';
 import { LoginModule } from './page/login/login.module';
+import { InterceptorModule } from './interceptor/interceptor.module';
 
 
 
@@ -30,6 +31,7 @@ import { LoginModule } from './page/login/login.module';
     UserModule,
     UserAdminModule,
     LoginModule,
+    InterceptorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

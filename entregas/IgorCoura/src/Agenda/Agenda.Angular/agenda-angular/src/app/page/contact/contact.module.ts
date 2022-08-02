@@ -16,6 +16,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatDialogModule} from '@angular/material/dialog';
+import { ContactService } from 'src/app/services/contact.service';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -39,9 +42,12 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatOptionModule,
     FlexLayoutModule,
     MatDialogModule,
+    MatSnackBarModule,
+    HttpClientModule,
   ],
   exports: [
     ContactViewComponent,
-  ]
+  ],
+  providers: [ContactService],
 })
 export class ContactModule { }

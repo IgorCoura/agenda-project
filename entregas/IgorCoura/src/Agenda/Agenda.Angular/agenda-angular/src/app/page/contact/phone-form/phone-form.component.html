@@ -7,8 +7,8 @@
         <div class="invalid-feedback d-block"></div>
     </div>
 
-    <mat-select [fxFlex]="20" class="card item" formControlName="phoneType" fxLayoutAlign="start center">
-        <mat-option *ngFor="let item of options" [value]="item">{{item}}</mat-option>
+    <mat-select [fxFlex]="20" class="card item" formControlName="phoneTypeId" fxLayoutAlign="start center">
+        <mat-option *ngFor="let item of options" [value]="item.id">{{item.name}}</mat-option>
     </mat-select>
 
     <button class="item" [fxFlex]="10" mat-stroked-button color="warn" (click)="remove()">

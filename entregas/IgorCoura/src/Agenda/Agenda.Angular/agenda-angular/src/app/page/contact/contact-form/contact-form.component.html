@@ -11,10 +11,10 @@
       </div>
     </div>
     <div class="card-body">
-      <app-phone-form *ngFor="let item of phonesField.controls; let i = index" [phoneForm]="phonesField.controls[i]" [index]="i" (removePhone)="onRemovePhone($event)" [options]="phoneOptions"></app-phone-form>
-      <button class="waves-effect waves-light btn cancel btn btn-primary" (click)="addPhoneForm()">
+      <app-phone-form *ngFor="let item of phonesField.controls; let i = index" [phoneForm]="phonesField.controls[i]" [index]="i" (removePhone)="onRemovePhone($event)" [options]="phoneOptions" ></app-phone-form>
+      <a class="waves-effect waves-light btn cancel btn btn-primary" (click)="addPhoneForm()">
         <span>Adicionar Telefone</span>
-      </button>
+      </a>
     </div>
     <div class="mb-3 m-auto">
       <button class="btn btn-primary m-3" type="submit" >Salvar</button>

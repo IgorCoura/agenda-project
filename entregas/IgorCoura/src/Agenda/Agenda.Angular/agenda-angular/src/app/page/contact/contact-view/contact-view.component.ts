@@ -1,10 +1,14 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { pipe, Subscription, take } from 'rxjs';
 import { Contact } from 'src/app/entities/contact.entity';
 import { Phone } from 'src/app/entities/phone.entity';
+import { ContactService } from 'src/app/services/contact.service';
 import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
+import { apiErrorHandler } from 'src/app/utils/api-error-handler';
+import { BaseParams } from 'src/params/base-params';
 
 @Component({
   selector: 'app-contact-view',
@@ -14,24 +18,53 @@ import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog
 export class ContactViewComponent implements OnInit, OnDestroy {
 
   userId: number = 0;
-  contacts = [new Contact(1, "Jose", [new Phone(1, "123456789", "Home", 1, "Celular"), new Phone(2, "123456789", "Home", 1, "Celular")]), new Contact(2, "Maria", [new Phone(1, "123456789", "Home", 1, "Celular"), new Phone(2, "123456789", "Home", 1, "Celular")]),];
+  contacts: Contact[]= [];
   optionsSearch : Array<string> = ["Name", "Phone", "DDD"];
   subscribe! : Subscription;
+  skip  = 0;
+  take = 10;
+  lengthPage = 10;
 
-
-
-  constructor(private router : Router, private activatedRoute : ActivatedRoute, public dialog: MatDialog) { }
+  constructor(
+    private router : Router, 
+    private activatedRoute : ActivatedRoute, 
+    private dialog: MatDialog,
+    private contactService: ContactService,
+    private snackBar: MatSnackBar,
+    ) { }
 
   ngOnInit(): void {
-    this. subscribe = this.activatedRoute.params.subscribe(params => {
+    this.subscribe = this.activatedRoute.params.subscribe(params => {
       if(params["userId"]){
         this.userId = params['userId'];
       }
     });
+    this.getDataAsync();
+    
   }
 
   ngOnDestroy(): void {
     this.subscribe.unsubscribe();
+  }
+
+
+  getDataAsync(){
+    if(this.userId === 0){
+      this.contactService.getAsync({ skip: this.skip, take: this.take})
+      .pipe(take(1))
+      .subscribe({
+        next: resp => {
+          this.lengthPage = resp.totalItems;
+          this.contacts = resp.data;
+        },
+        error: ([error]) => {
+          apiErrorHandler(this.snackBar, error);
+        }
+      })
+    }
+    else{
+      
+    }
   }
 
 
@@ -43,7 +76,16 @@ export class ContactViewComponent implements OnInit, OnDestroy {
 
     dialogRef.afterClosed().subscribe(result => {
       if(result){
-        console.log(result);
+        this.contactService.deleteAsync(contact.id).pipe(take(1)).subscribe({
+          next: () => {
+            this.snackBar.open("Contato excluído com sucesso!", "fechar", {duration: 2000});
+            
+          },
+          error: ({error}) => {
+            apiErrorHandler(this.snackBar, error);
+          }
+          
+        });
       }
     });
   }
@@ -73,7 +115,9 @@ export class ContactViewComponent implements OnInit, OnDestroy {
   }
 
   onChangePageEvent(event: any){
-    console.log("Take: "+event.take+" Skip: "+event.skip);
+    this.skip = event.skip;
+    this.take = event.take;
+    this.getDataAsync();
   }
 
 }

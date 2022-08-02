@@ -44,7 +44,7 @@ export class RegisterUserComponent implements OnInit {
   }
 
 
-  onSubmit() {
+  onSubmit() { 
     this.isLoading = true;
     if(this.form.valid){
       const data = this.form.value as User;

@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { UserService } from 'src/app/services/user.service';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -24,6 +25,7 @@ import { UserService } from 'src/app/services/user.service';
     HttpClientModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
+    FlexLayoutModule,
   ],
   providers: [AuthService, UserService],
 })

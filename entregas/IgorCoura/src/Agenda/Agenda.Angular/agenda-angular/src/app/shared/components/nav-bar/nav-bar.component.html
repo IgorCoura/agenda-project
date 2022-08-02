@@ -1,4 +1,4 @@
-<header>
+<header *ngIf="IsAuthenticated">
   <mat-toolbar  fxLayoutAlign="space-between center">
    <div fxLayout="row" fxLayoutAlign="start center" >
     <div>
@@ -15,19 +15,14 @@
       </div>
     </div>
    </div>
-  <div *ngIf="!IsAuthenticated">
-    <button mat-stroked-button color="primary" class="icon favorite-icon" aria-label="Icon-button with heart icon">
-      <span>Login</span>
-    </button>
-  </div>
-  <div *ngIf="IsAuthenticated">
+  <div>
     <button mat-button [matMenuTriggerFor]="menu" aria-label="Icon button with a delete icon">
       <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-photo-183042379.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
     </button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item routerLink="/user/edit">Editar Perfil</button>
       <button mat-menu-item routerLink="/user/edit-password">Alterar Senha</button>
-      <button mat-menu-item>Logout</button>
+      <button mat-menu-item (click)="onLogout()">Logout</button>
     </mat-menu>
   </div>
 </mat-toolbar>

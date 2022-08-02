@@ -1,7 +1,6 @@
 import { HttpParams } from "@angular/common/http";
 
 export class BaseParams extends HttpParams {
-  [key: string]: any;
-  take = 6;
+  take = 10;
   skip = 0;
 }

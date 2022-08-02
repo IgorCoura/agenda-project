@@ -20,6 +20,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { AuthService } from '../services/auth.service';
 
 
 @NgModule({
@@ -55,5 +56,6 @@ import {MatDialogModule} from '@angular/material/dialog';
     NavPageComponent,
     ConfirmDialogComponent,
   ],
+  providers: [AuthService],
 })
 export class SharedModule { }

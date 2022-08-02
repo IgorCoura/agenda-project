@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { PhoneType } from 'src/app/entities/phoneTypes.entity';
 
 @Component({
   selector: 'app-phone-form',
@@ -10,7 +11,7 @@ export class PhoneFormComponent implements OnInit {
 
   @Input() index!: number;
   @Input() phoneForm! : any;
-  @Input() options! : Array<string>;
+  @Input() options! : PhoneType[];
   @Output() removePhone = new EventEmitter(); 
 
   constructor() { 

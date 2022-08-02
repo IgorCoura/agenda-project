@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -6,18 +9,26 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss']
 })
-export class NavBarComponent implements OnInit {
+export class NavBarComponent implements OnInit, OnDestroy{
 
   IsAuthenticated : boolean = true;
   IsAdmin : boolean = true;
+  subs! : Subscription;
 
-  constructor() { }
+  constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+
   }
 
-  Change(){
-    this.IsAuthenticated = !this.IsAuthenticated;
+  ngOnDestroy(): void {
+    console.log("Destroy");
+    this.subs.unsubscribe();
+  }
+
+  onLogout(){
+    this.auth.clearToken();
+    this.router.navigate(['/login']);
   }
 
 }
