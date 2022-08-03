@@ -4,7 +4,6 @@ import { InteractionViewComponent } from './page/interaction/interaction-view/in
 
 const routes: Routes = [
   {path: '', redirectTo: 'contact', pathMatch: 'full'},
-  { path: 'interactions', component: InteractionViewComponent },
 ];
 
 @NgModule({

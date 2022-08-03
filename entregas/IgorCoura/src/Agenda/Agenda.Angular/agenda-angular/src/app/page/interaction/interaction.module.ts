@@ -5,6 +5,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { InteractionService } from 'src/app/services/interaction.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { InteractionRoutingModule } from './interaction.routing.module';
+import { AuthAdminGuard } from 'src/app/guards/auth-admin.guard';
 
 
 
@@ -16,11 +18,12 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatListModule,
     CommonModule,
     MatCardModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    InteractionRoutingModule,
   ],
   exports: [
     InteractionViewComponent,
   ],
-  providers: [InteractionService],
+  providers: [InteractionService, AuthAdminGuard],
 })
 export class InteractionModule { }

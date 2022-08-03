@@ -9,7 +9,6 @@ import { ContactAdminService } from 'src/app/services/contact-admin.service';
 import { ContactService } from 'src/app/services/contact.service';
 import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
 import { apiErrorHandler } from 'src/app/utils/api-error-handler';
-import { BaseParams } from 'src/params/base-params';
 
 @Component({
   selector: 'app-contact-view',

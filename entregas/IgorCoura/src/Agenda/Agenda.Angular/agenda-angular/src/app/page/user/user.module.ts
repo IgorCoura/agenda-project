@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { UserService } from 'src/app/services/user.service';
+import { AuthGuard } from 'src/app/guards/auth.guard';
 
 
 
@@ -34,6 +35,7 @@ import { UserService } from 'src/app/services/user.service';
   ],
   providers: [
     UserService,
+    AuthGuard,
   ]
 })
 export class UserModule { }

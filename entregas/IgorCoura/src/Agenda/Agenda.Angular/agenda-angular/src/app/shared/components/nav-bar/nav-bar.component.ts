@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subject, Subscription, takeUntil } from 'rxjs';
+import { Roles } from 'src/app/enums/roles';
 import { AuthService } from 'src/app/services/auth.service';
 
 
@@ -11,19 +12,19 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class NavBarComponent implements OnInit, OnDestroy{
 
-  IsAuthenticated : boolean = true;
-  IsAdmin : boolean = true;
-  subs! : Subscription;
+  IsAuthenticated!: boolean;
+  IsAdmin! : boolean;
+  unsub : Subscription[] = [];
 
   constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-
+    this.unsub.push(this.auth.showNavBar.subscribe((resp) => { this.IsAuthenticated = resp; }));
+    this.unsub.push(this.auth.showOptinsAdmin.subscribe((resp) => { this.IsAdmin = resp; }));
   }
 
   ngOnDestroy(): void {
-    console.log("Destroy");
-    this.subs.unsubscribe();
+    this.unsub.forEach((sub) => sub.unsubscribe());
   }
 
   onLogout(){

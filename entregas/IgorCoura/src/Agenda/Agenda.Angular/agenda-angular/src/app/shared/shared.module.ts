@@ -21,6 +21,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { AuthService } from '../services/auth.service';
+import { InputFieldComponent } from './components/input-field/input-field.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { AuthService } from '../services/auth.service';
     NavPageComponent,
     FormDebugComponent,
     ConfirmDialogComponent,
+    InputFieldComponent,
   ],
   imports: [
     CommonModule,
@@ -55,6 +57,7 @@ import { AuthService } from '../services/auth.service';
     FormDebugComponent,
     NavPageComponent,
     ConfirmDialogComponent,
+    InputFieldComponent,
   ],
   providers: [AuthService],
 })

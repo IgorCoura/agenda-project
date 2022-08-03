@@ -20,6 +20,8 @@ import { ContactService } from 'src/app/services/contact.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactAdminService } from 'src/app/services/contact-admin.service';
+import { AuthAdminGuard } from 'src/app/guards/auth-admin.guard';
+import { AuthGuard } from 'src/app/guards/auth.guard';
 
 
 @NgModule({
@@ -49,6 +51,6 @@ import { ContactAdminService } from 'src/app/services/contact-admin.service';
   exports: [
     ContactViewComponent,
   ],
-  providers: [ContactService, ContactAdminService],
+  providers: [ContactService, ContactAdminService, AuthAdminGuard, AuthGuard],
 })
 export class ContactModule { }

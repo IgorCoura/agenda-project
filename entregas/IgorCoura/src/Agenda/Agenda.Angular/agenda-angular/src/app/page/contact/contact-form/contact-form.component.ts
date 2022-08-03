@@ -42,12 +42,14 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     });
 
     this.form = this.formBuilder.group({
-      id: [this.id],
+      id: [null],
       name: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(200)]],
       phones: this.formBuilder.array([]),
     });
     
-    this.getContact();
+    if(this.id != 0){
+      this.getContact();
+    }
     this.getPhoneType();
 
   }

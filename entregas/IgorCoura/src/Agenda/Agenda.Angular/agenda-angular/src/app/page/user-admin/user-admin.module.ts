@@ -13,6 +13,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UserAdminService } from 'src/app/services/user-admin.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AuthAdminGuard } from 'src/app/guards/auth-admin.guard';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatDialogModule,
     MatSnackBarModule,
   ],
-  providers: [ UserAdminService ] 
+  providers: [ UserAdminService, AuthAdminGuard ] 
 })
 export class UserAdminModule { }
