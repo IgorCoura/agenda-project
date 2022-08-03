@@ -28,6 +28,6 @@
         </a>
       </div>
     </div>
-  <app-nav-page (changePageEvent)="onChangePage($event)"></app-nav-page>
+  <app-nav-page (changePageEvent)="onChangePage($event)" [length]="lengthPage" [pageSize]="params['take']"></app-nav-page>
 
 </div>

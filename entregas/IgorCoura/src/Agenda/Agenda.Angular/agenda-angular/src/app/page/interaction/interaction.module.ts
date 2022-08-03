@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { InteractionViewComponent } from './interaction-view/interaction-view.component';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { InteractionService } from 'src/app/services/interaction.service';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -13,10 +15,12 @@ import { MatCardModule } from '@angular/material/card';
   imports: [
     MatListModule,
     CommonModule,
-    MatCardModule
+    MatCardModule,
+    MatSnackBarModule
   ],
   exports: [
     InteractionViewComponent,
-  ]
+  ],
+  providers: [InteractionService],
 })
 export class InteractionModule { }

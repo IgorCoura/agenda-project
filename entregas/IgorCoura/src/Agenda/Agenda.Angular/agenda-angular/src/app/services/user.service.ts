@@ -4,28 +4,35 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ApiResponse } from '../classes/api-response';
 import { User } from '../entities/user.entity';
-import { ApiBaseService } from './api-base.service';
 
 
 @Injectable({
     providedIn: 'root'
 })
-export class UserService extends ApiBaseService<User>{
+export class UserService{
 
+    protected readonly apiUrl = environment.apiUrl;
 
-    constructor(protected override http: HttpClient) {
-        super("/v1/User", http); 
+    constructor(private http: HttpClient) {
     }
 
     getUserAsync(): Observable<ApiResponse<User>> {
         return this.http.get<ApiResponse<User>>(`${this.apiUrl}/v1/User`);
     }
 
+    createAsync(data: User): Observable<ApiResponse<User>> {
+        return this.http.post<ApiResponse<User>>(`${this.apiUrl}/v1/User`, data);
+    }
+
     updatePasswordAsync(user:User): Observable<ApiResponse<User>> {
         return this.http.put<ApiResponse<User>>(`${this.apiUrl}/v1/User/password`, user);
     }
 
+    updateAsync(data: User): Observable<ApiResponse<User>> {
+        return this.http.put<ApiResponse<User>>(`${this.apiUrl}/v1/User`, data);
+    }
+
     deleteUserAsync(): Observable<void> {
-        return this.http.delete<void>(`${this.apiUrl}${this.route}`);
+        return this.http.delete<void>(`${this.apiUrl}$/v1/User`);
     }
 }

@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Interaction } from 'src/app/entities/interaction.entity';
+import { InteractionService } from 'src/app/services/interaction.service';
+import { apiErrorHandler } from 'src/app/utils/api-error-handler';
+import { pipe, Subscription, take } from 'rxjs';
 
 @Component({
   selector: 'app-interaction-view',
@@ -8,11 +12,26 @@ import { Interaction } from 'src/app/entities/interaction.entity';
 })
 export class InteractionViewComponent implements OnInit {
 
-  interactions = [new Interaction(1, 1, "InteractionType", "Message"), new Interaction(2, 2, "InteractionType2", "Message2"),]
+  interactions: Interaction[]= [];
   
-  constructor() { }
+  constructor(private interactionService: InteractionService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+    this.getDataAsync();
+  }
+
+
+  getDataAsync(){
+    this.interactionService.getAsync()
+    .pipe(take(1))
+    .subscribe({
+      next: (resp) => {
+        this.interactions = resp.data;
+      },
+      error: ({error}) => {
+        apiErrorHandler(this.snackBar, error);
+      }
+    });
   }
 
 }

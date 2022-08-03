@@ -2,8 +2,8 @@
 <form class="form-group"  [formGroup]="form" fxLayout="column" fxLayoutAlign="center none"  (submit)="onSubmit()">
 
     <label>Cargo</label>
-    <mat-select fxLayoutAlign="none center" class="card" formControlName="userRole">
-        <mat-option *ngFor="let item of options" [value]="item">{{item}}</mat-option>
+    <mat-select fxLayoutAlign="none center" class="card" formControlName="userRoleId">
+        <mat-option *ngFor="let item of options" [value]="item.id">{{item.name}}</mat-option>
     </mat-select>
 
     <label>Name</label>
@@ -21,11 +21,11 @@
 
     <div *ngIf="id == 0" >
         <label>Senha</label>
-        <input type="password" class="form-control" placeholder="Enter senha">
+        <input type="password" class="form-control" placeholder="Enter senha" formControlName = "password">
         <div class = "invalid-feedback d-block"></div>
 
         <label>Confirma senha</label>
-        <input type="password" class="form-control" placeholder="Enter senha">
+        <input type="password" class="form-control" placeholder="Enter senha" formControlName="confirmPassword">
         <div class = "invalid-feedback d-block"></div>
     </div>
 

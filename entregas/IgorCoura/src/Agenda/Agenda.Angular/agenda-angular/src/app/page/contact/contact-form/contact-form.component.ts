@@ -6,6 +6,7 @@ import { Subscription, take } from 'rxjs';
 import { Contact } from 'src/app/entities/contact.entity';
 import { Phone } from 'src/app/entities/phone.entity';
 import { PhoneType } from 'src/app/entities/phoneTypes.entity';
+import { ContactAdminService } from 'src/app/services/contact-admin.service';
 import { ContactService } from 'src/app/services/contact.service';
 import { apiErrorHandler } from 'src/app/utils/api-error-handler';
 
@@ -26,7 +27,9 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     private activatedRoute : ActivatedRoute, 
     private contactService: ContactService, 
     private snackBar : MatSnackBar,
-    private router :  Router) { }
+    private router :  Router,
+    private contactAdminService: ContactAdminService,
+    ) { }
 
   ngOnInit(): void {
     this.subscribe = this.activatedRoute.params.subscribe(params => {
@@ -55,6 +58,9 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     .subscribe({
       next: (resp) => {
         this.phoneOptions = resp.data;
+      },
+      error: ({error}) => {
+        apiErrorHandler(this.snackBar, error);
       }
     });
   }
@@ -73,9 +79,26 @@ export class ContactFormComponent implements OnInit, OnDestroy {
           });
           contact.phones.forEach(phone => {this.addPhoneForm(phone)});
         },
-        error: ([error]) => {
+        error: ({error}) => {
           apiErrorHandler(this.snackBar, error);
-        }       
+        }     
+      });
+    }
+    else{
+      this.contactAdminService.getByIdAsync(this.id, this.userId)
+      .pipe(take(1))
+      .subscribe({
+        next: (resp) => {
+          var contact = resp.data;
+          this.form.patchValue({
+            id: contact.id,
+            name: contact.name,
+          });
+          contact.phones.forEach(phone => {this.addPhoneForm(phone)});
+        },
+        error: ({error}) => {
+          apiErrorHandler(this.snackBar, error);
+        }     
       });
     }
   }
@@ -119,8 +142,19 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   updateContact(){
     if(this.userId === 0){
       let data = this.form.value as Contact;
-      debugger;
       this.contactService.updateAsync(data).subscribe({
+        next: (resp) => {
+          this.snackBar.open('Contato atualizado com exito', 'fechar', {duration: 2000});
+          this.router.navigate(['/']);
+        },
+        error: ({error}) => {
+          apiErrorHandler(this.snackBar, error);
+        }
+      });
+    }
+    else{
+      let data = this.form.value as Contact;
+      this.contactAdminService.updateAsync(data, this.userId).subscribe({
         next: (resp) => {
           this.snackBar.open('Contato atualizado com exito', 'fechar', {duration: 2000});
           this.router.navigate(['/']);
@@ -136,6 +170,18 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     if(this.userId === 0){
       let data = this.form.value as Contact;
       this.contactService.createAsync(data).subscribe({
+        next: (resp) => {
+          this.snackBar.open('Contato criado com exito', 'fechar', {duration: 2000});
+          this.router.navigate(['/']);
+        },
+        error: ({error}) => {
+          apiErrorHandler(this.snackBar, error);
+        }
+      });
+    }
+    else{
+      let data = this.form.value as Contact;
+      this.contactAdminService.createAsync(data, this.userId).subscribe({
         next: (resp) => {
           this.snackBar.open('Contato criado com exito', 'fechar', {duration: 2000});
           this.router.navigate(['/']);

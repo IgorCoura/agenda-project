@@ -1,10 +1,10 @@
 <div class="contact-view">
-    
+
+    <h1 class="m-auto text-center mb-3">CONTATOS</h1>
+
+    <app-search-bar [optionsSearch]="optionsSearch" (addEvent)="onAdd()" (searchEvent)="onSearch($event)"></app-search-bar>
+
     <div *ngIf="contacts.length > 0">
-
-        <h1 class="m-auto text-center mb-3">CONTATOS</h1>
-
-        <app-search-bar [optionsSearch]="optionsSearch" (addEvent)="onAdd()" (searchEvent)="onSearch($event)"></app-search-bar>
 
         <div *ngFor="let contact of contacts; index as i" >
             <mat-expansion-panel class="card mb-1"  hideToggle >
@@ -34,7 +34,7 @@
             </mat-expansion-panel>
         </div>
 
-        <app-nav-page (changePageEvent)="onChangePageEvent($event)" [length]="lengthPage" [pageSize]="take"></app-nav-page>
+        <app-nav-page (changePageEvent)="onChangePageEvent($event)" [length]="lengthPage" [pageSize]="params['take']"></app-nav-page>
     </div>
 
     <div *ngIf="contacts.length == 0">

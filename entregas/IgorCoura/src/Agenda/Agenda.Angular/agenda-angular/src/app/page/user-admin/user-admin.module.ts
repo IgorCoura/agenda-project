@@ -11,6 +11,8 @@ import { MatOptgroup, MatOptionModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import {MatDialogModule} from '@angular/material/dialog';
+import { UserAdminService } from 'src/app/services/user-admin.service';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatOptionModule,
     ReactiveFormsModule,
     MatDialogModule,
-  ]
+    MatSnackBarModule,
+  ],
+  providers: [ UserAdminService ] 
 })
 export class UserAdminModule { }

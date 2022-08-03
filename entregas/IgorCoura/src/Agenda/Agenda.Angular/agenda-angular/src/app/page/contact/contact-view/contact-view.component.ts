@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { pipe, Subscription, take } from 'rxjs';
 import { Contact } from 'src/app/entities/contact.entity';
 import { Phone } from 'src/app/entities/phone.entity';
+import { ContactAdminService } from 'src/app/services/contact-admin.service';
 import { ContactService } from 'src/app/services/contact.service';
 import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
 import { apiErrorHandler } from 'src/app/utils/api-error-handler';
@@ -19,10 +20,9 @@ export class ContactViewComponent implements OnInit, OnDestroy {
 
   userId: number = 0;
   contacts: Contact[]= [];
-  optionsSearch : Array<string> = ["Name", "Phone", "DDD"];
+  optionsSearch : Array<string> = ["Name", "Number", "DDD"];
   subscribe! : Subscription;
-  skip  = 0;
-  take = 10;
+  params : {[key: string] : any} = {};
   lengthPage = 10;
 
   constructor(
@@ -31,9 +31,14 @@ export class ContactViewComponent implements OnInit, OnDestroy {
     private dialog: MatDialog,
     private contactService: ContactService,
     private snackBar: MatSnackBar,
+    private contactAdminService: ContactAdminService
     ) { }
 
   ngOnInit(): void {
+
+    this.params['skip'] = 0;
+    this.params['take'] = 10;
+
     this.subscribe = this.activatedRoute.params.subscribe(params => {
       if(params["userId"]){
         this.userId = params['userId'];
@@ -49,21 +54,32 @@ export class ContactViewComponent implements OnInit, OnDestroy {
 
 
   getDataAsync(){
-    if(this.userId === 0){
-      this.contactService.getAsync({ skip: this.skip, take: this.take})
+    if(this.userId === 0){ 
+      this.contactService.getAsync(this.params)
       .pipe(take(1))
       .subscribe({
         next: resp => {
           this.lengthPage = resp.totalItems;
           this.contacts = resp.data;
         },
-        error: ([error]) => {
+        error: ({error}) => {
           apiErrorHandler(this.snackBar, error);
         }
       })
     }
     else{
-      
+      this.params['userId'] = this.userId;
+      this.contactAdminService.getAsync(this.params)
+      .pipe(take(1))
+      .subscribe({
+        next: resp => {
+          this.lengthPage = resp.totalItems;
+          this.contacts = resp.data;
+        },
+        error: ({error}) => {
+          apiErrorHandler(this.snackBar, error);
+        }
+      })
     }
   }
 
@@ -76,22 +92,38 @@ export class ContactViewComponent implements OnInit, OnDestroy {
 
     dialogRef.afterClosed().subscribe(result => {
       if(result){
-        this.contactService.deleteAsync(contact.id).pipe(take(1)).subscribe({
-          next: () => {
-            this.snackBar.open("Contato excluído com sucesso!", "fechar", {duration: 2000});
+        if(this.userId == 0){
+          this.contactService.deleteAsync(contact.id).pipe(take(1)).subscribe({
+            next: () => {
+              this.snackBar.open("Contato excluído com sucesso!", "fechar", {duration: 2000});
+              this.getDataAsync();
+            },
+            error: ({error}) => {
+              apiErrorHandler(this.snackBar, error);
+            }
             
-          },
-          error: ({error}) => {
-            apiErrorHandler(this.snackBar, error);
-          }
-          
-        });
+          });
+        }
+        else{
+          this.contactAdminService.deleteAsync(contact.id, this.userId).pipe(take(1)).subscribe({
+            next: () => {
+              this.snackBar.open("Contato excluído com sucesso!", "fechar", {duration: 2000});
+              this.getDataAsync();
+            },
+            error: ({error}) => {
+              apiErrorHandler(this.snackBar, error);
+            }
+            
+          });
+        }
       }
     });
   }
 
   onSearch(event : any){
-    console.log(event.option + " " + event.search);
+    this.params['skip'] = 0;
+    this.params[event.option] = event.search;
+    this.getDataAsync();
   }
 
   onAdd(){
@@ -115,8 +147,8 @@ export class ContactViewComponent implements OnInit, OnDestroy {
   }
 
   onChangePageEvent(event: any){
-    this.skip = event.skip;
-    this.take = event.take;
+    this.params['skip'] = event.skip;
+    this.params['take'] = event.take;
     this.getDataAsync();
   }
 

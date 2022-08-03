@@ -19,6 +19,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { ContactService } from 'src/app/services/contact.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
+import { ContactAdminService } from 'src/app/services/contact-admin.service';
 
 
 @NgModule({
@@ -48,6 +49,6 @@ import { HttpClientModule } from '@angular/common/http';
   exports: [
     ContactViewComponent,
   ],
-  providers: [ContactService],
+  providers: [ContactService, ContactAdminService],
 })
 export class ContactModule { }

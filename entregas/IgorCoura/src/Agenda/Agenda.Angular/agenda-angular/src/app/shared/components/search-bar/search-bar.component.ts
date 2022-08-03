@@ -19,7 +19,7 @@ export class SearchBarComponent implements OnInit {
   }
 
   onSearch(search: string){
-    this.searchEvent.emit({option: this.selectedOption, search: search});
+    this.searchEvent.emit({option: this.selectedOption,  search: search});
   }
 
   onAdd(){
