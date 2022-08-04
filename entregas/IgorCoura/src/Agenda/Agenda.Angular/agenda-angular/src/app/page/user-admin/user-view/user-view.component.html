@@ -3,20 +3,21 @@
   <h1 class="m-auto text-center mb-3">USUARIOS</h1>
 
   <app-search-bar [optionsSearch]="optionsSearch" (searchEvent)="onSearch($event)" (addEvent)="onAdd()"></app-search-bar>
-    <div *ngFor="let user of Users" class="card" fxLayout="row"  fxLayoutAlign="space-around center" >
-      <div>
-        Nome: {{user.name}}
+  <div *ngIf="users.length != 0">
+    <div *ngFor="let user of users; let i = index" class="card" fxLayout="row"  fxLayoutAlign="space-around center" >
+      <div [fxFlex]="25" >
+        Nome: <br>{{user.name}}
       </div>
-      <div>
-        Email: {{user.email}}
+      <div [fxFlex]="25">
+        Email: <br>{{user.email}}
       </div>
-      <div>
-        Username: {{user.userName}}
+      <div [fxFlex]="20">
+        Username: <br>{{user.userName}}
       </div>
-      <div>
-        Role: {{user.userRole}}
+      <div [fxFlex]="10">
+        Role: <br>{{user.userRole}}
       </div>
-      <div>
+      <div [fxFlex]="15" fxLayout="row" fxLayoutAlign="end center">
         <a  mat-icon-button  [routerLink] = "['/admin/contact/', user.id]">
           <mat-icon>contacts</mat-icon>
         </a>
@@ -29,5 +30,12 @@
       </div>
     </div>
   <app-nav-page (changePageEvent)="onChangePage($event)" [length]="lengthPage" [pageSize]="params['take']"></app-nav-page>
+  </div>
+
+
+  <div *ngIf="users.length == 0 && !isLoading">
+      <h1 class="m-auto text-center mb-3">Nenhum usuario encontrado</h1>
+  </div>
+  <mat-spinner *ngIf="users.length == 0 && isLoading" [diameter]="50" class="spinner"></mat-spinner>
 
 </div>

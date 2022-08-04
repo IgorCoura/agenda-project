@@ -7,6 +7,11 @@
         </div>
     </li>
 </ol>
+<div *ngIf="interactions.length == 0 && !isLoading">
+    <h1 class="m-auto text-center mb-3">Nenhuma interação encontrado</h1>
+</div>
+<br>
+<mat-spinner *ngIf="interactions.length == 0 && isLoading" [diameter]="50" class="spinner"></mat-spinner>
 
 
 

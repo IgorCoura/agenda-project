@@ -1,21 +1,17 @@
 <h1>Editar</h1>
 <form class="form-group" [formGroup]="form" fxLayout="column" fxLayoutAlign="center none"  (submit)="onSubmit()" >
-    <label>Name</label>
-    <input type="text" class="form-control" placeholder="Enter name" formControlName="name">
-    <div class = "invalid-feedback d-block"></div>
 
-    <label>UserName</label>
-    <input type="text" class="form-control" placeholder="Enter username" formControlName="userName">
-    <div class = "invalid-feedback d-block"></div>
+    <app-input-field label="Nome" id="name" type="text" placeholder="Insira o seu nome" [control]="form.get('name')" [applyCss]="applyCssError('name')" formControlName="name"></app-input-field>
 
-    <label>Email</label>
-    <input type="email" class="form-control" placeholder="Enter email" formControlName="email">
-    <div class = "invalid-feedback d-block"></div>
+    <app-input-field label="UserName" id="userName" type="text" placeholder="Insira o seu userName" [control]="form.get('userName')" [applyCss]="applyCssError('userName')" formControlName="userName"></app-input-field>
 
-    <div>
-        <button type="submit" class="btn btn-primary m-2">Salvar</button>
+    <app-input-field label="Email" id="email" type="email" placeholder="Insira o seu email" [control]="form.get('email')" [applyCss]="applyCssError('email')" formControlName="email"></app-input-field>
+    <br>
+    <div *ngIf="!isLoading">
+        <button type="submit" class="btn btn-primary m-2" [disabled]="form.invalid">Salvar</button>
         <a routerLink="/" class="btn btn-link">cancelar</a>
     </div>
+    <mat-spinner class="spinner" *ngIf="isLoading" [diameter]="40"></mat-spinner>
 </form>
 <div style="height:50px"></div>
 <div class="text-center">
@@ -25,4 +21,6 @@
     </button>
 </div>
   
+
+
   

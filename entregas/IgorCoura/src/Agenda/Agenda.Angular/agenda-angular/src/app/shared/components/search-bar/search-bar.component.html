@@ -1,5 +1,5 @@
 
-<div fxLayout="row" fxLayoutAlign="center" >
+<div fxLayout="row" fxLayoutAlign="center" class="serach-div">
 
   <mat-select [(value)]="selectedOption" fxLayoutAlign="none center" >
     <mat-option *ngFor="let item of optionsSearch" [value]="item">{{item}}</mat-option>
@@ -7,10 +7,12 @@
 
   <input   matInput #search  placeholder="pesquisa...">
 
-  <button mat-stroked-button color="primary" (click) = "onSearch(search.value)">Buscar</button>
-  <button  mat-stroked-button color="primary" href='#' (click)="onAdd()">
-    Adicionar
-  </button>
+  <div fxLayout="row" fxLayoutAlign="center center" >
+    <button mat-stroked-button color="primary" (click) = "onSearch(search.value)">Buscar</button>
+    <button  mat-stroked-button color="primary" href='#' (click)="onAdd()">
+      Adicionar
+    </button>
+  </div>
   
 </div>
 

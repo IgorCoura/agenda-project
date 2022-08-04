@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { NavPageComponent } from './components/nav-page/nav-page.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormDebugComponent } from './components/form-debug/form-debug.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
@@ -22,6 +22,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
 import {MatDialogModule} from '@angular/material/dialog';
 import { AuthService } from '../services/auth.service';
 import { InputFieldComponent } from './components/input-field/input-field.component';
+import { BaseFormComponent } from './components/base-form/base-form.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { InputFieldComponent } from './components/input-field/input-field.compon
     FlexLayoutModule,
     MatPaginatorModule,
     MatDialogModule,
+    FormsModule,
   ],
   exports: [
     SearchBarComponent,

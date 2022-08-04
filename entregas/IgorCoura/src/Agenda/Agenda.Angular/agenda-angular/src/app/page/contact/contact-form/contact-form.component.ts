@@ -8,6 +8,7 @@ import { Phone } from 'src/app/entities/phone.entity';
 import { PhoneType } from 'src/app/entities/phoneTypes.entity';
 import { ContactAdminService } from 'src/app/services/contact-admin.service';
 import { ContactService } from 'src/app/services/contact.service';
+import { BaseFormComponent } from 'src/app/shared/components/base-form/base-form.component';
 import { apiErrorHandler } from 'src/app/utils/api-error-handler';
 
 @Component({
@@ -15,10 +16,9 @@ import { apiErrorHandler } from 'src/app/utils/api-error-handler';
   templateUrl: './contact-form.component.html',
   styleUrls: ['./contact-form.component.scss']
 })
-export class ContactFormComponent implements OnInit, OnDestroy {
+export class ContactFormComponent extends BaseFormComponent implements OnInit, OnDestroy {
   id: number = 0;
   userId: number = 0;
-  form!: FormGroup;
   subscribe!: Subscription;
   phoneOptions!: PhoneType[];
   
@@ -29,9 +29,9 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     private snackBar : MatSnackBar,
     private router :  Router,
     private contactAdminService: ContactAdminService,
-    ) { }
+    ) { super(); }
 
-  ngOnInit(): void {
+  override ngOnInit(): void {
     this.subscribe = this.activatedRoute.params.subscribe(params => {
       if(params['id']){
         this.id = params['id'];
@@ -50,9 +50,14 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     if(this.id != 0){
       this.getContact();
     }
+    else{
+      this.isLoading = false;
+    }
+    
     this.getPhoneType();
 
   }
+
 
   getPhoneType(){
     this.contactService.getPhoneTypesAsync()
@@ -74,6 +79,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
       .pipe(take(1))
       .subscribe({
         next: (resp) => {
+          this.isLoading = false;
           var contact = resp.data;
           this.form.patchValue({
             id: contact.id,
@@ -82,6 +88,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
           contact.phones.forEach(phone => {this.addPhoneForm(phone)});
         },
         error: ({error}) => {
+          this.isLoading = false;
           apiErrorHandler(this.snackBar, error);
         }     
       });
@@ -119,7 +126,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     this.phonesField.push(
       this.formBuilder.group({
         id: [data.id],
-        formattedPhone: [data?.formattedPhone, [Validators.required, Validators.pattern("/^[(]?[1-9][0-9][)]?[ ]?(9?[0-9])[0-9]{3}[-]?[0-9]{4}$/im")]],
+        formattedPhone: [data?.formattedPhone, [Validators.required]],
         description: [data?.description, [Validators.required, Validators.minLength(3), Validators.maxLength(200)]],
         phoneTypeId: [data?.phoneTypeId, [Validators.required]],
         phoneTye: [data?.phoneType],
@@ -127,18 +134,19 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     )
   }
 
+  //Validators.pattern("/^[(]?[1-9][0-9][)]?[ ]?(9?[0-9])[0-9]{3}[-]?[0-9]{4}$/im")
+
   onRemovePhone(event : any){
     this.phonesField.removeAt(event.index);
   }
 
-  onSubmit(){
+  override submit(){
     if(this.id == 0){
       this.createContact();
     }
     else{
       this.updateContact();
     }
-
   }
 
   updateContact(){

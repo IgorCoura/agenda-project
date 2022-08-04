@@ -23,6 +23,7 @@ export class ContactViewComponent implements OnInit, OnDestroy {
   subscribe! : Subscription;
   params : {[key: string] : any} = {};
   lengthPage = 10;
+  isLoading = true;
 
   constructor(
     private router : Router, 
@@ -58,10 +59,12 @@ export class ContactViewComponent implements OnInit, OnDestroy {
       .pipe(take(1))
       .subscribe({
         next: resp => {
+          this.isLoading = false;
           this.lengthPage = resp.totalItems;
           this.contacts = resp.data;
         },
         error: ({error}) => {
+          this.isLoading = false;
           apiErrorHandler(this.snackBar, error);
         }
       })
@@ -72,14 +75,17 @@ export class ContactViewComponent implements OnInit, OnDestroy {
       .pipe(take(1))
       .subscribe({
         next: resp => {
+          this.isLoading = false;
           this.lengthPage = resp.totalItems;
           this.contacts = resp.data;
         },
         error: ({error}) => {
+          this.isLoading = false;
           apiErrorHandler(this.snackBar, error);
         }
       })
     }
+    
   }
 
 

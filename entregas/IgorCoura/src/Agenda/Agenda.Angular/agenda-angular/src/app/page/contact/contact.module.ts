@@ -22,6 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ContactAdminService } from 'src/app/services/contact-admin.service';
 import { AuthAdminGuard } from 'src/app/guards/auth-admin.guard';
 import { AuthGuard } from 'src/app/guards/auth.guard';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { IConfig, NgxMaskModule } from 'ngx-mask';
 
 
 @NgModule({
@@ -47,6 +49,8 @@ import { AuthGuard } from 'src/app/guards/auth.guard';
     MatDialogModule,
     MatSnackBarModule,
     HttpClientModule,
+    MatProgressSpinnerModule,
+    NgxMaskModule.forRoot(),
   ],
   exports: [
     ContactViewComponent,

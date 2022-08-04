@@ -13,6 +13,7 @@ import { pipe, Subscription, take } from 'rxjs';
 export class InteractionViewComponent implements OnInit {
 
   interactions: Interaction[]= [];
+  isLoading = true;
   
   constructor(private interactionService: InteractionService, private snackBar: MatSnackBar) { }
 
@@ -26,9 +27,11 @@ export class InteractionViewComponent implements OnInit {
     .pipe(take(1))
     .subscribe({
       next: (resp) => {
+        this.isLoading = false;
         this.interactions = resp.data;
       },
       error: ({error}) => {
+        this.isLoading = false;
         apiErrorHandler(this.snackBar, error);
       }
     });

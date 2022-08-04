@@ -17,7 +17,8 @@ export class UserViewComponent implements OnInit {
   params : {[key: string] : any} = {};
   lengthPage = 10;
   optionsSearch: Array<string> = ["Name", "Email", "Username"];
-  Users : User[]= [];
+  users : User[]= [];
+  isLoading = true;
 
   constructor(
     private router: Router, 
@@ -39,10 +40,12 @@ export class UserViewComponent implements OnInit {
     .pipe(take(1))
     .subscribe({
       next: (resp) => {
+        this.isLoading = false;
         this.lengthPage = resp.totalItems;
-        this.Users = resp.data;
+        this.users = resp.data;
       },
       error: ({error}) => {
+        this.isLoading = false;
         apiErrorHandler(this.snackBar, error);
       }
     });

@@ -10,6 +10,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { UserService } from 'src/app/services/user.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -26,6 +27,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatSnackBarModule,
     MatProgressSpinnerModule,
     FlexLayoutModule,
+    SharedModule,
   ],
   providers: [AuthService, UserService],
 })

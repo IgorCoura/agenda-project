@@ -14,6 +14,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { UserAdminService } from 'src/app/services/user-admin.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AuthAdminGuard } from 'src/app/guards/auth-admin.guard';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AuthAdminGuard } from 'src/app/guards/auth-admin.guard';
     ReactiveFormsModule,
     MatDialogModule,
     MatSnackBarModule,
+    MatProgressSpinnerModule,
   ],
   providers: [ UserAdminService, AuthAdminGuard ] 
 })

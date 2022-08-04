@@ -6,33 +6,24 @@
         <mat-option *ngFor="let item of options" [value]="item.id">{{item.name}}</mat-option>
     </mat-select>
 
-    <label>Name</label>
-    <input type="text" class="form-control" placeholder="Enter name" formControlName="name">
-    <div class = "invalid-feedback d-block"></div>
+    <app-input-field label="Nome" id="name" type="text" placeholder="Insira o seu nome" [control]="form.get('name')" [applyCss]="applyCssError('name')" formControlName="name"></app-input-field>
 
-    <label>UserName</label>
-    <input type="text" class="form-control" placeholder="Enter username" formControlName="userName">
-    <div class = "invalid-feedback d-block"></div>
+    <app-input-field label="UserName" id="userName" type="text" placeholder="Insira o seu userName" [control]="form.get('userName')" [applyCss]="applyCssError('userName')" formControlName="userName"></app-input-field>
 
-    <label>Email</label>
-    <input type="email" class="form-control" placeholder="Enter email" formControlName="email">
-    <div class = "invalid-feedback d-block"></div>
-
+    <app-input-field label="Email" id="email" type="email" placeholder="Insira o seu email" [control]="form.get('email')" [applyCss]="applyCssError('email')" formControlName="email"></app-input-field>
 
     <div *ngIf="id == 0" >
-        <label>Senha</label>
-        <input type="password" class="form-control" placeholder="Enter senha" formControlName = "password">
-        <div class = "invalid-feedback d-block"></div>
+        <app-input-field label="Senha" id="password" type="password" placeholder="Insira o seu senha" [control]="form.get('password')" [applyCss]="applyCssError('password')" formControlName="password"></app-input-field>
 
-        <label>Confirma senha</label>
-        <input type="password" class="form-control" placeholder="Enter senha" formControlName="confirmPassword">
-        <div class = "invalid-feedback d-block"></div>
+        <app-input-field label="Confirmar Senha" id="password" type="password" placeholder="Insira novamente a senha" [control]="form.get('confirmPassword')" [applyCss]="applyCssError('confirmPassword')" formControlName="confirmPassword"></app-input-field>
     </div>
-
-    <div class="div-button">
-        <button type="submit" class="btn btn-primary m-2">Salvar</button>
+    <br>
+    <div class="div-button" *ngIf="!isLoading">
+        <button type="submit" class="btn btn-primary m-2" [disabled]="form.invalid">Salvar</button>
         <a routerLink="/admin/user" class="btn btn-link">cancelar</a>
     </div>
+    <mat-spinner class="spinner" *ngIf="isLoading" [diameter]="40"></mat-spinner>
 </form>
 
+<app-form-debug></app-form-debug>
   

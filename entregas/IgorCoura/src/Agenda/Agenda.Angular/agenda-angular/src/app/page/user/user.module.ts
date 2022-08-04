@@ -14,6 +14,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { UserService } from 'src/app/services/user.service';
 import { AuthGuard } from 'src/app/guards/auth.guard';
+import { SharedModule } from 'src/app/shared/shared.module';
+import {  MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 
@@ -28,7 +30,8 @@ import { AuthGuard } from 'src/app/guards/auth.guard';
     ReactiveFormsModule,
     FlexLayoutModule,
     MatSnackBarModule,
-
+    SharedModule,
+    MatProgressSpinnerModule,
   ],
   exports:[
     EditComponent,

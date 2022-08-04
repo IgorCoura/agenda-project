@@ -7,6 +7,7 @@ import { InteractionService } from 'src/app/services/interaction.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { InteractionRoutingModule } from './interaction.routing.module';
 import { AuthAdminGuard } from 'src/app/guards/auth-admin.guard';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 
@@ -20,6 +21,7 @@ import { AuthAdminGuard } from 'src/app/guards/auth-admin.guard';
     MatCardModule,
     MatSnackBarModule,
     InteractionRoutingModule,
+    MatProgressSpinnerModule,
   ],
   exports: [
     InteractionViewComponent,
