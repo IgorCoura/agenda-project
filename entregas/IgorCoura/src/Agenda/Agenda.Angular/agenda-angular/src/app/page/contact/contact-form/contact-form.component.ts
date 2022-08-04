@@ -55,7 +55,7 @@ export class ContactFormComponent extends BaseFormComponent implements OnInit, O
     }
     
     this.getPhoneType();
-
+    
   }
 
 
@@ -126,7 +126,7 @@ export class ContactFormComponent extends BaseFormComponent implements OnInit, O
     this.phonesField.push(
       this.formBuilder.group({
         id: [data.id],
-        formattedPhone: [data?.formattedPhone, [Validators.required]],
+        formattedPhone: [data?.formattedPhone.replace(/[^0-9]/g, ''), [Validators.required, this.validatePhone()]],
         description: [data?.description, [Validators.required, Validators.minLength(3), Validators.maxLength(200)]],
         phoneTypeId: [data?.phoneTypeId, [Validators.required]],
         phoneTye: [data?.phoneType],
@@ -134,7 +134,6 @@ export class ContactFormComponent extends BaseFormComponent implements OnInit, O
     )
   }
 
-  //Validators.pattern("/^[(]?[1-9][0-9][)]?[ ]?(9?[0-9])[0-9]{3}[-]?[0-9]{4}$/im")
 
   onRemovePhone(event : any){
     this.phonesField.removeAt(event.index);

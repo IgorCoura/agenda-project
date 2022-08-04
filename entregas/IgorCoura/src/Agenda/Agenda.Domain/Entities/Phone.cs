@@ -20,6 +20,12 @@ namespace Agenda.Domain.Entities
             Description = description;
             SetPhone(formattedPhone);
         }
+        public Phone(string description, string formattedPhone, int phoneTypeId)
+        {
+            Description = description;
+            PhoneTypeId = phoneTypeId;
+            SetPhone(formattedPhone);
+        }
 
         public Phone(int id, int contactId, string description, string formattedPhone, DateTime createdAt, DateTime updatedAt) : base(id, createdAt, updatedAt)
         {

@@ -53,10 +53,10 @@ namespace Agenda.Application.Services
 
         public async Task<ContactModel> Edit(UpdateContactModel contactModel, int userId)
         {
-            var entity = await _contactRepository.FirstAsync(e => e.Id == contactModel.Id) ?? throw new NotFoundRequestException($"Contato com id: {contactModel.Id} não encontrado.");
+            var entity = await _contactRepository.FirstAsyncAsTracking(e => e.Id == contactModel.Id, include: q => q.Include(p => p.Phones)) ?? throw new NotFoundRequestException($"Contato com id: {contactModel.Id} não encontrado.");
 
             if (userId != entity.UserId)
-                throw new NotAuthorizedException();
+                throw new NotAuthorizedException();  
 
             var contextValidation = new ValidationContext<UpdateContactModel>(contactModel);
             contextValidation.RootContextData["userId"] = userId;
@@ -65,14 +65,38 @@ namespace Agenda.Application.Services
                 throw new BadRequestException(validation);
 
         
-            _mapper.Map<UpdateContactModel, Contact>(contactModel, entity);
-            entity.UserId = userId;
-            var result = await _contactRepository.UpdateAsync(entity);
+            entity.Name = contactModel.Name;
 
+            var phones = entity.Phones.ToList();
+            phones.RemoveAll(p => !contactModel.Phones.Any(x => x.Id == p.Id));
+            entity.Phones = phones;
+
+            foreach (var phone in contactModel.Phones)
+            {
+                if(phone.Id == 0)
+                {
+                    var phonesList = entity.Phones.ToList();
+                    phonesList.Add(new Phone(phone.Description, phone.FormattedPhone, phone.PhoneTypeId));
+                    entity.Phones = phonesList;
+                }
+                else
+                {
+                    var p = entity.Phones.Where(x => x.Id == phone.Id).First();
+                    p.SetPhone(phone.FormattedPhone);
+                    p.Description = phone.Description;
+                    p.PhoneTypeId = phone.PhoneTypeId;
+                }
+            }
+
+
+
+
+            entity.UserId = userId;
+  
             await _interactionRepository.RegisterAsync(new Interaction(InteractionType.UpdateContact.Id, $"Atualizando Contato {entity.Name}"));
             await _unitOfWork.CommitAsync();
 
-            return _mapper.Map<ContactModel>(result);
+            return _mapper.Map<ContactModel>(entity);
         }
 
         public async Task<ContactModel> RecoverById(int id, int? userId = null)

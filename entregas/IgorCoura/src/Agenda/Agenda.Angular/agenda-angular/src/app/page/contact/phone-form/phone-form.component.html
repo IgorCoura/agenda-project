@@ -3,7 +3,7 @@
   <div  fxLayout="row" fxLayoutAlign="start center">
     <div class="item label" [fxFlex]="10" >TELEFONE</div>
     <div class="item" [fxFlex]="60" >
-        <input class="form-control" placeholder="Telefone" type="text" [mask]="getMaskPhone()" formControlName="formattedPhone" [ngClass]="applyCssError('formattedPhone')" >
+        <input class="form-control" placeholder="Telefone" type="text"  formControlName="formattedPhone" [ngClass]="applyCssError('formattedPhone')" [mask]="getMaskPhone()">
     </div>
     <mat-select [fxFlex]="20" class="card item" formControlName="phoneTypeId" fxLayoutAlign="start center">
         <mat-option *ngFor="let item of options" [value]="item.id">{{item.name}}</mat-option>

@@ -75,4 +75,20 @@ export abstract class BaseFormComponent implements OnInit {
     return validator;
   }
 
+  validatePhone() {
+    const validator = (formControl: FormControl) => {
+      if (!formControl.root || !(<FormGroup>formControl.root).controls) {
+        return null;
+      }
+      const isValid = new RegExp(/^\([1-9]{2}\) (?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}/).test(formControl.value);
+      if (isValid) {
+        return { validatePhone : "validatePhone" };
+      }
+      return null;
+    };
+    return validator;
+  }
+
+ 
+
 }

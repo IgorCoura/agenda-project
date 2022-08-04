@@ -29,8 +29,9 @@ export class PhoneFormComponent extends BaseFormComponent implements OnInit {
   }
 
   getMaskPhone(): string {
-    return '(00) 00000-0000'
-
+    return this.form.get("phoneTypeId")?.value === 2
+      ? '(00) 00000-0000'
+      : '(00) 0000-0000'
   }
 
   errorMessage(value: string, label: string) {
@@ -51,7 +52,8 @@ export class PhoneFormComponent extends BaseFormComponent implements OnInit {
       'required': `${fieldName} é obrigatório.`,
       'minlength': `${fieldName} precisa ter no mínimo ${validatorValue.requiredLength} caracteres.`,
       'maxlength': `${fieldName} precisa ter no máximo ${validatorValue.requiredLength} caracteres.`,
-      'pattern': 'Campo inválido'
+      'pattern': 'Campo inválido',
+      'mask': 'Telefone inválido. Ex : (00) 0000-0000 ou (00) 90000-0000'
     };
 
     if(fieldName === 'Telefone' && validatorName === 'pattern'){

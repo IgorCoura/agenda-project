@@ -23,7 +23,7 @@ import { ContactAdminService } from 'src/app/services/contact-admin.service';
 import { AuthAdminGuard } from 'src/app/guards/auth-admin.guard';
 import { AuthGuard } from 'src/app/guards/auth.guard';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { IConfig, NgxMaskModule } from 'ngx-mask';
+import { NgxMaskModule } from 'ngx-mask';
 
 
 @NgModule({
