@@ -20,5 +20,9 @@ export class InteractionService {
         return this.http.get<ApiResponse<Interaction[]>>(`${this.apiUrl}/v1/Interaction`);
     }
 
+    download(){
+        return this.http.get(`${this.apiUrl}/v1/Interaction/download`, {responseType: 'blob'});
+    }
 
+ 
 }

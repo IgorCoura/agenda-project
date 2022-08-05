@@ -26,6 +26,8 @@ export class SearchBarComponent implements OnInit {
     this.addEvent.emit();
   }
 
+  valueChange(){
+  }
 
   
 

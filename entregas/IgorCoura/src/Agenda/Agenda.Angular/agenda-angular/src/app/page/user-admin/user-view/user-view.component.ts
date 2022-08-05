@@ -54,6 +54,8 @@ export class UserViewComponent implements OnInit {
   onSearch(event: any) {
     this.params['skip'] = 0;
     this.params[event.option] = event.search;
+    var options = this.optionsSearch.filter(option => option !== event.option);
+    options.forEach(option => { delete this.params[option] });
     this.getDataAsync();
   }
 

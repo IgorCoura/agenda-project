@@ -34,7 +34,7 @@ export class RegisterUserComponent extends BaseFormComponent implements OnInit {
       password: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(200), Validators.pattern('^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$_!%*?&-])[0-9a-zA-Z@$_!%*?&-]{8,}$')]],
       confirmPassword: [null, [Validators.required, this.equalsTo('password')]],
     });
-
+    this.isLoading = false;
   }
 
 

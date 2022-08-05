@@ -37,4 +37,18 @@ export class InteractionViewComponent implements OnInit {
     });
   }
 
+  onDownload(){
+    this.interactionService.download().subscribe((res) => {
+      const file = new Blob([res], { type: res.type });
+      const blob = window.URL.createObjectURL(file);
+
+      const link = document.createElement('a');
+      link.href = blob;
+      link.download = 'interactions.json';
+      link.click();
+      window.URL.revokeObjectURL(blob);
+      link.remove();
+    });  
+  }
+
 }

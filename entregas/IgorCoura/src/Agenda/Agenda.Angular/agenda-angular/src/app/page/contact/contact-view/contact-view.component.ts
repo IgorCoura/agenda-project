@@ -92,7 +92,7 @@ export class ContactViewComponent implements OnInit, OnDestroy {
   onDelete(contact: Contact){
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '350px',
-      data: {title: "Confirmar Exclusão", message: "Deseja realmente excluir o usuário " + contact.name + "?"}
+      data: {title: "Confirmar Exclusão", message: "Deseja realmente excluir o contato " + contact.name + "?"}
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -128,11 +128,12 @@ export class ContactViewComponent implements OnInit, OnDestroy {
   onSearch(event : any){
     this.params['skip'] = 0;
     this.params[event.option] = event.search;
+    var options = this.optionsSearch.filter(option => option !== event.option);
+    options.forEach(option => { delete this.params[option] });
     this.getDataAsync();
   }
 
   onAdd(){
-    console.log(this.userId);
     if(this.userId === 0){
       this.router.navigate(['/contact/form/0']);
     }

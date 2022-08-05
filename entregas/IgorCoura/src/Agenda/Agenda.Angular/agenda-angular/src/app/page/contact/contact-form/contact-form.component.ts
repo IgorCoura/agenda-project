@@ -64,9 +64,11 @@ export class ContactFormComponent extends BaseFormComponent implements OnInit, O
     .pipe(take(1))
     .subscribe({
       next: (resp) => {
+        this.isLoading = false;
         this.phoneOptions = resp.data;
       },
       error: ({error}) => {
+        this.isLoading = false;
         apiErrorHandler(this.snackBar, error);
       }
     });
@@ -98,6 +100,7 @@ export class ContactFormComponent extends BaseFormComponent implements OnInit, O
       .pipe(take(1))
       .subscribe({
         next: (resp) => {
+          this.isLoading = false;
           var contact = resp.data;
           this.form.patchValue({
             id: contact.id,
@@ -106,6 +109,7 @@ export class ContactFormComponent extends BaseFormComponent implements OnInit, O
           contact.phones.forEach(phone => {this.addPhoneForm(phone)});
         },
         error: ({error}) => {
+          this.isLoading = false;
           apiErrorHandler(this.snackBar, error);
         }     
       });
@@ -126,7 +130,7 @@ export class ContactFormComponent extends BaseFormComponent implements OnInit, O
     this.phonesField.push(
       this.formBuilder.group({
         id: [data.id],
-        formattedPhone: [data?.formattedPhone.replace(/[^0-9]/g, ''), [Validators.required, this.validatePhone()]],
+        formattedPhone: [data?.formattedPhone?.replace(/[^0-9]/g, ''), [Validators.required, this.validatePhone()]],
         description: [data?.description, [Validators.required, Validators.minLength(3), Validators.maxLength(200)]],
         phoneTypeId: [data?.phoneTypeId, [Validators.required]],
         phoneTye: [data?.phoneType],
@@ -153,10 +157,12 @@ export class ContactFormComponent extends BaseFormComponent implements OnInit, O
       let data = this.form.value as Contact;
       this.contactService.updateAsync(data).subscribe({
         next: (resp) => {
+          this.isLoading = false;
           this.snackBar.open('Contato atualizado com exito', 'fechar', {duration: 2000});
           this.router.navigate(['/']);
         },
         error: ({error}) => {
+          this.isLoading = false;
           apiErrorHandler(this.snackBar, error);
         }
       });
@@ -165,10 +171,12 @@ export class ContactFormComponent extends BaseFormComponent implements OnInit, O
       let data = this.form.value as Contact;
       this.contactAdminService.updateAsync(data, this.userId).subscribe({
         next: (resp) => {
+          this.isLoading = false;
           this.snackBar.open('Contato atualizado com exito', 'fechar', {duration: 2000});
-          this.router.navigate(['/']);
+          this.router.navigate([`/admin/contact/${this.userId}`]);
         },
         error: ({error}) => {
+          this.isLoading = false;
           apiErrorHandler(this.snackBar, error);
         }
       });
@@ -180,10 +188,12 @@ export class ContactFormComponent extends BaseFormComponent implements OnInit, O
       let data = this.form.value as Contact;
       this.contactService.createAsync(data).subscribe({
         next: (resp) => {
+          this.isLoading = false;
           this.snackBar.open('Contato criado com exito', 'fechar', {duration: 2000});
           this.router.navigate(['/']);
         },
         error: ({error}) => {
+          this.isLoading = false;
           apiErrorHandler(this.snackBar, error);
         }
       });
@@ -192,10 +202,12 @@ export class ContactFormComponent extends BaseFormComponent implements OnInit, O
       let data = this.form.value as Contact;
       this.contactAdminService.createAsync(data, this.userId).subscribe({
         next: (resp) => {
+          this.isLoading = false;
           this.snackBar.open('Contato criado com exito', 'fechar', {duration: 2000});
-          this.router.navigate(['/']);
+          this.router.navigate([`/admin/contact/${this.userId}`]);
         },
         error: ({error}) => {
+          this.isLoading = false;
           apiErrorHandler(this.snackBar, error);
         }
       });
