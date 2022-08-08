@@ -8,8 +8,8 @@
   <input   matInput #search  placeholder="pesquisa...">
 
   <div fxLayout="row" fxLayoutAlign="center center" >
-    <button mat-stroked-button color="primary" (click) = "onSearch(search.value)">Buscar</button>
-    <button  mat-stroked-button color="primary" href='#' (click)="onAdd()">
+    <button id="search-button" mat-stroked-button color="primary" (click) = "onSearch(search.value)">Buscar</button>
+    <button id="add-search-button" mat-stroked-button color="primary" href='#' (click)="onAdd()">
       Adicionar
     </button>
   </div>

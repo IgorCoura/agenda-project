@@ -33,6 +33,6 @@ export class UserService{
     }
 
     deleteUserAsync(): Observable<void> {
-        return this.http.delete<void>(`${this.apiUrl}$/v1/User`);
+        return this.http.delete<void>(`${this.apiUrl}/v1/User`);
     }
 }

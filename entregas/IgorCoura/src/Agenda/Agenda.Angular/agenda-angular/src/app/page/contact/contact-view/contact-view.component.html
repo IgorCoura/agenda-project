@@ -13,8 +13,8 @@
                         {{contact.name}}
                     </mat-panel-title>
                     <div>
-                        <button mat-icon-button color="primary" aria-label="Icon button with a home icon" (click)="onEdit(contact)"><mat-icon>edit</mat-icon></button>
-                        <button mat-icon-button color="warn" aria-label="Icon button with a home icon" (click) = "onDelete(contact)"><mat-icon>delete</mat-icon></button>
+                        <button id="contact-view-edit-button" mat-icon-button color="primary" aria-label="Icon button with a home icon" (click)="onEdit(contact)"><mat-icon>edit</mat-icon></button>
+                        <button id="contact-view-delete-button" mat-icon-button color="warn" aria-label="Icon button with a home icon" (click) = "onDelete(contact)"><mat-icon>delete</mat-icon></button>
                     </div>
                 </mat-expansion-panel-header>
 
@@ -32,11 +32,9 @@
                 </div>
 
             </mat-expansion-panel>
-        </div>
-
-        <app-nav-page (changePageEvent)="onChangePageEvent($event)" [length]="lengthPage" [pageSize]="params['take']"></app-nav-page>
+        </div> 
     </div>
-
+    <app-nav-page (changePageEvent)="onChangePageEvent($event)" [length]="lengthPage" [pageSize]="params['take']"></app-nav-page>
     <div *ngIf="contacts.length == 0 && !isLoading">
         <h1 class="m-auto text-center mb-3">Nenhum contato encontrado</h1>
     </div>

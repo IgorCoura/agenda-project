@@ -19,8 +19,8 @@
     </div>
     <br>
     <div class="div-button" *ngIf="!isLoading">
-        <button type="submit" class="btn btn-primary m-2" [disabled]="form.invalid">Salvar</button>
-        <a routerLink="/admin/user" class="btn btn-link">cancelar</a>
+        <button id="user-form-save-button" type="submit" class="btn btn-primary m-2" [disabled]="form.invalid">Salvar</button>
+        <a id="user-form-cancel-button" routerLink="/admin/user" class="btn btn-link">cancelar</a>
     </div>
     <mat-spinner class="spinner" *ngIf="isLoading" [diameter]="40"></mat-spinner>
 </form>

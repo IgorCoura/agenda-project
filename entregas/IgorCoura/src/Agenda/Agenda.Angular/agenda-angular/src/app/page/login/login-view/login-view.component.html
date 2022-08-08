@@ -12,10 +12,10 @@
             <div class = "invalid-feedback d-block"></div> 
         </div>
         <div class="text-end mb-2">
-        <a [routerLink]="['/login/register']">Criar conta</a>
+        <a id="login-create-user-button" [routerLink]="['/login/register']">Criar conta</a>
         </div>
         <div>
-        <button *ngIf="!isLoading" class="w-100 btn btn-lg btn-primary" type="submit">LOGIN</button>
+        <button id="login-button" *ngIf="!isLoading" class="w-100 btn btn-lg btn-primary" type="submit">LOGIN</button>
         <mat-spinner *ngIf="isLoading" [diameter]="50" class="spinner"></mat-spinner>
         </div>
     </form>

@@ -3,12 +3,12 @@
   <div  fxLayout="row" fxLayoutAlign="start center">
     <div class="item label" [fxFlex]="10" >TELEFONE</div>
     <div class="item" [fxFlex]="60" >
-        <input class="form-control" placeholder="Telefone" type="text"  formControlName="formattedPhone" [ngClass]="applyCssError('formattedPhone')" [mask]="getMaskPhone()">
+        <input  id="phone-form-input-phone" class="form-control" placeholder="Telefone" type="text"  formControlName="formattedPhone" [ngClass]="applyCssError('formattedPhone')" [mask]="getMaskPhone()">
     </div>
     <mat-select [fxFlex]="20" class="card item" formControlName="phoneTypeId" fxLayoutAlign="start center">
         <mat-option *ngFor="let item of options" [value]="item.id">{{item.name}}</mat-option>
     </mat-select>
-    <button class="item" [fxFlex]="10" mat-stroked-button color="warn" (click)="remove()">
+    <button id="phone-form-remove-button" class="item" [fxFlex]="10" mat-stroked-button color="warn" (click)="remove()">
       <mat-icon>delete</mat-icon>
     </button>
   </div>
@@ -17,7 +17,7 @@
   <div fxLayout="row" fxLayoutAlign="start center">
     <div class="item label" [fxFlex]="10" >DESCRIÇÃO</div>
     <div class="item" [fxFlex]="90" >
-      <input class="form-control" placeholder="Descrição" type="text" formControlName="description" [ngClass]="applyCssError('description')">
+      <input id="phone-form-input-description" class="form-control" placeholder="Descrição" type="text" formControlName="description" [ngClass]="applyCssError('description')">
     </div>
   </div>
   <div *ngIf="errorMessage('description', 'Descrição') != null" class="invalid-feedback d-block"> {{errorMessage('description', 'Descrição')}} </div>

@@ -8,10 +8,10 @@
       </a>
     </div>
     <div fxLayoutAlign="start center">
-      <a  mat-button [routerLink]="['/contact']"><span>Contatos</span></a>
+      <a id="nav-bar-contacts" mat-button [routerLink]="['/contact']"><span>Contatos</span></a>
       <div *ngIf="IsAdmin">
-        <a mat-button  [routerLink]="['/admin/user']" ><span>Usuarios</span></a>
-        <a mat-button [routerLink]="['/interactions']" ><span>Interações</span></a>
+        <a id="nav-bar-user" mat-button  [routerLink]="['/admin/user']" ><span>Usuarios</span></a>
+        <a id="nav-bar-interactions" mat-button [routerLink]="['/interactions']" ><span>Interações</span></a>
       </div>
     </div>
    </div>
@@ -20,9 +20,9 @@
       <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-photo-183042379.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item routerLink="/user/edit">Editar Perfil</button>
-      <button mat-menu-item routerLink="/user/edit-password">Alterar Senha</button>
-      <button mat-menu-item (click)="onLogout()">Logout</button>
+      <button id="nav-bar-edit-perfil" mat-menu-item routerLink="/user/edit">Editar Perfil</button>
+      <button id="nav-bar-edit-password" mat-menu-item routerLink="/user/edit-password">Alterar Senha</button>
+      <button id="nav-bar-logout" mat-menu-item (click)="onLogout()">Logout</button>
     </mat-menu>
   </div>
 </mat-toolbar>

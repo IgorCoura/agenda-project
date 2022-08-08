@@ -8,15 +8,15 @@
     <app-input-field label="Email" id="email" type="email" placeholder="Insira o seu email" [control]="form.get('email')" [applyCss]="applyCssError('email')" formControlName="email"></app-input-field>
     <br>
     <div *ngIf="!isLoading">
-        <button type="submit" class="btn btn-primary m-2" [disabled]="form.invalid">Salvar</button>
-        <a routerLink="/" class="btn btn-link">cancelar</a>
+        <button id="edit-user-save-button" type="submit" class="btn btn-primary m-2" [disabled]="form.invalid">Salvar</button>
+        <a id="edit-user-delete-button" routerLink="/" class="btn btn-link">cancelar</a>
     </div>
     <mat-spinner class="spinner" *ngIf="isLoading" [diameter]="40"></mat-spinner>
 </form>
 <div style="height:50px"></div>
 <div class="text-center">
     <h2>Deletar conta!</h2>
-    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" (click) = "onDelete()">
+    <button id="edit-user-delete-button" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" (click) = "onDelete()">
     Deletar conta
     </button>
 </div>
