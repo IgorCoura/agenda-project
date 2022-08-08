@@ -77,26 +77,16 @@ export class ContactFormComponent extends BaseFormComponent implements OnInit, O
 
   getContact(){
     if(this.userId === 0 ){     
-      this.contactService.getByIdAsync(this.id)
-      .pipe(take(1))
-      .subscribe({
-        next: (resp) => {
-          this.isLoading = false;
-          var contact = resp.data;
-          this.form.patchValue({
-            id: contact.id,
-            name: contact.name,
-          });
-          contact.phones.forEach(phone => {this.addPhoneForm(phone)});
-        },
-        error: ({error}) => {
-          this.isLoading = false;
-          apiErrorHandler(this.snackBar, error);
-        }     
-      });
+      this.getComumContact()
     }
     else{
-      this.contactAdminService.getByIdAsync(this.id, this.userId)
+      this.getAdminContact()
+    }
+  }
+
+
+  getComumContact(){
+    this.contactService.getByIdAsync(this.id)
       .pipe(take(1))
       .subscribe({
         next: (resp) => {
@@ -113,7 +103,26 @@ export class ContactFormComponent extends BaseFormComponent implements OnInit, O
           apiErrorHandler(this.snackBar, error);
         }     
       });
-    }
+  }
+
+  getAdminContact(){
+    this.contactAdminService.getByIdAsync(this.id, this.userId)
+      .pipe(take(1))
+      .subscribe({
+        next: (resp) => {
+          this.isLoading = false;
+          var contact = resp.data;
+          this.form.patchValue({
+            id: contact.id,
+            name: contact.name,
+          });
+          contact.phones.forEach(phone => {this.addPhoneForm(phone)});
+        },
+        error: ({error}) => {
+          this.isLoading = false;
+          apiErrorHandler(this.snackBar, error);
+        }     
+      });
   }
 
   ngOnDestroy(): void {
@@ -145,16 +154,27 @@ export class ContactFormComponent extends BaseFormComponent implements OnInit, O
 
   override submit(){
     if(this.id == 0){
-      this.createContact();
+      if(this.userId === 0){
+        this.createComumContact();
+      }
+      else{
+        this.createAdminContact();
+      }
     }
     else{
-      this.updateContact();
+      if(this.userId === 0){
+        this.updateComumContact();
+      }
+      else{
+        
+      }
+      this.updateAdminContact();
     }
   }
 
-  updateContact(){
-    if(this.userId === 0){
-      let data = this.form.value as Contact;
+
+  updateComumContact(){
+    let data = this.form.value as Contact;
       this.contactService.updateAsync(data).subscribe({
         next: (resp) => {
           this.isLoading = false;
@@ -166,9 +186,10 @@ export class ContactFormComponent extends BaseFormComponent implements OnInit, O
           apiErrorHandler(this.snackBar, error);
         }
       });
-    }
-    else{
-      let data = this.form.value as Contact;
+  }
+
+  updateAdminContact(){
+    let data = this.form.value as Contact;
       this.contactAdminService.updateAsync(data, this.userId).subscribe({
         next: (resp) => {
           this.isLoading = false;
@@ -180,12 +201,11 @@ export class ContactFormComponent extends BaseFormComponent implements OnInit, O
           apiErrorHandler(this.snackBar, error);
         }
       });
-    }
   }
+  
 
-  createContact(){
-    if(this.userId === 0){
-      let data = this.form.value as Contact;
+  createComumContact(){
+    let data = this.form.value as Contact;
       this.contactService.createAsync(data).subscribe({
         next: (resp) => {
           this.isLoading = false;
@@ -197,9 +217,10 @@ export class ContactFormComponent extends BaseFormComponent implements OnInit, O
           apiErrorHandler(this.snackBar, error);
         }
       });
-    }
-    else{
-      let data = this.form.value as Contact;
+  }
+  
+  createAdminContact(){
+    let data = this.form.value as Contact;
       this.contactAdminService.createAsync(data, this.userId).subscribe({
         next: (resp) => {
           this.isLoading = false;
@@ -211,10 +232,8 @@ export class ContactFormComponent extends BaseFormComponent implements OnInit, O
           apiErrorHandler(this.snackBar, error);
         }
       });
-    }
-
   }
- 
+
 
 }
  

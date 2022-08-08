@@ -55,7 +55,16 @@ export class ContactViewComponent implements OnInit, OnDestroy {
 
   getDataAsync(){
     if(this.userId === 0){ 
-      this.contactService.getAsync(this.params)
+      this.getComumContact();
+    }
+    else{
+      this.getAdminContact();
+    }
+    
+  }
+
+  getComumContact(){
+    this.contactService.getAsync(this.params)
       .pipe(take(1))
       .subscribe({
         next: resp => {
@@ -68,9 +77,10 @@ export class ContactViewComponent implements OnInit, OnDestroy {
           apiErrorHandler(this.snackBar, error);
         }
       })
-    }
-    else{
-      this.params['userId'] = this.userId;
+  }
+
+  getAdminContact(){
+    this.params['userId'] = this.userId;
       this.contactAdminService.getAsync(this.params)
       .pipe(take(1))
       .subscribe({
@@ -84,8 +94,6 @@ export class ContactViewComponent implements OnInit, OnDestroy {
           apiErrorHandler(this.snackBar, error);
         }
       })
-    }
-    
   }
 
 
@@ -98,30 +106,38 @@ export class ContactViewComponent implements OnInit, OnDestroy {
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         if(this.userId == 0){
-          this.contactService.deleteAsync(contact.id).pipe(take(1)).subscribe({
-            next: () => {
-              this.snackBar.open("Contato excluído com sucesso!", "fechar", {duration: 2000});
-              this.getDataAsync();
-            },
-            error: ({error}) => {
-              apiErrorHandler(this.snackBar, error);
-            }
-            
-          });
+          this.deleteComumContact(contact);
         }
         else{
-          this.contactAdminService.deleteAsync(contact.id, this.userId).pipe(take(1)).subscribe({
-            next: () => {
-              this.snackBar.open("Contato excluído com sucesso!", "fechar", {duration: 2000});
-              this.getDataAsync();
-            },
-            error: ({error}) => {
-              apiErrorHandler(this.snackBar, error);
-            }
-            
-          });
+          this.deleteAdminContact(contact);
         }
       }
+    });
+  }
+
+  deleteComumContact(contact : Contact){
+    this.contactService.deleteAsync(contact.id).pipe(take(1)).subscribe({
+      next: () => {
+        this.snackBar.open("Contato excluído com sucesso!", "fechar", {duration: 2000});
+        this.getDataAsync();
+      },
+      error: ({error}) => {
+        apiErrorHandler(this.snackBar, error);
+      }
+      
+    });
+  }
+
+  deleteAdminContact(contact : Contact){
+    this.contactAdminService.deleteAsync(contact.id, this.userId).pipe(take(1)).subscribe({
+      next: () => {
+        this.snackBar.open("Contato excluído com sucesso!", "fechar", {duration: 2000});
+        this.getDataAsync();
+      },
+      error: ({error}) => {
+        apiErrorHandler(this.snackBar, error);
+      }
+      
     });
   }
 
