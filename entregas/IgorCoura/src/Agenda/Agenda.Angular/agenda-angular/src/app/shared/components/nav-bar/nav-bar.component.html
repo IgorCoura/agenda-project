@@ -1,0 +1,31 @@
+<header *ngIf="IsAuthenticated">
+  <mat-toolbar  fxLayoutAlign="space-between center">
+   <div fxLayout="row" fxLayoutAlign="start center" >
+    <div>
+      <a class="home-button" fxFill mat-icon-button routerLink="">
+        <img class="bi me-2" width="40" height="32" src="https://cdn-icons-png.flaticon.com/512/212/212184.png">
+        <span>Agenda</span>
+      </a>
+    </div>
+    <div fxLayoutAlign="start center">
+      <a id="nav-bar-contacts" mat-button [routerLink]="['/contact']"><span>Contatos</span></a>
+      <div *ngIf="IsAdmin">
+        <a id="nav-bar-user" mat-button  [routerLink]="['/admin/user']" ><span>Usuarios</span></a>
+        <a id="nav-bar-interactions" mat-button [routerLink]="['/interactions']" ><span>Interações</span></a>
+      </div>
+    </div>
+   </div>
+  <div>
+    <button mat-button [matMenuTriggerFor]="menu" aria-label="Icon button with a delete icon">
+      <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-photo-183042379.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+    </button>
+    <mat-menu #menu="matMenu">
+      <button id="nav-bar-edit-perfil" mat-menu-item routerLink="/user/edit">Editar Perfil</button>
+      <button id="nav-bar-edit-password" mat-menu-item routerLink="/user/edit-password">Alterar Senha</button>
+      <button id="nav-bar-logout" mat-menu-item (click)="onLogout()">Logout</button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
+<mat-divider></mat-divider>
+</header>
+

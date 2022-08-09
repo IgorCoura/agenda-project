@@ -1,0 +1,22 @@
+<div class="interaction-view">
+    <h1 class="m-auto text-center mb-3">Interactions</h1>
+    <button id="interaction-download-button" type="button" class="btn btn-primary" (click)="onDownload()">
+        Download
+    </button>
+    <ol class="list-group list-group-numbered m-auto interaction-view">
+        <li class="list-group-item d-flex justify-content-between align-items-start" *ngFor="let item of interactions">
+            <div class="ms-2 me-auto">
+            <div class="fw-bold">{{item.interactionType}}</div>
+            {{item.message}}
+            </div>
+        </li>
+    </ol>
+    <div *ngIf="interactions.length == 0 && !isLoading">
+        <h1 class="m-auto text-center mb-3">Nenhuma interação encontrado</h1>
+    </div>
+    <br>
+    <mat-spinner *ngIf="interactions.length == 0 && isLoading" [diameter]="50" class="spinner"></mat-spinner>
+</div>
+
+
+

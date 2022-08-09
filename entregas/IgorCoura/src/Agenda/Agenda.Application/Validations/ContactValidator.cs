@@ -30,11 +30,11 @@ namespace Agenda.Application.Validations
                 .Must(phones => phones.GroupBy(x => x.FormattedPhone).All(group => group.Count() == 1))
                 .WithMessage("Existem telefones duplicados na lista.");
             RuleFor(x => x.Phones)
-                .MustAsync(async (contact, phones, context, cancellationToken) =>
-                {
-                    var userId = context.RootContextData["userId"] as int? ?? throw new ArgumentNullException("userId não pode ser null na validação do BaseContactValidator");
-                    return await VerifyExistingPhones(phones, userId);
-                }).WithMessage("Telefone já existe.");
+            .MustAsync(async (contact, phones, context, cancellationToken) =>
+            {
+                var userId = context.RootContextData["userId"] as int? ?? throw new ArgumentNullException("userId não pode ser null na validação do BaseContactValidator");
+                return await VerifyExistingPhones(phones, userId);
+            }).WithMessage("Telefone já existe.");
         }
 
         public async Task<bool> VerifyExistingPhones(

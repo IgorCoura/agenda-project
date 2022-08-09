@@ -1,0 +1,22 @@
+<h1>Register User</h1>
+<form class="form-group"  [formGroup]="form" fxLayout="column" fxLayoutAlign="center none"  (submit)="onSubmit()">
+
+    <app-input-field label="Nome" id="name" type="text" placeholder="Insira o seu nome" [control]="form.get('name')" [applyCss]="applyCssError('name')" formControlName="name"></app-input-field>
+
+    <app-input-field label="UserName" id="username" type="text" placeholder="Insira o seu username" [control]="form.get('userName')" [applyCss]="applyCssError('userName')" formControlName="userName"></app-input-field>
+
+    <app-input-field label="Email" id="email" type="email" placeholder="Insira o seu email" [control]="form.get('email')" [applyCss]="applyCssError('email')" formControlName="email"></app-input-field>
+
+    <app-input-field label="Senha" id="password" type="password" placeholder="Insira o seu senha" [control]="form.get('password')" [applyCss]="applyCssError('password')" formControlName="password"></app-input-field>
+
+    <app-input-field label="Confirmar Senha" id="confirmPassword" type="password" placeholder="Insira novamente a senha" [control]="form.get('confirmPassword')" [applyCss]="applyCssError('confirmPassword')" formControlName="confirmPassword"></app-input-field>
+    <br>    
+    <div class="div-button" *ngIf="!isLoading">
+        <button id="register-user-save-button" type="submit" class="btn btn-primary m-2" [disabled]="form.invalid">Salvar</button>
+        <a id="register-user-cancel-button" routerLink="/login" class="btn btn-link">cancelar</a>
+    </div>
+    <mat-spinner class="spinner" *ngIf="isLoading" [diameter]="40"></mat-spinner>
+ 
+</form>
+
+  

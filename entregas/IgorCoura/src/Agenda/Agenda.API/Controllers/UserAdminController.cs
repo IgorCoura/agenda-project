@@ -31,7 +31,7 @@ namespace Agenda.API.Controllers
 
         [HttpPut("{id:int}")]
         public async Task<ActionResult> PutAdmin([FromRoute] int id, [FromBody] UpdateUserModel model)
-        {
+            {
             if (!ModelState.IsValid)
                 return BadCustomResponse(ModelState);
             var result = await _userService.Edit(id, model);

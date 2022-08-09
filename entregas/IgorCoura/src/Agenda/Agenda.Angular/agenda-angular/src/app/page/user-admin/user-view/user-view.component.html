@@ -1,0 +1,41 @@
+<div class="user-view">
+
+  <h1 class="m-auto text-center mb-3">USUARIOS</h1>
+
+  <app-search-bar [optionsSearch]="optionsSearch" (searchEvent)="onSearch($event)" (addEvent)="onAdd()"></app-search-bar>
+  <div *ngIf="users.length != 0">
+    <div *ngFor="let user of users; let i = index" class="card" fxLayout="row"  fxLayoutAlign="space-around center" >
+      <div [fxFlex]="25" >
+        Nome: <br>{{user.name}}
+      </div>
+      <div [fxFlex]="25">
+        Email: <br>{{user.email}}
+      </div>
+      <div [fxFlex]="20">
+        Username: <br>{{user.userName}}
+      </div>
+      <div [fxFlex]="10">
+        Role: <br>{{user.userRole}}
+      </div>
+      <div [fxFlex]="15" fxLayout="row" fxLayoutAlign="end center">
+        <a id="contact-view-contats" mat-icon-button  [routerLink] = "['/admin/contact/', user.id]">
+          <mat-icon>contacts</mat-icon>
+        </a>
+        <a id="contacts-view-edit" mat-icon-button color="primary" [routerLink] = "['/admin/user/form/', user.id]"> 
+          <mat-icon>edit</mat-icon>
+        </a>
+        <a id="contacts-view-delete" mat-icon-button color="warn" (click)="onDelete(user)">
+          <mat-icon>delete</mat-icon>
+        </a>
+      </div>
+    </div>
+  
+  </div>
+  <app-nav-page (changePageEvent)="onChangePage($event)" [length]="lengthPage" [pageSize]="params['take']"></app-nav-page>
+
+  <div *ngIf="users.length == 0 && !isLoading">
+      <h1 class="m-auto text-center mb-3">Nenhum usuario encontrado</h1>
+  </div>
+  <mat-spinner *ngIf="users.length == 0 && isLoading" [diameter]="50" class="spinner"></mat-spinner>
+
+</div>

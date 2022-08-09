@@ -1,0 +1,26 @@
+<h1>Editar</h1>
+<form class="form-group" [formGroup]="form" fxLayout="column" fxLayoutAlign="center none"  (submit)="onSubmit()" >
+
+    <app-input-field label="Nome" id="name" type="text" placeholder="Insira o seu nome" [control]="form.get('name')" [applyCss]="applyCssError('name')" formControlName="name"></app-input-field>
+
+    <app-input-field label="UserName" id="userName" type="text" placeholder="Insira o seu userName" [control]="form.get('userName')" [applyCss]="applyCssError('userName')" formControlName="userName"></app-input-field>
+
+    <app-input-field label="Email" id="email" type="email" placeholder="Insira o seu email" [control]="form.get('email')" [applyCss]="applyCssError('email')" formControlName="email"></app-input-field>
+    <br>
+    <div *ngIf="!isLoading">
+        <button id="edit-user-save-button" type="submit" class="btn btn-primary m-2" [disabled]="form.invalid">Salvar</button>
+        <a id="edit-user-delete-button" routerLink="/" class="btn btn-link">cancelar</a>
+    </div>
+    <mat-spinner class="spinner" *ngIf="isLoading" [diameter]="40"></mat-spinner>
+</form>
+<div style="height:50px"></div>
+<div class="text-center">
+    <h2>Deletar conta!</h2>
+    <button id="edit-user-delete-button" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" (click) = "onDelete()">
+    Deletar conta
+    </button>
+</div>
+  
+
+
+  

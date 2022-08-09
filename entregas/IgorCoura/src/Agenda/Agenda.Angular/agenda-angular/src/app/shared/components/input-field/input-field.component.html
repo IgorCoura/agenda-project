@@ -1,0 +1,11 @@
+<div fxLayout="row" fxLayoutAlign="start center" >
+    <div *ngIf="typeLabel == 'row'" [fxFlex]="10">
+      {{label}}
+    </div>
+    <div [fxFlex]="typeLabel == 'row' ? 90 : 0">
+        <label [attr.for]="id" *ngIf="typeLabel == 'collumn'">{{label}}</label>
+        <input [id]="id" [type]="type" class="form-control" [placeholder]="placeholder"  
+        [ngClass]="applyCss" [readonly]="!!isReadOnly" [(ngModel)]="value"  [value]="value" (blur)="onTouched()">
+    </div>
+</div>
+<div *ngIf="errorMessage != null" class="invalid-feedback d-block"> {{errorMessage}} </div>

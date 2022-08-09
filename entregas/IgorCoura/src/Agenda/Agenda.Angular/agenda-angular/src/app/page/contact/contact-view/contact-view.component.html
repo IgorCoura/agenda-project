@@ -1,0 +1,43 @@
+<div class="contact-view">
+
+    <h1 class="m-auto text-center mb-3">CONTATOS</h1>
+
+    <app-search-bar [optionsSearch]="optionsSearch" (addEvent)="onAdd()" (searchEvent)="onSearch($event)"></app-search-bar>
+
+    <div *ngIf="contacts.length > 0">
+
+        <div *ngFor="let contact of contacts; index as i" >
+            <mat-expansion-panel class="card mb-1"  hideToggle >
+                <mat-expansion-panel-header fxLayoutAlign="space-between center">
+                    <mat-panel-title>
+                        {{contact.name}}
+                    </mat-panel-title>
+                    <div>
+                        <button id="contact-view-edit-button" mat-icon-button color="primary" aria-label="Icon button with a home icon" (click)="onEdit(contact)"><mat-icon>edit</mat-icon></button>
+                        <button id="contact-view-delete-button" mat-icon-button color="warn" aria-label="Icon button with a home icon" (click) = "onDelete(contact)"><mat-icon>delete</mat-icon></button>
+                    </div>
+                </mat-expansion-panel-header>
+
+                <div>
+                    <div class="card-body">
+                        <mat-divider></mat-divider>
+                        <div class="mb-2" *ngFor="let phone of contact.phones">
+                            <br>
+                            <div>{{phone.phoneType}} - {{phone.formattedPhone}}</div>
+                            <div>Descrição: {{phone.description}}</div>
+                            <br>
+                            <mat-divider></mat-divider>
+                        </div>               
+                    </div>
+                </div>
+
+            </mat-expansion-panel>
+        </div> 
+    </div>
+    <app-nav-page (changePageEvent)="onChangePageEvent($event)" [length]="lengthPage" [pageSize]="params['take']"></app-nav-page>
+    <div *ngIf="contacts.length == 0 && !isLoading">
+        <h1 class="m-auto text-center mb-3">Nenhum contato encontrado</h1>
+    </div>
+    <mat-spinner *ngIf="contacts.length == 0 && isLoading" [diameter]="50" class="spinner"></mat-spinner>
+
+</div>

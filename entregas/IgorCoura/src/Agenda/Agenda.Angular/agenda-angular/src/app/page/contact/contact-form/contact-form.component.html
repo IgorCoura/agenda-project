@@ -1,0 +1,21 @@
+<form class="card form-contact" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="card-header mb-3">
+      <app-input-field id="contact-form-input-name"  label="Nome" typeLabel="row" type="text" placeholder="Insira o nome do contato" [control]="form.get('name')" [applyCss]="applyCssError('name')" formControlName="name"></app-input-field>
+    </div>
+    <div class="card-body">
+      <div *ngFor="let item of phonesField.controls; let i = index">
+        <app-phone-form  [phoneForm]="item" [index]="i" (removePhone)="onRemovePhone($event)" [options]="phoneOptions" ></app-phone-form>
+      </div>
+      <a id="contact-form-add-phone-button" class="waves-effect waves-light btn cancel btn btn-primary" (click)="addPhoneForm()">
+        <span>Adicionar Telefone</span>
+      </a>
+    </div>
+    
+    <div class="m-auto" *ngIf="!isLoading">
+      <button id="contact-form-save-button" class="btn btn-primary m-3" type="submit" [disabled]="form.invalid" >Salvar</button>
+      <a id="contact-form-cancel-button-comum" *ngIf="userId == 0" class="m-3" routerLink="/contact" >Cancelar</a>
+      <a id="contact-form-cancel-button-admin" *ngIf="userId > 0" class="m-3" [routerLink]="['/admin/contact', userId]" >Cancelar</a>
+    </div>
+    <mat-spinner class="spinner" *ngIf="isLoading" [diameter]="40"></mat-spinner>
+    <br *ngIf="isLoading" >
+</form>
